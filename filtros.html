@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Editor Visual - MOMED</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="Filtros, Diseño Interior, MOME">
+  <meta name="description" content="Editor visual con filtros y texturas para diseño de interiores">
+  <!-- Favicon -->
+  <link href="img/favicon.ico" rel="icon">
+  <!-- Google Web Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+  <!-- Flaticon Font -->
+  <link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
+  <!-- Libraries Stylesheet -->
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+  <!-- Customized Bootstrap Stylesheet -->
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+
+  <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            // Inicializar EmailJS con tu Public Key
+            emailjs.init("fBsDQAPpy2ke_o-zr"); // Reemplaza con tu Public Key de EmailJS
+        })();
+    </script>
+
+</head>
+<style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+    }
+    .container-filtros {
+      padding: 80px 20px;
+      text-align: center;
+    }
+    #uploadedImage {
+      max-width: 100%;
+      height: auto;
+      margin-top: 20px;
+      display: none;
+      border-radius: 10px;
+      border: 2px solid #ccc;
+      transition: all 0.3s ease;
+    }
+    #colorOverlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: none;
+      opacity: 0.6;
+      pointer-events: none;
+      border-radius: 10px;
+      mix-blend-mode: multiply;
+    }
+    #textureOverlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: none;
+      opacity: 0.4;
+      pointer-events: none;
+      border-radius: 10px;
+    }
+    .preview {
+      position: relative;
+      display: inline-block;
+      margin: 20px auto;
+    }
+    .filter-buttons {
+      margin-top: 20px;
+    }
+    .filter-buttons button {
+      margin: 10px;
+      padding: 10px 20px;
+      background-color: #32612d;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+    .filter-buttons button:hover {
+      background-color: #32612d;
+      transform: translateY(-2px);
+    }
+    .color-button {
+      width: 60px !important;
+      height: 60px !important;
+      border-radius: 50% !important;
+      margin: 5px !important;
+      padding: 0 !important;
+      border: 3px solid #fff !important;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    .color-button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    .filter-buttons img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+    h4 {
+      margin-top: 50px;
+      color: #32612d;
+    }
+    .color-picker-container {
+      margin: 20px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+    }
+    #colorPicker {
+      width: 60px;
+      height: 60px;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      outline: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      background: none;
+      padding: 0;
+    }
+    #colorPicker::-webkit-color-swatch-wrapper {
+      padding: 0;
+      border: none;
+      border-radius: 50%;
+    }
+    #colorPicker::-webkit-color-swatch {
+      border: none;
+      border-radius: 50%;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    #colorPicker::-moz-color-swatch {
+      border: none;
+      border-radius: 50%;
+    }
+    #colorPicker:hover {
+      transform: scale(1.1);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    .intensity-slider {
+      margin: 20px 0;
+    }
+    .intensity-slider input {
+      width: 300px;
+      max-width: 100%;
+    }
+    .reset-button {
+      background-color: #dc3545 !important;
+      margin-top: 20px;
+    }
+    .reset-button:hover {
+      background-color: #c82333 !important;
+    }
+  .btn-filtro{
+    background: #32612d;
+    color: #fff;
+    border: none;
+    margin: 5px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  .btn-filtro:hover {
+    background: #29961d;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  }
+
+  /* Enhanced card styles */
+  .card {
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .card:hover {
+    transform: translateY(-2px);
+  }
+
+  /* Custom color picker styling */
+  #colorPicker {
+    width: 80px;
+    height: 80px;
+    border: 4px solid #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(50, 97, 45, 0.15);
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: none;
+    padding: 0;
+    transition: transform 0.2s ease;
+  }
+
+  #colorPicker:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+  }
+
+  #colorPicker::-webkit-color-swatch-wrapper {
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+  }
+
+  #colorPicker::-webkit-color-swatch {
+    border: none;
+    border-radius: 50%;
+  }
+
+  #colorPicker::-moz-color-swatch {
+    border: none;
+    border-radius: 50%;
+  }
+
+  /* Enhanced button styles */
+  .btn {
+    transition: all 0.3s ease;
+  }
+
+  .btn:hover {
+    transform: translateY(-1px);
+  }
+
+  /* Canvas container styling */
+  #canvas {
+    transition: box-shadow 0.3s ease;
+  }
+
+  #canvas:hover {
+    box-shadow: 0 8px 25px rgba(50, 97, 45, 0.3) !important;
+  }
+
+  /* Color bar enhanced styling */
+  #colorBar button {
+    transition: all 0.2s ease;
+    border: 3px solid #fff !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+
+  #colorBar button:hover {
+    transform: scale(1.15);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+
+  /* Estilos para botones de textura con imagen de fondo */
+  .texture-btn {
+    min-height: 90px;
+    max-height: 90px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.7em;
+    line-height: 1.2;
+    text-align: center;
+    font-weight: bold;
+    position: relative;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    border: 2px solid #ddd !important;
+    transition: all 0.3s ease;
+  }
+
+  .texture-btn:hover {
+    transform: scale(1.05);
+    border-color: #32612d !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+
+  /* Quitando el fondo negro del span y mejorando el text-shadow para legibilidad */
+  .texture-btn span {
+    position: relative;
+    z-index: 2;
+    color: white;
+    padding: 0.3rem 0.5rem;
+    border-radius: 4px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.9), -1px -1px 2px rgba(0,0,0,0.9), 1px -1px 2px rgba(0,0,0,0.9), -1px 1px 2px rgba(0,0,0,0.9);
+  }
+
+  /* Responsive improvements */
+  @media (max-width: 768px) {
+    .display-4 {
+      font-size: 2rem;
+    }
+
+    #canvas {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .btn-group-vertical .btn {
+      margin-bottom: 10px;
+    }
+  }
+
+  /* Estilos mejorados para botones de textura con esquinas redondeadas */
+  .texture-btn {
+    min-height: 90px;
+    max-height: 90px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.7em;
+    line-height: 1.2;
+    text-align: center;
+    font-weight: bold;
+    position: relative;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    border: 2px solid #ddd !important;
+    border-radius: 12px !important; /* Esquinas redondeadas */
+    transition: all 0.3s ease;
+  }
+
+  .texture-btn:hover {
+    transform: scale(1.05);
+    border-color: #32612d !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+
+  .texture-btn span {
+    position: relative;
+    z-index: 2;
+    color: white;
+    padding: 0.3rem 0.5rem;
+    border-radius: 4px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.9), -1px -1px 2px rgba(0,0,0,0.9), 1px -1px 2px rgba(0,0,0,0.9), -1px 1px 2px rgba(0,0,0,0.9);
+  }
+
+  /* Estilos para redondear el slider de tolerancia */
+  #tolerance {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 8px;
+    background: linear-gradient(to right, #32612d, #29961d);
+    border-radius: 50px;
+    outline: none;
+    opacity: 0.9;
+    transition: opacity 0.2s;
+  }
+
+  #tolerance:hover {
+    opacity: 1;
+  }
+
+  /* Estilo del pulgar para Chrome/Safari */
+  #tolerance::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    background: #32612d;
+    border: none; /* Changed from: border: 3px solid #fff !important; */
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+  }
+
+  #tolerance::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  }
+
+  /* Estilo del pulgar para Firefox */
+  #tolerance::-moz-range-thumb {
+    width: 24px;
+    height: 24px;
+    background: #32612d;
+    border: none; /* Changed from: border: 3px solid #fff !important; */
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+  }
+
+  #tolerance::-moz-range-thumb:hover {
+    transform: scale(1.2);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  }
+
+  /* Estilo de la pista para Firefox */
+  #tolerance::-moz-range-track {
+    height: 8px;
+    background: linear-gradient(to right, #32612d, #29961d);
+    border-radius: 50px;
+  }
+</style>
+<body>
+  <!-- Inicio de la barra Superior -->
+  <div class="container-fluid bg-rich-black py-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 text-center text-lg-left mb-2 mb-lg-0">
+          <div class="d-inline-flex align-items-center">
+            <a class="text-white pr-3" href="">Preguntas Frecuentes</a>
+            <span class="text-white">|</span>
+            <a class="text-white px-3" href="contact.html">Ayuda</a>
+
+            <span class="text-white">|</span>
+            <a class="text-white pl-3" href="mailto:soportemomed@googlegroups.com">Soporte Técnico</a>
+
+          </div>
+        </div>
+        <div class="col-md-6 text-center text-lg-right">
+          <div class="d-inline-flex align-items-center">
+            <a class="text-white px-3" href="https://www.facebook.com/p/MOMED-100075915498484/" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a class="text-white px-3" href="https://www.instagram.com/momed_arquitectura/?fbclid=IwY2xjawLGf-BleHRuA2FlbQIxMABicmlkETFGa0swOWpHN1dwZFBnSjFCAR4vy0A4iqyH8xGg_F4HKCoKwFYCBsZsAib7CEpJ7LOA2ehIvoU_87OjTcg6mg_aem_h4qptahWIcuug3rvusXuBg" target="_blank" rel="noopener noreferrer">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Final de la barra Superior -->
+  <!-- Navbar -->
+  <div class="container-fluid position-relative nav-bar p-0">
+    <div class="container position-relative" style="z-index: 9;">
+      <nav class="navbar navbar-expand-lg bg-floral-white navbar-dark py-3 py-lg-0 pl-3 pl-lg-5">
+        <a href="" class="navbar-brand">
+          <img src="img/Logo.jpg" alt="Logo MOMED" style="height: 150px;">
+        </a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
+          <div class="navbar-nav ml-auto py-0">
+                        <a href="index.html" class="nav-item text-rich-black nav-link active">Hogar</a>
+                        <a href="about.html" class="nav-item text-timber-green nav-link">Acerca de</a>
+                        <a href="service.html" class="nav-item text-timber-green nav-link">Servicios</a>
+                        <a href="project.html" class="nav-item text-timber-green nav-link">Proyectos</a>
+                        <a href="filtros.html" class="nav-item text-timber-green nav-link">Diseñame</a>
+                        <a href="contact.html" class="nav-item text-timber-green nav-link">Contacto</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle text-timber-green" data-toggle="dropdown">Más Paginas...</a>
+                            <div class="dropdown-menu rounded-0 m-0">
+                                <a href="blog.html" class="dropdown-item text-timber-green">Nuestra Revista</a>
+                                <a href="single.html" class="dropdown-item text-timber-green">Sabías Qué…?</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+  <!-- Fin Navbar -->
+
+  <!-- Inicio de Navegación -->
+  <div class="container-fluid bg-timber-green py-3">
+    <div class="container">
+      <div class="row justify-content-center">
+        <!-- Bloque Correo -->
+        <div class="col-lg-6 d-flex mb-3 mb-lg-0">
+          <div class="d-inline-flex text-left align-items-start">
+            <a href="mailto:momedproyectos@gmail.com" class="mr-3">
+              <i class="fas fa-envelope fa-2x" style="color: #03ac13;"></i>
+            </a>
+            <div class="d-flex flex-column">
+              <h5 class="text-floral-white mb-1">Envíanos un correo electrónico</h5>
+              <a href="mailto:momedproyectos@gmail.com" class="text-floral-white" style="text-decoration: none;">
+                momedproyectos@gmail.com
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Bloque WhatsApp -->
+        <div class="col-lg-6 d-flex">
+          <div class="d-inline-flex text-left align-items-start">
+            <a href="https://wa.me/524423440411" target="_blank">
+              <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" style="width: 36px; height: 36px;" class="mr-3">
+            </a>
+            <div class="d-flex flex-column">
+              <h5 class="text-floral-white mb-1">Contáctanos</h5>
+              <a href="https://wa.me/524423440411" target="_blank" class="text-floral-white" style="text-decoration: none;">
+                +52 442 3440411
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Final de Navegación -->
+  <!-- Inicio del encabezado de la página -->
+    <div class="container-fluid bg-rich-black py-5">
+        <div class="container py-5">
+            <div class="row align-items-center py-4">
+                <div class="col-md-6 text-center text-md-left">
+                    <h1 class="mb-4 mb-md-0 text-floral-white text-uppercase">Tu Estilo en Cada Rincón</h1>
+                </div>
+                <div class="col-md-6 text-center text-md-right">
+                    <div class="d-inline-flex align-items-center">
+                        <a class="btn btn-outline-primary" href="">Hogar</a>
+                        <i class="fas fa-angle-double-right text-juniper mx-2"></i>
+                        <a class="btn btn-outline-primary disabled" href="">Editor Visual</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Final del encabezado de la página -->
+
+
+  <!-- INICIO DEL EDITOR -->
+  <div class="container-fluid py-5" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <!-- Header Section -->
+          <div class="text-center mb-5">
+            <h2 class="display-4 font-weight-bold text-rich-black mb-3">Transforma tu Espacio en Instantes</h2>
+            <p class="lead text-dark px-3" id="actionInstruction">
+            "Sube tu imagen, selecciona áreas, aplica color y textura. Deja volar tu imaginación y haznos llegar tu idea Nosotros hacemos la magia"<br>
+            </p>
+          </div>
+
+          <!-- Upload and Controls Section -->
+          <div class="card shadow-lg border-0 mb-4">
+            <div class="card-header bg-timber-green text-white text-center py-3" style="background: linear-gradient(45deg, #32612d, #29961d);">
+              <h5 class="mb-0"><i class="fas fa-upload mr-2"></i>Controles de Imagen</h5>
+            </div>
+            <div class="card-body p-4">
+              <div class="text-center mb-3">
+                <label for="upload" class="btn btn-primary btn-lg px-4 py-2 mb-0" style="border-radius: 12px;">
+                  <i class="fas fa-cloud-upload-alt mr-2"></i>Subir Imagen
+                </label>
+                <input type="file" id="upload" accept="image/*" style="display: none;">
+              </div>
+              <div class="text-center">
+                 <!-- Agregado border-radius al botón "Limpiar Selección" -->
+                <button class="btn btn-outline-warning px-4 py-2" onclick="clearSelection()" style="border-radius: 12px;">
+                  <i class="fas fa-eraser mr-1"></i>Limpiar Selección
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Selection Tools Section -->
+          <div class="card shadow-lg border-0 mb-4">
+            <div class="card-header bg-rich-black text-white text-center py-3" style="background: linear-gradient(45deg, #32612d, #29961d);">
+              <h5 class="mb-0"><i class="fas fa-mouse-pointer mr-2"></i>Herramientas de Selección</h5>
+            </div>
+            <div class="card-body p-4">
+              <div class="row align-items-center">
+                <div class="col-md-6 mb-3 mb-md-0">
+                  <div class="text-center">
+                    <label class="font-weight-bold text-rich-black mb-2 d-block">
+                      Tolerancia: <span id="tolVal" class="badge badge-primary">30</span>
+                    </label>
+                    <input type="range" id="tolerance" min="1" max="100" value="30" class="custom-range" style="width: 200px;">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="d-flex justify-content-center">
+                     <!-- Agregado border-radius a los botones de selección -->
+                    <button class="btn btn-success mx-2" onclick="mode='add'; document.getElementById('actionInstruction').innerText = 'Haz clic en las áreas que deseas modificar.';" style="border-radius: 12px;">
+                      <i class="fas fa-plus mr-1"></i>Seleccionar Área
+                    </button>
+                    <button class="btn btn-danger mx-2" onclick="mode='remove'; document.getElementById('actionInstruction').innerText = 'Haz clic en las áreas que deseas remover de la selección.';" style="border-radius: 12px;">
+                      <i class="fas fa-minus mr-1"></i>Remover Área
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Canvas Section -->
+          <div class="text-center mb-4">
+            <div class="d-inline-block position-relative">
+              <canvas id="canvas" width="800" height="600"
+                      class="img-fluid shadow-lg rounded"
+                      style="border: 4px solid #32612d; cursor: crosshair; max-width: 100%; height: auto;">
+              </canvas>
+            </div>
+          </div>
+
+          <!-- Dropdown Filter Buttons Section -->
+          <div class="row mb-4">
+            <!-- Color Selection Dropdown -->
+            <div class="col-md-6 mb-3">
+              <button class="btn btn-lg btn-block shadow-lg text-white py-3"
+                      style="background: linear-gradient(45deg, #32612d, #29961d); border-radius: 12px;"
+                      type="button"
+                      data-toggle="collapse"
+                      data-target="#colorSection"
+                      aria-expanded="false"
+                      aria-controls="colorSection">
+                <i class="fas fa-palette mr-2"></i>Selección de Colores
+                <i class="fas fa-chevron-down float-right mt-1"></i>
+              </button>
+
+              <div class="collapse mt-3" id="colorSection">
+                <div class="card shadow-lg border-0">
+                  <div class="card-body p-4 text-center">
+                    <div class="mb-3">
+                      <h6 class="font-weight-bold text-rich-black mb-3">Colores Predefinidos</h6>
+                      <div id="colorBar" class="d-flex flex-wrap justify-content-center mb-3"></div>
+                    </div>
+                    <div class="mb-3">
+                      <h6 class="font-weight-bold text-rich-black mb-2">Color Personalizado</h6>
+                      <input type="color" id="colorPicker" value="#FF0000" class="mx-auto d-block">
+                    </div>
+                    <!-- Agregado border-radius al botón "Aplicar Color" -->
+                    <button class="btn btn-primary btn-lg px-4" onclick="applyColor()" style="border-radius: 12px;">
+                      <i class="fas fa-paint-brush mr-2"></i>Aplicar Color
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Texture Selection Dropdown -->
+            <div class="col-md-6 mb-3">
+              <button class="btn btn-lg btn-block shadow-lg text-white py-3"
+                      style="background: linear-gradient(45deg, #32612d, #29961d); border-radius: 12px;"
+                      type="button"
+                      data-toggle="collapse"
+                      data-target="#textureSection"
+                      aria-expanded="false"
+                      aria-controls="textureSection">
+                <i class="fas fa-th-large mr-2"></i>Texturas Disponibles
+                <i class="fas fa-chevron-down float-right mt-1"></i>
+              </button>
+
+              <div class="collapse mt-3" id="textureSection">
+                <div class="card shadow-lg border-0">
+                  <div class="card-body p-4">
+                     <!-- Botones de texturas con imágenes de fondo -->
+                    <div class="row" id="textureBar">
+                       <!-- Primera fila de texturas -->
+                      <div class="col-12 mb-4">
+                        <div class="row">
+                          <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-3">
+                            <button class="btn texture-btn btn-block" onclick="selectTexture('img/granito-blanco.jpg')" style="background-image: url('img/granito-blanco.jpg');">
+                              <span>GRANITO</span>
+                            </button>
+                          </div>
+                          <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-3">
+                            <button class="btn texture-btn btn-block" onclick="selectTexture('img/Textura de cantera.jpg')" style="background-image: url('img/Textura de cantera.jpg');">
+                              <span>CANTERA</span>
+                            </button>
+                          </div>
+                          <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-3">
+                            <button class="btn texture-btn btn-block" onclick="selectTexture('img/Textura Marmol.jpg')" style="background-image: url('img/Textura Marmol.jpg');">
+                              <span>MÁRMOL</span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+
+                       <!-- Segunda fila de texturas -->
+                      <div class="col-12 mb-4">
+                        <div class="row">
+                          <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-3">
+                            <button class="btn texture-btn btn-block" onclick="selectTexture('img/MURO VERDE0.jpg')" style="background-image: url('img/MURO VERDE0.jpg');">
+                              <span>MURO VERDE</span>
+                            </button>
+                          </div>
+                          <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-3">
+                            <button class="btn texture-btn btn-block" onclick="selectTexture('img/textura de madera.jpg')" style="background-image: url('img/textura de madera.jpg');">
+                              <span>MADERA</span>
+                            </button>
+                          </div>
+                          <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-3">
+                            <button class="btn texture-btn btn-block" onclick="selectTexture('img/PIEDRA NEGRA.png')" style="background-image: url('img/PIEDRA NEGRA.png');">
+                              <span>PIEDRA NEGRA</span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+
+                       <!-- Tercera fila de texturas -->
+                      <div class="col-12 mb-4">
+                        <div class="row">
+                          <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-3">
+                            <button class="btn texture-btn btn-block" onclick="selectTexture('img/TEXTURA DE ROCA.png')" style="background-image: url('img/TEXTURA DE ROCA.png');">
+                              <span>REVESTIMIENTO PIEDRA</span>
+                            </button>
+                          </div>
+                          <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-3">
+                            <button class="btn texture-btn btn-block" onclick="selectTexture('img/LAMBRIN NEGRO.jpg')" style="background-image: url('img/LAMBRIN NEGRO.jpg');">
+                              <span>LAMBRIN NEGRO</span>
+                            </button>
+                          </div>
+                          <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-3">
+                            <button class="btn texture-btn btn-block" onclick="selectTexture('img/LAMBRIN CAFE.jpg')" style="background-image: url('img/LAMBRIN CAFE.jpg');">
+                              <span>LAMBRIN CAFÉ</span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+
+                       <!-- Cuarta fila de texturas -->
+                      <div class="col-12 mb-4">
+                        <div class="row">
+                          <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-3">
+                            <button class="btn texture-btn btn-block" onclick="selectTexture('img/MICROCEMENTO.jpg')" style="background-image: url('img/MICROCEMENTO.jpg');">
+                              <span>MICROCEMENTO</span>
+                            </button>
+                          </div>
+                          <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-3">
+                            <button class="btn texture-btn btn-block" onclick="selectTexture('img/MARMOL NEGRO.jpg')" style="background-image: url('img/MARMOL NEGRO.jpg');">
+                              <span>MÁRMOL NEGRO</span>
+                            </button>
+                          </div>
+                          <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-3">
+                            <button class="btn texture-btn btn-block" onclick="selectTexture('img/MARMOL GRIS.jpg')" style="background-image: url('img/MARMOL GRIS.jpg');">
+                              <span>MÁRMOL GRIS</span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+
+                       <!-- Quinta fila de texturas -->
+                      <div class="col-12 mb-4">
+                        <div class="row">
+                          <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-3">
+                            <button class="btn texture-btn btn-block" onclick="selectTexture('img/MICROCEMENTO ARENA.jpg')" style="background-image: url('img/MICROCEMENTO ARENA.jpg');">
+                              <span>MICROCEMENTO ARENA</span>
+                            </button>
+                          </div>
+                          <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-3">
+                            <button class="btn texture-btn btn-block" onclick="selectTexture('img/MICROCEMENTO BEIGE.jpg')" style="background-image: url('img/MICROCEMENTO BEIGE.jpg');">
+                              <span>MICROCEMENTO BEIGE</span>
+                            </button>
+                          </div>
+                          <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-3">
+                            <button class="btn texture-btn btn-block" onclick="selectTexture('img/TAPIZ RAYADO VERTICAL.jpg')" style="background-image: url('img/TAPIZ RAYADO VERTICAL.jpg');">
+                              <span>TAPIZ RAYADO</span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+
+                       <!-- Sexta fila de texturas -->
+                      <div class="col-12 mb-4">
+                        <div class="row">
+                          <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-3">
+                            <button class="btn texture-btn btn-block" onclick="selectTexture('img/TAPIZ ONDAS.jpg')" style="background-image: url('img/TAPIZ ONDAS.jpg');">
+                              <span>TAPIZ ONDAS</span>
+                            </button>
+                          </div>
+                          <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-3">
+                            <button class="btn texture-btn btn-block" onclick="selectTexture('img/TAPIZ RELIEVE.jpg')" style="background-image: url('img/TAPIZ RELIEVE.jpg');">
+                              <span>TAPIZ RELIEVE</span>
+                            </button>
+                          </div>
+                          <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-3">
+                            <button class="btn texture-btn btn-block" onclick="selectTexture('img/MADERA CAOBA.jpg')" style="background-image: url('img/MADERA CAOBA.jpg');">
+                              <span>MADERA CAOBA</span>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                     <!-- Separación y redondeo de botones de textura -->
+                    <div class="text-center mt-4">
+                      <div class="d-flex flex-column flex-md-row justify-content-center align-items-center gap-3" style="gap: 15px;">
+                        <button class="btn btn-info px-4 py-2 mb-2 mb-md-0" onclick="applyTextureOnly()" style="border-radius: 12px; min-width: 200px;">
+                          <i class="fas fa-texture mr-2"></i>Solo Textura
+                        </button>
+                        <button class="btn btn-warning px-4 py-2" onclick="applyTextureWithColor()" style="border-radius: 12px; min-width: 200px;">
+                          Textura y Color
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Save and Send Section -->
+          <div class="card shadow-lg border-0 mb-5">
+            <div class="card-header bg-gradient text-white text-center py-3" style="background: linear-gradient(45deg, #32612d, #29961d);">
+              <h5 class="mb-0"><i class="fas fa-save mr-2"></i>Guardar y Compartir</h5>
+            </div>
+            <div class="card-body p-4 text-center">
+               <!-- Agregado border-radius a los botones de descarga y envío -->
+              <div class="btn-group-vertical btn-group-lg" role="group">
+                <button class="btn btn-success mb-2 px-5" onclick="downloadImage()" style="border-radius: 12px;">
+                  <i class="fas fa-download mr-2"></i>Descargar Imagen
+                </button>
+                <button class="btn btn-primary px-5" onclick="sendEmail()" style="border-radius: 12px;">
+                  <i class="fas fa-envelope mr-2"></i>Enviar por Correo
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FIN DEL EDITOR  -->
+
+
+  <div class="container-fluid bg-rich-black text-timber-green py-5 px-sm-3 px-md-5">
+    <div class="row pt-5">
+      <div class="col-lg-3 col-md-6 mb-5">
+        <h4 class="text-shamrock mb-4">Contáctanos</h4>
+        <p class="text-floral-white"><i class="fa text-floral-white fa-phone-alt mr-2"></i>+52 442 3440411</p>
+        <p class="text-floral-white"><i class="fa text-floral-white fa-phone-alt mr-2"></i>+52 442 3451559</p>
+        <p class="text-floral-white"><i class="fa text-floral-white fa-envelope mr-2"></i>momedproyectos@gmail.com</p>
+        <div class="d-flex justify-content-start mt-4">
+          <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="https://www.facebook.com/p/MOMED-100075915498484/" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="https://www.instagram.com/momed_arquitectura/?fbclid=IwY2xjawLGf-BleHRuA2FlbQIxMABicmlkETFGa0swOWpHN1dwZFBnSjFCAR4vy0A4iqyH8xGg_F4HKCoKwFYCBsZsAib7CEpJ7LOA2ehIvoU_87OjTcg6mg_aem_h4qptahWIcuug3rvusXuBg" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-5">
+         <h4 class="text-shamrock mb-4">Accesos Directos</h4>
+<div class="d-flex flex-column justify-content-start">
+    <a class="text-white mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Inicio</a>
+    <a class="text-white mb-2" href="about.html"><i class="fa fa-angle-right mr-2"></i>Sobre Nosotros</a>
+    <a class="text-white mb-2" href="service.html"><i class="fa fa-angle-right mr-2"></i>Nuestros Servicios</a>
+    <a class="text-white mb-2" href="project.html"><i class="fa fa-angle-right mr-2"></i>Nuestros Proyectos</a>
+    <a class="text-white" href="contact.html"><i class="fa fa-angle-right mr-2"></i>Contáctanos</a>
+</div>
+
+            </div>
+            <div class="col-lg-3 col-md-6 mb-5">
+                <!--Charly agregado del color-->
+                <h4 class="text-shamrock mb-4">Secciones Populares</h4>
+<div class="d-flex flex-column justify-content-start">
+    <a class="text-white mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Inicio</a>
+    <a class="text-white mb-2" href="filtros.html"><i class="fa fa-angle-right mr-2"></i>Diseñame</a>
+    <a class="text-white mb-2" href="single.html"><i class="fa fa-angle-right mr-2"></i>Sabías Qué…?</a>
+    <a class="text-white mb-2" href="project.html"><i class="fa fa-angle-right mr-2"></i>Nuestros Proyectos</a>
+    <a class="text-white" href="contact.html"><i class="fa fa-angle-right mr-2"></i>Contáctanos</a>
+</div>
+</div>
+
+<!--Inicio de comentarios-->
+    <div class="col-lg-3 col-md-6 mb-5">
+                <!--Charly agregado del color-->
+                <h4 class="text-shamrock mb-4">Déjanos tu opinión</h4>
+                <!-- Agregado id al formulario y corregido el tipo de input para comentario -->
+                <form id="comentarios-form">
+                    <div class="form-group">
+                        <input type="text" name="nombre" class="form-control border-0" placeholder="Nombre Completo" required="required" />
+                    </div>
+                    <div class="form-group">
+                        <!-- Cambiado de type="email" a textarea para comentarios -->
+                        <textarea name="comentario" class="form-control border-0" placeholder="Escribe tu comentario aquí..." rows="4" required="required"></textarea>
+                    </div>
+                    <div>
+                        <!-- Botón de envío con estilo unificado -->
+                        <button class="btn btn-unified btn-primary btn-block border-0" type="submit">Enviar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+<!--Fin de los comentarios-->
+
+        <div class="container border-top border-secondary pt-5">
+            <p class="m-0 text-center text-white">
+                &copy; <a class="text-white font-weight-bold" href="#">MOMED</a>. Todos los derechos reservados.
+                <a class="text-white font-weight-bold" href="https://htmlcodex.com"></a>
+            </p>
+        </div>
+    </div>
+
+
+  <!-- Volver Arriba -->
+    <a href="#" class="btn btn-unified btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+  <!-- SCRIPTS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="lib/lightbox/js/lightbox.min.js"></script>
+  <!-- Archivo de Contacto Javascript -->
+  <script src="mail/jqBootstrapValidation.min.js"></script>
+  <script src="mail/contact.js"></script>
+  <!-- Plantilla Javascript -->
+  <script src="js/main.js"></script>
+
+
+  <!--Inicio de Musica de Fondo Playlist mejorado por Charly -->
+<link rel="stylesheet" href="style.css">
+
+<audio id="musicaFondo" loop preload="auto" muted style="display: none;">
+</audio>
+
+<button onclick="toggleAudio()" class="musica-banner" id="botonMusica">
+    🔊 Música
+</button>
+
+<script>
+  const canvas = document.getElementById('canvas');
+  const ctx = canvas.getContext('2d');
+  let img = new Image();
+  let originalData;
+  let workingData;
+  let selectedPixels = new Set();
+  let mode = 'add';
+  let selectedTexture = null;
+  
+  const colors = [
+    '#FFFFFF','#F5F5DC','#D2B48C','#98FB98',
+    '#87CEEB','#FFB6C1','#FFD700','#FF4500',
+    '#6A5ACD','#008080'
+  ];
+  const colorBar = document.getElementById('colorBar');
+  colors.forEach(c => {
+    const btn = document.createElement('button');
+    btn.style.background = c;
+    btn.style.width = '40px';
+    btn.style.height = '40px';
+    btn.style.margin = '3px';
+    btn.style.border = '2px solid #444';
+    btn.style.borderRadius = '50%';
+    btn.onclick = () => {
+      document.getElementById('colorPicker').value = c;
+    };
+    colorBar.appendChild(btn);
+  });
+  
+  document.getElementById('upload').onchange = (e) => {
+    const reader = new FileReader();
+    reader.onload = function(evt) {
+      img.onload = () => {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        const imgAspectRatio = img.width / img.height;
+        const canvasAspectRatio = canvas.width / canvas.height;
+        let drawWidth;
+        let drawHeight;
+        let offsetX = 0;
+        let offsetY = 0;
+        if (imgAspectRatio > canvasAspectRatio) {
+          drawWidth = canvas.width;
+          drawHeight = canvas.width / imgAspectRatio;
+          offsetY = (canvas.height - drawHeight) / 2;
+        } else {
+          drawHeight = canvas.height;
+          drawWidth = canvas.height * imgAspectRatio;
+          offsetX = (canvas.width - drawWidth) / 2;
+        }
+        ctx.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
+        originalData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        workingData = ctx.createImageData(originalData);
+        workingData.data.set(originalData.data);
+        selectedPixels.clear();
+        document.getElementById('actionInstruction').innerText = "Selecciona un área para modificar con la herramienta 'Seleccionar Área'.";
+      };
+      img.src = evt.target.result;
+    };
+    reader.readAsDataURL(e.target.files[0]);
+  };
+  
+  document.getElementById('tolerance').oninput = (e) => {
+    document.getElementById('tolVal').innerText = e.target.value;
+  };
+  
+  canvas.addEventListener('click', function(e) {
+    if (!workingData) return alert("Por favor, sube una imagen primero.");
+    const rect = canvas.getBoundingClientRect();
+    const x = Math.floor(e.clientX - rect.left);
+    const y = Math.floor(e.clientY - rect.top);
+    const idx = (y * canvas.width + x) * 4;
+    const target = [
+      workingData.data[idx],
+      workingData.data[idx + 1],
+      workingData.data[idx + 2]
+    ];
+    const tol = parseInt(document.getElementById('tolerance').value);
+    const visited = new Uint8Array(workingData.width * workingData.height).fill(0); // Inicializar visited
+    function floodFill(x, y) {
+      const stack = [[x, y]];
+      while (stack.length) {
+        const [nx, ny] = stack.pop();
+        if (nx < 0 || ny < 0 || nx >= workingData.width || ny >= workingData.height) continue;
+        const i = ny * workingData.width + nx;
+        if (visited[i]) continue;
+        const currentIdx = i * 4;
+        const pixel = [
+          workingData.data[currentIdx],
+          workingData.data[currentIdx + 1],
+          workingData.data[currentIdx + 2]
+        ];
+        if (colorDistance(pixel, target) < tol) {
+          if (mode === 'add') {
+            selectedPixels.add(i);
+          } else if (mode === 'remove') {
+            selectedPixels.delete(i);
+          }
+          visited[i] = 1;
+          stack.push([nx + 1, ny]);
+          stack.push([nx - 1, ny]);
+          stack.push([nx, ny + 1]);
+          stack.push([nx, ny - 1]);
+        }
+      }
+    }
+    floodFill(x, y);
+    highlightSelection();
+    document.getElementById('actionInstruction').innerText = mode === 'add' ?
+      "✅ Área seleccionada para modificar. Ahora puedes aplicar color o textura." : "➖ Área removida de la selección.";
+  });
+  
+  function colorDistance(c1, c2) {
+    return Math.sqrt(
+      (c1[0] - c2[0]) ** 2 +
+      (c1[1] - c2[1]) ** 2 +
+      (c1[2] - c2[2]) ** 2
+    );
+  }
+  
+  function highlightSelection() {
+    let temp = ctx.createImageData(workingData);
+    temp.data.set(workingData.data);
+    selectedPixels.forEach(i => {
+      const idx = i * 4;
+      // Aplicar un color de resaltado semitransparente (rojo en este caso)
+      temp.data[idx] = 255;     // Red
+      temp.data[idx + 1] = 0;   // Green
+      temp.data[idx + 2] = 0;   // Blue
+      temp.data[idx + 3] = 100; // Alpha (semi-transparente)
+    });
+    ctx.putImageData(temp, 0, 0);
+  }
+  
+  function applyColor() {
+    if (selectedPixels.size === 0) return alert("Selecciona un área primero.");
+    const color = hexToRgb(document.getElementById('colorPicker').value);
+    selectedPixels.forEach(i => {
+      const idx = i * 4;
+      workingData.data[idx] = color.r;
+      workingData.data[idx + 1] = color.g;
+      workingData.data[idx + 2] = color.b;
+      workingData.data[idx + 3] = 255; // Asegurar opacidad completa
+    });
+    ctx.putImageData(workingData, 0, 0);
+    selectedPixels.clear(); // Limpiar selección después de aplicar
+    highlightSelection(); // Actualizar resaltado (vacío)
+    document.getElementById('actionInstruction').innerText = "Color aplicado. Selecciona otra área si lo deseas.";
+  }
+  
+  function selectTexture(src) {
+    selectedTexture = src;
+    document.getElementById('actionInstruction').innerText = `🎨 Textura "${src.split('/').pop()}" seleccionada. Haz clic en el botón de abajo para aplicarla.`;
+  }
+  
+  function applyTextureOnly() {
+    if (!selectedTexture) return alert("Selecciona una textura primero.");
+    if (selectedPixels.size === 0) return alert("Selecciona un área primero.");
+    const textureImg = new Image();
+    textureImg.onload = () => {
+      const patternCanvas = document.createElement('canvas');
+      patternCanvas.width = canvas.width;
+      patternCanvas.height = canvas.height;
+      const pctx = patternCanvas.getContext('2d');
+      pctx.fillStyle = pctx.createPattern(textureImg, 'repeat');
+      pctx.fillRect(0, 0, canvas.width, canvas.height);
+      const textureData = pctx.getImageData(0, 0, canvas.width, canvas.height);
+      
+      selectedPixels.forEach(i => {
+        const idx = i * 4;
+        workingData.data[idx] = textureData.data[idx];
+        workingData.data[idx + 1] = textureData.data[idx + 1];
+        workingData.data[idx + 2] = textureData.data[idx + 2];
+        workingData.data[idx + 3] = 255; // Asegurar opacidad completa
+      });
+      ctx.putImageData(workingData, 0, 0);
+      selectedPixels.clear(); // Limpiar selección después de aplicar
+      highlightSelection(); // Actualizar resaltado (vacío)
+      document.getElementById('actionInstruction').innerText = "Textura aplicada. Selecciona otra área si lo deseas.";
+    };
+    textureImg.src = selectedTexture;
+  }
+  
+  function applyTextureWithColor() {
+    if (!selectedTexture) return alert("Selecciona una textura primero.");
+    if (selectedPixels.size === 0) return alert("Selecciona un área primero.");
+    const color = hexToRgb(document.getElementById('colorPicker').value);
+    const textureImg = new Image();
+    textureImg.onload = () => {
+      const patternCanvas = document.createElement('canvas');
+      patternCanvas.width = canvas.width;
+      patternCanvas.height = canvas.height;
+      const pctx = patternCanvas.getContext('2d');
+      pctx.fillStyle = pctx.createPattern(textureImg, 'repeat');
+      pctx.fillRect(0, 0, canvas.width, canvas.height);
+      const textureData = pctx.getImageData(0, 0, canvas.width, canvas.height);
+      
+      selectedPixels.forEach(i => {
+        const idx = i * 4;
+        // Mezclar color y textura
+        workingData.data[idx] = (color.r + textureData.data[idx]) / 2;
+        workingData.data[idx + 1] = (color.g + textureData.data[idx + 1]) / 2;
+        workingData.data[idx + 2] = (color.b + textureData.data[idx + 2]) / 2;
+        workingData.data[idx + 3] = 255; // Asegurar opacidad completa
+      });
+      ctx.putImageData(workingData, 0, 0);
+      selectedPixels.clear(); // Limpiar selección después de aplicar
+      highlightSelection(); // Actualizar resaltado (vacío)
+      document.getElementById('actionInstruction').innerText = "Textura y color aplicados. Selecciona otra área si lo deseas.";
+    };
+    textureImg.src = selectedTexture;
+  }
+  
+  function hexToRgb(hex) {
+    const bigint = parseInt(hex.slice(1), 16);
+    return {
+      r: (bigint >> 16) & 255,
+      g: (bigint >> 8) & 255,
+      b: bigint & 255
+    };
+  }
+  
+  function resetImage() {
+    if (!originalData) return alert("Primero sube una imagen.");
+    workingData = ctx.createImageData(originalData);
+    workingData.data.set(originalData.data);
+    ctx.putImageData(workingData, 0, 0);
+    selectedPixels.clear();
+    highlightSelection(); // Asegurarse de que el resaltado se elimine
+    document.getElementById('actionInstruction').innerText = "Imagen restaurada. Selecciona un área para modificar.";
+  }
+  
+  function clearSelection() {
+    resetImage();
+    // El mensaje de acción se actualiza en resetImage
+  }
+  
+  function downloadImage() {
+    const link = document.createElement('a');
+    link.download = 'imagen_momed_editor.png';
+    link.href = canvas.toDataURL('image/png'); // Especificar formato PNG para mejor calidad
+    link.click();
+    alert("Imagen descargada como 'imagen_momed_editor.png'");
+  }
+  
+  function sendEmail() {
+    // Crear un enlace para abrir Gmail con un borrador de correo
+    const recipient = 'momedproyectos@gmail.com';
+    const subject = encodeURIComponent("Imagen Editada - Editor Visual MOMED");
+    const body = encodeURIComponent("Hola equipo de MOMED,\n\nAdjunto mi diseño creado con el editor visual.\n\n¡Gracias!");
+    
+    const mailtoLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${recipient}&su=${subject}&body=${body}`;
+    
+    // Abrir Gmail en una nueva pestaña
+    window.open(mailtoLink, '_blank');
+    alert("Se abrirá tu cliente de correo electrónico para que envíes la imagen. ¡No olvides adjuntarla!");
+  }
+
+  // --- Funciones para el control de audio ---
+  const canciones = [
+        "Musica/Lost Love.mp3",
+             "Musica/Father Ocean.mp3",
+             "Musica/Give Me a Kiss.mp3",
+             "Musica/Hunting.mp3",
+             "Musica/I know.mp3",
+             "Musica/I love You Always Forever.mp3",
+             "Musica/In Memoriam.mp3",
+             "Musica/Jealous Girl.mp3",
+             "Musica/La Mer.mp3",
+             "Musica/Late Night Alumni.mp3",
+             "Musica/Leaving Me.mp3",
+             "Musica/Father Ocean.mp3",
+             "Musica/Love Story - Indila.mp3",
+             "Musica/My life.mp3",
+             "Musica/My World.mp3",
+             "Musica/Norah Jones.mp3",
+             "Musica/Romance.mp3",
+             "Musica/Stacey Kent.mp3",
+             "Musica/Studying You.mp3",
+             "Musica/Welcome Back.mp3",
+             "Musica/Withering.mp3",
+             "Musica/Coming Home.mp3"
+    ];
+
+    const audio = document.getElementById('musicaFondo');
+    const botonMusica = document.getElementById('botonMusica');
+    let isPlaying = false;
+    let cancionActual = 0;
+
+    function iniciarMusica() {
+        audio.src = canciones[cancionActual];
+        audio.volume = 0;    // empieza en silencio
+        audio.muted = false;
+
+        audio.play().then(() => {
+            isPlaying = true;
+            botonMusica.innerText = "🔊 " + obtenerNombreCancion();
+            botonMusica.classList.add('playing');
+
+            // Subir volumen gradualmente en ~1s
+            let v = 0;
+            const fade = setInterval(() => {
+                if (v >= 0.7) {
+                    clearInterval(fade);
+                } else {
+                    v += 0.05;
+                    audio.volume = v;
+                }
+            }, 100);
+        }).catch(err => {
+            console.log("⚠️ Autoplay bloqueado:", err);
+        });
+    }
+
+    function obtenerNombreCancion() {
+        const nombreCompleto = canciones[cancionActual];
+        const nombre = nombreCompleto.split('/').pop().replace('.mp3', '');
+        return nombre.length > 20 ? nombre.substring(0, 20) + '...' : nombre;
+    }
+
+    // Cuando termine una canción, pasa a la siguiente
+    audio.addEventListener('ended', function() {
+        cancionActual = (cancionActual + 1) % canciones.length;
+        audio.src = canciones[cancionActual];
+        audio.play().then(() => {
+            botonMusica.innerText = "🔊 " + obtenerNombreCancion();
+        });
+    });
+
+    function toggleAudio() {
+        if (isPlaying) {
+            audio.pause();
+            botonMusica.innerText = "🔇 Pausado";
+            botonMusica.classList.remove('playing');
+        } else {
+            audio.play().then(() => {
+                botonMusica.innerText = "🔊 " + obtenerNombreCancion();
+                botonMusica.classList.add('playing');
+            });
+        }
+        isPlaying = !isPlaying;
+    }
+
+    // 🎵 Activar música en la primera interacción (scroll, clic o touch)
+    function activarMusicaConInteraccion() {
+        iniciarMusica();
+        document.removeEventListener('scroll', activarMusicaConInteraccion);
+        document.removeEventListener('click', activarMusicaConInteraccion);
+        document.removeEventListener('touchstart', activarMusicaConInteraccion);
+    }
+
+    document.addEventListener('scroll', activarMusicaConInteraccion, { once: true });
+    document.addEventListener('click', activarMusicaConInteraccion, { once: true });
+    document.addEventListener('touchstart', activarMusicaConInteraccion, { once: true });
+</script>
+<!--Fin de la reproduccion de Musica-->
+
+<!-- Script para manejar el envío de comentarios con EmailJS -->
+    <script>
+        document.getElementById('comentarios-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Obtener los datos del formulario
+            const formData = new FormData(this);
+            const templateParams = {
+                from_name: formData.get('nombre'),
+                message: formData.get('comentario'),
+                fecha: new Date().toLocaleDateString('es-ES') // Formato de fecha en español
+            };
+
+            // Enviar email usando EmailJS
+            emailjs.send('service_uovpo9g', 'template_q54exgf', templateParams)
+                .then(function(response) {
+                    alert('¡Comentario enviado exitosamente!');
+                    document.getElementById('comentarios-form').reset(); // Limpiar el formulario
+                }, function(error) {
+                    alert('Error al enviar el comentario. Por favor intenta de nuevo.');
+                    console.error('Error:', error);
+                });
+        });
+    </script>
+
+</body>
+</html>

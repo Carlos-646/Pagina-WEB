@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>MOMED PROJECTOS</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet"> 
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Flaticon Font -->
+    <link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Agregando CSS para evitar duplicación de imágenes en Lightbox -->
+    <style>
+        /* Mejorado CSS para ocultar elementos clonados y aumentar espacio */
+        .owl-carousel .cloned {
+            pointer-events: none !important;
+        }
+        
+        .owl-carousel .cloned [data-lightbox],
+        .owl-carousel .cloned a[data-lightbox] {
+            display: none !important;
+            pointer-events: none !important;
+            visibility: hidden !important;
+        }
+        
+        /* Aumentar espacio entre cartas del carrusel */
+        .casas-stock-carousel {
+            padding: 30px 0 !important;
+        }
+        
+        .casas-stock-carousel .owl-stage {
+            padding: 20px 0;
+        }
+        
+        /* Asegurar que las cartas tengan espacio adicional */
+        .casas-stock-carousel .owl-item {
+            padding: 0 15px;
+        }
+    </style>
+
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            // Inicializar EmailJS con tu Public Key
+            emailjs.init("fBsDQAPpy2ke_o-zr"); // Reemplaza con tu Public Key de EmailJS
+        })();
+    </script>
+
+</head>
+<body>
+    <!-- "Inicio de la barra superior". -->
+    <div class="container-fluid bg-rich-black py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-lg-left mb-2 mb-lg-0">
+                    <div class="d-inline-flex align-items-center">
+                        <a class="text-white pr-3" href="">Preguntas Frecuentes</a>
+                        <span class="text-white">|</span>
+                        <a class="text-white px-3" href="contact.html">Ayuda</a>
+
+                        <span class="text-white">|</span>
+                        <a class="text-white pl-3" href="mailto:soportemomed@googlegroups.com">Soporte Técnico</a>
+
+                    </div>
+                </div>
+                <div class="col-md-6 text-center text-lg-right">
+                    <!--Charly, agregado y redireccion a la red social de Facebook-->
+                    <div class="d-inline-flex align-items-center">
+                        <a class="text-white px-3" 
+   href="https://www.facebook.com/p/MOMED-100075915498484/" 
+   target="_blank" 
+   rel="noopener noreferrer">
+   <i class="fab fa-facebook-f"></i></a>
+                        </a>
+                        </a>
+                        </a>
+                        <!--Charly, Agregado y redireccion a la red social de Instagram-->
+                        <a class="text-white px-3" 
+   href="https://www.instagram.com/momed_arquitectura/?fbclid=IwY2xjawLGf-BleHRuA2FlbQIxMABicmlkETFGa0swOWpHN1dwZFBnSjFCAR4vy0A4iqyH8xGg_F4HKCoKwFYCBsZsAib7CEpJ7LOA2ehIvoU_87OjTcg6mg_aem_h4qptahWIcuug3rvusXuBg" 
+   target="_blank" 
+   rel="noopener noreferrer">
+   <i class="fab fa-instagram"></i></a>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- "Final de la barra superior". -->
+
+<!-- Inicio de la barra de Navegación -->
+<div class="container-fluid position-relative nav-bar p-0">
+    <div class="container position-relative" style="z-index: 9;">
+        <!--charly Cambio el color-->
+        <nav class="navbar navbar-expand-lg bg-floral-white navbar-dark py-3 py-lg-0 pl-3 pl-lg-5">
+            <a href="" class="navbar-brand">
+               <!--DAYAN:CAMBIO RUTA DE LOGO DE TEXTO A LOGO DE IMAGEN-->
+               <img src="img/Logo.jpg" alt="Logo MOMED" style="height: 150px;">
+
+            </a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
+                <div class="navbar-nav ml-auto py-0">
+                    <!--Brayan:CAMBIO TEXTOs A Español-->
+                    <a href="index.html" class="nav-item text-rich-black nav-link active">Hogar</a>
+                        <a href="about.html" class="nav-item text-timber-green nav-link">Acerca de</a>
+                        <a href="service.html" class="nav-item text-timber-green nav-link">Servicios</a> 
+                        <a href="project.html" class="nav-item text-timber-green nav-link">Proyectos</a> 
+                        <a href="filtros.html" class="nav-item text-timber-green nav-link">Diseñame</a>  
+                        <a href="contact.html" class="nav-item text-timber-green nav-link">Contacto</a>       
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle text-timber-green" data-toggle="dropdown">Más Paginas...</a>
+                            <div class="dropdown-menu rounded-0 m-0">
+                                <a href="blog.html" class="dropdown-item text-timber-green">Nuestra Revista</a>
+                                <a href="single.html" class="dropdown-item text-timber-green">Sabías Qué…?</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+<!-- Final de la barra de Navegación -->
+
+   <div class="container-fluid bg-timber-green py-3">
+  <div class="container">
+    <div class="row justify-content-center">
+
+      <!-- Bloque Correo -->
+      <div class="col-lg-6 d-flex mb-3 mb-lg-0">
+  <div class="d-inline-flex text-left align-items-start">
+    <!-- Ícono de correo con enlace -->
+    <a href="mailto:momedproyectos@gmail.com" class="mr-3">
+      <i class="fas fa-envelope fa-2x" style="color: #03ac13;"></i>
+    </a>
+    <!-- Texto e email -->
+    <div class="d-flex flex-column">
+      <h5 class="text-floral-white mb-1">Envíanos un correo electrónico</h5>
+      <a href="mailto:momedproyectos@gmail.com" class="text-floral-white" style="text-decoration: none;">
+        momedproyectos@gmail.com
+      </a>
+    </div>
+  </div>
+</div>
+
+
+      <!-- Bloque WhatsApp -->
+      <div class="col-lg-6 d-flex">
+        <div class="d-inline-flex text-left align-items-start">
+          <a href="https://wa.me/524423440411" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" 
+                 alt="WhatsApp" 
+                 style="width: 36px; height: 36px;" class="mr-3">
+          </a>
+          <div class="d-flex flex-column">
+            <h5 class="text-floral-white mb-1">Contáctanos</h5>
+            <a href="https://wa.me/524423440411" target="_blank" class="text-floral-white" style="text-decoration: none;">
+              +52 442 3440411
+            </a>
+          </div>
+        </div>
+      </div>
+            </div>
+        </div>
+    </div>
+    <!-- "Final de la sección debajo de la barra de navegación" -->
+
+
+    <!-- "Inicio del encabezado de la página". -->
+     <!--Charly cambio de color de fondo-->
+    <div class="container-fluid bg-rich-black py-5">
+        <div class="container py-5">
+            <div class="row align-items-center py-4">
+                <link href="https://fonts.googleapis.com/css2?family=Great Vibes&display=swap" rel="stylesheet">
+
+                <div class="col-md-6 text-center text-md-left">
+                 <!-- Agregada la frase principal con mejor estilo -->
+                 <h1 class="mb-4 mb-md-0 text-floral-white" 
+                 style="font-family: 'Great Vibes', cursive; color: floralwhite; font-size: 45px;">
+                 Construyendo sueños, un ladrillo a la vez
+                 </h1>
+                </div>
+                <div class="col-md-6 text-center text-md-right">
+                    <div class="d-inline-flex align-items-center">
+                        <a class="btn btn-outline-primary" href="">Hogar</a>
+                        <i class="fas fa-angle-double-right text-juniper mx-2"></i>
+                        <a class="btn btn-outline-primary disabled" href="">Nuestros Proyectos</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- "Final del encabezado de la página". -->
+
+<!-- "Inicio de la sección de casas" -->
+<!-- Reemplazando sección de casas con diseño moderno fusionado -->
+
+<!-- FONDO CLARO del encabezado -->
+<section class="section-light" style="background:#fffbf3;">
+  <div class="section-wrap, section-wrap-stock">
+    <div style="display:flex;justify-content:center;margin-bottom:18px;">
+      <div class="encabezado">
+        <span class="encabezado-stock"></span>¡Disponibles Ahora!
+      </div>
+    </div>
+
+    <h1 class="letrero">
+      Casas en <span style="color:#03ac13;">Stock</span>
+    </h1>
+
+    <p class="slogan">No pierdas la oportunidad de encontrar tu hogar ideal.<br>
+      Propiedades listas para entrega inmediata.</p>
+
+    <div class="stats-grid-cards">
+  <div class="inicio-carta">
+    <div class="numero">15+</div>
+    <div class="inicio-letras">Casas Disponibles</div>
+  </div>
+  <div class="inicio-carta">
+    <div class="numero">24h</div>
+    <div class="inicio-letras">Entrega Inmediata</div>
+  </div>
+  <div class="inicio-carta">
+    <div class="numero">100%</div>
+    <div class="inicio-letras">Financiamiento</div>
+  </div>
+</div>
+</section>
+
+<!-- Sección de Cards de Casas -->
+<section class="section-wrap, section-wrap-card">
+  <div class="owl-carousel casas-stock-carousel team-carousel position-relative">
+
+    <!-- Card AGUA -->
+    <article class="card, carta-modelo">
+      <div class="card-media, card-media-efect">
+        <img class="card-img, card-img-efect" src="img/FACHADA PPAL 1 agua.jpg" alt="Casa Elemento Agua">
+         <!-- Agregado icono de gota de agua -->
+        <span class="badge-top badge-left, stock-agua"><i class="fas fa-tint mr-1"></i>AGUA</span>
+        <span class="badge-top badge-right, stock">En Stock</span>
+      </div>
+      <div class="card-body" style="padding:20px 22px 26px;">
+        <h3 class="card-title, card-title-letra">Casa Elemento Agua</h3>
+        <p class="card-desc, card-desc-letra">3 habitaciones • 2 baños • Vista al mar</p>
+        <div class="card-row, card-row-efect">
+          <span class="price, precio-casas">$320,000</span>
+          <span class="hint, hint-card">Ideal vacacional</span>
+        </div>
+        <div class="card-actions efecto" >
+        <a class="ver-mas" href="img/FACHADA PPAL 1 agua.jpg" data-lightbox="galeriaAgua" data-title="Casa Elemento Agua">
+        Ver más</a>
+        <!-- imágenes adicionales ocultas -->
+       <a href="img/FACHADA PPAL agua.jpg" data-lightbox="galeriaAgua" data-title="Casa Elemento Agua"></a>
+       <a href="img/planta baja agua.png" data-lightbox="galeriaAgua" data-title="Casa Elemento Agua"></a>
+       <a href="img/planta alta agua.jpg" data-lightbox="galeriaAgua" data-title="Casa Elemento Agua"></a>
+        <a href="img/FACHADA POSTERIOR agua.png" data-lightbox="galeriaAgua" data-title="Casa Elemento Agua"></a>
+       <a href="img/SALA AGUA.jpg" data-lightbox="galeriaAgua" data-title="Casa Elemento Agua"></a>
+       <a href="img/COCINA.png" data-lightbox="galeriaAgua" data-title="Casa Elemento Agua"></a>
+    </div>
+    </article>
+
+    <!-- Card TIERRA -->
+    <article class="card, carta-modelo">
+      <div class="card-media, card-media-efect">
+        <img class="card-img, card-img-efect" src="img/FACHADA PPAL tierra.png" alt="Casa Elemento Fuego">
+         <!-- Agregado icono de montaña para tierra -->
+        <span class="badge-top badge-left, stock-tierra"><i class="fas fa-mountain mr-1"></i>TIERRA</span>
+        <span class="badge-top badge-right, stock">En Stock</span>
+      </div>
+      <div class="card-body" style="padding:20px 22px 26px;">
+        <h3 class="card-title, card-title-letra">Casa Elemento Tierra</h3>
+        <p class="card-desc, card-desc-letra">4 habitaciones • 3 baños • Terraza con asador</p>
+        <div class="card-row, card-row-efect">
+          <span class="price, precio-casas">$890,000</span>
+          <span class="hint, hint-card">Entrega inmediata</span>
+        </div>
+        <div class="card-actions efecto">
+        <a class="ver-mas" href="img/FACHADA PPAL tierra.png" data-lightbox="galeriaTierra" data-title="Casa Elemento Tierra">
+        Ver más</a>
+        
+        <a href="img/PERSPECTIVA tierra.png" data-lightbox="galeriaTierra" data-title="Casa Elemento Tierra"></a>
+        <a href="img/PERSPECTIVA 1 tierra.png" data-lightbox="galeriaTierra" data-title="Casa Elemento Tierra"></a>
+        <a href="img/TIERRA PLANTA BAJA.png" data-lightbox="galeriaTierra" data-title="Casa Elemento Tierra"></a>
+        <a href="img/TIERRA PLANTA ALTA.png" data-lightbox="galeriaTierra" data-title="Casa Elemento Tierra"></a>
+        <a href="img/ESCALERAS PLANTA ALTA tierra.png" data-lightbox="galeriaTierra" data-title="Casa Elemento Tierra"></a>
+    </div>
+    </article>
+
+    <!-- Card FUEGO -->
+    <article class="card, carta-modelo">
+      <div class="card-media, card-media-efect">
+        <img class="card-img, card-img-efect" src="img/FACHADA PPPAL fuego.jpg" alt="Casa Elemento Fuego">
+         <!-- Agregado icono de fuego -->
+        <span class="badge-top badge-left, stock-fuego"><i class="fas fa-fire mr-1"></i>FUEGO</span>
+        <span class="badge-top badge-right, stock">En Stock</span>
+      </div>
+      <div class="card-body" style="padding:20px 22px 26px;">
+        <h3 class="card-title, card-title-letra">Casa Elemento Fuego</h3>
+        <p class="card-desc, card-desc-letra">4 habitaciones • 3 baños • Terraza con asador</p>
+        <div class="card-row, card-row-efect">
+          <span class="price, precio-casas">$350,000</span>
+          <span class="hint, hint-card">Entrega inmediata</span>
+        </div>
+        <div class="card-actions efecto">
+        <a class="ver-mas" href="img/FACHADA PPPAL fuego.jpg" data-lightbox="galeriaFuego" data-title="Casa Elemento Fuego">
+        Ver más</a>
+        <a href="img/FUEGO BAJA.png" data-lightbox="galeriaFuego" data-title="Casa Elemento Fuego"></a>
+        <a href="img/FUEGO ALTA.png" data-lightbox="galeriaFuego" data-title="Casa Elemento Fuego"></a>
+        <a href="img/SALA fuego.png" data-lightbox="galeriaFuego" data-title="Casa Elemento Fuego"></a>
+        <a href="img/ESCALERAS fuego.png" data-lightbox="galeriaFuego" data-title="Casa Elemento Fuego"></a>
+        <a href="img/COCINA fuego.png" data-lightbox="galeriaFuego" data-title="Casa Elemento Fuego"></a>
+        <a href="img/COMEDOR fuego.png" data-lightbox="galeriaFuego" data-title="Casa Elemento Fuego"></a>
+        <a href="img/FOGATERO fuego.png" data-lightbox="galeriaFuego" data-title="Casa Elemento Fuego"></a>
+    </div>
+    </article>
+
+    <!-- Card AIRE -->
+    <article class="card, carta-modelo">
+      <div class="card-media, card-media-efect">
+        <img class="card-img, card-img-efect" src="img/FACHADA PPAL (2) viento.png" alt="Casa Elemento Aire">
+         <!-- Agregado icono de viento para aire -->
+        <span class="badge-top badge-left, stock-aire"><i class="fas fa-wind mr-1"></i>AIRE</span>
+        <span class="badge-top badge-right, stock">En Stock</span>
+      </div>
+      <div class="card-body" style="padding:20px 22px 26px;">
+        <h3 class="card-title, card-title-letra">Casa Elemento Aire</h3>
+        <p class="card-desc, card-desc-letra">2 habitaciones • 2 baños • Terraza elevada</p>
+        <div class="card-row, card-row-efect">
+          <span class="price, precio-casas">$310,000</span>
+          <span class="hint, hint-card">Vista panorámica</span>
+        </div>
+        <div class="card-actions efecto">
+        <a class="ver-mas" href="img/FACHADA PPAL (2) viento.png" data-lightbox="galeriaAire" data-title="Casa Elemento Aire">
+        Ver más</a>
+        <a href="img/VIENTO PLANTA BAJA.png" data-lightbox="galeriaAire" data-title="Casa Elemento Aire"></a>
+        <a href="img/VIENTO PLANTA ALTA.png" data-lightbox="galeriaAire" data-title="Casa Elemento Aire"></a>
+        <a href="img/SALA ACCESO viento.jpeg" data-lightbox="galeriaAire" data-title="Casa Elemento Aire"></a>
+        <a href="img/ESCALERAS Y SALA viento.jpg" data-lightbox="galeriaAire" data-title="Casa Elemento Aire"></a>
+        <a href="img/SALA NOCTURNO viento.jpg" data-lightbox="galeriaAire" data-title="Casa Elemento Aire"></a>
+        <a href="img/RECAMARA viento.jpg" data-lightbox="galeriaAire" data-title="Casa Elemento Aire"></a>
+        <a href="img/BAÑO DOBLE ALTURA viento.jpg" data-lightbox="galeriaAire" data-title="Casa Elemento Aire"></a>
+    </div>
+    </article>
+  </div>
+</section>
+
+
+<!-- Sección de Urgencia -->
+<section class="section-card">
+  <div class="urgency, urgency-estilo">
+    <h2 class="letras-urgency">¡No Esperes Más!</h2>
+    <p class="text-urgency">Estas propiedades se están vendiendo rápidamente. Agenda tu visita hoy mismo y asegura tu nuevo hogar.</p>
+    <div class="urgency-ctas" style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+      <a class="urgency-card, urgency-call" href="tel:+524423440411">📞 Llamar Ahora</a>
+      <a class="urgency-card, urgency-botton" onclick="openVisitModal()">📅 Agendar Visita</a>
+    </div>
+  </div>
+</section>
+<!-- "Final de la sección de casas" -->
+
+    <!-- "Inicio de la sección de Proyectos" -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-8 col text-center mb-4">
+                    <!--Charly cambio de color-->
+                    <h6 class="text-shamrock font-weight-normal text-uppercase mb-3">Trabajos Destacados</h6>
+                    <h1 class="mb-4">Nuestro Estilo Reflejado en Cada Espacio</h1>
+                </div>
+            </div>
+            <!-- Proyecto 1 - Categoría: first (Completo) -->
+            <div class="row mx-1 portfolio-container">
+                <div class="col-lg-4 col-md-6 col-sm-12 p-0 portfolio-item first">
+                    <div class="position-relative overflow-hidden">
+                        <div class="portfolio-img d-flex align-items-center justify-content-center">
+                             <!-- Sección de Imagenes -->
+                             <!--Dayan:ACOMODE LAS IMAGES A UN SOLO TAMAÑO PARA QUE SE VEAN MEJOR-->
+                             <!-- DAYAN:ALINIACION DE IMAGENES Y MARCO VERDE -->
+                            <img src="img/VESUVIO 1.png" alt="obra1" class="marco">
+                        </div>
+                        <div class="portfolio-text bg-secondary d-flex flex-column align-items-center justify-content-center">
+                            <h4 class="text-white mb-4">VESUVIO RESIDENCIAL</h4>
+                            <div class="d-flex align-items-center justify-content-center">
+                                <a class="btn btn-outline-primary m-1" href="">
+                                    <i class="fa fa-link"></i>
+                                </a>
+                                <!--DAYAN:CAMBIE LAS IMAGENES-->
+                                <!--  Categoría:(Completo) -->
+                                <!-- Agregando data-title para mostrar nombre en lightbox -->
+                                <a class="btn btn-outline-primary m-1" href="img/VESUVIO 1.png" data-lightbox="VESUVIO" data-title="VESUVIO RESIDENCIAL">
+                                    <i class="fa fa-eye"></i>
+                                </a>
+                                <a href="img/VESUVIO 2.png" data-lightbox="VESUVIO" data-title="VESUVIO RESIDENCIAL"></a>
+                                <a href="img/VESUVIO 3.png" data-lightbox="VESUVIO" data-title="VESUVIO RESIDENCIAL"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+                <!-- Proyecto 3 - Categoría: third (En Proceso) -->
+                <div class="col-lg-4 col-md-6 col-sm-12 p-0 portfolio-item first">
+                    <div class="position-relative overflow-hidden">
+                        <div class="portfolio-img d-flex align-items-center justify-content-center">
+                            <!-- DAYAN:ALINIACION DE IMAGENES Y MARCO VERDE -->
+                            <img src="img/TULIPAN 6.png" alt="obra3" class="marco">
+                        </div>
+                        <div class="portfolio-text bg-secondary d-flex flex-column align-items-center justify-content-center">
+                            <h4 class="text-white mb-4">TULIPAN RESIDENCIAL</h4>
+                            <div class="d-flex align-items-center justify-content-center">
+                                <a class="btn btn-outline-primary m-1" href="">
+                                    <i class="fa fa-link"></i>
+                                </a>
+                                <!-- Agregando data-title para mostrar nombre en lightbox -->
+                                <a class="btn btn-outline-primary m-1" href="img/TULIPAN 6.png" data-lightbox="TULIPAN" data-title="TULIPAN RESIDENCIAL">
+                                    <i class="fa fa-eye"></i>
+                                </a>
+                                <a href="img/TULIPAN 5.png" data-lightbox="TULIPAN" data-title="TULIPAN RESIDENCIAL"></a>
+                                <a href="img/TULIPAN 4.png" data-lightbox="TULIPAN" data-title="TULIPAN RESIDENCIAL"></a>
+                                <a href="img/TULIPAN 3.png" data-lightbox="TULIPAN" data-title="TULIPAN RESIDENCIAL"></a>
+                                <a href="img/TULIPAN 2.png" data-lightbox="TULIPAN" data-title="TULIPAN RESIDENCIAL"></a>
+                                <a href="img/TULIPAN 1.png" data-lightbox="TULIPAN" data-title="TULIPAN RESIDENCIAL"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Proyecto nuevo - Categoría: En Proceso -->
+<div class="col-lg-4 col-md-6 col-sm-12 p-0 portfolio-item first">
+    <div class="position-relative overflow-hidden">
+        <div class="portfolio-img d-flex align-items-center justify-content-center">
+            <!-- Imagen nueva -->
+            <!-- DAYAN:ALINIACION DE IMAGENES Y MARCO VERDE -->
+            <img src="img/SERENDIPIA 1.png" alt="obra en proceso" class="marco">
+        </div>
+        <div class="portfolio-text bg-secondary d-flex flex-column align-items-center justify-content-center">
+            <h4 class="text-white mb-4">SERENDIPIA RESIDENCIAL</h4>
+            <div class="d-flex align-items-center justify-content-center">
+                <a class="btn btn-outline-primary m-1" href="">
+                    <i class="fa fa-link"></i>
+                </a>
+                <!-- Agregando data-title para mostrar nombre en lightbox -->
+                <a class="btn btn-outline-primary m-1" href="img/SERENDIPIA 1.png" data-lightbox="SERENDIPIA" data-title="SERENDIPIA RESIDENCIAL">
+                    <i class="fa fa-eye"></i>
+                </a>
+                <a href="img/SERENDIPIA 2.png" data-lightbox="SERENDIPIA" data-title="SERENDIPIA RESIDENCIAL"></a>
+                <a href="img/SERENDIPIA 3.png" data-lightbox="SERENDIPIA" data-title="SERENDIPIA RESIDENCIAL"></a>
+                <a href="img/SERENDIPIA 4.png" data-lightbox="SERENDIPIA" data-title="SERENDIPIA RESIDENCIAL"></a>
+            </div>
+        </div>
+    </div>
+</div>
+                 <!-- Proyecto 3 - Categoría:(Completo) -->
+                <div class="col-lg-4 col-md-6 col-sm-12 p-0 portfolio-item first">
+                    <div class="position-relative overflow-hidden">
+                        <div class="portfolio-img d-flex align-items-center justify-content-center">
+                           <!-- DAYAN:ALINIACION DE IMAGENES Y MARCO VERDE -->
+                           <img src="img/INNOVA 1.png" alt="obra4" class="marco">
+                        </div>
+                        <div class="portfolio-text bg-secondary d-flex flex-column align-items-center justify-content-center">
+                            <h4 class="text-white mb-4">INNOVA RESIDENCIAL</h4>
+                            <div class="d-flex align-items-center justify-content-center">
+                                <a class="btn btn-outline-primary m-1" href="">
+                                    <i class="fa fa-link"></i>
+                                </a>
+                                <!-- Agregando data-title para mostrar nombre en lightbox -->
+                                <a class="btn btn-outline-primary m-1" href="img/INNOVA 1.png" data-lightbox="INNOVA" data-title="INNOVA RESIDENCIAL">
+                                    <i class="fa fa-eye"></i>
+                                </a>
+                                <a href="img/INNOVA 2.png" data-lightbox="INNOVA" data-title="INNOVA RESIDENCIAL"></a>
+                                <a href="img/INNOVA 3.png" data-lightbox="INNOVA" data-title="INNOVA RESIDENCIAL"></a>
+                                <a href="img/INNOVA 4.png" data-lightbox="INNOVA" data-title="INNOVA RESIDENCIAL"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              <!-- Proyecto nuevo - Categoría: Completo -->
+<div class="col-lg-4 col-md-6 col-sm-12 p-0 portfolio-item first">
+    <div class="position-relative overflow-hidden">
+        <div class="portfolio-img d-flex align-items-center justify-content-center">
+            <!-- DAYAN:ALINIACION DE IMAGENES Y MARCO VERDE -->
+            <img src="img/PERGOLA 1.png" alt="obra completa" class="marco">
+        </div>
+        <div class="portfolio-text bg-secondary d-flex flex-column align-items-center justify-content-center">
+            <h4 class="text-white mb-4">PERGOLA DE DISEÑO</h4>
+            <div class="d-flex align-items-center justify-content-center">
+                <a class="btn btn-outline-primary m-1" href="https://www.instagram.com/p/DL1jRDSAP6x/?igsh=bjV2b24wcTBsOXR2" target="_blank" rel="noopener noreferrer">
+                    <i class="fa fa-link"></i>
+                </a>
+                <!-- Agregando data-title para mostrar nombre en lightbox -->
+                <a class="btn btn-outline-primary m-1" href="img/PERGOLA 1.png" data-lightbox="PERGOLA" data-title="PERGOLA DE DISEÑO">
+                    <i class="fa fa-eye"></i>
+                </a>
+                <a href="img/PERGOLA 2.png" data-lightbox="PERGOLA" data-title="PERGOLA DE DISEÑO"></a>
+                <a href="img/PERGOLA 3.png" data-lightbox="PERGOLA" data-title="PERGOLA DE DISEÑO"></a>
+                <a href="img/PERGOLA 6.png" data-lightbox="PERGOLA" data-title="PERGOLA DE DISEÑO"></a>
+                <a href="img/PERGOLA 8.jpg" data-lightbox="PERGOLA" data-title="PERGOLA DE DISEÑO"></a>
+                <a href="img/PERGOLA 9.jpg" data-lightbox="PERGOLA" data-title="PERGOLA DE DISEÑO"></a>
+                <a href="img/PERGOLA 10.jpg" data-lightbox="PERGOLA" data-title="PERGOLA DE DISEÑO"></a>
+                <a href="img/PERGOLA 11.jpeg" data-lightbox="PERGOLA" data-title="PERGOLA DE DISEÑO"></a>
+                <a href="img/PERGOLA 12.jpg" data-lightbox="PERGOLA" data-title="PERGOLA DE DISEÑO"></a>
+                <a href="img/PERGOLA 13.jpg" data-lightbox="PERGOLA" data-title="PERGOLA DE DISEÑO"></a>
+                <a href="img/PERGOLA 14.jpg" data-lightbox="PERGOLA" data-title="PERGOLA DE DISEÑO"></a>
+            </div>
+        </div>
+    </div>
+</div> 
+<!-- Proyecto - Categoría: Completo -->
+                <div class="col-lg-4 col-md-6 col-sm-12 p-0 portfolio-item third">
+                    <div class="position-relative overflow-hidden">
+                        <div class="portfolio-img d-flex align-items-center justify-content-center">
+                           <!-- DAYAN:ALINIACION DE IMAGENES Y MARCO VERDE -->
+                           <img src="img/DSC_4664.JPG" alt="obra4" class="marco">
+                        </div>
+                        <div class="portfolio-text bg-secondary d-flex flex-column align-items-center justify-content-center">
+                            <h4 class="text-white mb-4">DISEÑO DE INTERIORES</h4>
+                            <div class="d-flex align-items-center justify-content-center">
+                                <a class="btn btn-outline-primary m-1" href="https://www.instagram.com/reel/DJTSrY-A8Hx/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" rel="noopener noreferrer">
+                                    <i class="fa fa-link"></i>
+                                </a>
+                                <!-- Agregando data-title para mostrar nombre en lightbox -->
+                                <a class="btn btn-outline-primary m-1" href="img/DSC_4664.JPG" data-lightbox="INTERIORES" data-title="DISEÑO DE INTERIORES">
+                                    <i class="fa fa-eye"></i>
+                                </a>
+                                <a href="img/Escaleras.jpeg" data-lightbox="INTERIORES" data-title="DISEÑO DE INTERIORES - Escaleras"></a>
+                                <a href="img/DSC_4893.JPG" data-lightbox="INTERIORES" data-title="DISEÑO DE INTERIORES"></a>
+                                <a href="img/DSC_4685.JPG" data-lightbox="INTERIORES" data-title="DISEÑO DE INTERIORES"></a>
+                                <a href="img/DSC_4631.JPG" data-lightbox="INTERIORES" data-title="DISEÑO DE INTERIORES"></a>
+                                <a href="img/DSC_4630.JPG" data-lightbox="INTERIORES" data-title="DISEÑO DE INTERIORES"></a>
+                                <a href="img/DSC_4621.JPG" data-lightbox="INTERIORES" data-title="DISEÑO DE INTERIORES"></a>
+                                <a href="img/DSC_4619.JPG" data-lightbox="INTERIORES" data-title="DISEÑO DE INTERIORES"></a>
+                                <a href="img/DSC_4582.JPG" data-lightbox="INTERIORES" data-title="DISEÑO DE INTERIORES"></a>
+                                <a href="img/DSC_4576.JPG" data-lightbox="INTERIORES" data-title="DISEÑO DE INTERIORES"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto - Categoría:(Completo) -->
+                <div class="col-lg-4 col-md-6 col-sm-12 p-0 portfolio-item third">
+                    <div class="position-relative overflow-hidden">
+                        <div class="portfolio-img d-flex align-items-center justify-content-center">
+                           <!-- DAYAN:ALINIACION DE IMAGENES Y MARCO VERDE -->
+                           <img src="img/CONST10 (1).jpg" alt="obra4" class="marco">
+                        </div>
+                        <div class="portfolio-text bg-secondary d-flex flex-column align-items-center justify-content-center">
+                            <h4 class="text-white mb-4">CONSTRUCCION</h4>
+                            <div class="d-flex align-items-center justify-content-center">
+                                <a class="btn btn-outline-primary m-1" href="">
+                                    <i class="fa fa-link"></i>
+                                </a>
+                                <!-- Agregando data-title para mostrar nombre en lightbox -->
+                                <a class="btn btn-outline-primary m-1" href="img/CONST10 (1).jpg" data-lightbox="CONSTRUCCION" data-title="CONSTRUCCION">
+                                    <i class="fa fa-eye"></i>
+                                </a>
+                                <a href="img/CONST11.jpg" data-lightbox="CONSTRUCCION" data-title="CONSTRUCCION"></a>
+                                <a href="img/CONST10.jpg" data-lightbox="CONSTRUCCION" data-title="CONSTRUCCION"></a>
+                                <a href="img/CONST9.jpg" data-lightbox="CONSTRUCCION" data-title="CONSTRUCCION"></a>
+                                <a href="img/CONST8.jpg" data-lightbox="CONSTRUCCION" data-title="CONSTRUCCION"></a>
+                                <a href="img/CONST7.jpg" data-lightbox="CONSTRUCCION" data-title="CONSTRUCCION"></a>
+                                <a href="img/CONST6.jpg" data-lightbox="CONSTRUCCION" data-title="CONSTRUCCION"></a>
+                                <a href="img/CONST5.jpg" data-lightbox="CONSTRUCCION" data-title="CONSTRUCCION"></a>
+                                <a href="img/CONST4.jpg" data-lightbox="CONSTRUCCION" data-title="CONSTRUCCION"></a>
+                                <a href="img/CONST3.jpg" data-lightbox="CONSTRUCCION" data-title="CONSTRUCCION"></a>
+                                <a href="img/CONST1.jpg" data-lightbox="CONSTRUCCION" data-title="CONSTRUCCION"></a>
+                                <a href="img/CONST 2.jpg" data-lightbox="CONSTRUCCION" data-title="CONSTRUCCION"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-sm-12 p-0 portfolio-item first">
+                    <div class="position-relative overflow-hidden">
+                        <div class="portfolio-img d-flex align-items-center justify-content-center">
+                            <!-- Sección de Imagenes -->
+                            <!-- Categoría: third (En Proceso) -->
+                            <!-- DAYAN:ALINIACION DE IMAGENES Y MARCO VERDE -->
+                            <img src="img/HG 1.png" alt="obra6" class="marco">
+                        </div>
+                        <div class="portfolio-text bg-secondary d-flex flex-column align-items-center justify-content-center">
+                            <h4 class="text-white mb-4">HIGH GARDENS</h4>
+                            <div class="d-flex align-items-center justify-content-center">
+                                <a class="btn btn-outline-primary m-1" href="https://www.instagram.com/p/DHYvBotAgoO/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" rel="noopener noreferrer">
+                                    <i class="fa fa-link"></i>
+                                </a>
+                                <!-- Agregando data-title para mostrar nombre en lightbox -->
+                                <a class="btn btn-outline-primary m-1" href="img/HG 1.png" data-lightbox="portfolio" data-title="HIGH GARDENS">
+                                    <i class="fa fa-eye"></i>
+                                </a>
+                                <a href="img/HG 2.png" data-lightbox="portfolio" data-title="HIGH GARDENS"></a>
+                                <a href="img/HG 4.jpg" data-lightbox="portfolio" data-title="HIGH GARDENS"></a>
+                                <a href="img/HERRERIA.JPG" data-lightbox="portfolio" data-title="HIGH GARDENS"></a>
+                                <a href="img/DSC_4880.JPG" data-lightbox="portfolio" data-title="HIGH GARDENS"></a>
+                                <a href="img/H3.jpg" data-lightbox="portfolio" data-title="HIGH GARDENS"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <!--Vermas-->
+                <div class="col-lg-4 col-md-6 col-sm-12 p-0 portfolio-item">
+                    <div class="position-relative overflow-hidden">
+                        <div class="portfolio-img d-flex align-items-center justify-content-center">
+                            <img src="img/IMG_4560.JPG" alt="obra6" class="marco">
+                        </div>
+                        <div class="portfolio-text bg-secondary d-flex flex-column align-items-center justify-content-center">
+                            <h4 class="text-white mb-4">PERGOLAS</h4>
+                            <div class="d-flex align-items-center justify-content-center">
+                                <a class="btn btn-outline-primary m-1" href="">
+                                    <i class="fa fa-link"></i>
+                                </a>
+                                <!-- Agregando data-title para mostrar nombre en lightbox -->
+                                <a class="btn btn-outline-primary m-1" href="img/IMG_4560.JPG" data-lightbox="PERGOLAS" data-title="PERGOLAS">
+                                    <i class="fa fa-eye"></i>
+                                </a>
+                                <a href="img/IMG-20250824-WA0050.jpg" data-lightbox="PERGOLAS" data-title="PERGOLAS"></a>
+                                <a href="img/IMG_20250803_192550_700.jpg" data-lightbox="PERGOLAS" data-title="PERGOLAS"></a>
+                                <a href="img/IMG_4560.JPG" data-lightbox="PERGOLAS" data-title="PERGOLAS"></a>
+                                <a href="img/PERGOLA 4.png" data-lightbox="PERGOLAS" data-title="PERGOLAS"></a>
+                                <a href="img/IMG_20250803_192550_790.jpg" data-lightbox="PERGOLAS" data-title="PERGOLAS"></a>
+                                <a href="img/IMG_20250803_192549_528.jpg" data-lightbox="PERGOLAS" data-title="PERGOLAS"></a>
+                                <a href="img/IMG_20250803_192550_635.jpg" data-lightbox="PERGOLAS" data-title="PERGOLAS"></a>
+                                <a href="img/IMG_20250803_192549_904.jpg" data-lightbox="PERGOLAS" data-title="PERGOLAS"></a>
+                                <a href="img/IMG_4366.JPG" data-lightbox="PERGOLAS" data-title="PERGOLAS"></a>
+                                <a href="img/IMG_4578.JPG" data-lightbox="PERGOLAS" data-title="PERGOLAS"></a>
+                                <a href="img/IMG_4591.JPG" data-lightbox="PERGOLAS" data-title="PERGOLAS"></a>
+                                <a href="img/IMG_4621.JPG" data-lightbox="PERGOLAS" data-title="PERGOLAS"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- "Final de la sección de Proyectos" -->
+
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Prevenir scroll del body
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restaurar scroll del body
+        }
+
+        function contactarVenta(nombreCasa) {
+            const mensaje = `Hola, estoy interesado en la ${nombreCasa}. Me gustaría recibir más información sobre esta propiedad.`;
+            const whatsappUrl = `https://wa.me/524423440411?text=${encodeURIComponent(mensaje)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+        function agendarVisita(nombreCasa) {
+            const mensaje = `Hola, me gustaría agendar una visita para conocer la ${nombreCasa}. ¿Cuándo sería posible?`;
+            const whatsappUrl = `https://wa.me/524423440411?text=${encodeURIComponent(mensaje)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+
+        // Cerrar modal al hacer clic fuera del contenido
+        window.onclick = function(event) {
+            const modals = document.querySelectorAll('.modal-casa');
+            modals.forEach(modal => {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        }
+
+        // Cerrar modal con tecla Escape
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                const modals = document.querySelectorAll('.modal-casa');
+                modals.forEach(modal => {
+                    if (modal.style.display === 'block') {
+                        modal.style.display = 'none';
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            }
+        });
+
+        // Funciones para el modal de agendar visita
+        const WHATSAPP_NUM = "524423440411";
+
+        function openVisitModal(){
+            const m = document.getElementById('visitModal');
+            m.classList.add('show');
+            const d = document.getElementById('vf_date');
+            const today = new Date();
+            const yyyy = today.getFullYear();
+            const mm = String(today.getMonth()+1).padStart(2,'0');
+            const dd = String(today.getDate()).padStart(2,'0');
+            d.min = `${yyyy}-${mm}-${dd}`;
+        }
+        function closeVisitModal(){
+            document.getElementById('visitModal').classList.remove('show');
+        }
+
+        function showError(msg){
+            const e = document.getElementById('vf_error');
+            e.textContent = msg; e.hidden = false;
+            setTimeout(()=>{ e.hidden = true; }, 4000);
+        }
+
+        function submitVisit(ev){
+            ev.preventDefault();
+            const name = document.getElementById('vf_name').value.trim();
+            const phone = document.getElementById('vf_phone').value.trim();
+            const date = document.getElementById('vf_date').value;
+            const time = document.getElementById('vf_time').value;
+            const notes = document.getElementById('vf_notes').value.trim();
+
+            if(!name || !phone || !date || !time){ return showError('Completa los campos requeridos (*)'); }
+
+            const chosen = new Date(`${date}T${time}`);
+            if(chosen < new Date()){ return showError('Elige una fecha y hora futuras.'); }
+
+            const nice = chosen.toLocaleString([], {weekday:'long', year:'numeric', month:'long', day:'numeric', hour:'2-digit', minute:'2-digit'});
+
+            const msg = `¡Hola! Quiero agendar una visita:\n` +
+                        `• Nombre: ${name}\n` +
+                        `• Teléfono: ${phone}\n` +
+                        `• Fecha y hora: ${nice}\n` +
+                        (notes ? `• Comentarios: ${notes}` : '');
+
+            const url = `https://wa.me/${WHATSAPP_NUM}?text=${encodeURIComponent(msg)}`;
+            window.open(url, '_blank', 'noopener');
+            closeVisitModal();
+        }
+
+        function downloadICS(){
+            const name = document.getElementById('vf_name').value.trim() || 'Cliente';
+            const date = document.getElementById('vf_date').value;
+            const time = document.getElementById('vf_time').value;
+            const notes = document.getElementById('vf_notes').value.trim();
+
+            if(!date || !time){ return showError('Selecciona fecha y hora para crear el .ics'); }
+
+            const start = new Date(`${date}T${time}:00`);
+            const end = new Date(start.getTime() + 60*60*1000); // 1 h
+
+            const fmt = d => d.toISOString().replace(/[-:]/g,'').split('.')[0] + 'Z';
+            const ics =
+`BEGIN:VCALENDAR
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:${Date.now()}@agenda
+DTSTAMP:${fmt(new Date())}
+DTSTART:${fmt(start)}
+DTEND:${fmt(end)}
+SUMMARY:Visita a propiedad
+DESCRIPTION:Visita agendada por ${name}${notes ? "\\n" + notes.replace(/\n/g,'\\n') : ""}
+END:VEVENT
+END:VCALENDAR`;
+
+            const blob = new Blob([ics], {type:'text/calendar;charset=utf-8'});
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = 'visita_propiedad.ics';
+            document.body.appendChild(a); a.click(); a.remove();
+        }
+    </script>
+
+    <!-- Modal de Agenda de Visita -->
+    <div id="visitModal" class="visit-modal" aria-hidden="true">
+      <div class="visit-backdrop" onclick="closeVisitModal()"></div>
+
+      <div class="visit-card" role="dialog" aria-modal="true" aria-labelledby="visitTitle">
+        <button class="visit-close" onclick="closeVisitModal()" aria-label="Cerrar">×</button>
+
+        <h3 id="visitTitle" class="visit-title">Agendar visita</h3>
+        <p class="visit-sub">Elige fecha y hora para visitar la propiedad y deja tus datos de contacto.</p>
+
+        <form id="visitForm" onsubmit="submitVisit(event)">
+          <div class="visit-grid">
+            <label class="field">
+              <span>Nombre completo *</span>
+              <input id="vf_name" type="text" required>
+            </label>
+
+            <label class="field">
+              <span>Teléfono (WhatsApp) *</span>
+              <input id="vf_phone" type="tel" inputmode="tel" pattern="[0-9+\-()\\s]{8,}" required>
+            </label>
+
+            <label class="field">
+              <span>Fecha *</span>
+              <input id="vf_date" type="date" required>
+            </label>
+
+            <label class="field">
+              <span>Hora *</span>
+              <input id="vf_time" type="time" required>
+            </label>
+          </div>
+
+          <label class="field">
+            <span>Comentarios (opcional)</span>
+            <textarea id="vf_notes" rows="3" placeholder="Ej. Vamos 2 personas, preferimos tarde…"></textarea>
+          </label>
+
+          <div class="visit-actions">
+            <button type="button" class="btn btn-ghost" onclick="downloadICS()">Añadir a mi calendario (.ics)</button>
+            <button type="submit" class="btn btn-primary">Enviar por WhatsApp</button>
+          </div>
+
+          <p id="vf_error" class="visit-error" hidden></p>
+        </form>
+      </div>
+    </div>
+
+    <!--Inicio de Musica de Fondo Playlist mejorado por Charly -->
+<link rel="stylesheet" href="style.css">
+
+<audio id="musicaFondo" loop preload="auto" muted style="display: none;">
+</audio>
+
+<button onclick="toggleAudio()" class="musica-banner" id="botonMusica">
+    🔊 Música
+</button>
+
+<script>
+    const canciones = [
+        "Musica/Hunting.mp3",
+            "Musica/My World.mp3",
+            "Musica/Norah Jones.mp3", 
+            "Musica/Romance.mp3",
+            "Musica/I love You Always Forever.mp3",
+            "Musica/In Memoriam.mp3", 
+            "Musica/Jealous Girl.mp3",
+            "Musica/La Mer.mp3",
+            "Musica/Late Night Alumni.mp3", 
+            "Musica/Leaving Me.mp3",
+            "Musica/Lost Love.mp3",
+            "Musica/Love Story - Indila.mp3", 
+            "Musica/My life.mp3",
+            "Musica/Stacey Kent.mp3",
+            "Musica/Studying You.mp3",
+            "Musica/Welcome Back.mp3",
+            "Musica/Withering.mp3",
+            "Musica/Coming Home.mp3",
+            "Musica/Father Ocean.mp3",
+            "Musica/Give Me a Kiss.mp3",
+            "Musica/I know.mp3"
+    ];
+
+    const audio = document.getElementById('musicaFondo');
+    const botonMusica = document.getElementById('botonMusica');
+    let isPlaying = false;
+    let cancionActual = 0;
+
+    function iniciarMusica() {
+        audio.src = canciones[cancionActual];
+        audio.volume = 0;    // empieza en silencio
+        audio.muted = false;
+
+        audio.play().then(() => {
+            isPlaying = true;
+            botonMusica.innerText = "🔊 " + obtenerNombreCancion();
+            botonMusica.classList.add('playing');
+
+            // Subir volumen gradualmente en ~1s
+            let v = 0;
+            const fade = setInterval(() => {
+                if (v >= 0.7) {
+                    clearInterval(fade);
+                } else {
+                    v += 0.05;
+                    audio.volume = v;
+                }
+            }, 100);
+        }).catch(err => {
+            console.log("⚠️ Autoplay bloqueado:", err);
+        });
+    }
+
+    function obtenerNombreCancion() {
+        const nombreCompleto = canciones[cancionActual];
+        const nombre = nombreCompleto.split('/').pop().replace('.mp3', '');
+        return nombre.length > 20 ? nombre.substring(0, 20) + '...' : nombre;
+    }
+
+    // Cuando termine una canción, pasa a la siguiente
+    audio.addEventListener('ended', function() {
+        cancionActual = (cancionActual + 1) % canciones.length;
+        audio.src = canciones[cancionActual];
+        audio.play().then(() => {
+            botonMusica.innerText = "🔊 " + obtenerNombreCancion();
+        });
+    });
+
+    function toggleAudio() {
+        if (isPlaying) {
+            audio.pause();
+            botonMusica.innerText = "🔇 Pausado";
+            botonMusica.classList.remove('playing');
+        } else {
+            audio.play().then(() => {
+                botonMusica.innerText = "🔊 " + obtenerNombreCancion();
+                botonMusica.classList.add('playing');
+            });
+        }
+        isPlaying = !isPlaying;
+    }
+
+    // 🎵 Activar música en la primera interacción (scroll, clic o touch)
+    function activarMusicaConInteraccion() {
+        iniciarMusica();
+        document.removeEventListener('scroll', activarMusicaConInteraccion);
+        document.removeEventListener('click', activarMusicaConInteraccion);
+        document.removeEventListener('touchstart', activarMusicaConInteraccion);
+    }
+
+    document.addEventListener('scroll', activarMusicaConInteraccion, { once: true });
+    document.addEventListener('click', activarMusicaConInteraccion, { once: true });
+    document.addEventListener('touchstart', activarMusicaConInteraccion, { once: true });
+</script>
+<!--Fin de la reproduccion de Musica-->
+
+    <!-- Scripts para la galería de casas -->
+    <script>
+        function openGallery(galleryId) {
+            document.getElementById(galleryId).style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeGallery(galleryId) {
+            document.getElementById(galleryId).style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Cerrar galerías al hacer clic fuera de ellas
+        document.addEventListener('click', function(event) {
+            const galleries = document.querySelectorAll('.gallery-overlay');
+            galleries.forEach(gallery => {
+                if (event.target === gallery) {
+                    gallery.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+
+        // Cerrar galerías con tecla Escape
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                const galleries = document.querySelectorAll('.gallery-overlay');
+                galleries.forEach(gallery => {
+                    if (gallery.style.display === 'flex') {
+                        gallery.style.display = 'none';
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            }
+        });
+    </script>
+
+    <!-- Estilos para las galerías de casas -->
+
+    <!-- Galerías de imágenes para cada casa -->
+    <div id="galeriaAgua" class="gallery-overlay">
+        <div class="gallery-content">
+            <span class="close-gallery" onclick="closeGallery('galeriaAgua')">&times;</span>
+            <img id="currentImageAgua" src="img/SALA AGUA.jpg" alt="Casa Elemento Agua">
+            <div class="gallery-nav prev" onclick="changeImageAgua(-1)">&#10094;</div>
+            <div class="gallery-nav next" onclick="changeImageAgua(1)">&#10095;</div>
+        </div>
+    </div>
+
+    <div id="galeriaFuego" class="gallery-overlay">
+        <div class="gallery-content">
+            <span class="close-gallery" onclick="closeGallery('galeriaFuego')">&times;</span>
+            <img id="currentImageFuego" src="img/VESUVIO 1.png" alt="Casa Elemento Fuego">
+            <div class="gallery-nav prev" onclick="changeImageFuego(-1)">&#10094;</div>
+            <div class="gallery-nav next" onclick="changeImageFuego(1)">&#10095;</div>
+        </div>
+    </div>
+
+    <div id="galeriaAire" class="gallery-overlay">
+        <div class="gallery-content">
+            <span class="close-gallery" onclick="closeGallery('galeriaAire')">&times;</span>
+            <img id="currentImageAire" src="img/SALA.jpeg" alt="Casa Elemento Aire">
+            <div class="gallery-nav prev" onclick="changeImageAire(-1)">&#10094;</div>
+            <div class="gallery-nav next" onclick="changeImageAire(1)">&#10095;</div>
+        </div>
+    </div>
+
+    <div id="galeriaTierra" class="gallery-overlay">
+        <div class="gallery-content">
+            <span class="close-gallery" onclick="closeGallery('galeriaTierra')">&times;</span>
+            <img id="currentImageTierra" src="img/SALA.jpeg" alt="Casa Elemento Tierra">
+            <div class="gallery-nav prev" onclick="changeImageTierra(-1)">&#10094;</div>
+            <div class="gallery-nav next" onclick="changeImageTierra(1)">&#10095;</div>
+        </div>
+    </div>
+
+    <!-- JavaScript para la funcionalidad de las galerías -->
+    <script>
+        const imagesAgua = ["img/SALA AGUA.jpg", "img/AGUA 2.jpg", "img/AGUA 3.jpg"];
+        let currentImageIndexAgua = 0;
+
+        const imagesFuego = ["img/VESUVIO 1.png", "img/VESUVIO 2.png", "img/VESUVIO 3.png"];
+        let currentImageIndexFuego = 0;
+
+        const imagesAire = ["img/SALA.jpeg", "img/AIRE 2.jpg", "img/AIRE 3.jpg"];
+        let currentImageIndexAire = 0;
+
+        const imagesTierra = ["img/VESUVIO 1.png", "img/VESUVIO 2.png", "img/VESUVIO 3.png"];
+        let currentImageIndexTierra = 0;
+
+        function changeImageAgua(n) {
+            currentImageIndexAgua = (currentImageIndexAgua + n + imagesAgua.length) % imagesAgua.length;
+            document.getElementById('currentImageAgua').src = imagesAgua[currentImageIndexAgua];
+        }
+
+        function changeImageFuego(n) {
+            currentImageIndexFuego = (currentImageIndexFuego + n + imagesFuego.length) % imagesFuego.length;
+            document.getElementById('currentImageFuego').src = imagesFuego[currentImageIndexFuego];
+        }
+
+        function changeImageAire(n) {
+            currentImageIndexAire = (currentImageIndexAire + n + imagesAire.length) % imagesAire.length;
+            document.getElementById('currentImageAire').src = imagesAire[currentImageIndexAire];
+        }
+
+        function changeImageTierra(n) {
+            currentImageIndexTierra = (currentImageIndexTierra + n + imagesTierra.length) % imagesTierra.length;
+            document.getElementById('currentImageTierra').src = imagesTierra[currentImageIndexTierra];
+        }
+    </script>
+
+    <!-- Script para manejar el envío de comentarios con EmailJS -->
+    <script>
+        document.getElementById('comentarios-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Obtener los datos del formulario
+            const formData = new FormData(this);
+            const templateParams = {
+                from_name: formData.get('nombre'),
+                message: formData.get('comentario'),
+                fecha: new Date().toLocaleDateString('es-ES')
+            };
+            
+            // Enviar email usando EmailJS
+            emailjs.send('service_uovpo9g', 'template_q54exgf', templateParams)
+                .then(function(response) {
+                    alert('¡Comentario enviado exitosamente!');
+                    document.getElementById('comentarios-form').reset();
+                }, function(error) {
+                    alert('Error al enviar el comentario. Por favor intenta de nuevo.');
+                    console.error('Error:', error);
+                });
+        });
+    </script>
+
+    <!-- "Inicio del pie de página". -->
+    <!--color Charly-->
+    <div class="container-fluid bg-rich-black text-white py-5 px-sm-3 px-md-5">
+        <div class="row pt-5">
+            <div class="col-lg-3 col-md-6 mb-5">
+                <!--Charly cambio de color-->
+                <h4 class="text-shamrock mb-4">Contáctanos</h4>
+                <p><i class="fa fa-phone-alt mr-2"></i>+52 442 3440411</p>
+                <p><i class="fa fa-phone-alt mr-2"></i>+52 442 3451559</p>
+                <p><i class="fa fa-envelope mr-2"></i>momedproyectos@gmail.com</p>
+                <div class="d-flex justify-content-start mt-4">
+                    
+                    <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-facebook-f"></i></a>
+                    
+                    <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-5">
+                <!--Charly cambio de color-->
+                 <h4 class="text-shamrock mb-4">Accesos Directos</h4>
+<div class="d-flex flex-column justify-content-start">
+    <a class="text-white mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Inicio</a>
+    <a class="text-white mb-2" href="about.html"><i class="fa fa-angle-right mr-2"></i>Sobre Nosotros</a>
+    <a class="text-white mb-2" href="service.html"><i class="fa fa-angle-right mr-2"></i>Nuestros Servicios</a>
+    <a class="text-white mb-2" href="project.html"><i class="fa fa-angle-right mr-2"></i>Nuestros Proyectos</a>
+    <a class="text-white" href="contact.html"><i class="fa fa-angle-right mr-2"></i>Contáctanos</a>
+</div>
+
+            </div>
+            <div class="col-lg-3 col-md-6 mb-5">
+                <!--Charly agregado del color-->
+                <h4 class="text-shamrock mb-4">Secciones Populares</h4>
+<div class="d-flex flex-column justify-content-start">
+    <a class="text-white mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Inicio</a>
+    <a class="text-white mb-2" href="filtros.html"><i class="fa fa-angle-right mr-2"></i>Diseñame</a>
+    <a class="text-white mb-2" href="single.html"><i class="fa fa-angle-right mr-2"></i>Sabías Qué…?</a>
+    <a class="text-white mb-2" href="project.html"><i class="fa fa-angle-right mr-2"></i>Nuestros Proyectos</a>
+    <a class="text-white" href="contact.html"><i class="fa fa-angle-right mr-2"></i>Contáctanos</a>
+</div>
+</div>
+
+<!--Inicio de comentarios-->
+    <div class="col-lg-3 col-md-6 mb-5">
+                <!--Charly agregado del color-->
+                <h4 class="text-shamrock mb-4">Déjanos tu opinión</h4>
+                <!-- Agregado id al formulario y corregido el tipo de input para comentario -->
+                <form id="comentarios-form">
+                    <div class="form-group">
+                        <input type="text" name="nombre" class="form-control border-0" placeholder="Nombre Completo" required="required" />
+                    </div>
+                    <div class="form-group">
+                        <!-- Cambiado de type="email" a textarea para comentarios -->
+                        <textarea name="comentario" class="form-control border-0" placeholder="Escribe tu comentario aquí..." rows="4" required="required"></textarea>
+                    </div>
+                    <div>
+                        <!-- Botón de envío con estilo unificado -->
+                        <button class="btn btn-unified btn-primary btn-block border-0" type="submit">Enviar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+<!--Final de comentarios-->
+
+
+        <div class="container border-top border-secondary pt-5">
+            <p class="m-0 text-center text-white">
+                &copy; <a class="text-white font-weight-bold" href="#">MOMED</a>. Todos los derechos reservados.
+                <a class="text-white font-weight-bold" href="https://htmlcodex.com"></a>
+            </p>
+        </div>
+    </div>
+    <!-- "Final del pie de página". -->
+
+
+    <!-- Agregado botón de retornar arriba con mejor posicionamiento -->
+    <a href="#" class="btn btn-lg btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+    <!-- JavaScript Librerias -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Agregado JavaScript personalizado para funcionalidades -->
+    <script src="js/main.js"></script>
+
+    <!-- Script para manejar el formulario de comentarios -->
+    <script>
+        // Manejar envío de comentarios
+        document.getElementById('comentarios-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const nombre = this.nombre.value;
+            const comentario = this.comentario.value;
+            
+            // Aquí puedes agregar la lógica para enviar el comentario
+            // Por ejemplo, usando EmailJS o enviando a un servidor
+            
+            alert('¡Gracias por tu comentario, ' + nombre + '! Lo hemos recibido correctamente.');
+            this.reset();
+        });
+    </script>
+
+    <!-- Script para inicializar el carrusel de casas en stock -->
+    <script>
+        $(document).ready(function(){
+            const carousel = $(".casas-stock-carousel").owlCarousel({
+                autoplay: true,
+                autoplayTimeout: 5000,
+                autoplaySpeed: 1000,
+                autoplayHoverPause: true,
+                smartSpeed: 1000,
+                margin: 150, // Aumentado de 120 a 150 para más espacio
+                dots: true,
+                loop: false,
+                rewind: false,
+                nav: true,
+                navText: [
+                    '<i class="fa fa-angle-left" aria-hidden="true"></i>',
+                    '<i class="fa fa-angle-right" aria-hidden="true"></i>'
+                ],
+                responsive: {
+                    0:{
+                        items:1
+                    },
+                    576:{
+                        items:1
+                    },
+                    768:{
+                        items:1.5 // Mostrar 1.5 items para dar más espacio
+                    },
+                    992:{
+                        items:2
+                    }
+                },
+                onInitialized: function(event) {
+                    setTimeout(function() {
+                        $('.owl-carousel .cloned [data-lightbox]').each(function() {
+                            $(this).removeAttr('data-lightbox');
+                            $(this).removeAttr('data-title');
+                            $(this).css('pointer-events', 'none');
+                        });
+                    }, 100);
+                },
+                onTranslated: function(event) {
+                    $('.owl-carousel .cloned [data-lightbox]').each(function() {
+                        $(this).removeAttr('data-lightbox');
+                        $(this).removeAttr('data-title');
+                        $(this).css('pointer-events', 'none');
+                    });
+                }
+            });
+            
+            setTimeout(function() {
+                $('.owl-carousel .cloned [data-lightbox]').each(function() {
+                    $(this).removeAttr('data-lightbox');
+                    $(this).removeAttr('data-title');
+                    $(this).css('pointer-events', 'none');
+                });
+            }, 500);
+        });
+    </script>
+
+</body>
+</html>
