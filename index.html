@@ -1,0 +1,1737 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>MOMED PAGINA PRINCIPAL</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Plantillas Google Web -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tipografia Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Tipografia Flaticon -->
+    <link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
+
+    <!-- Libreria Hoja de Estilos de Tipografia -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Hoja de Estilos Personalizada de Bootstrap -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            // Inicializar EmailJS con tu Public Key
+            emailjs.init("fBsDQAPpy2ke_o-zr"); // Reemplaza con tu Public Key de EmailJS
+        })();
+    </script>
+
+    <!-- Estilos unificados para botones consistentes -->
+    <style>
+        /* Override para botones específicos */
+
+        /* Estilos específicos para controles del carrusel - botones cuadrados verdes con flechas blancas */
+        .carousel-control-prev, .carousel-control-next {
+            width: auto;
+            height: auto;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 1;
+        }
+
+        .carousel-control-prev {
+            left: 20px;
+        }
+
+        .carousel-control-next {
+            right: 20px;
+        }
+
+        /* Mejorando el centrado de los botones del carrusel */
+        .carousel-control-prev .btn, .carousel-control-next .btn {
+            width: 45px !important;
+            height: 45px !important;
+            border-radius: 8px !important; /* Cuadrado con esquinas ligeramente redondeadas */
+            background: #03ac13 !important; /* Verde sólido */
+            border: none !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+            transition: all 0.3s ease !important;
+            padding: 0 !important;
+            position: relative !important;
+        }
+
+        .carousel-control-prev .btn:hover, .carousel-control-next .btn:hover {
+            background: #03ac13 !important;
+            transform: scale(1.05) !important;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25) !important;
+        }
+
+        /* Centrando perfectamente las flechas con caracteres tipográficos */
+        .carousel-control-prev-icon, .carousel-control-next-icon {
+            width: auto !important;
+            height: auto !important;
+            background-image: none !important;
+            background-size: 100% 100% !important;
+            filter: none !important;
+            position: absolute !important;
+            top: 50% !important;
+            left: 50% !important;
+            transform: translate(-50%, -50%) !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+        }
+
+        .carousel-control-prev-icon::before {
+            content: '‹' !important;
+            font-size: 20px !important;
+            color: #fff !important;
+            font-weight: bold !important;
+            line-height: 1 !important;
+            display: block !important;
+            text-align: center !important;
+        }
+
+        .carousel-control-next-icon::before {
+            content: '›' !important;
+            font-size: 20px !important;
+            color: #fff !important;
+            font-weight: bold !important;
+            line-height: 1 !important;
+            display: block !important;
+            text-align: center !important;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Inicio de la barra Superior -->
+    <div class="container-fluid bg-rich-black py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-lg-left mb-2 mb-lg-0">
+                    <div class="d-inline-flex align-items-center">
+                        <a class="text-white pr-3" href="">Preguntas Frecuentes</a>
+                        <span class="text-white">|</span>
+                        <a class="text-white px-3" href="contact.html">Ayuda</a>
+                        <span class="text-white">|</span>
+                        <a class="text-white pl-3" href="mailto:soportemomed@googlegroups.com">Soporte Técnico</a>
+                    </div>
+                </div>
+                <div class="col-md-6 text-center text-lg-right">
+                    <div class="d-inline-flex align-items-center">
+                        <a class="text-white px-3" 
+                           href="https://www.facebook.com/p/MOMED-100075915498484/" 
+                           target="_blank" 
+                           rel="noopener noreferrer">
+                           <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a class="text-white px-3" 
+                           href="https://www.instagram.com/momed_arquitectura/?fbclid=IwY2xjawLGf-BleHRuA2FlbQIxMABicmlkETFGa0swOWpHN1dwZFBnSjFCAR4vy0A4iqyH8xGg_F4HKCoKwFYCBsZsAib7CEpJ7LOA2ehIvoU_87OjTcg6mg_aem_h4qptahWIcuug3rvusXuBg" 
+                           target="_blank" 
+                           rel="noopener noreferrer">
+                           <i class="fab fa-instagram"></i>
+                        </a>   
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Final de la barra Superior -->
+
+    <!-- Inicio de la barra de Navegación -->
+    <div class="container-fluid position-relative nav-bar p-0">
+        <div class="container position-relative" style="z-index: 9;">
+            <nav class="navbar navbar-expand-lg bg-floral-white navbar-dark py-3 py-lg-0 pl-3 pl-lg-5">
+                <a href="" class="navbar-brand">
+                   <img src="img/Logo.jpg" alt="Logo MOMED" style="height: 150px;">
+                </a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
+                    <div class="navbar-nav ml-auto py-0">
+                        <a href="index.html" class="nav-item text-rich-black nav-link active">Hogar</a>
+                        <a href="about.html" class="nav-item text-timber-green nav-link">Acerca de</a>
+                        <a href="service.html" class="nav-item text-timber-green nav-link">Servicios</a> 
+                        <a href="project.html" class="nav-item text-timber-green nav-link">Proyectos</a> 
+                        <a href="filtros.html" class="nav-item text-timber-green nav-link">Diseñame</a>  
+                        <a href="contact.html" class="nav-item text-timber-green nav-link">Contacto</a>       
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle text-timber-green" data-toggle="dropdown">Más Paginas...</a>
+                            <div class="dropdown-menu rounded-0 m-0">
+                                <a href="blog.html" class="dropdown-item text-timber-green">Nuestra Revista</a>
+                                <a href="single.html" class="dropdown-item text-timber-green">Sabías Qué…?</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Final de la barra de Navegación -->
+
+    <!-- Inicio de Navegación -->
+    <div class="container-fluid bg-timber-green py-3">
+      <div class="container">
+        <div class="row justify-content-center">
+          <!-- Bloque Correo -->
+          <div class="col-lg-6 d-flex mb-3 mb-lg-0">
+              <div class="d-inline-flex text-left align-items-start">
+                <a href="mailto:momedproyectos@gmail.com" class="mr-3">
+                  <i class="fas fa-envelope fa-2x" style="color: #03ac13;"></i>
+                </a>
+                <div class="d-flex flex-column">
+                  <h5 class="text-floral-white mb-1">Envíanos un correo electrónico</h5>
+                  <a href="mailto:momedproyectos@gmail.com" class="text-floral-white" style="text-decoration: none;">
+                    momedproyectos@gmail.com
+                  </a>
+                </div>
+              </div>
+          </div>
+
+          <!-- Bloque WhatsApp -->
+          <div class="col-lg-6 d-flex">
+            <div class="d-inline-flex text-left align-items-start">
+              <a href="https://wa.me/524423440411" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" 
+                     alt="WhatsApp" 
+                     style="width: 36px; height: 36px;" class="mr-3">
+              </a>
+              <div class="d-flex flex-column">
+                <h5 class="text-floral-white mb-1">Contáctanos</h5>
+                <a href="https://wa.me/524423440411" target="_blank" class="text-floral-white" style="text-decoration: none;">
+                  +52 442 3440411
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Final de Navegación -->
+
+    <!-- Inicio del Carrusel -->
+    <div class="container-fluid p-0">
+        <div id="header-carousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="w-100" src="img/INNOVA 1.png" alt="Image"  style="height: 100vh; object-fit: cover;">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                        <div class="p-3" style="max-width: 800px;">
+                            <h4 class="text-green text-uppercase font-weight-normal mb-md-3">DISEÑO CON VISION EXCLUSIVA Y ATEMPORAL</h4>
+                            <h3 class="display-3 text-white mb-md-4">"BIENVENIDO A UN ESPACIO DONDE LA ARQUITECTURA SE CONVIERTE EN ARTE DE VIVIR"</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="w-100" src="img/SERENDIPIA 1.png" alt="Image"  style="height: 100vh; object-fit: cover;">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                        <div class="p-3" style="max-width: 800px;">
+                            <h4 class="text-green text-uppercase font-weight-normal mb-md-3">ELEGANCIA HECHA ESPACIO</h4>
+                            <h3 class="display-3 text-white mb-md-4">"DISEÑAMOS EXPERIENCIAS QUE TRASCIENDEN LO VISUAL Y SE SIENTEN EN EL ALMA"</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="w-100" src="img/TULIPAN 6.png" alt="Image"  style="height: 100vh; object-fit: cover;">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                        <div class="p-3" style="max-width: 800px;">
+                            <h4 class="text-green text-uppercase font-weight-normal mb-md-3">ARQUITECTURA CON PROPOSITO</h4>
+                            <h3 class="display-3 text-white mb-md-4">"AQUI, CADA PROYECTO ES UNA OBRA UNICA CREADA PARA REFLEJAR TU GRANDEZA"</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Botones del carrusel con el estilo exacto solicitado -->
+            <a class="carousel-control-prev" href="#header-carousel" data-slide="prev">
+                <div class="btn btn-success" style="width: 45px; height: 45px;">
+                    <span class="carousel-control-prev-icon mb-n2"></span>
+                </div>
+            </a>
+            <a class="carousel-control-next" href="#header-carousel" data-slide="next">
+                <div class="btn btn-success" style="width: 45px; height: 45px;">
+                    <span class="carousel-control-next-icon mb-n2"></span>
+                </div>
+            </a>
+        </div>
+    </div>
+    <!-- Final del Carrusel -->
+
+    <!-- Acerca de Inicio -->
+    <div class="container-fluid bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="d-flex flex-column align-items-center justify-content-center bg-basil h-100 py-5 px-3">
+                        <i class="flaticon-brickwall display-1 font-weight-normal text-rich-black mb-3"></i>
+                        <h4 class="display-3 mb-3">5+</h4>
+                        <h1 class="m-0">Años de Experiencia</h1>
+                    </div>
+                </div>
+                <div class="col-lg-7 m-0 my-lg-5 pt-5 pb-5 pb-lg-2 pl-lg-5">
+                    <h6 class="text-shamrock font-weight-normal text-uppercase mb-3">Conozcanos</h6>
+                    <h1 class="mb-4 section-title">MOMED: Arquitectura que inspira, conecta y trasciende</h1>
+                    <div class="text-dark">
+                      <p>
+                        En <strong>MOMED</strong> creemos que cada espacio puede transformar vidas. Diseñamos y construimos proyectos que van más allá de lo funcional, creando arquitectura que genera bienestar y conexión con el entorno.
+                      </p>
+                      <p>
+                        Nuestra filosofía se basa en el equilibrio con el ambiente y en entender que un espacio no solo se habita, también se siente. Buscamos despertar emociones, promover armonía y mejorar la calidad de vida con diseños conscientes y sustentables.
+                      </p>
+                      <p>
+                        En <strong>MOMED</strong>, la arquitectura es experiencia: un puente entre funcionalidad, belleza y emoción. Construir no es solo edificar, es crear lugares que inspiran y dejan huella.
+                      </p>
+                    </div>
+
+                    <div class="row py-2">
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-center mb-4">
+                                <h1 class="flaticon-house font-weight-normal text-shamrock m-0 mr-3"></h1>
+                                <h5 class="text-truncate m-0">Planificación del Proyecto</h5>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-center mb-4">
+                                <h1 class="flaticon-stairs font-weight-normal text-shamrock m-0 mr-3"></h1>
+                                <h5 class="text-truncate m-0">Interior & exterior</h5>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-center mb-4">
+                                <h1 class="flaticon-office font-weight-normal text-shamrock m-0 mr-3"></h1>
+                                <h5 class="text-truncate m-0">Diseño Comercial</h5>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-center mb-4">
+                                <h1 class="flaticon-living-room font-weight-normal text-shamrock m-0 mr-3"></h1>
+                                <h5 class="text-truncate m-0">Diseño Residencial</h5>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-center mb-4">
+                                <img 
+                                    src="/img/paisaje.png" 
+                                    alt="Icono de paisajismo" 
+                                    class="font-weight-normal m-0 mr-3"
+                                    style="width: 2.5em; height: 2.5em; filter: hue-rotate(0deg);"
+                                />
+                                <h5 class="text-truncate m-0">Paisajismo</h5>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-center mb-4">
+                                <img 
+                                    src="/img/Flaticon-gestion.png" 
+                                    alt="Icono de gestion" 
+                                    class="font-weight-normal text-shamrock m-0 mr-3"
+                                    style="width: 2.6em; height: 2.6em; filter: hue-rotate(0deg);"
+                                />
+                                <h5 class="text-truncate m-0">Gestoria y Tramites</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Final de Inicio -->
+
+    <!-- Sección de servicios moderna e interactiva fusionada -->
+    <!-- ===== SECCIÓN SERVICIOS v3.1 (sin detalles + WhatsApp SVG) ===== -->
+    <section class="svc3" id="servicios">
+      <div class="svc3-wrap">
+        <!-- Header -->
+        <header class="svc3-head">
+          <h2 class="svc3-eyebrow">DISEÑO · CONSTRUCCIÓN · MÁS</h2>
+          <h3 class="svc3-title">Conoce nuestros <span>servicios</span></h3>
+          <p class="svc3-sub">Acompañamos tu proyecto de principio a fin con precisión, calidad y tiempos claros.</p>
+        </header>
+
+        <!-- Grid -->
+        <div class="svc3-grid">
+          <!-- ===== Card: Arquitectura ===== -->
+          <article class="svc3-card" data-cat="arquitectura"tabindex="0">
+            <div class="svc3-border"></div>
+            <header class="svc3-card-top">
+              <div class="svc3-icon">
+                <svg viewBox="0 0 48 48" width="24" height="24" aria-hidden="true">
+                  <circle cx="24" cy="24" r="20" fill="currentColor"></circle>
+                </svg>
+              </div>
+              <span class="svc3-badge">#1</span>
+            </header>
+
+            <h4 class="svc3-card-title">Arquitectura</h4>
+            <p class="svc3-card-lead">Diseño arquitectónico eficiente y sustentable, optimizado para permisos y ejecución.</p>
+
+            <ul class="svc3-list">
+              <li><span class="ok3"></span> Elaboración de planos arquitectónicos y constructivos</li>
+              <li><span class="ok3"></span> Proyecto ejecutivo para licencia de construcción</li>
+              <li><span class="ok3"></span> Modelado 3D y coordinación BIM</li>
+              <li><span class="ok3"></span> Optimización de materiales y costos</li>
+            </ul>
+
+            <div class="svc3-cta">
+              <button class="btn3 whats3" data-service="Arquitectura" aria-label="Cotizar servicio Arquitectura">
+                <svg class="wa-icon" viewBox="0 0 32 32" aria-hidden="true">
+                  <path d="M16 3C9.9 3 5 7.9 5 14c0 2.3.7 4.4 2 6.1L5 27l7.1-1.9c1.7 1 3.6 1.5 5.9 1.5 6.1 0 11-4.9 11-11S22.1 3 16 3zM16 25c-1.9 0-3.6-.5-5.1-1.4l-.4-.2-3.1.8.8-3-.2-.4C7.1 19.1 6.6 17.6 6.6 16 6.6 10.9 10.9 6.6 16 6.6S25.4 10.9 25.4 16 21.1 25 16 25zm5.2-7.1c-.3-.2-1.7-.9-1.9-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1s-1.2-.4-2.2-1.4c-.8-.7-1.4-1.6-1.6-1.8s0-.4.1-.6.3-.4.4-.6c.2-.2.3-.4.4-.6.1-.2 0-.4 0-.6 0-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.1 3.1 1.3 3.3c.2.3 2.2 3.3 5.4 4.6.8.4 1.4.6 1.9.8.8.3 1.6.3 2.2.2.7-.1 2-.8 2.3-1.6.3-.8.3-1.5.2-1.6-.1-.1-.3-.2-.6-.4z" fill="currentColor"/>
+                </svg>
+                Cotizar servicio
+              </button>
+            </div>
+          </article>
+
+          <!-- ===== Card: Construcción ===== -->
+          <article class="svc3-card" data-cat="construccion"tabindex="0">
+            <div class="svc3-border"></div>
+            <header class="svc3-card-top">
+              <div class="svc3-icon">
+                <svg viewBox="0 0 48 48" width="24" height="24" aria-hidden="true">
+                  <rect x="8" y="8" width="32" height="32" rx="8" fill="currentColor"></rect>
+                </svg>
+              </div>
+              <span class="svc3-badge">#2</span>
+            </header>
+
+            <h4 class="svc3-card-title">Construcción</h4>
+            <p class="svc3-card-lead">Ejecución con control de calidad, seguridad y cumplimiento de tiempos.</p>
+
+            <ul class="svc3-list">
+              <li><span class="ok3"></span> Vivienda residencial</li>
+              <li><span class="ok3"></span> Proyectos comerciales</li>
+              <li><span class="ok3"></span> Oficinas corporativas</li>
+              <li><span class="ok3"></span> Sector salud</li>
+              <li><span class="ok3"></span> Supervisión y gestión de obra</li>
+              <li><span class="ok3"></span> Seguridad y normativas locales</li>
+            </ul>
+
+            <div class="svc3-cta">
+              <button class="btn3 whats3" data-service="Construcción" aria-label="Cotizar servicio Construcción">
+                <svg class="wa-icon" viewBox="0 0 32 32" aria-hidden="true">
+                  <path d="M16 3C9.9 3 5 7.9 5 14c0 2.3.7 4.4 2 6.1L5 27l7.1-1.9c1.7 1 3.6 1.5 5.9 1.5 6.1 0 11-4.9 11-11S22.1 3 16 3zM16 25c-1.9 0-3.6-.5-5.1-1.4l-.4-.2-3.1.8.8-3-.2-.4C7.1 19.1 6.6 17.6 6.6 16 6.6 10.9 10.9 6.6 16 6.6S25.4 10.9 25.4 16 21.1 25 16 25zm5.2-7.1c-.3-.2-1.7-.9-1.9-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1s-1.2-.4-2.2-1.4c-.8-.7-1.4-1.6-1.6-1.8s0-.4.1-.6.3-.4.4-.6c.2-.2.3-.4.4-.6.1-.2 0-.4 0-.6 0-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.1 3.1 1.3 3.3c.2.3 2.2 3.3 5.4 4.6.8.4 1.4.6 1.9.8.8.3 1.6.3 2.2.2.7-.1 2-.8 2.3-1.6.3-.8.3-1.5.2-1.6-.1-.1-.3-.2-.6-.4z" fill="currentColor"/>
+                </svg>
+                Cotizar servicio
+              </button>
+            </div>
+          </article>
+
+          <!-- ===== Card: Otros Servicios ===== -->
+          <article class="svc3-card" data-cat="extra"tabindex="0">
+            <div class="svc3-border"></div>
+            <header class="svc3-card-top">
+              <div class="svc3-icon">
+                <svg viewBox="0 0 48 48" width="24" height="24" aria-hidden="true">
+                  <path d="M24 6L42 24L24 42L6 24Z" fill="currentColor"></path>
+                </svg>
+              </div>
+              <span class="svc3-badge">#3</span>
+            </header>
+
+            <h4 class="svc3-card-title">Otros Servicios</h4>
+            <p class="svc3-card-lead">Complementos que elevan tu proyecto al siguiente nivel.</p>
+
+            <ul class="svc3-list">
+              <li><span class="ok3"></span> Remodelaciones y ampliaciones</li>
+              <li><span class="ok3"></span> Paisajismo</li>
+              <li><span class="ok3"></span> Gestoría y tramitología</li>
+              <li><span class="ok3"></span> Renders (imágenes 3D)</li>
+              <li><span class="ok3"></span> Mantenimiento preventivo y correctivo</li>
+              <li><span class="ok3"></span> Interiorismo y selección de materiales</li>
+              <li><span class="ok3"></span> Facility Management</li>
+            </ul>
+
+            <div class="svc3-cta">
+              <button class="btn3 whats3" data-service="Otros Servicios" aria-label="Cotizar servicio Otros Servicios">
+                <svg class="wa-icon" viewBox="0 0 32 32" aria-hidden="true">
+                  <path d="M16 3C9.9 3 5 7.9 5 14c0 2.3.7 4.4 2 6.1L5 27l7.1-1.9c1.7 1 3.6 1.5 5.9 1.5 6.1 0 11-4.9 11-11S22.1 3 16 3zM16 25c-1.9 0-3.6-.5-5.1-1.4l-.4-.2-3.1.8.8-3-.2-.4C7.1 19.1 6.6 17.6 6.6 16 6.6 10.9 10.9 6.6 16 6.6S25.4 10.9 25.4 16 21.1 25 16 25zm5.2-7.1c-.3-.2-1.7-.9-1.9-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1s-1.2-.4-2.2-1.4c-.8-.7-1.4-1.6-1.6-1.8s0-.4.1-.6.3-.4.4-.6c.2-.2.3-.4.4-.6.1-.2 0-.4 0-.6 0-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.1 3.1 1.3 3.3c.2.3 2.2 3.3 5.4 4.6.8.4 1.4.6 1.9.8.8.3 1.6.3 2.2.2.7-.1 2-.8 2.3-1.6.3-.8.3-1.5.2-1.6-.1-.1-.3-.2-.6-.4z" fill="currentColor"/>
+                </svg>
+                Cotizar servicio
+              </button>
+            </div>
+          </article>
+        </div>
+
+        <!-- Botón Ver Más centrado -->
+        <div class="text-center mt-5">
+          <a href="service.html" class="btn btn-unified btn-success py-2 px-4 rounded-pill shadow-sm">Ver Más</a>
+        </div>
+      </div>
+
+      <!-- decor -->
+      <div class="orb o1"></div>
+      <div class="orb o2"></div>
+    </section>
+
+    <style>
+      .svc3{
+        position:relative;
+        padding:70px 0 84px;
+        background:
+          radial-gradient(1200px 620px at 90% -10%, rgba(16,185,129,.14), transparent 60%),
+          radial-gradient(900px 480px at -10% 0%, rgba(52,211,153,.10), transparent 60%),
+          var(--bg);
+        font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+        overflow:hidden;
+      }
+      .svc3-wrap{ max-width:1200px; margin:0 auto; padding:0 22px; }
+
+      /* Header */
+      .svc3-head{ text-align:center; margin-bottom:26px; }
+      .svc3-eyebrow{
+        display:inline-block; padding:.45rem .8rem; font-size:.85rem; font-weight:800; letter-spacing:.06em;
+        color:var(--Basil); background:#eafaf3; border:1px solid #c9efe0; border-radius:999px;
+      }
+      .svc3-title{ margin:.8rem 0 .4rem; font-size:clamp(28px,4.5vw,44px); font-weight:900; color:var(--rich-black); }
+      .svc3-title span{
+        background:linear-gradient(90deg,var(--Shamrock),var(--Shamrock));
+        -webkit-background-clip:text; background-clip:text; color:transparent;
+      }
+      .svc3-sub{ color:#3a5533; max-width:760px; margin:0 auto; }
+
+      /* Grid */
+      .svc3-grid{
+        display:grid; gap:22px; margin-top:24px;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      }
+
+      /* Card */
+      .svc3-card{
+        position:relative; background:var(--floral-white); border:1px solid var(--floral-white);
+        border-radius:18px; padding:20px 18px 16px; box-shadow:0 18px 40px rgba(7, 23, 2, 0.07);
+        display:flex; flex-direction:column; min-height:100%;
+        transition: transform .22s ease, box-shadow .25s ease, border-color .25s ease;
+        outline:none;
+      }
+      .svc3-card:hover{ transform:translateY(-4px); box-shadow:0 28px 60px rgba(6, 23, 2, 0.12); border-color:rgba(36, 185, 16, 0.35); }
+      .svc3-card:focus{ box-shadow:0 0 0 6px rgba(55, 185, 16, 0.25); }
+
+      /* Glow border */
+      .svc3-border{
+        pointer-events:none; position:absolute; inset:-1px; border-radius:18px; z-index:0;
+        background: conic-gradient(from 180deg, rgba(36, 185, 16, 0.6), rgba(70, 211, 52, 0.45), rgba(30, 185, 16, 0.6));
+        opacity:.16; filter: blur(10px); transition:.3s ease;
+      }
+      .svc3-card:hover .svc3-border{ opacity:.32; }
+
+      .svc3-card-top{ display:flex; justify-content:space-between; align-items:center; margin-bottom:.4rem; position:relative; z-index:1; }
+      .svc3-icon{
+        width:46px; height:46px; display:grid; place-items:center; border-radius:14px;
+        color:var(--Shamrock); background:#fffbf3; border:1px solid #d4fad1;
+        box-shadow: inset 0 0 0 3px rgba(16, 185, 24, 0.08);
+      }
+      .svc3-badge{ font-weight:900; color:var(--Shamrock); background:#fffbf3; border:1px solid #c9efc9; border-radius:999px; padding:.2rem .55rem; font-size:.86rem; }
+
+      .svc3-card-title{ margin:.35rem 0 .1rem; font-weight:900; color:var(--rich-black); font-size:1.22rem; }
+      .svc3-card-lead{ color:var(--Basil); margin:.3rem 0 1rem; line-height:1.55; }
+
+      .svc3-list{ list-style:none; padding:0; margin:0 0 .6rem; display:grid; gap:.45rem; }
+      .svc3-list li{ display:flex; align-items:flex-start; gap:.55rem; color:var(--rich-black); }
+      .ok3{
+        width:18px; height:18px; border-radius:6px; flex:0 0 18px; margin-top:2px;
+        background: conic-gradient(from 0deg, var(--Shamrock), var(--Basil));
+        -webkit-mask: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 7L9 18l-5-5" fill="black" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>') center/100% no-repeat;
+                mask: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 7L9 18l-5-5" fill="black" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>') center/100% no-repeat;
+      }
+
+      /* CTA */
+      .svc3-cta{ display:flex; justify-content:flex-end; margin-top:auto; }
+      .btn3{
+        --ring: 0 0 0 0 rgba(50, 185, 16, 0.35);
+        display:inline-flex; align-items:center; gap:.5rem;
+        padding:.7rem 1.1rem; border:none; border-radius:12px;
+        background: linear-gradient(90deg, var(--Shamrock), var(--Basil));
+        color:#fffbf3; font-weight:900; cursor:pointer;
+        box-shadow: 0 10px 22px rgba(50, 185, 16, 0.22), var(--Shamrock);
+        transition: transform .15s ease, box-shadow .2s ease, filter .2s ease;
+      }
+      .btn3:hover{ transform: translateY(-2px); filter: saturate(1.05) contrast(1.02); }
+      .btn3:active{ transform: translateY(0); box-shadow: 0 6px 14px rgba(22, 185, 16, 0.26); }
+      .wa-icon{ width:18px; height:18px; display:block; }
+
+      /* decor orbs */
+      .orb{ position:absolute; width:380px; height:380px; border-radius:50%; filter: blur(20px); pointer-events:none; }
+      .o1{ top:-110px; left:-80px; background: radial-gradient(closest-side, rgba(36, 185, 16, 0.18), transparent 70%); }
+      .o2{ bottom:-120px; right:-60px; background: radial-gradient(closest-side, rgba(65, 211, 52, 0.18), transparent 70%); }
+
+      /* Responsive */
+      @media (max-width: 520px){
+        .svc3-wrap{ padding:0 18px; }
+        .svc3-card{ padding:18px 16px 14px; }
+      }
+    </style>
+    <!-- Final de Servicios -->
+
+    <!-- Sección de Interiores -->
+    <section class="editor-section py-5">
+      <div class="container">
+        <div class="editor-card">
+          <div class="row g-4 align-items-center">
+            <!-- Texto -->
+            <div class="col-lg-6">
+              <span class="eyebrow">Herramienta interactiva</span>
+              <h2 class="editor-title">Deja volar tu imaginación en nuestro <span class="highlight">editor de interiores y paredes</span></h2>
+              <p class="editor-subtitle">
+                Déjanos sorprenderte con un diseño hecho a tu medida. Prueba colores, texturas y estilos en segundos.
+              </p>
+
+              <ul class="editor-benefits">
+                <li>Prueba paletas de color en tiempo real</li>
+                <li>Simula acabados en muros y muebles</li>
+                <li>Guarda y comparte tus diseños</li>
+              </ul>
+
+              <!-- Botones del editor con estilos unificados -->
+              <div class="d-flex flex-wrap gap-3 mt-4">
+                <a href="filtros.html" class="btn btn-unified btn-primary">Abrir editor</a>
+              </div>
+            </div>
+
+            <!-- Visual -->
+            <div class="col-lg-6">
+              <div class="editor-media">
+                <img src="img/Editor simulador.gif" alt="Simulador de interiores" class="img-fluid">
+                <div class="media-badge">Demo en vivo</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      /* base */
+      .editor-section{
+        background:#fffbf3;
+        font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+      }
+
+      /* tarjeta principal */
+      .editor-card{
+        background:#fffbf3;
+        border:1px solid #fffbf3;
+        border-radius:24px;
+        padding:32px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+      }
+
+      /* encabezados */
+      .eyebrow{
+        display:inline-block;
+        font-size:.85rem;
+        letter-spacing:.08em;
+        text-transform:uppercase;
+        color:#03ac13;
+        background:#fffbf3;
+        border:1px solid #fffbf3;
+        padding:.30rem .6rem;
+        border-radius:999px;
+        margin-bottom:.75rem;
+        font-weight:700;
+      }
+      .editor-title{
+        font-weight: 800;
+        line-height:1.15;
+        color:#041C19;
+        margin-bottom:.5rem;
+      }
+      .editor-title .highlight{ color:#03ac13; }
+      .editor-subtitle{
+        color:#32612d;
+        margin: 0 0 1rem 0;
+        font-size:1.05rem;
+      }
+
+      /* lista de beneficios */
+      .editor-benefits{
+        list-style:none;
+        padding:0;
+        margin:0;
+      }
+      .editor-benefits li{
+        position:relative;
+        padding-left:28px;
+        margin:.5rem 0;
+        color:#041C19;
+        font-weight:600;
+      }
+      .editor-benefits li::before{
+        content:"✔";
+        position:absolute;
+        left:0;
+        top:2px;
+        font-weight:800;
+        color:#03ac13;
+      }
+
+      /* media (imagen/gif) */
+      .editor-media{
+        position:relative;
+        border-radius:18px;
+        overflow:hidden;
+        border:1px solid #fffbf3;
+        box-shadow:0 12px 28px rgba(0, 0, 0, 0.06);
+      }
+      .editor-media img{
+        display:block;
+        width:100%;
+        height:auto;
+      }
+      .media-badge{
+        position:absolute;
+        top:12px;
+        left:12px;
+        background:#3a5311;
+        color:#fffbf3;
+        font-size:.8rem;
+        padding:.35rem .6rem;
+        border-radius:999px;
+        opacity:.9;
+      }
+
+      /* espacios responsivos */
+      @media (min-width: 992px){
+        .editor-title{ font-size:2.1rem; }
+      }
+      @media (max-width: 991.98px){
+        .editor-card{ padding:24px; }
+        .editor-title{ font-size:1.8rem; }
+      }
+    </style>
+
+    <!-- ====== SECCIÓN PROMOCIÓN / STOCK ====== -->
+    <section class="promo-stock" aria-labelledby="promo-title">
+      <div class="promo-bg"></div>
+
+      <div class="promo-wrap">
+        <span class="promo-badge">Nuevas oportunidades</span>
+
+        <h2 id="promo-title">Conoce tu <span>nuevo hogar</span></h2>
+
+        <p class="promo-sub">
+          Casas seleccionadas, ubicaciones estratégicas y precios que sí cierran.
+          Entra a ver el stock y enamórate de tu próxima casa.
+        </p>
+
+        <!-- Tarjeta clicable -->
+        <a class="promo-card" href="project.html">
+          <div class="card-media"></div>
+          <div class="card-body">
+            <h3>Propiedades listas para visitar</h3>
+            <p>Haz clic y descubre modelos, planos y recorridos.</p>
+            <span class="card-link">Entrar ahora →</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Brillos decorativos -->
+      <div class="glow glow-1"></div>
+      <div class="glow glow-2"></div>
+    </section>
+
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+
+    .promo-stock{
+      position: relative;
+      overflow: hidden;
+      border-radius: 24px;
+      margin: 60px auto;
+      max-width: 1200px;
+      padding: clamp(24px, 4vw, 56px);
+      background: radial-gradient(1200px 600px at 10% -20%, rgba(36, 185, 16, 0.2), transparent),
+                  radial-gradient(1000px 500px at 110% 120%, rgba(29, 150, 5, 0.18), transparent),
+                  linear-gradient(135deg, #fffbf3 0%, #fffbf3 100%);
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      color: var(--rich-black);
+    }
+
+    .promo-bg{
+      position:absolute; inset:0; z-index:-1;
+      background:
+        linear-gradient(to bottom, #fffbf3(255,255,255,.85), #fffbf39a(255,255,255,.6)),
+        url('img/FACHADA%20PPAL.png');
+      background-size: cover; background-position:center;
+      filter: saturate(1.05) contrast(1.02);
+    }
+
+    .promo-wrap{ max-width: 980px; margin: 0 auto; text-align:center; }
+
+    .promo-badge{
+      display:inline-block;
+      background: rgba(44, 185, 16, 0.12);
+      color: var(--Basil);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-weight: 600;
+      letter-spacing:.2px;
+      margin-bottom: 14px;
+    }
+
+    .promo-stock h2{
+      font-size: clamp(28px, 4vw, 48px);
+      line-height: 1.08;
+      margin: 6px 0 10px;
+      font-weight: 800;
+    }
+    .promo-stock h2 span{ color: var(--Basil); }
+
+    .promo-sub{
+      max-width: 750px;
+      margin: 0 auto 22px;
+      color: var(--muted);
+      font-size: clamp(16px, 1.6vw, 18px);
+    }
+
+    /* Tarjeta clicable */
+    .promo-card{
+      display:grid; grid-template-columns: 1.2fr 1fr;
+      align-items: stretch;
+      background: var(--floral-white);
+      border-radius: 18px;
+      overflow: hidden;
+      text-decoration:none;
+      color: inherit;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .promo-card:hover{
+      transform: translateY(-4px);
+      box-shadow: 0 22px 50px rgba(0, 0, 0, 0.15);
+    }
+    .card-media{
+      min-height: 220px;
+      background:
+        linear-gradient(180deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.35)),
+        url('img/SALA%20AGUA.jpg');
+      background-size: cover; background-position: center;
+    }
+    .card-body{
+      padding: clamp(18px, 2.8vw, 28px);
+      display:flex; flex-direction:column; justify-content:center; text-align:left;
+    }
+    .card-body h3{
+      margin: 0 0 8px; font-size: clamp(18px, 2.4vw, 24px);
+    }
+    .card-body p{
+      color: var(--Basil); margin: 0 0 12px; font-size: 15px;
+    }
+    .card-link{ font-weight: 700; color: var(--Basil); }
+
+    /* Brillos decorativos */
+    .glow{
+      position:absolute; width: 420px; height: 420px; filter: blur(80px); opacity:.45; z-index:-1;
+      border-radius: 50%;
+    }
+    .glow-1{ background: rgba(22, 185, 16, 0.5); top:-120px; left:-140px; }
+    .glow-2{ background: rgba(22, 185, 16, 0.5); bottom:-160px; right:-180px; }
+
+    @media (max-width: 860px){
+      .promo-card{ grid-template-columns: 1fr; }
+      .card-media{ min-height: 180px; }
+    }
+    </style>
+
+
+    <!-- Inicio de Caracteristicas -->
+    <div class="container-fluid bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 mt-5 py-5 pr-lg-5">
+                    <h6 class="text-shamrock font-weight-normal text-uppercase mb-3 pt-5">POR QUE SOMOS TU MEJOR OPCIÓN?</h6>
+                    <h1 class="mb-4 section-title">La Arquitectura Se Convierte En Experiencia</h1>
+                    <p class="mb-4 text-dark">Ofrecemos soluciones creativas, funcionales y elegantes que transforman cada espacio en un reflejo único de estilo y personalidad. Nuestra trayectoria respalda la calidad, el compromiso y la pasión en cada proyecto.</p>
+                    <ul class="list-inline">
+                        <li><h5><i class="far fa-check-square text-shamrock mr-3"></i>Equilibrio Con El Ambiente </h5></li>
+                        <li><h5><i class="far fa-check-square text-shamrock mr-3"></i>El Mejor Diseño De Interiores</h5></li>
+                        <li><h5><i class="far fa-check-square text-shamrock mr-3"></i>Satisfacción Del Cliente</h5></li>
+                    </ul>
+                    <!-- Botón con estilo unificado -->
+                    <a href="about.html" class="btn btn-unified btn-primary mt-3 py-2 px-4">Ver Más</a>
+                </div>
+                <div class="col-lg-5">
+                    <br></br>
+                    <div class="d-flex flex-column align-items-center justify-content-center h-100 overflow-hidden">
+                        <img src="img/Acantharesidencial6.jpg" alt="Residencial6" style="height: 600px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Final de Caracteristicas -->
+
+    <!-- Inicio de Proyectos -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-8 col text-center mb-4">
+                    <h6 class="text-shamrock font-weight-normal text-uppercase mb-3">Nuestros Proyectos</h6>
+                    <h1 class="mb-4">Diseños Que Inspiran</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center mb-2">
+                    <!-- Botones de filtro con estilos unificados -->
+                    <ul class="list-inline mb-4" id="portfolio-flters">
+                        <li class="btn btn-unified btn-outline-primary m-1 active"  data-filter="*">Todo</li>
+                        <li class="btn btn-unified btn-outline-primary m-1" data-filter=".first">Completo</li>
+                        <li class="btn btn-unified btn-outline-primary m-1" data-filter=".third">En Proceso</li>
+                    </ul>
+                </div>
+            </div>
+<!-- Proyecto 1 - Categoría: first (Completo) -->
+            <div class="row mx-1 portfolio-container">
+                <div class="col-lg-4 col-md-6 col-sm-12 p-0 portfolio-item first">
+                    <div class="position-relative overflow-hidden">
+                        <div class="portfolio-img d-flex align-items-center justify-content-center">
+                             <!-- Sección de Imagenes -->
+                             <!--Dayan:ACOMODE LAS IMAGES A UN SOLO TAMAÑO PARA QUE SE VEAN MEJOR-->
+                             <!-- DAYAN:ALINIACION DE IMAGENES Y MARCO VERDE -->
+                            <img src="img/VESUVIO 1.png" alt="obra1" class="marco">
+                        </div>
+                        <div class="portfolio-text bg-secondary d-flex flex-column align-items-center justify-content-center">
+                            <h4 class="text-white mb-4">VESUVIO RESIDENCIAL</h4>
+                            <div class="d-flex align-items-center justify-content-center">
+                                <a class="btn btn-outline-primary m-1" href="">
+                                    <i class="fa fa-link"></i>
+                                </a>
+                                <!--DAYAN:CAMBIE LAS IMAGENES-->
+                                <!--  Categoría:(Completo) -->
+                                <!-- Agregando data-title para mostrar nombre en lightbox -->
+                                <a class="btn btn-outline-primary m-1" href="img/VESUVIO 1.png" data-lightbox="VESUVIO" data-title="VESUVIO RESIDENCIAL">
+                                    <i class="fa fa-eye"></i>
+                                </a>
+                                <a href="img/VESUVIO 2.png" data-lightbox="VESUVIO" data-title="VESUVIO RESIDENCIAL"></a>
+                                <a href="img/VESUVIO 3.png" data-lightbox="VESUVIO" data-title="VESUVIO RESIDENCIAL"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+                <!-- Proyecto 3 - Categoría: third (En Proceso) -->
+                <div class="col-lg-4 col-md-6 col-sm-12 p-0 portfolio-item first">
+                    <div class="position-relative overflow-hidden">
+                        <div class="portfolio-img d-flex align-items-center justify-content-center">
+                            <!-- DAYAN:ALINIACION DE IMAGENES Y MARCO VERDE -->
+                            <img src="img/TULIPAN 6.png" alt="obra3" class="marco">
+                        </div>
+                        <div class="portfolio-text bg-secondary d-flex flex-column align-items-center justify-content-center">
+                            <h4 class="text-white mb-4">TULIPAN RESIDENCIAL</h4>
+                            <div class="d-flex align-items-center justify-content-center">
+                                <a class="btn btn-outline-primary m-1" href="">
+                                    <i class="fa fa-link"></i>
+                                </a>
+                                <!-- Agregando data-title para mostrar nombre en lightbox -->
+                                <a class="btn btn-outline-primary m-1" href="img/TULIPAN 6.png" data-lightbox="TULIPAN" data-title="TULIPAN RESIDENCIAL">
+                                    <i class="fa fa-eye"></i>
+                                </a>
+                                <a href="img/TULIPAN 5.png" data-lightbox="TULIPAN" data-title="TULIPAN RESIDENCIAL"></a>
+                                <a href="img/TULIPAN 4.png" data-lightbox="TULIPAN" data-title="TULIPAN RESIDENCIAL"></a>
+                                <a href="img/TULIPAN 3.png" data-lightbox="TULIPAN" data-title="TULIPAN RESIDENCIAL"></a>
+                                <a href="img/TULIPAN 2.png" data-lightbox="TULIPAN" data-title="TULIPAN RESIDENCIAL"></a>
+                                <a href="img/TULIPAN 1.png" data-lightbox="TULIPAN" data-title="TULIPAN RESIDENCIAL"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Proyecto nuevo - Categoría: En Proceso -->
+<div class="col-lg-4 col-md-6 col-sm-12 p-0 portfolio-item first">
+    <div class="position-relative overflow-hidden">
+        <div class="portfolio-img d-flex align-items-center justify-content-center">
+            <!-- Imagen nueva -->
+            <!-- DAYAN:ALINIACION DE IMAGENES Y MARCO VERDE -->
+            <img src="img/SERENDIPIA 1.png" alt="obra en proceso" class="marco">
+        </div>
+        <div class="portfolio-text bg-secondary d-flex flex-column align-items-center justify-content-center">
+            <h4 class="text-white mb-4">SERENDIPIA RESIDENCIAL</h4>
+            <div class="d-flex align-items-center justify-content-center">
+                <a class="btn btn-outline-primary m-1" href="">
+                    <i class="fa fa-link"></i>
+                </a>
+                <!-- Agregando data-title para mostrar nombre en lightbox -->
+                <a class="btn btn-outline-primary m-1" href="img/SERENDIPIA 1.png" data-lightbox="SERENDIPIA" data-title="SERENDIPIA RESIDENCIAL">
+                    <i class="fa fa-eye"></i>
+                </a>
+                <a href="img/SERENDIPIA 2.png" data-lightbox="SERENDIPIA" data-title="SERENDIPIA RESIDENCIAL"></a>
+                <a href="img/SERENDIPIA 3.png" data-lightbox="SERENDIPIA" data-title="SERENDIPIA RESIDENCIAL"></a>
+                <a href="img/SERENDIPIA 4.png" data-lightbox="SERENDIPIA" data-title="SERENDIPIA RESIDENCIAL"></a>
+            </div>
+        </div>
+    </div>
+</div>
+                 <!-- Proyecto 3 - Categoría:(Completo) -->
+                <div class="col-lg-4 col-md-6 col-sm-12 p-0 portfolio-item first">
+                    <div class="position-relative overflow-hidden">
+                        <div class="portfolio-img d-flex align-items-center justify-content-center">
+                           <!-- DAYAN:ALINIACION DE IMAGENES Y MARCO VERDE -->
+                           <img src="img/INNOVA 1.png" alt="obra4" class="marco">
+                        </div>
+                        <div class="portfolio-text bg-secondary d-flex flex-column align-items-center justify-content-center">
+                            <h4 class="text-white mb-4">INNOVA RESIDENCIAL</h4>
+                            <div class="d-flex align-items-center justify-content-center">
+                                <a class="btn btn-outline-primary m-1" href="">
+                                    <i class="fa fa-link"></i>
+                                </a>
+                                <!-- Agregando data-title para mostrar nombre en lightbox -->
+                                <a class="btn btn-outline-primary m-1" href="img/INNOVA 1.png" data-lightbox="INNOVA" data-title="INNOVA RESIDENCIAL">
+                                    <i class="fa fa-eye"></i>
+                                </a>
+                                <a href="img/INNOVA 2.png" data-lightbox="INNOVA" data-title="INNOVA RESIDENCIAL"></a>
+                                <a href="img/INNOVA 3.png" data-lightbox="INNOVA" data-title="INNOVA RESIDENCIAL"></a>
+                                <a href="img/INNOVA 4.png" data-lightbox="INNOVA" data-title="INNOVA RESIDENCIAL"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              <!-- Proyecto nuevo - Categoría: Completo -->
+<div class="col-lg-4 col-md-6 col-sm-12 p-0 portfolio-item first">
+    <div class="position-relative overflow-hidden">
+        <div class="portfolio-img d-flex align-items-center justify-content-center">
+            <!-- DAYAN:ALINIACION DE IMAGENES Y MARCO VERDE -->
+            <img src="img/PERGOLA 1.png" alt="obra completa" class="marco">
+        </div>
+        <div class="portfolio-text bg-secondary d-flex flex-column align-items-center justify-content-center">
+            <h4 class="text-white mb-4">PERGOLA DE DISEÑO</h4>
+            <div class="d-flex align-items-center justify-content-center">
+                <a class="btn btn-outline-primary m-1" href="https://www.instagram.com/p/DL1jRDSAP6x/?igsh=bjV2b24wcTBsOXR2" target="_blank" rel="noopener noreferrer">
+                    <i class="fa fa-link"></i>
+                </a>
+                <!-- Agregando data-title para mostrar nombre en lightbox -->
+                <a class="btn btn-outline-primary m-1" href="img/PERGOLA 1.png" data-lightbox="PERGOLA" data-title="PERGOLA DE DISEÑO">
+                    <i class="fa fa-eye"></i>
+                </a>
+                <a href="img/PERGOLA 2.png" data-lightbox="PERGOLA" data-title="PERGOLA DE DISEÑO"></a>
+                <a href="img/PERGOLA 3.png" data-lightbox="PERGOLA" data-title="PERGOLA DE DISEÑO"></a>
+                <a href="img/PERGOLA 6.png" data-lightbox="PERGOLA" data-title="PERGOLA DE DISEÑO"></a>
+                <a href="img/PERGOLA 8.jpg" data-lightbox="PERGOLA" data-title="PERGOLA DE DISEÑO"></a>
+                <a href="img/PERGOLA 9.jpg" data-lightbox="PERGOLA" data-title="PERGOLA DE DISEÑO"></a>
+                <a href="img/PERGOLA 10.jpg" data-lightbox="PERGOLA" data-title="PERGOLA DE DISEÑO"></a>
+                <a href="img/PERGOLA 11.jpeg" data-lightbox="PERGOLA" data-title="PERGOLA DE DISEÑO"></a>
+                <a href="img/PERGOLA 12.jpg" data-lightbox="PERGOLA" data-title="PERGOLA DE DISEÑO"></a>
+                <a href="img/PERGOLA 13.jpg" data-lightbox="PERGOLA" data-title="PERGOLA DE DISEÑO"></a>
+                <a href="img/PERGOLA 14.jpg" data-lightbox="PERGOLA" data-title="PERGOLA DE DISEÑO"></a>
+            </div>
+        </div>
+    </div>
+</div> 
+<!-- Proyecto - Categoría:(Completo) -->
+                <div class="col-lg-4 col-md-6 col-sm-12 p-0 portfolio-item third">
+                    <div class="position-relative overflow-hidden">
+                        <div class="portfolio-img d-flex align-items-center justify-content-center">
+                           <!-- DAYAN:ALINIACION DE IMAGENES Y MARCO VERDE -->
+                            
+                           <img src="img/DSC_4664.JPG" alt="obra4" class="marco">
+                        </div>
+                        <div class="portfolio-text bg-secondary d-flex flex-column align-items-center justify-content-center">
+                            <h4 class="text-white mb-4">DISEÑO DE INTERIORES</h4>
+                            <div class="d-flex align-items-center justify-content-center">
+                                <a class="btn btn-outline-primary m-1" href="https://www.instagram.com/reel/DJTSrY-A8Hx/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" rel="noopener noreferrer">
+                                    <i class="fa fa-link"></i>
+                                </a>
+                                <!-- Agregando data-title para mostrar nombre en lightbox -->
+                                <a class="btn btn-outline-primary m-1" href="img/DSC_4664.JPG" data-lightbox="INTERIORES" data-title="DISEÑO DE INTERIORES">
+                                    <i class="fa fa-eye"></i>
+                                </a>
+                                <a href="img/Escaleras.jpeg" data-lightbox="INTERIORES" data-title="DISEÑO DE INTERIORES - Escaleras"></a>
+                                <a href="img/DSC_4893.JPG" data-lightbox="INTERIORES" data-title="DISEÑO DE INTERIORES"></a>
+                                <a href="img/DSC_4685.JPG" data-lightbox="INTERIORES" data-title="DISEÑO DE INTERIORES"></a>
+                                <a href="img/DSC_4631.JPG" data-lightbox="INTERIORES" data-title="DISEÑO DE INTERIORES"></a>
+                                <a href="img/DSC_4630.JPG" data-lightbox="INTERIORES" data-title="DISEÑO DE INTERIORES"></a>
+                                <a href="img/DSC_4621.JPG" data-lightbox="INTERIORES" data-title="DISEÑO DE INTERIORES"></a>
+                                <a href="img/DSC_4619.JPG" data-lightbox="INTERIORES" data-title="DISEÑO DE INTERIORES"></a>
+                                <a href="img/DSC_4582.JPG" data-lightbox="INTERIORES" data-title="DISEÑO DE INTERIORES"></a>
+                                <a href="img/DSC_4576.JPG" data-lightbox="INTERIORES" data-title="DISEÑO DE INTERIORES"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto - Categoría:(Completo) -->
+                <div class="col-lg-4 col-md-6 col-sm-12 p-0 portfolio-item third">
+                    <div class="position-relative overflow-hidden">
+                        <div class="portfolio-img d-flex align-items-center justify-content-center">
+                           <!-- DAYAN:ALINIACION DE IMAGENES Y MARCO VERDE -->
+                           <img src="img/CONST10 (1).jpg" alt="obra4" class="marco">
+                        </div>
+                        <div class="portfolio-text bg-secondary d-flex flex-column align-items-center justify-content-center">
+                            <h4 class="text-white mb-4">CONSTRUCCION</h4>
+                            <div class="d-flex align-items-center justify-content-center">
+                                <a class="btn btn-outline-primary m-1" href="">
+                                    <i class="fa fa-link"></i>
+                                </a>
+                                <!-- Agregando data-title para mostrar nombre en lightbox -->
+                                <a class="btn btn-outline-primary m-1" href="img/CONST10 (1).jpg" data-lightbox="CONSTRUCCION" data-title="CONSTRUCCION">
+                                    <i class="fa fa-eye"></i>
+                                </a>
+                                <a href="img/CONST11.jpg" data-lightbox="CONSTRUCCION" data-title="CONSTRUCCION"></a>
+                                <a href="img/CONST10.jpg" data-lightbox="CONSTRUCCION" data-title="CONSTRUCCION"></a>
+                                <a href="img/CONST9.jpg" data-lightbox="CONSTRUCCION" data-title="CONSTRUCCION"></a>
+                                <a href="img/CONST8.jpg" data-lightbox="CONSTRUCCION" data-title="CONSTRUCCION"></a>
+                                <a href="img/CONST7.jpg" data-lightbox="CONSTRUCCION" data-title="CONSTRUCCION"></a>
+                                <a href="img/CONST6.jpg" data-lightbox="CONSTRUCCION" data-title="CONSTRUCCION"></a>
+                                <a href="img/CONST5.jpg" data-lightbox="CONSTRUCCION" data-title="CONSTRUCCION"></a>
+                                <a href="img/CONST4.jpg" data-lightbox="CONSTRUCCION" data-title="CONSTRUCCION"></a>
+                                <a href="img/CONST3.jpg" data-lightbox="CONSTRUCCION" data-title="CONSTRUCCION"></a>
+                                <a href="img/CONST1.jpg" data-lightbox="CONSTRUCCION" data-title="CONSTRUCCION"></a>
+                                <a href="img/CONST 2.jpg" data-lightbox="CONSTRUCCION" data-title="CONSTRUCCION"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-sm-12 p-0 portfolio-item first">
+                    <div class="position-relative overflow-hidden">
+                        <div class="portfolio-img d-flex align-items-center justify-content-center">
+                            <!-- Sección de Imagenes -->
+                            <!-- Categoría: third (En Proceso) -->
+                            <!-- DAYAN:ALINIACION DE IMAGENES Y MARCO VERDE -->
+                            <img src="img/HG 1.png" alt="obra6" class="marco">
+                        </div>
+                        <div class="portfolio-text bg-secondary d-flex flex-column align-items-center justify-content-center">
+                            <h4 class="text-white mb-4">HIGH GARDENS</h4>
+                            <div class="d-flex align-items-center justify-content-center">
+                                <a class="btn btn-outline-primary m-1" href="https://www.instagram.com/p/DHYvBotAgoO/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" rel="noopener noreferrer">
+                                    <i class="fa fa-link"></i>
+                                </a>
+                                <!-- Agregando data-title para mostrar nombre en lightbox -->
+                                <a class="btn btn-outline-primary m-1" href="img/HG 1.png" data-lightbox="portfolio" data-title="HIGH GARDENS">
+                                    <i class="fa fa-eye"></i>
+                                </a>
+                                <a href="img/HG 2.png" data-lightbox="portfolio" data-title="HIGH GARDENS"></a>
+                                <a href="img/HG 4.jpg" data-lightbox="portfolio" data-title="HIGH GARDENS"></a>
+                                <a href="img/HERRERIA.JPG" data-lightbox="portfolio" data-title="HIGH GARDENS"></a>
+                                <a href="img/DSC_4880.JPG" data-lightbox="portfolio" data-title="HIGH GARDENS"></a>
+                                <a href="img/H3.jpg" data-lightbox="portfolio" data-title="HIGH GARDENS"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <!--Vermas-->
+                <div class="col-lg-4 col-md-6 col-sm-12 p-0 portfolio-item">
+                    <div class="position-relative overflow-hidden">
+                        <div class="portfolio-img d-flex align-items-center justify-content-center">
+                            <img src="img/IMG_4560.JPG" alt="obra6" class="marco">
+                        </div>
+                        <div class="portfolio-text bg-secondary d-flex flex-column align-items-center justify-content-center">
+                            <h4 class="text-white mb-4">PERGOLAS</h4>
+                            <div class="d-flex align-items-center justify-content-center">
+                                <a class="btn btn-outline-primary m-1" href="">
+                                    <i class="fa fa-link"></i>
+                                </a>
+                                <!-- Agregando data-title para mostrar nombre en lightbox -->
+                                <a class="btn btn-outline-primary m-1" href="img/IMG_4560.JPG" data-lightbox="PERGOLAS" data-title="PERGOLAS">
+                                    <i class="fa fa-eye"></i>
+                                </a>
+                                <a href="img/IMG-20250824-WA0050.jpg" data-lightbox="PERGOLAS" data-title="PERGOLAS"></a>
+                                <a href="img/IMG_20250803_192550_700.jpg" data-lightbox="PERGOLAS" data-title="PERGOLAS"></a>
+                                <a href="img/IMG_4560.JPG" data-lightbox="PERGOLAS" data-title="PERGOLAS"></a>
+                                <a href="img/PERGOLA 4.png" data-lightbox="PERGOLAS" data-title="PERGOLAS"></a>
+                                <a href="img/IMG_20250803_192550_790.jpg" data-lightbox="PERGOLAS" data-title="PERGOLAS"></a>
+                                <a href="img/IMG_20250803_192549_528.jpg" data-lightbox="PERGOLAS" data-title="PERGOLAS"></a>
+                                <a href="img/IMG_20250803_192550_635.jpg" data-lightbox="PERGOLAS" data-title="PERGOLAS"></a>
+                                <a href="img/IMG_20250803_192549_904.jpg" data-lightbox="PERGOLAS" data-title="PERGOLAS"></a>
+                                <a href="img/IMG_4366.JPG" data-lightbox="PERGOLAS" data-title="PERGOLAS"></a>
+                                <a href="img/IMG_4578.JPG" data-lightbox="PERGOLAS" data-title="PERGOLAS"></a>
+                                <a href="img/IMG_4591.JPG" data-lightbox="PERGOLAS" data-title="PERGOLAS"></a>
+                                <a href="img/IMG_4621.JPG" data-lightbox="PERGOLAS" data-title="PERGOLAS"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Final de Proyectos -->
+
+    <!-- Testimonial Start -->
+<section class="testimonials-section py-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Texto / Carrusel -->
+      <div class="col-md-7 py-4 pr-md-5">
+        <h6 class="text-shamrock text-uppercase mb-3">Testimonios</h6>
+        <h1 class="display-5 fw-bold text-dark mb-4">¿Qué dicen nuestros clientes?</h1>
+
+        <div class="owl-carousel testimonial-carousel">
+
+          <!-- Slide 1 -->
+          <article class="testimonial-card">
+            <div class="stars" aria-label="5 de 5 estrellas">
+              <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+              <i class="fa fa-star"></i><i class="fa fa-star"></i>
+            </div>
+            <p class="testimonial-text">
+              Tengo más de 10 años @totalplaymx y si bien no es barato durante todos estos años ha sido el mejor
+              servicio de todos. He tenido 2 fallas en 10 años y el soporte siempre fue muy rápido.
+            </p>
+            <h5 class="client-name">José Jair</h5>
+          </article>
+
+          <!-- Slide 2 -->
+          <article class="testimonial-card">
+            <div class="stars" aria-label="5 de 5 estrellas">
+              <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+              <i class="fa fa-star"></i><i class="fa fa-star"></i>
+            </div>
+            <p class="testimonial-text">
+              El servicio fue excelente desde el primer momento. Profesionalismo y rapidez; resolvieron todo.
+              Los volvería a contratar sin dudarlo.
+            </p>
+            <h5 class="client-name">Alejandro Torres</h5>
+          </article>
+
+          <!-- Slide 3 -->
+          <article class="testimonial-card">
+            <div class="stars" aria-label="5 de 5 estrellas">
+              <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+              <i class="fa fa-star"></i><i class="fa fa-star"></i>
+            </div>
+            <p class="testimonial-text">
+              Me ayudaron muchísimo. Todo fue claro y rápido, con mucha paciencia. ¡100% recomendados!
+            </p>
+            <h5 class="client-name">Carlos Mendoza</h5>
+          </article>
+        </div>
+      </div>
+
+      <!-- Imagen lateral -->
+      <div class="col-md-5">
+        <div class="d-flex align-items-center justify-content-center h-100 overflow-hidden">
+          <img class="img-fluid rounded-3 shadow-lg testimonial-side-image" src="img/ELEGANTE1.jpg" alt="Clientes satisfechos">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Testimonial End -->
+
+<!-- ESTILOS -->
+<style>
+  :root{
+    /* Colores claros para integrar con la página */
+    --sec-bg:#ffffff;       /* fondo sección blanco */
+    --card-bg:#f9f9f9;      /* fondo tarjeta claro */
+    --card-br:#dddddd;      /* borde suave */
+    --text:#000000;         /* texto principal negro */
+    --muted:#555555;        /* texto secundario gris */
+    --accent:#00c58e;       /* verde principal */
+    --accent-2:#00e6a0;     /* verde degradado */
+  }
+
+  .text-shamrock{color:var(--Shamrock)!important;}
+
+  .testimonials-section{
+    background: var(--sec-bg);
+    position: relative;
+    overflow: hidden;
+    border-radius: 18px;
+    .testimonial-carousel .owl-nav{
+  display: none !important;
+}
+  }
+
+  /* Tarjeta del testimonio */
+  .testimonial-card{
+    position: relative;
+    background: var(--card-bg);
+    color: var(--text);
+    border:1px solid var(--card-br);
+    border-radius: 18px;
+    padding: 48px 36px 64px;
+    text-align: center;
+    box-shadow: 0 4px 14px rgba(0,0,0,.08);
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .testimonial-text{
+    color: var(--muted);
+    font-size: 1.05rem;
+    line-height: 1.75;
+    margin: 18px 0 20px;
+  }
+
+  .client-name{
+    color:var(--text);
+    font-weight: 700;
+    margin: 0;
+  }
+
+  /* Estrellas compactas */
+  .stars{
+    font-size: 1.4rem;
+    color: #ffcc33;
+    display:inline-flex;
+    gap:0;
+    letter-spacing:0;
+  }
+  .stars i{
+    margin:0;
+    padding:0;
+  }
+
+  /* Barra degradada inferior */
+  .gradient-underline{
+    content:"";
+    position:absolute;
+    left: 24px; right: 24px; bottom: 8px;
+    height: 8px;
+    border-radius: 12px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  }
+
+  /* Imagen lateral */
+  .testimonial-side-image{
+    max-height: 520px;
+    object-fit: cover;
+  }
+
+  /* Owl nav personalizado */
+  .testimonial-carousel .owl-nav button{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent!important;
+    border: 0;
+    width: 46px; height: 46px;
+    display: grid; place-items: center;
+    color: var(--text)!important;
+    font-size: 28px!important;
+    line-height: 1;
+    opacity: .7;
+  }
+  .testimonial-carousel .owl-nav button.owl-prev{ left: -18px; }
+  .testimonial-carousel .owl-nav button.owl-next{ right: -18px; }
+  .testimonial-carousel .owl-nav button:hover{ opacity: 1; }
+
+  /* Dots */
+  .testimonial-carousel .owl-dots{
+    margin-top: 18px;
+  }
+  .testimonial-carousel .owl-dot span{
+    width:10px; height:10px;
+    background:#00000022; display:block; border-radius:999px;
+  }
+  .testimonial-carousel .owl-dot.active span{
+    background: var(--accent);
+  }
+
+  /* Responsive */
+  @media (max-width: 991.98px){
+    .testimonial-carousel .owl-nav button.owl-prev{ left: -6px; }
+    .testimonial-carousel .owl-nav button.owl-next{ right: -6px; }
+  }
+  @media (max-width: 576px){
+    .testimonial-card{ padding: 36px 22px 56px; }
+    .stars{ font-size: 1.2rem; }
+    .testimonial-text{ font-size: 1rem; }
+  }
+</style>
+
+<!-- INIT OwlCarousel -->
+<script>
+  (function(){
+    if (typeof $ === "undefined" || typeof $.fn.owlCarousel === "undefined") return;
+    $('.testimonial-carousel').owlCarousel({
+      items: 1,
+      margin: 24,
+      loop: true,
+      nav: true,
+      dots: true,
+      smartSpeed: 550,
+      navText: ['<i class="fa fa-chevron-left"></i>','<i class="fa fa-chevron-right"></i>'],
+      autoHeight: true
+    });
+  })();
+</script>
+<!--Testimonial end-->
+
+
+    <!-- Inicio del Blog -->
+    <div class="container-fluid bg-light pt-5">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-8 col text-center mb-4">
+                    <!--Charly Cambio de color-->
+                    <h6 class="text-shamrock font-weight-normal text-uppercase mb-3">MATERIALES Y TEXTURAS</h6>
+                    <h1 class="mb-4">Diseñamos con materiales que aportan estética, durabilidad y conexión con la naturaleza</h1>
+                </div>
+            </div>
+            <div class="row pb-3">
+                <div class="col-md-4 mb-4">
+                    <div class="card border-0 mb-2">
+                        <img class="card-img-top" src="img/banos_microcemento-1024x683.png" alt="" style="height: 275px; width: 100%; object-fit: cover;  display: block;">
+                        <div class="card-body bg-white p-4">
+                            <div class="d-flex align-items-center mb-3">
+                                <a class="btn btn-unified btn-primary" href="https://topcret.com/microcemento/" target="_blank">
+  <i class="fa fa-link"></i>
+</a>
+
+                                <h5 class="m-0 ml-3 text-truncate">Microcemento</h5>
+                            </div>
+                            <p>"Modernidad y superficies continuas"</p>
+                            <div class="d-flex">
+                                <!--Charly Cambio de color-->
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card border-0 mb-2">
+                        <img class="card-img-top" src="img/fotos_cocinas_murelli_11232017_147.jpg" alt=""  style="height: 275px; width: 100%; object-fit: cover;  display: block;">
+                        <div class="card-body bg-white p-4">
+                            <div class="d-flex align-items-center mb-3">
+                                <a class="btn btn-unified btn-primary" href="https://www.westwing.es/inspiration/decoracion/decoracion-con-colores/colores-neutros/" target="_blank">
+  <i class="fa fa-link"></i>
+</a>
+
+                                <h5 class="m-0 ml-3 text-truncate">Colores neutros </h5>
+                            </div>
+                            <p>"Equilibrio y serenidad"</p>
+                            <div class="d-flex">
+                                 <!--Charly Cambio de color-->
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card border-0 mb-2">
+                        <img class="card-img-top" src="img/granito-header1.jpg" alt=""  style="height: 275px; width: 100%; object-fit: cover;  display: block;">
+                        <div class="card-body bg-white p-4">
+                            <div class="d-flex align-items-center mb-3">
+                                <a class="btn btn-unified btn-primary" href="https://casacor.abril.com.br/es-ES/noticias/casacor-explica/granito-o-que-e-e-principais-cuidados-com-a-sua-pedra" target="_blank">
+  <i class="fa fa-link"></i>
+</a>
+
+                                <h5 class="m-0 ml-3 text-truncate">Granito</h5>
+                            </div>
+                            <p>"Resistencia y elegancia atemporal"</p>
+                            <div class="d-flex">
+                                <!--Charly Cambio de color-->
+
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card border-0 mb-2">
+                        <img class="card-img-top" src="img/M-WPC-106-1.jpg" alt=""  style="height: 275px; width: 100%; object-fit: cover;  display: block;">
+                        <div class="card-body bg-white p-4">
+                            <div class="d-flex align-items-center mb-3">
+                                <a class="btn btn-unified btn-primary" href="https://www.studocu.com/es-mx/document/instituto-tecnologico-de-apizaco/mecanica-de-suelos/lambrines/93571538" target="_blank">
+  <i class="fa fa-link"></i>
+</a>
+
+                                <h5 class="m-0 ml-3 text-truncate">Lambrín</h5>
+                            </div>
+                            <p>"Calidez y textura natural"</p>
+                            <div class="d-flex">
+
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card border-0 mb-2">
+                        <img class="card-img-top" src="img/casas-con-interiores-de-madera.jpg" alt=""  style="height: 275px; width: 100%; object-fit: cover;  display: block;">
+                        <div class="card-body bg-white p-4">
+                            <div class="d-flex align-items-center mb-3">
+                                <a class="btn btn-unified btn-primary" href="https://www.emedec.com/tipos-de-madera-cuales-son-las-mas-utilizadas/" target="_blank">
+  <i class="fa fa-link"></i>
+</a>
+
+                                <h5 class="m-0 ml-3 text-truncate">Madera</h5>
+                            </div>
+                            <p>"Nobleza y calidez que humanizan los espacios"</p>
+                            <div class="d-flex">
+
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card border-0 mb-2">
+                        <img class="card-img-top" src="img/Piedra-San-Andres---Cintilla--Piedraslabeta_large.jpg" alt=""  style="height: 275px; width: 100%; object-fit: cover;  display: block;">
+                        <div class="card-body bg-white p-4">
+                            <div class="d-flex align-items-center mb-3">
+                                <a class="btn btn-unified btn-primary" href="https://www.piedraslabeta.com/blogs/piedra-natural-para-vialidades-y-fachadas/la-piedra-y-cantera-natural-pueden-aumentar-el-valor-de-las-propiedades?srsltid=AfmBOopVpZPhjSlxFFSaYl6sgMRiv-OzsSgSPeANrGuL-hSspclsy3O9" target="_blank">
+  <i class="fa fa-link"></i>
+</a>
+
+                                <h5 class="m-0 ml-3 text-truncate">Cantera</h5>
+                            </div>
+                            <p>"Tradición y carácter con un acabado natural"</p>
+                            <div class="d-flex">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Final del Blog -->
+
+
+    <!-- Inicio del Pie de Pagina -->
+    <!--Charly cambio el color de Rich-black-->
+    <div class="container-fluid bg-rich-black text-timber-green py-5 px-sm-3 px-md-5">
+        <div class="row pt-5">
+            <div class="col-lg-3 col-md-6 mb-5">
+                <!--Charly agregado del color-->
+                <h4 class="text-shamrock mb-4">Contáctanos</h4>
+                <p class="text-floral-white"><i class="fa text-floral-white fa-phone-alt mr-2"></i>+52 442 3440411</p>
+                <p class="text-floral-white"><i class="fa text-floral-white fa-phone-alt mr-2"></i>+52 442 3451559</p>
+                <p class="text-floral-white"><i class="fa text-floral-white fa-envelope mr-2"></i>momedproyectos@gmail.com</p>
+                <div class="d-flex justify-content-start mt-4">
+                <!--Charly, Agregado y redireccion a la red social de Facebook-->
+                    <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" 
+                       style="width: 38px; height: 38px;" 
+                       href="https://www.facebook.com/p/MOMED-100075915498484/" 
+                       target="_blank" 
+                       rel="noopener noreferrer">
+                       <i class="fab fa-facebook-f"></i>
+                    </a>
+                <!--Charly, Agregado y redireccion a la red social de Instagram-->
+                    <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" 
+                       style="width: 38px; height: 38px;" 
+                       href="https://www.instagram.com/momed_arquitectura/?fbclid=IwY2xjawLGf-BleHRuA2FlbQIxMABicmlkETFGa0swOWpHN1dwZFBnSjFCAR4vy0A4iqyH8xGg_F4HKCoKwFYCBsZsAib7CEpJ7LOA2ehIvoU_87OjTcg6mg_aem_h4qptahWIcuug3rvusXuBg" 
+                       target="_blank" 
+                       rel="noopener noreferrer">
+                       <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-5">
+                <!--Charly cambio del color-->
+                <h4 class="text-shamrock mb-4">Accesos Directos</h4>
+<div class="d-flex flex-column justify-content-start">
+    <a class="text-white mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Inicio</a>
+    <a class="text-white mb-2" href="about.html"><i class="fa fa-angle-right mr-2"></i>Sobre Nosotros</a>
+    <a class="text-white mb-2" href="service.html"><i class="fa fa-angle-right mr-2"></i>Nuestros Servicios</a>
+    <a class="text-white mb-2" href="project.html"><i class="fa fa-angle-right mr-2"></i>Nuestros Proyectos</a>
+    <a class="text-white" href="contact.html"><i class="fa fa-angle-right mr-2"></i>Contáctanos</a>
+</div>
+
+            </div>
+            <div class="col-lg-3 col-md-6 mb-5">
+                <!--Charly agregado del color-->
+                <h4 class="text-shamrock mb-4">Secciones Populares</h4>
+<div class="d-flex flex-column justify-content-start">
+    <a class="text-white mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Inicio</a>
+    <a class="text-white mb-2" href="filtros.html"><i class="fa fa-angle-right mr-2"></i>Diseñame</a>
+    <a class="text-white mb-2" href="single.html"><i class="fa fa-angle-right mr-2"></i>Sabías Qué…?</a>
+    <a class="text-white mb-2" href="project.html"><i class="fa fa-angle-right mr-2"></i>Nuestros Proyectos</a>
+    <a class="text-white" href="contact.html"><i class="fa fa-angle-right mr-2"></i>Contáctanos</a>
+</div>
+</div>
+
+<!--Inicio de comentarios-->
+            <div class="col-lg-3 col-md-6 mb-5">
+                <!--Charly agregado del color-->
+                <h4 class="text-shamrock mb-4">Déjanos tu opinión</h4>
+                <!-- Agregado id al formulario y corregido el tipo de input para comentario -->
+                <form id="comentarios-form">
+                    <div class="form-group">
+                        <input type="text" name="nombre" class="form-control border-0" placeholder="Nombre Completo" required="required" />
+                    </div>
+                    <div class="form-group">
+                        <!-- Cambiado de type="email" a textarea para comentarios -->
+                        <textarea name="comentario" class="form-control border-0" placeholder="Escribe tu comentario aquí..." rows="4" required="required"></textarea>
+                    </div>
+                    <div>
+                        <!-- Botón de envío con estilo unificado -->
+                        <button class="btn btn-unified btn-primary btn-block border-0" type="submit">Enviar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+<!--Fin de los comentarios-->
+
+        <div class="container border-top border-secondary pt-5">
+            <p class="m-0 text-center text-white">
+                &copy; <a class="text-white font-weight-bold" href="#">MOMED</a>. Todos los derechos reservados.
+            </p>
+        </div>
+    </div>
+    <!-- Final del Pie de Pagina  -->
+
+    <!-- Volver Arriba -->
+    <!-- Botón de volver arriba con estilo unificado -->
+    <a href="#" class="btn btn-unified btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+    <!-- JavaScript Librerias -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Archivo de Contacto Javascript  -->
+    <script src="mail/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
+
+    <!-- Plantilla Javascript -->
+    <script src="js/main.js"></script>
+
+    <!-- Scripts unificados para funcionalidades interactivas -->
+    <script>
+    /* ===== Interacciones: WhatsApp + Servicios ===== */
+    (function(){
+      const WHATS = "524423440411"; // +52 442 344 0411
+
+      // WhatsApp CTAs
+      document.querySelectorAll(".whats3").forEach(btn=>{
+        btn.addEventListener("click",(e)=>{
+          e.preventDefault();
+          const servicio = btn.getAttribute("data-service") || "Servicio";
+          const msg = `Hola, me interesa cotizar el servicio de ${servicio}. ¿Podemos hablar?`;
+          const url = `https://wa.me/${WHATS}?text=${encodeURIComponent(msg)}`;
+          window.open(url, "_blank", "noopener,noreferrer");
+        }, {passive:false});
+      });
+    })();
+
+    // Música de fondo
+    const canciones = [
+        "Musica/Father Ocean.mp3",
+        "Musica/Coming Home.mp3", 
+        "Musica/Give Me a Kiss.mp3",
+        "Musica/Hunting.mp3", 
+        "Musica/I know.mp3",
+        "Musica/I love You Always Forever.mp3",
+        "Musica/In Memoriam.mp3", 
+        "Musica/Jealous Girl.mp3",
+        "Musica/La Mer.mp3",
+        "Musica/Late Night Alumni.mp3", 
+        "Musica/Leaving Me.mp3",
+        "Musica/Lost Love.mp3",
+        "Musica/Love Story - Indila.mp3", 
+        "Musica/My life.mp3",
+        "Musica/My World.mp3",
+        "Musica/Norah Jones.mp3", 
+        "Musica/Romance.mp3",
+        "Musica/Stacey Kent.mp3",
+        "Musica/Studying You.mp3",
+        "Musica/Welcome Back.mp3",
+        "Musica/Withering.mp3"
+    ];
+
+    // Script para manejar el envío de comentarios con EmailJS
+    document.getElementById('comentarios-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        const formData = new FormData(this);
+        const templateParams = {
+            from_name: formData.get('nombre'),
+            message: formData.get('comentario'),
+            fecha: new Date().toLocaleDateString('es-ES')
+        };
+        
+        emailjs.send('service_uovpo9g', 'template_q54exgf', templateParams)
+            .then(function(response) {
+                alert('¡Comentario enviado exitosamente!');
+                document.getElementById('comentarios-form').reset();
+            }, function(error) {
+                alert('Error al enviar el comentario. Por favor intenta de nuevo.');
+                console.error('Error:', error);
+            });
+    });
+    </script>
+
+    <!-- Botón de música -->
+    <audio id="musicaFondo" loop preload="auto" muted style="display: none;"></audio>
+    <button onclick="toggleAudio()" class="musica-banner" id="botonMusica">🔊 Música</button>
+
+    <script>
+    const audio = document.getElementById('musicaFondo');
+    const botonMusica = document.getElementById('botonMusica');
+    let isPlaying = false;
+    let cancionActual = 0;
+
+    function iniciarMusica() {
+        audio.src = canciones[cancionActual];
+        audio.volume = 0;
+        audio.muted = false;
+
+        audio.play().then(() => {
+            isPlaying = true;
+            botonMusica.innerText = "🔊 " + obtenerNombreCancion();
+            botonMusica.classList.add('playing');
+
+            let v = 0;
+            const fade = setInterval(() => {
+                if (v >= 0.7) {
+                    clearInterval(fade);
+                } else {
+                    v += 0.05;
+                    audio.volume = v;
+                }
+            }, 100);
+        }).catch(err => {
+            console.log("⚠️ Autoplay bloqueado:", err);
+        });
+    }
+
+    function obtenerNombreCancion() {
+        const nombreCompleto = canciones[cancionActual];
+        const nombre = nombreCompleto.split('/').pop().replace('.mp3', '');
+        return nombre.length > 20 ? nombre.substring(0, 20) + '...' : nombre;
+    }
+
+    audio.addEventListener('ended', function() {
+        cancionActual = (cancionActual + 1) % canciones.length;
+        audio.src = canciones[cancionActual];
+        audio.play().then(() => {
+            botonMusica.innerText = "🔊 " + obtenerNombreCancion();
+        });
+    });
+
+    function toggleAudio() {
+        if (isPlaying) {
+            audio.pause();
+            botonMusica.innerText = "🔇 Pausado";
+            botonMusica.classList.remove('playing');
+        } else {
+            audio.play().then(() => {
+                botonMusica.innerText = "🔊 " + obtenerNombreCancion();
+                botonMusica.classList.add('playing');
+            });
+        }
+        isPlaying = !isPlaying;
+    }
+
+    function activarMusicaConInteraccion() {
+        iniciarMusica();
+        document.removeEventListener('scroll', activarMusicaConInteraccion);
+        document.removeEventListener('click', activarMusicaConInteraccion);
+        document.removeEventListener('touchstart', activarMusicaConInteraccion);
+    }
+
+    document.addEventListener('scroll', activarMusicaConInteraccion, { once: true });
+    document.addEventListener('click', activarMusicaConInteraccion, { once: true });
+    document.addEventListener('touchstart', activarMusicaConInteraccion, { once: true });
+    </script>
+
+</body>
+</html>
