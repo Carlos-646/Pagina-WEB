@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="utf-8">
@@ -61,21 +61,6 @@
    target="_blank" 
    rel="noopener noreferrer">
    <i class="fab fa-facebook-f"></i></a>
-                        </a>
-                        </a>
-                        </a>
-                        <!--Charly, Agregado y redireccion a la red social de Instagram-->
-                        <a class="text-white px-3" 
-   href="https://www.instagram.com/momed_arquitectura/?fbclid=IwY2xjawLGf-BleHRuA2FlbQIxMABicmlkETFGa0swOWpHN1dwZFBnSjFCAR4vy0A4iqyH8xGg_F4HKCoKwFYCBsZsAib7CEpJ7LOA2ehIvoU_87OjTcg6mg_aem_h4qptahWIcuug3rvusXuBg" 
-   target="_blank" 
-   rel="noopener noreferrer">
-   <i class="fab fa-instagram"></i></a>   
-   
-
-
-</a>
-
-                        </a>
                     </div>
                 </div>
             </div>
@@ -221,7 +206,7 @@
                         <div class="col-sm-6">
                             <div class="d-flex align-items-center mb-4">
                                 <h1 class="flaticon-living-room font-weight-normal text-shamrock m-0 mr-3"></h1>
-                                <h5 class="text-truncate m-0">Controla El Presupusesto</h5>
+                                <h5 class="text-truncate m-0">Controla El Presupuesto</h5>
                             </div>
                         </div>
 
@@ -247,7 +232,7 @@
             class="font-weight-normal text-shamrock m-0 mr-3"
             style="width: 2.6em; height: 2.6em; filter: hue-rotate(0deg);"
         />
-        <h5 class="text-truncate m-0">Gestoria y Tramites</h5>
+        <h5 class="text-truncate m-0">Gestoria y Trámites</h5>
     </div>
 </div>
 
@@ -290,32 +275,7 @@
     <img src="img/maestra5.jpg" class="imagen-carrusel" alt="Imagen 4">
     <!-- Puedes seguir agregando más imágenes -->
      <button class="carrusel-btn next" onclick="moverCarrusel(1)">❯</button>
-     div class="col-md-8 col-sm-6 p-0 py-sm-5">
-                    <div class="owl-carousel team-carousel position-relative p-0 py-sm-5">
-                        <div class="team d-flex flex-column text-center mx-3">
-                            <div class="position-relative">
-</div>
-<script>
-  let indice = 0;
-  const imagenes = document.querySelectorAll('.imagen-carrusel');
-
-  function mostrarImagen(i) {
-    imagenes.forEach(img => img.classList.remove('active'));
-    indice = (i + imagenes.length) % imagenes.length;
-    imagenes[indice].classList.add('active');
-  }
-
-  function moverCarrusel(direccion) {
-    mostrarImagen(indice + direccion);
-  }
-
-
-
-  // Mostrar la primera imagen al cargar
-  mostrarImagen(indice);
-</script>
   </div>
-</div>
 </div>
                     </div>
                 </div>
@@ -330,20 +290,28 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4 col-sm-6">
-                    <!--Charly cambio de color-->
                     <div class="py-5 px-4 h-100 bg-basil d-flex flex-column align-items-center justify-content-center">
                         <h6 class="text-white font-weight-normal text-uppercase mb-3">LO QUE TRANSMITIMOS</h6>
                         <h1 class="mb-0 text-center">Nuestra visión en cada publicación.</h1>
                     </div>
                 </div>
+                
+                <!-- Carrusel de publicaciones con inicialización mejorada -->
                 <div class="col-md-8 col-sm-6 p-0 py-sm-5">
-                    <div class="owl-carousel team-carousel position-relative p-0 py-sm-5">
+                    <div class="owl-carousel team-carousel position-relative p-0 py-sm-5" id="team-carousel-about">
+                        
                         <div class="team d-flex flex-column text-center mx-3">
                             <div class="position-relative">
-                                <img class="img-fluid w-100" src="img/Pergola_caoba.png" alt="">
+                                <img class="img-fluid w-100" src="img/Pergola_caoba.png" alt="Pérgola CAOBA">
                                 <div class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">
-                                    <a class="btn btn-outline-primary text-center mr-2 px-0" style="width: 38px; height: 38px;" href="https://www.instagram.com/p/DL1jRDSAP6x/?igsh=bjV2b24wcTBsOXR2" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-                                    <a class="btn btn-outline-primary text-center mr-2 px-0" style="width: 38px; height: 38px;" href="https://www.facebook.com/share/p/1EsN9mhoPn/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-outline-primary text-center mr-2 px-0" style="width: 38px; height: 38px;" 
+                                       href="https://www.instagram.com/p/DL1jRDSAP6x/" target="_blank" rel="noopener noreferrer">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                    <a class="btn btn-outline-primary text-center mr-2 px-0" style="width: 38px; height: 38px;" 
+                                       href="https://www.facebook.com/share/p/1EsN9mhoPn/" target="_blank" rel="noopener noreferrer">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
                                 </div>
                             </div>
                             <div class="d-flex flex-column bg-secondary text-center py-3">
@@ -353,23 +321,35 @@
 
                         <div class="team d-flex flex-column text-center mx-3">
                             <div class="position-relative">
-                                <img class="img-fluid w-100" src="img/Vegetacion_interiores.png" alt="">
+                                <img class="img-fluid w-100" src="img/Vegetacion_interiores.png" alt="Vegetación Interiores">
                                 <div class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">
-                                    <a class="btn btn-outline-primary text-center mr-2 px-0" style="width: 38px; height: 38px;" href="https://www.instagram.com/reel/DJTSrY-A8Hx/?igsh=MWVicjgzZ2dtb3U3bA==" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-                                    <a class="btn btn-outline-primary text-center mr-2 px-0" style="width: 38px; height: 38px;" href="https://www.facebook.com/share/r/1C5NcsrLSM/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-outline-primary text-center mr-2 px-0" style="width: 38px; height: 38px;" 
+                                       href="https://www.instagram.com/reel/DJTSrY-A8Hx/" target="_blank" rel="noopener noreferrer">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                    <a class="btn btn-outline-primary text-center mr-2 px-0" style="width: 38px; height: 38px;" 
+                                       href="https://www.facebook.com/share/r/1C5NcsrLSM/" target="_blank" rel="noopener noreferrer">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
                                 </div>
                             </div>
                             <div class="d-flex flex-column bg-secondary text-center py-3">
-                                <h5 class="text-white">"Vegetacion Interiores"</h5>
+                                <h5 class="text-white">"Vegetación Interiores"</h5>
                             </div>
                         </div>
 
                         <div class="team d-flex flex-column text-center mx-3">
                             <div class="position-relative">
-                                <img class="img-fluid w-100" src="img/Casa_club.jpg" alt="">
+                                <img class="img-fluid w-100" src="img/Casa_club.jpg" alt="Casa Club">
                                 <div class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">
-                                    <a class="btn btn-outline-primary text-center mr-2 px-0" style="width: 38px; height: 38px;" href="https://www.instagram.com/p/DGRZPrigw4y/?igsh=Zm95emprNTR1N28w" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-                                    <a class="btn btn-outline-primary text-center mr-2 px-0" style="width: 38px; height: 38px;" href="https://www.facebook.com/share/p/1YnUJQXyo5/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-outline-primary text-center mr-2 px-0" style="width: 38px; height: 38px;" 
+                                       href="https://www.instagram.com/p/DGRZPrigw4y/" target="_blank" rel="noopener noreferrer">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                    <a class="btn btn-outline-primary text-center mr-2 px-0" style="width: 38px; height: 38px;" 
+                                       href="https://www.facebook.com/share/p/1YnUJQXyo5/" target="_blank" rel="noopener noreferrer">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
                                 </div>
                             </div>
                             <div class="d-flex flex-column bg-secondary text-center py-3">
@@ -379,11 +359,16 @@
 
                         <div class="team d-flex flex-column text-center mx-3">
                             <div class="position-relative">
-                                <img class="img-fluid w-100" src="img/Momed_Arquitectura.png" alt="">
+                                <img class="img-fluid w-100" src="img/Momed_Arquitectura.png" alt="MOMED Arquitectura">
                                 <div class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">
-                                    <a class="btn btn-outline-primary text-center mr-2 px-0" style="width: 38px; height: 38px;" href="https://www.instagram.com/reel/DJDN9hksheK/?igsh=YmIxOTB4bDZjNHhp" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-                                    <a class="btn btn-outline-primary text-center mr-2 px-0" style="width: 38px; height: 38px;" href="https://www.facebook.com/share/r/19WGznsdRE/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
-                                
+                                    <a class="btn btn-outline-primary text-center mr-2 px-0" style="width: 38px; height: 38px;" 
+                                       href="https://www.instagram.com/reel/DJDN9hksheK/" target="_blank" rel="noopener noreferrer">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                    <a class="btn btn-outline-primary text-center mr-2 px-0" style="width: 38px; height: 38px;" 
+                                       href="https://www.facebook.com/share/r/19WGznsdRE/" target="_blank" rel="noopener noreferrer">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
                                 </div>
                             </div>
                             <div class="d-flex flex-column bg-secondary text-center py-3">
@@ -393,11 +378,16 @@
 
                         <div class="team d-flex flex-column text-center mx-3">
                             <div class="position-relative">
-                                <img class="img-fluid w-100" src="img/Publicacion_1.jpeg" alt="">
+                                <img class="img-fluid w-100" src="img/Publicacion_1.jpeg" alt="Orientación Arquitectura">
                                 <div class="team-social d-flex align-items-center justify-content-center w-100 h-100 position-absolute">
-                                    <a class="btn btn-outline-primary text-center mr-2 px-0" style="width: 38px; height: 38px;" href="https://www.instagram.com/p/DJilSCZAZbF/?igsh=dnZqbDVqZDF1dG45" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-                                    <a class="btn btn-outline-primary text-center mr-2 px-0" style="width: 38px; height: 38px;" href="https://www.facebook.com/share/p/1LJV26J5V1/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
-                                   
+                                    <a class="btn btn-outline-primary text-center mr-2 px-0" style="width: 38px; height: 38px;" 
+                                       href="https://www.instagram.com/p/DJilSCZAZbF/" target="_blank" rel="noopener noreferrer">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                    <a class="btn btn-outline-primary text-center mr-2 px-0" style="width: 38px; height: 38px;" 
+                                       href="https://www.facebook.com/share/p/1LJV26J5V1/" target="_blank" rel="noopener noreferrer">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
                                 </div>
                             </div>
                             <div class="d-flex flex-column bg-secondary text-center py-3">
@@ -410,7 +400,7 @@
             </div>
         </div>
     </div>
-    <!-- "Inicio de la sección del Equipo" -->
+    <!-- "Final de la sección del Equipo" -->
 
 
     <!-- Inicio del Pie de Pagina -->
@@ -502,7 +492,7 @@
     <a href="#" class="btn btn-lg btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
 
 
-    <!-- JavaScript Librerias -->
+    <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>
@@ -626,7 +616,8 @@
 <!--Fin de la reproduccion de Musica-->
 
 
-<!-- Script para manejar el envío de comentarios con EmailJS -->
+
+    <!-- Script para manejar el envío de comentarios con EmailJS -->
     <script>
         document.getElementById('comentarios-form').addEventListener('submit', function(event) {
             event.preventDefault();
@@ -651,5 +642,37 @@
         });
     </script>
 
+    <!-- Inicialización específica del carrusel de publicaciones -->
+    <script>
+        $(document).ready(function() {
+            console.log('[MOMED] Inicializando carrusel de publicaciones...');
+            
+            $('#team-carousel-about').owlCarousel({
+                loop: true,
+                margin: 30,
+                nav: true,
+                dots: true,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                autoplayHoverPause: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    576: {
+                        items: 2
+                    },
+                    768: {
+                        items: 2
+                    },
+                    992: {
+                        items: 3
+                    }
+                }
+            });
+            
+            console.log('[MOMED] Carrusel de publicaciones inicializado correctamente');
+        });
+    </script>
 </body>
 </html>

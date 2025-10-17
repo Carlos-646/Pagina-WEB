@@ -1,15 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="utf-8">
     <title>MOMED SERVICIOS</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Free HTML Templates" name="keywords">
-    <meta content="Free HTML Templates" name="description">
-
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
 
     <!-- Google Web Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet"> 
@@ -31,16 +26,13 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script type="text/javascript">
         (function(){
-            // Inicializar EmailJS con tu Public Key
-            emailjs.init("fBsDQAPpy2ke_o-zr"); // Reemplaza con tu Public Key de EmailJS
+            emailjs.init("fBsDQAPpy2ke_o-zr");
         })();
     </script>
-
 </head>
 
-<!-- Inicio de la barra de Navegación -->
 <body>
-<!-- "Inicio de la barra superior". -->
+    <!-- "Inicio de la barra de Navegación" -->
     <div class="container-fluid bg-rich-black py-3">
         <div class="container">
             <div class="row">
@@ -63,16 +55,12 @@
    target="_blank" 
    rel="noopener noreferrer">
    <i class="fab fa-facebook-f"></i></a>
-                        </a>
-                        </a>
-                        </a>
                         <!--Charly, Agregado y redireccion a la red social de Instagram-->
                         <a class="text-white px-3" 
    href="https://www.instagram.com/momed_arquitectura/?fbclid=IwY2xjawLGf-BleHRuA2FlbQIxMABicmlkETFGa0swOWpHN1dwZFBnSjFCAR4vy0A4iqyH8xGg_F4HKCoKwFYCBsZsAib7CEpJ7LOA2ehIvoU_87OjTcg6mg_aem_h4qptahWIcuug3rvusXuBg" 
    target="_blank" 
    rel="noopener noreferrer">
    <i class="fab fa-instagram"></i></a>
-                        </a>
                     </div>
                 </div>
             </div>
@@ -190,7 +178,7 @@
   <div class="row g-4">
     <!-- Residencial -->
     <div class="col-lg-3 col-md-6">
-      <div class="card shadow-sm border-0 h-100">
+      <div class="card shadow-sm border-0 h-100" style="display: block !important;">
         <div class="card-body text-center">
           <i class="fas fa-home fa-2x text-dark mb-3"></i>
           <h5 class="fw-bold text-dark">Residencial</h5>
@@ -203,7 +191,7 @@
 
     <!-- Casa Club -->
     <div class="col-lg-3 col-md-6">
-      <div class="card shadow-sm border-0 h-100">
+      <div class="card shadow-sm border-0 h-100" style="display: block !important;">
         <div class="card-body text-center">
           <i class="fas fa-building fa-2x text-dark mb-3"></i>
           <h5 class="fw-bold text-dark">Casa Club</h5>
@@ -216,7 +204,7 @@
 
     <!-- Paisajismo -->
     <div class="col-lg-3 col-md-6">
-      <div class="card shadow-sm border-0 h-100">
+      <div class="card shadow-sm border-0 h-100" style="display: block !important;">
         <div class="card-body text-center">
           <i class="fas fa-tree fa-2x text-dark mb-3"></i>
           <h5 class="fw-bold text-dark">Paisajismo</h5>
@@ -229,7 +217,7 @@
 
     <!-- Arquitectura -->
     <div class="col-lg-3 col-md-6">
-      <div class="card shadow-sm border-0 h-100">
+      <div class="card shadow-sm border-0 h-100" style="display: block !important;">
         <div class="card-body text-center">
           <i class="fas fa-drafting-compass fa-2x text-dark mb-3"></i>
           <h5 class="fw-bold text-dark">Arquitectura</h5>
@@ -279,14 +267,14 @@
         <div class="row">
             <div class="col-md-5">
                 <div class="d-flex flex-column align-items-center justify-content-center h-50 overflow-hidden">
-                    <img class="h-100" src="img/Logo.jpg" alt="">
+                    <img class="h-100" src="img/Logo.jpg" alt="MOMED Logo">
                 </div>
             </div>
             <div class="col-md-7 py-5 pl-md-5">
                 <h6 class="text-shamrock font-weight-normal text-uppercase mb-3 pt-5">Servicios</h6>
                 <h1 class="mb-4 section-title">Algunos Servicios Que Ofrecemos</h1>
 
-                <div class="owl-carousel testimonial-carousel position-relative pb-5 mb-md-5">
+                <div class="owl-carousel testimonial-carousel position-relative pb-5 mb-md-5" id="services-carousel">
                     
                     <!-- Slide 1: Introducción -->
                     <div class="d-flex flex-column">
@@ -303,7 +291,6 @@
                     <div class="d-flex flex-column">
                         <div class="d-flex align-items-center mb-3">
                             <img src="img/construcción.jpg" class="img-fluid rounded-circle" style="width: 60px; height: 60px;" alt="Icono Arquitectura">
-                            
                         </div>
                         <h5 class="text-shamrock">Arquitectura</h5>
                         <ul class="text-dark pl-3">
@@ -421,6 +408,8 @@
             </div>
         </div>
 <!--Fin de los comentarios-->
+
+
 
 
         <div class="container border-top border-secondary pt-5">
@@ -583,6 +572,29 @@
                     alert('Error al enviar el comentario. Por favor intenta de nuevo.');
                     console.error('Error:', error);
                 });
+        });
+    </script>
+
+    <!-- Inicialización específica del carrusel de servicios -->
+    <script>
+        $(document).ready(function() {
+            console.log('[MOMED] Inicializando carrusel de servicios...');
+            
+            $('#services-carousel').owlCarousel({
+                items: 1,
+                margin: 24,
+                loop: true,
+                nav: true,
+                dots: true,
+                autoplay: true,
+                autoplayTimeout: 6000,
+                autoplayHoverPause: true,
+                smartSpeed: 550,
+                navText: ['<i class="fa fa-chevron-left"></i>','<i class="fa fa-chevron-right"></i>'],
+                autoHeight: true
+            });
+            
+            console.log('[MOMED] Carrusel de servicios inicializado correctamente');
         });
     </script>
     
