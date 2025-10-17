@@ -70,12 +70,12 @@
         /* Contenedor de botones en línea horizontal */
         .card-actions {
             display: flex !important;
-            flex-direction: row !important; /* Cambiado de column a row para que estén en la misma línea */
+            flex-direction: row !important;
             align-items: center !important;
-            justify-content: center !important; /* Centrar los botones horizontalmente */
-            gap: 12px !important; /* Espacio entre los botones */
+            justify-content: center !important;
+            gap: 12px !important;
             margin-top: 15px !important;
-            flex-wrap: wrap !important; /* Permitir que se envuelvan en pantallas pequeñas si es necesario */
+            flex-wrap: nowrap !important; /* Cambiado de wrap a nowrap para evitar que se apilen */
         }
         /* </CHANGE> */
 
@@ -238,6 +238,32 @@
             /* Reducir padding en las cards de casas */
             .carta-modelo {
                 margin-bottom: 15px !important;
+            }
+
+            /* Ajustar botones para móviles - reducir padding y min-width para que quepan en la misma línea */
+            .ver-mas {
+                padding: 6px 12px !important;
+                min-width: 90px !important;
+                font-size: 13px !important;
+            }
+
+            .card-actions {
+                gap: 8px !important;
+                flex-wrap: nowrap !important;
+            }
+            /* </CHANGE> */
+        }
+
+        /* Media query adicional para pantallas muy pequeñas */
+        @media (max-width: 480px) {
+            .ver-mas {
+                padding: 6px 10px !important;
+                min-width: 80px !important;
+                font-size: 12px !important;
+            }
+
+            .card-actions {
+                gap: 6px !important;
             }
         }
         /* </CHANGE> */
@@ -464,10 +490,10 @@
         <a href="img/FACHADA POSTERIOR agua.png" data-lightbox="galeriaAgua" data-title="Casa Elemento Agua"></a>
        <a href="img/SALA AGUA.jpg" data-lightbox="galeriaAgua" data-title="Casa Elemento Agua"></a>
        <a href="img/COCINA.png" data-lightbox="galeriaAgua" data-title="Casa Elemento Agua"></a>
-       <!-- Eliminado margin-top del botón Áreas para alinearlo con Ver más -->
-       <button class="ver-mas" onclick="openMapModal()" style="background-color: #03ac13;">
-         <i class="fas fa-map-marker-alt mr-1"></i>Áreas
-       </button>
+        <!-- Eliminado margin-top del botón Áreas para alinearlo con Ver más -->
+        <button class="ver-mas" onclick="openMapModal()" style="background-color: #03ac13;">
+          <i class="fas fa-map-marker-alt mr-1"></i>Áreas
+        </button>
     </div>
     </article>
 
