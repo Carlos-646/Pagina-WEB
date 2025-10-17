@@ -55,15 +55,29 @@
             padding: 0 15px;
         }
 
-        /* Agregando estilos para centrar y ajustar altura del botón "Ver más" */
+        /* Ajustando botones para que estén en la misma línea horizontal */
         .ver-mas {
             display: inline-flex !important;
             align-items: center !important;
             justify-content: center !important;
             text-align: center !important;
-            padding: 8px 20px !important; /* Reducido el padding vertical de 12px a 8px */
+            padding: 8px 20px !important;
             line-height: 1.2 !important;
+            width: auto !important;
+            min-width: 120px !important;
         }
+
+        /* Contenedor de botones en línea horizontal */
+        .card-actions {
+            display: flex !important;
+            flex-direction: row !important; /* Cambiado de column a row para que estén en la misma línea */
+            align-items: center !important;
+            justify-content: center !important; /* Centrar los botones horizontalmente */
+            gap: 12px !important; /* Espacio entre los botones */
+            margin-top: 15px !important;
+            flex-wrap: wrap !important; /* Permitir que se envuelvan en pantallas pequeñas si es necesario */
+        }
+        /* </CHANGE> */
 
         /* Agregando estilos para los botones de navegación del carrusel */
         .team-carousel .owl-nav,
@@ -159,10 +173,19 @@
                 margin-top: 0 !important;
             }
             
+            /* Grid de estadísticas en 2 columnas para móviles */
             .stats-grid-cards {
                 margin-bottom: 20px !important;
                 gap: 15px !important;
+                display: grid !important;
+                grid-template-columns: repeat(2, 1fr) !important; /* 2 columnas en móviles */
             }
+            
+            /* El tercer elemento (100% Financiamiento) ocupará toda la fila */
+            .stats-grid-cards .inicio-carta:nth-child(3) {
+                grid-column: 1 / -1 !important; /* Ocupa ambas columnas */
+            }
+            /* </CHANGE> */
             
             .letrero {
                 margin-bottom: 15px !important;
@@ -172,7 +195,6 @@
                 margin-bottom: 20px !important;
             }
         }
-        /* </CHANGE> */
     </style>
 
     <!-- EmailJS SDK -->
