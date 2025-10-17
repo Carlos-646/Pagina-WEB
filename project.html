@@ -154,47 +154,93 @@
         }
 
         /* Agregando media queries para reducir espacio en blanco en móviles */
-        /* Reducir padding y margin en secciones para dispositivos móviles */
-        @media (max-width: 768px) {
+        /* Haciendo los estilos más agresivos para sobrescribir CSS externo */
+        @media (max-width: 992px) {
+            /* Tablets */
             .section-light {
-                padding-top: 30px !important;
-                padding-bottom: 20px !important;
+                padding-top: 25px !important;
+                padding-bottom: 15px !important;
+                margin-bottom: 0 !important;
             }
             
             .section-wrap,
             .section-wrap-stock {
-                padding-top: 20px !important;
-                padding-bottom: 20px !important;
+                padding-top: 15px !important;
+                padding-bottom: 15px !important;
+                margin-top: 0 !important;
                 margin-bottom: 0 !important;
             }
             
             .section-wrap-card {
-                padding-top: 20px !important;
+                padding-top: 15px !important;
+                padding-bottom: 30px !important;
                 margin-top: 0 !important;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            /* Móviles */
+            .section-light {
+                padding-top: 20px !important;
+                padding-bottom: 10px !important;
+                margin-bottom: 0 !important;
+                min-height: auto !important;
+            }
+            
+            .section-wrap,
+            .section-wrap-stock {
+                padding-top: 10px !important;
+                padding-bottom: 10px !important;
+                margin-top: 0 !important;
+                margin-bottom: 0 !important;
+                min-height: auto !important;
+            }
+            
+            .section-wrap-card {
+                padding-top: 10px !important;
+                padding-bottom: 20px !important;
+                margin-top: 0 !important;
+                min-height: auto !important;
+            }
+            
+            /* Reducir espaciado en el contenedor del carrusel */
+            .casas-stock-carousel {
+                padding: 15px 0 !important;
+                margin-top: 0 !important;
+            }
+            
+            .casas-stock-carousel .owl-stage {
+                padding: 10px 0 !important;
             }
             
             /* Grid de estadísticas en 2 columnas para móviles */
             .stats-grid-cards {
-                margin-bottom: 20px !important;
-                gap: 15px !important;
+                margin-bottom: 15px !important;
+                margin-top: 10px !important;
+                gap: 12px !important;
                 display: grid !important;
-                grid-template-columns: repeat(2, 1fr) !important; /* 2 columnas en móviles */
+                grid-template-columns: repeat(2, 1fr) !important;
             }
             
             /* El tercer elemento (100% Financiamiento) ocupará toda la fila */
             .stats-grid-cards .inicio-carta:nth-child(3) {
-                grid-column: 1 / -1 !important; /* Ocupa ambas columnas */
+                grid-column: 1 / -1 !important;
             }
-            /* </CHANGE> */
             
             .letrero {
-                margin-bottom: 15px !important;
+                margin-bottom: 12px !important;
             }
             
             .slogan {
-                margin-bottom: 20px !important;
+                margin-bottom: 15px !important;
+            }
+            
+            /* Reducir padding en las cards de casas */
+            .carta-modelo {
+                margin-bottom: 15px !important;
             }
         }
+        /* </CHANGE> */
     </style>
 
     <!-- EmailJS SDK -->
@@ -418,8 +464,8 @@
         <a href="img/FACHADA POSTERIOR agua.png" data-lightbox="galeriaAgua" data-title="Casa Elemento Agua"></a>
        <a href="img/SALA AGUA.jpg" data-lightbox="galeriaAgua" data-title="Casa Elemento Agua"></a>
        <a href="img/COCINA.png" data-lightbox="galeriaAgua" data-title="Casa Elemento Agua"></a>
-       <!-- Agregado botón de Posibles áreas -->
-       <button class="ver-mas" onclick="openMapModal()" style="margin-top: 10px; background-color: #03ac13;">
+       <!-- Eliminado margin-top del botón Áreas para alinearlo con Ver más -->
+       <button class="ver-mas" onclick="openMapModal()" style="background-color: #03ac13;">
          <i class="fas fa-map-marker-alt mr-1"></i>Áreas
        </button>
     </div>
@@ -449,8 +495,8 @@
         <a href="img/TIERRA PLANTA BAJA.png" data-lightbox="galeriaTierra" data-title="Casa Elemento Tierra"></a>
         <a href="img/TIERRA PLANTA ALTA.png" data-lightbox="galeriaTierra" data-title="Casa Elemento Tierra"></a>
         <a href="img/ESCALERAS PLANTA ALTA tierra.png" data-lightbox="galeriaTierra" data-title="Casa Elemento Tierra"></a>
-        <!-- Agregado botón de Posibles áreas -->
-        <button class="ver-mas" onclick="openMapModal()" style="margin-top: 10px; background-color: #03ac13;">
+        <!-- Eliminado margin-top del botón Áreas para alinearlo con Ver más -->
+        <button class="ver-mas" onclick="openMapModal()" style="background-color: #03ac13;">
           <i class="fas fa-map-marker-alt mr-1"></i>Áreas
         </button>
     </div>
@@ -481,8 +527,8 @@
         <a href="img/COCINA fuego.png" data-lightbox="galeriaFuego" data-title="Casa Elemento Fuego"></a>
         <a href="img/COMEDOR fuego.png" data-lightbox="galeriaFuego" data-title="Casa Elemento Fuego"></a>
         <a href="img/FOGATERO fuego.png" data-lightbox="galeriaFuego" data-title="Casa Elemento Fuego"></a>
-        <!-- Agregado botón de Posibles áreas -->
-        <button class="ver-mas" onclick="openMapModal()" style="margin-top: 10px; background-color: #03ac13;">
+        <!-- Eliminado margin-top del botón Áreas para alinearlo con Ver más -->
+        <button class="ver-mas" onclick="openMapModal()" style="background-color: #03ac13;">
           <i class="fas fa-map-marker-alt mr-1"></i>Áreas
         </button>
     </div>
@@ -513,8 +559,8 @@
         <a href="img/SALA NOCTURNO viento.jpg" data-lightbox="galeriaAire" data-title="Casa Elemento Aire"></a>
         <a href="img/RECAMARA viento.jpg" data-lightbox="galeriaAire" data-title="Casa Elemento Aire"></a>
         <a href="img/BAÑO DOBLE ALTURA viento.jpg" data-lightbox="galeriaAire" data-title="Casa Elemento Aire"></a>
-        <!-- Agregado botón de Posibles áreas -->
-        <button class="ver-mas" onclick="openMapModal()" style="margin-top: 10px; background-color: #03ac13;">
+        <!-- Eliminado margin-top del botón Áreas para alinearlo con Ver más -->
+        <button class="ver-mas" onclick="openMapModal()" style="background-color: #03ac13;">
           <i class="fas fa-map-marker-alt mr-1"></i>Áreas
         </button>
     </div>
