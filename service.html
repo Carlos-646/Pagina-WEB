@@ -168,84 +168,10 @@
     <!-- Final del encabezado de la página -->
 
 
- <!-- ====== INICIO | Venta de Hogares (Sección Interactiva) ====== -->
+
+
+<!-- ====== Venta de Hogares (InteractivA – estilo Airbnb) ====== -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-
-<style>
-  /* Fondo y tipografía de la sección */
-  .vh-section {
-    position: relative;
-    background: radial-gradient(1200px 600px at 10% 10%, #e7f4eb 0%, #f6fbf7 38%, #fdfefe 70%),
-                linear-gradient(180deg, #f5fff8 0%, #ffffff 100%);
-    overflow: hidden;
-  }
-  .vh-section::before {
-    content:"";
-    position:absolute; inset:-40% -10% auto auto;
-    width:60vw; height:60vw; border-radius:50%;
-    background: radial-gradient(closest-side, rgba(91,140,81,.25), rgba(91,140,81,0));
-    filter: blur(20px);
-    pointer-events:none;
-  }
-  .vh-pill {
-    display:inline-block; padding:.35rem .75rem; border-radius:999px;
-    font-weight:600; font-size:.8rem; letter-spacing:.04em;
-    background:#e8f6ea; color:#2e6f54; border:1px solid #d8efdc;
-  }
-  .vh-title { font-weight:900; letter-spacing:.4px; }
-  .vh-sub { max-width:760px; margin:auto; }
-
-  /* Tarjetas */
-  .vh-card {
-    background: rgba(255,255,255,.7);
-    backdrop-filter: blur(6px);
-    border: 1px solid rgba(46,111,84,.08);
-    border-radius: 18px;
-    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
-    box-shadow: 0 8px 24px rgba(0,0,0,.06);
-  }
-  .vh-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 28px rgba(46,111,84,.15);
-    border-color: rgba(46,111,84,.18);
-  }
-  .vh-icon {
-    width:64px; height:64px; display:grid; place-items:center;
-    border-radius:16px; margin:auto; margin-bottom:14px;
-    background: linear-gradient(135deg, #2e6f54 0%, #6fbf7a 100%);
-    color:#fff; font-size:1.5rem; box-shadow: 0 8px 18px rgba(46,111,84,.25);
-  }
-  .vh-badge {
-    background:#eaf7ee; color:#2e6f54; border:1px solid #d6eddc;
-    padding:.25rem .5rem; border-radius:8px; font-size:.75rem; font-weight:600;
-  }
-  .vh-list {
-    list-style:none; padding-left:0; margin:0;
-  }
-  .vh-list li {
-    margin:.35rem 0; color:#1e2d25;
-  }
-  .vh-list i {
-    color:#2e6f54; margin-right:.4rem;
-  }
-
-  /* Contadores */
-  .vh-counter-wrap {
-    border-radius:14px; padding:1rem 1.25rem; background:#f2f9f4;
-    border:1px solid #e1efe6;
-  }
-  .vh-kpi { font-weight:900; font-size:1.6rem; color:#2e6f54; }
-  .vh-kpi-sub { font-size:.9rem; color:#406a58; }
-
-  /* CTA */
-  .vh-cta {
-    background: linear-gradient(135deg, #2e6f54 0%, #6fbf7a 100%);
-    color:#fff; border-radius:18px; padding:28px 20px;
-    box-shadow: 0 10px 28px rgba(46,111,84,.25);
-  }
-  .vh-cta .btn-wh { background:#fff; color:#215942; border:none; }
-  .vh-cta .btn-wh:hover { filter:brightness(.95); }
-</style>
 
 <section class="vh-section py-5">
   <div class="container">
@@ -353,100 +279,195 @@
       </div>
     </div>
 
-  <!-- ====== INICIO | CTA Premium con WhatsApp dinámico ====== -->
-<style>
-  .cta-wrap{
-    position:relative; border-radius:22px; overflow:hidden; padding:28px 22px;
-    background: radial-gradient(900px 420px at 0% 0%, #e8f6ee 0%, #f6fbf8 45%, #ffffff 85%);
-    border:1px solid #e1efe6; box-shadow:0 16px 40px rgba(0,0,0,.08);
-  }
-  .cta-wrap::before{
-    content:""; position:absolute; right:-10%; top:-40%;
-    width:60vw; height:60vw; border-radius:50%;
-    background: radial-gradient(closest-side, rgba(46,111,84,.18), rgba(46,111,84,0));
-    filter: blur(18px); pointer-events:none;
-  }
-  .cta-title{font-weight:900; letter-spacing:.3px}
-  .cta-sub{color:#455b51; opacity:.9}
-  .cta-badge{
-    display:inline-block; background:#e9f6ee; border:1px solid #d6ecdf; color:#2a5a47;
-    padding:.35rem .65rem; border-radius:999px; font-weight:700; font-size:.8rem;
-  }
-  .cta-glass{
-    background:rgba(255,255,255,.85); border:1px solid #e4efe8; backdrop-filter:blur(6px);
-    border-radius:14px; padding:.75rem 1rem;
-  }
-  .cta-mini{font-size:.85rem; color:#577066}
-  .cta-btn-main{
-    background: linear-gradient(135deg, #2e6f54, #6fbf7a); border:none; color:#fff;
-    border-radius:14px; padding:.9rem 1.1rem; font-weight:800;
-    box-shadow:0 10px 26px rgba(46,111,84,.2); transition:transform .15s ease, filter .15s ease;
-  }
-  .cta-btn-main:hover{ transform: translateY(-2px); filter:brightness(.96); }
-  .cta-btn-ghost{
-    border:1px solid #cfe6d8; color:#215942; background:#fff; border-radius:14px; padding:.9rem 1.1rem; font-weight:800;
-  }
-  .form-control.cta-in{ border-radius:12px; border:1px solid #dfece6; padding:.7rem .9rem; }
-  .cta-note{font-size:.8rem; color:#6b7c75}
-  @media (max-width: 991.98px){
-    .cta-actions{margin-top:12px}
-  }
-</style>
+    <!-- ====== CTA Premium con WhatsApp dinámico (botones pequeños) ====== -->
+    <div class="cta-wrap mt-5">
+      <div class="row g-3 align-items-center">
+        <!-- Texto -->
+        <div class="col-lg-7">
+          <span class="cta-badge">Respuesta &lt; 24 h</span>
+          <h3 class="cta-title mt-2 mb-1">¿Agendamos tu primera visita hoy?</h3>
+          <p class="cta-sub mb-3">Te enviamos un catálogo curado según tu <strong>zona, presupuesto y fecha</strong>, y coordinamos visita sin compromiso.</p>
 
-<div class="cta-wrap mt-5">
-  <div class="row g-3 align-items-center">
-    <!-- Texto -->
-    <div class="col-lg-7">
-      <span class="cta-badge">Respuesta &lt; 24 h</span>
-      <h3 class="cta-title mt-2 mb-1">¿Agendamos tu primera visita hoy?</h3>
-      <p class="cta-sub mb-3">Te enviamos un catálogo curado según tu <strong>zona, presupuesto y fecha</strong>, y coordinamos visita sin compromiso.</p>
+          <div class="cta-glass d-inline-flex align-items-center gap-3">
+            <div class="cta-mini"><strong>+70</strong> propiedades vendidas</div>
+            <div class="vr mx-2"></div>
+            <div class="cta-mini"><strong>95%</strong> nos recomienda</div>
+            <div class="vr mx-2"></div>
+            <div class="cta-mini">Transparencia total de costos</div>
+          </div>
+        </div>
 
-      <!-- Mini confianza -->
-      <div class="cta-glass d-inline-flex align-items-center gap-3">
-        <div class="cta-mini"><strong>+70</strong> propiedades vendidas</div>
-        <div class="vr mx-2"></div>
-        <div class="cta-mini"><strong>95%</strong> nos recomienda</div>
-        <div class="vr mx-2"></div>
-        <div class="cta-mini">Transparencia total de costos</div>
+        <!-- Formulario + Acciones -->
+        <div class="col-lg-5">
+          <form id="ctaForm" class="row g-2">
+            <div class="col-12">
+              <label class="form-label mb-1">Zona de interés</label>
+              <input type="text" class="form-control cta-in" id="zona" placeholder="Ej. Juriquilla, Zibatá, Centro" />
+            </div>
+            <div class="col-6">
+              <label class="form-label mb-1">Presupuesto (MXN)</label>
+              <input type="number" class="form-control cta-in" id="presupuesto" min="0" placeholder="2,500,000" />
+            </div>
+            <div class="col-6">
+              <label class="form-label mb-1">Fecha tentativa</label>
+              <input type="date" class="form-control cta-in" id="fecha" />
+            </div>
+
+            <div class="col-12 d-flex flex-wrap gap-2 cta-actions">
+              <!-- Botón principal (WhatsApp) -->
+              <a id="ctaWhats" class="air-btn-sm solid" target="_blank" href="#">
+                <i class="fa-brands fa-whatsapp"></i> Agenda visita
+              </a>
+            
+            </div>
+            <div class="col-12">
+              <div class="cta-note mt-2">Sin spam. Usamos tus datos solo para esta atención.</div>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
+    <!-- ====== FIN CTA ====== -->
 
-    <!-- Formulario + Acciones -->
-    <div class="col-lg-5">
-      <form id="ctaForm" class="row g-2">
-        <div class="col-12">
-          <label class="form-label mb-1">Zona de interés</label>
-          <input type="text" class="form-control cta-in" id="zona" placeholder="Ej. Juriquilla, Zibatá, Centro" />
-        </div>
-        <div class="col-6">
-          <label class="form-label mb-1">Presupuesto (MXN)</label>
-          <input type="number" class="form-control cta-in" id="presupuesto" min="0" placeholder="2,500,000" />
-        </div>
-        <div class="col-6">
-          <label class="form-label mb-1">Fecha tentativa</label>
-          <input type="date" class="form-control cta-in" id="fecha" />
-        </div>
-
-        <div class="col-12 d-flex flex-wrap gap-2 cta-actions">
-          <!-- Botón principal (WhatsApp) -->
-          <a id="ctaWhats" class="btn cta-btn-main" target="_blank" href="https://wa.me/5210000000000">
-            <i class="fa-brands fa-whatsapp"></i> Recibir catálogo y agendar
-          </a>
-          <!-- Botón secundario -->
-          <a class="btn cta-btn-ghost" href="#propiedades">Ver propiedades</a>
-        </div>
-        <div class="col-12">
-          <div class="cta-note mt-2">Sin spam. Usamos tus datos solo para esta atención.</div>
-        </div>
-      </form>
-    </div>
   </div>
-</div>
+</section>
 
+<!-- ====== ESTILOS Airbnb (coral) ====== -->
+<style>
+:root{
+  --accent:#FF385C; --accent-d:#E31C5F;
+  --ink:#222; --muted:#6b6b6b; --line:#e9e9e9;
+  --soft:#F7F7F7; --chip:#FFF0F3;
+}
+
+/* Encabezado superior */
+.air-hero{
+  background:#0f1720; /* fondo oscuro elegante */
+  padding:48px 0;
+  color:#fff;
+}
+.air-hero-wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.air-hero-title{margin:0; font-weight:900; text-transform:uppercase; letter-spacing:.02em}
+.air-breadcrumb{display:inline-flex;align-items:center;gap:8px}
+.air-breadcrumb i{color:#94a3b8}
+
+/* Botón pequeño reutilizable (breadcrumb & CTA) */
+.air-btn-sm{
+  display:inline-flex; align-items:center; gap:.35rem;
+  padding:.4rem .8rem;
+  border-radius:10px;
+  font-weight:700; font-size:.82rem; text-decoration:none;
+  border:1px solid var(--line);
+  background:#fff; color:#111827;
+  transition:transform .2s ease, box-shadow .2s ease, filter .2s ease;
+}
+.air-btn-sm:hover{ transform:translateY(-2px); box-shadow:0 8px 18px rgba(0,0,0,.12) }
+.air-btn-sm.disabled{ opacity:.55; pointer-events:none }
+
+/* Variantes CTA pequeñas */
+.air-btn-sm.solid{
+  background:linear-gradient(90deg,var(--accent),var(--accent-d));
+  color:#fff; border:none;
+  box-shadow:0 8px 18px rgba(255,56,92,.25);
+}
+.air-btn-sm.ghost{
+  background:#fff; border:1px solid var(--line); color:#111827;
+}
+
+/* Sección principal (quitamos verdes) */
+.vh-section{
+  position:relative;
+  background: radial-gradient(1200px 600px at 10% 10%, #fafafa 0%, #ffffff 70%);
+  overflow:hidden;
+}
+.vh-section::before{
+  content:""; position:absolute; inset:-40% -10% auto auto;
+  width:60vw; height:60vw; border-radius:50%;
+  background: radial-gradient(closest-side, rgba(255,56,92,.18), rgba(255,56,92,0));
+  filter: blur(24px); pointer-events:none;
+}
+
+.vh-pill{
+  display:inline-block; padding:.35rem .75rem; border-radius:999px;
+  font-weight:600; font-size:.8rem; letter-spacing:.04em;
+  background:var(--soft); color:#6b6b6b; border:1px solid var(--line);
+}
+.vh-title{ font-weight:900; letter-spacing:.4px; }
+.vh-sub{ max-width:760px; margin:auto; }
+
+/* Tarjetas */
+.vh-card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:18px;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  box-shadow: 0 8px 24px rgba(0,0,0,.06);
+}
+.vh-card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0,0,0,.10);
+  border-color:#e6e6e6;
+}
+
+/* Icono de la tarjeta (coral) */
+.vh-icon{
+  width:64px; height:64px; display:grid; place-items:center;
+  border-radius:16px; margin:auto; margin-bottom:14px;
+  background: var(--chip);
+  color: var(--accent);
+  font-size:1.5rem;
+  box-shadow: 0 8px 18px rgba(255,56,92,.15);
+}
+
+/* Badges y listas */
+.vh-badge{
+  background:#fff; color:#111; border:1px solid var(--line);
+  padding:.25rem .5rem; border-radius:8px; font-size:.75rem; font-weight:700;
+}
+.vh-list{ list-style:none; padding-left:0; margin:0; }
+.vh-list li{ margin:.35rem 0; color:#1f2937; }
+.vh-list i{ color:var(--accent); margin-right:.4rem; }
+
+/* KPIs */
+.vh-counter-wrap{ border-radius:14px; padding:1rem 1.25rem; background:#fafafa; border:1px solid var(--line); }
+.vh-kpi{ font-weight:900; font-size:1.6rem; color:var(--accent); }
+.vh-kpi-sub{ font-size:.9rem; color:#6b7280; }
+
+/* CTA (coral y botones pequeños) */
+.cta-wrap{
+  position:relative; border-radius:22px; overflow:hidden; padding:24px 20px;
+  background: radial-gradient(900px 420px at 0% 0%, #fff 0%, #fff 85%);
+  border:1px solid var(--line); box-shadow:0 16px 40px rgba(0,0,0,.08);
+}
+.cta-wrap::before{
+  content:""; position:absolute; right:-10%; top:-40%;
+  width:60vw; height:60vw; border-radius:50%;
+  background: radial-gradient(closest-side, rgba(255,56,92,.18), rgba(255,56,92,0));
+  filter: blur(22px); pointer-events:none;
+}
+.cta-title{font-weight:900; letter-spacing:.3px}
+.cta-sub{color:#374151}
+.cta-badge{
+  display:inline-block; background:rgba(255,56,92,.12); border:1px solid #ffd3dd; color:var(--accent);
+  padding:.35rem .65rem; border-radius:999px; font-weight:700; font-size:.8rem;
+}
+.cta-glass{ background:#fff; border:1px solid var(--line); border-radius:12px; padding:.6rem .8rem; }
+.cta-mini{ font-size:.85rem; color:#4b5563 }
+.form-control.cta-in{ border-radius:10px; border:1px solid var(--line); padding:.6rem .8rem; }
+.cta-note{ font-size:.8rem; color:#6b7280 }
+
+/* Ajustes responsivos */
+@media (max-width: 991.98px){
+  .cta-actions{margin-top:8px}
+}
+</style>
+
+<!-- ====== JS: WhatsApp dinámico + contadores ====== -->
 <script>
-  // Configura tu número real de WhatsApp aquí:
-  const WHATS_NUMBER = "5210000000000"; // Ejemplo: 5214421234567
+  // Número de WhatsApp real:
+  const WHATS_NUMBER = "524421317870"; // +52 442 131 7870
 
+  // Construye enlace de WhatsApp desde el formulario (botón pequeño coral)
   (function(){
     const $ = (s)=>document.querySelector(s);
     const whatsBtn = $('#ctaWhats');
@@ -474,6 +495,7 @@
     function updateLink(){
       const href = `https://wa.me/${WHATS_NUMBER}?text=${buildMessage()}`;
       whatsBtn.setAttribute('href', href);
+      whatsBtn.setAttribute('rel','noopener');
     }
 
     ['input','change'].forEach(evt=>{
@@ -481,16 +503,10 @@
       presupuesto.addEventListener(evt, updateLink);
       fecha.addEventListener(evt, updateLink);
     });
-    updateLink(); // set inicial
+    updateLink();
   })();
-</script>
-<!-- ====== FIN | CTA Premium con WhatsApp dinámico ====== -->
 
-  </div>
-</section>
-
-<script>
-  // Contadores animados al entrar en viewport
+  // Contadores animados
   (function(){
     const els = document.querySelectorAll('.vh-kpi');
     const io = new IntersectionObserver((entries)=>{
@@ -498,7 +514,7 @@
         if(entry.isIntersecting){
           const el = entry.target;
           const target = +el.dataset.counter;
-          const dur = 900; // ms
+          const dur = 900;
           const start = performance.now();
           const step = (t)=>{
             const p = Math.min((t-start)/dur, 1);
@@ -513,129 +529,194 @@
     els.forEach(e=>io.observe(e));
   })();
 </script>
-<!-- ====== FIN | Venta de Hogares (Sección Interactiva) ====== -->
 
 
 
-  <!-- ====== INICIO | Por qué Elegirnos (Versión Profesional sin Íconos) ====== -->
-<section class="container-fluid py-5" style="background: linear-gradient(180deg, #f8fbf9 0%, #ffffff 100%);">
-  <div class="container">
 
+ <!-- ====== INICIO | Por qué elegirnos (Estilo Airbnb) ====== -->
+<section class="air-why">
+  <div class="air-why-wrap">
     <!-- Encabezado -->
-    <div class="text-center mb-5">
-      <span style="background:#e9f6ee; color:#2e6f54; padding:6px 14px; border-radius:30px; font-weight:600; font-size:0.85rem;">
-        Nuestro Compromiso
-      </span>
-      <h2 class="fw-bold text-dark mt-3">Por Qué Nuestros Clientes Nos Eligen</h2>
-      <p class="text-muted" style="max-width:800px; margin:auto;">
-        Porque no solo vendemos propiedades, sino que acompañamos a cada cliente durante todo el proceso con transparencia, garantías reales y resultados comprobables.
+    <header class="air-why-head">
+      <span class="air-eyebrow">Nuestro compromiso</span>
+      <h2 class="air-title">Por Qué Nuestros Clientes <span>Nos Eligen</span></h2>
+      <p class="air-sub">
+        No solo vendemos propiedades: acompañamos cada paso con transparencia,
+        garantías reales y resultados comprobables.
       </p>
-    </div>
+    </header>
 
-    <!-- Resultados / Métricas -->
-    <div class="row text-center mb-5">
-      <div class="col-md-4 mb-4">
-        <h3 class="fw-bold text-success">+70</h3>
-        <p class="text-dark">Casas vendidas con éxito</p>
-      </div>
-      <div class="col-md-4 mb-4">
-        <h3 class="fw-bold text-success">98%</h3>
-        <p class="text-dark">Clientes satisfechos con nuestro servicio</p>
-      </div>
-      <div class="col-md-4 mb-4">
-        <h3 class="fw-bold text-success">5 Años</h3>
-        <p class="text-dark">De experiencia en el sector inmobiliario</p>
-      </div>
+    <!-- Métricas -->
+    <div class="air-metrics">
+      <article class="metric">
+        <div class="num">+70</div>
+        <div class="label">Casas vendidas con éxito</div>
+      </article>
+      <article class="metric">
+        <div class="num">98%</div>
+        <div class="label">Clientes satisfechos</div>
+      </article>
+      <article class="metric">
+        <div class="num">15 años</div>
+        <div class="label">De experiencia inmobiliaria</div>
+      </article>
     </div>
 
     <!-- Diferenciales -->
-    <div class="row g-4 mb-5">
-      <div class="col-md-6 col-lg-3">
-        <div class="border rounded-4 p-4 h-100 shadow-sm">
-          <h5 class="fw-bold text-dark mb-3">Transparencia Total</h5>
-          <p class="text-muted mb-0">
-            Ofrecemos presupuestos claros, contratos detallados y comunicación constante. Sin costos ocultos ni letras pequeñas.
-          </p>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="border rounded-4 p-4 h-100 shadow-sm">
-          <h5 class="fw-bold text-dark mb-3">Asesoría Integral</h5>
-          <p class="text-muted mb-0">
-            Te acompañamos desde la búsqueda hasta la firma de escritura, incluyendo orientación legal y financiera personalizada.
-          </p>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="border rounded-4 p-4 h-100 shadow-sm">
-          <h5 class="fw-bold text-dark mb-3">Compromiso por Escrito</h5>
-          <p class="text-muted mb-0">
-            Todos nuestros compromisos se entregan en documento firmado para garantizar confianza y cumplimiento en cada paso.
-          </p>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="border rounded-4 p-4 h-100 shadow-sm">
-          <h5 class="fw-bold text-dark mb-3">Resultados Reales</h5>
-          <p class="text-muted mb-0">
-            Cada proyecto finalizado se traduce en clientes felices, inversiones seguras y hogares listos para habitar.
-          </p>
-        </div>
-      </div>
+    <div class="air-grid">
+      <article class="air-card">
+        <h5>Transparencia total</h5>
+        <p>Presupuestos claros, contratos detallados y comunicación constante. Sin costos ocultos ni letras pequeñas.</p>
+      </article>
+
+      <article class="air-card">
+        <h5>Asesoría integral</h5>
+        <p>Desde la búsqueda hasta la escritura, con orientación legal y financiera personalizada.</p>
+      </article>
+
+      <article class="air-card">
+        <h5>Compromiso por escrito</h5>
+        <p>Todos los acuerdos se entregan firmados para garantizar confianza y cumplimiento.</p>
+      </article>
+
+      <article class="air-card">
+        <h5>Resultados reales</h5>
+        <p>Clientes felices, inversiones seguras y hogares listos para habitar.</p>
+      </article>
     </div>
 
     <!-- Comparativa -->
-    <div class="table-responsive mb-5">
-      <table class="table table-bordered align-middle text-center">
-        <thead style="background:#e9f6ee;">
-          <tr class="fw-bold text-dark">
+    <div class="air-table-wrap">
+      <table class="air-table">
+        <thead>
+          <tr>
             <th>Aspecto</th>
-            <th>Nuestra Empresa</th>
-            <th>Promedio del Mercado</th>
+            <th>Nuestra empresa</th>
+            <th>Promedio del mercado</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>Asesoría personalizada</td>
-            <td class="text-success">Incluida en todos los planes</td>
-            <td class="text-muted">Limitada o con costo adicional</td>
+            <td class="good">Incluida en todos los planes</td>
+            <td class="muted">Limitada o con costo adicional</td>
           </tr>
           <tr>
             <td>Compromisos por escrito</td>
-            <td class="text-success">Sí, firmados antes de iniciar</td>
-            <td class="text-muted">Generalmente no disponibles</td>
+            <td class="good">Sí, firmados antes de iniciar</td>
+            <td class="muted">Generalmente no disponibles</td>
           </tr>
           <tr>
             <td>Transparencia de precios</td>
-            <td class="text-success">Sin costos ocultos</td>
-            <td class="text-muted">Cobros extra al final del proceso</td>
+            <td class="good">Sin costos ocultos</td>
+            <td class="muted">Cobros extra al final</td>
           </tr>
           <tr>
             <td>Garantía de entrega</td>
-            <td class="text-success">100% asegurada con contrato</td>
-            <td class="text-muted">No garantizada</td>
+            <td class="good">100% asegurada con contrato</td>
+            <td class="muted">No garantizada</td>
           </tr>
           <tr>
             <td>Soporte postventa</td>
-            <td class="text-success">Sí, durante 30 días después de la entrega</td>
-            <td class="text-muted">Casi nunca incluido</td>
+            <td class="good">Sí, durante 30 días</td>
+            <td class="muted">Casi nunca incluido</td>
           </tr>
         </tbody>
       </table>
     </div>
 
-
-
     <!-- CTA -->
-    <div class="text-center mt-4">
-      <a href="https://wa.me/5210000000000" target="_blank" class="btn btn-success btn-lg px-5 py-3 rounded-pill">
+    <div class="air-cta">
+      <a class="air-btn-sm solid" target="_blank"
+         href="https://wa.me/524421317870?text=Hola%2C%20me%20gustaría%20conocer%20sus%20garantías%20y%20agendar%20una%20visita.">
         Contáctanos y conoce nuestras garantías
       </a>
     </div>
-
   </div>
 </section>
-<!-- ====== FIN | Por qué Elegirnos (Versión Profesional sin Íconos) ====== -->
+
+<style>
+  :root{
+    --accent:#FF385C; --accent-d:#E31C5F;
+    --ink:#222; --muted:#6b6b6b; --line:#e9e9e9; --soft:#F7F7F7;
+  }
+
+  .air-why{
+    background: linear-gradient(180deg,#FAFAFA 0%,#FFFFFF 100%);
+    padding: 70px 0 84px;
+    font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  }
+  .air-why-wrap{ max-width:1200px; margin:0 auto; padding:0 22px; }
+
+  /* Head */
+  .air-why-head{ text-align:center; margin-bottom:28px; }
+  .air-eyebrow{
+    display:inline-block; padding:.45rem .9rem; border-radius:999px;
+    background:#F7F7F7; border:1px solid var(--line);
+    color:#6b6b6b; font-weight:700; font-size:.85rem; letter-spacing:.06em; text-transform:uppercase;
+  }
+  .air-title{ margin:.8rem 0 .4rem; font-size:clamp(28px,4.5vw,40px); color:var(--ink); font-weight:900; }
+  .air-title span{ color:var(--accent); }
+  .air-sub{ color:var(--muted); max-width:780px; margin:0 auto; line-height:1.65; }
+
+  /* Métricas */
+  .air-metrics{
+    display:grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    gap:16px; margin:26px 0 10px;
+  }
+  .metric{
+    background:#fff; border:1px solid var(--line); border-radius:16px;
+    padding:18px; text-align:center; box-shadow:0 10px 26px rgba(0,0,0,.05);
+  }
+  .metric .num{ font-weight:900; font-size:1.8rem; color:var(--accent); }
+  .metric .label{ color:#444; }
+
+  /* Diferenciales */
+  .air-grid{
+    display:grid; gap:18px; margin:18px 0 26px;
+    grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+  }
+  .air-card{
+    background:#fff; border:1px solid var(--line); border-radius:16px;
+    padding:20px; box-shadow:0 10px 26px rgba(0,0,0,.05);
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .air-card:hover{ transform:translateY(-4px); box-shadow:0 18px 40px rgba(0,0,0,.08); }
+  .air-card h5{ margin:0 0 8px; font-weight:800; color:var(--ink); }
+  .air-card p{ margin:0; color:#555; }
+
+  /* Tabla comparativa */
+  .air-table-wrap{ margin-top:6px; }
+  .air-table{
+    width:100%; border-collapse:separate; border-spacing:0; overflow:hidden;
+    border:1px solid var(--line); border-radius:16px; background:#fff;
+    box-shadow:0 12px 32px rgba(0,0,0,.06);
+  }
+  .air-table thead th{
+    background:#F7F7F7; border-bottom:1px solid var(--line); color:#111; font-weight:800;
+    padding:14px; text-align:center;
+  }
+  .air-table td{ padding:14px; border-top:1px solid var(--line); text-align:center; }
+  .air-table td:first-child{ text-align:left; }
+  .air-table .good{ color:var(--accent); font-weight:800; }
+  .air-table .muted{ color:#777; }
+
+  /* CTA */
+  .air-cta{ text-align:center; margin-top:28px; }
+  .air-btn-sm{
+    display:inline-flex; align-items:center; gap:.35rem;
+    padding:.55rem 1rem; border-radius:12px; font-weight:800; font-size:.9rem;
+    text-decoration:none; border:1px solid var(--line); background:#fff; color:#111827;
+    transition:transform .2s ease, box-shadow .2s ease, filter .2s ease;
+  }
+  .air-btn-sm.solid{
+    background:linear-gradient(90deg,var(--accent),var(--accent-d));
+    color:#fff; border:none; box-shadow:0 10px 22px rgba(255,56,92,.25);
+  }
+  .air-btn-sm:hover{ transform:translateY(-2px); box-shadow:0 14px 28px rgba(0,0,0,.10); }
+</style>
+<!-- ====== FIN | Por qué elegirnos (Estilo Airbnb) ====== -->
+
 
 
 
@@ -664,10 +745,66 @@
   .btn-mini:hover{filter:brightness(.95)}
 </style>
 
-<section class="container homes-wrap">
-  <h2 class="homes-title mb-3">Conoce nuestras casas en venta</h2>
+<!-- ====== INICIO | Mapa de Casas (Estilo Airbnb) ====== -->
+<section class="container homes-wrap text-center my-5">
+  <div class="air-homes-head mb-4">
+    <span class="air-eyebrow">Casas Disponibles</span>
+    <h2 class="air-homes-title">Explora <span>Tu Próximo Hogar</span></h2>
+  </div>
+
   <div id="mapHomes"></div>
 </section>
+
+<style>
+  :root{
+    --accent:#FF385C; --accent-d:#E31C5F;
+    --ink:#222; --muted:#6b6b6b; --line:#e9e9e9;
+  }
+
+  .homes-wrap{
+    max-width:1100px;
+    margin:auto;
+    padding:0 1rem;
+  }
+
+  .air-homes-head .air-eyebrow{
+    display:inline-block;
+    padding:.45rem .9rem;
+    border-radius:999px;
+    background:#FFF0F3;
+    border:1px solid var(--line);
+    color:var(--accent);
+    font-weight:700;
+    font-size:.85rem;
+    letter-spacing:.05em;
+    text-transform:uppercase;
+  }
+
+  .air-homes-title{
+    margin-top:.7rem;
+    font-weight:900;
+    font-size:clamp(1.8rem,4vw,2.3rem);
+    color:var(--ink);
+  }
+  .air-homes-title span{
+    color:var(--accent);
+  }
+
+  #mapHomes{
+    width:100%;
+    height:550px;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 10px 26px rgba(0,0,0,.08);
+    border:1px solid var(--line);
+  }
+
+  @media (max-width:768px){
+    #mapHomes{ height:420px; }
+  }
+</style>
+<!-- ====== FIN | Mapa de Casas (Estilo Airbnb) ====== -->
+
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
