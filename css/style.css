@@ -10,10 +10,10 @@
   /*Charly registraro los colores que usaremos*/
   /*inicio*/
   --rich-black: #1c0404;
-  --timber-green: #364436;
+  --timber-green: #443636;
   --floral-white: #fffbf3;
-  --Basil: #32612d;
-  --Shamrock: #03ac13;
+  --Basil: #612d2d;
+  --Shamrock: #ac0303;
   --Juniper: #3a5311; 
   --emerald:#10b981;
   --emerald-2:#34d399;
@@ -10614,6 +10614,7 @@ h6 {
 .carrusel-btn.next {
   right: 10px;
 }
+
 
 
 
