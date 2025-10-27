@@ -14,8 +14,8 @@
   --floral-white: #fffbf3;
   --Basil: #612d2d;
   --Shamrock: #ac0303;
-  --Juniper: #3a5311; 
-  --emerald:#10b981;
+  --Juniper: #531111; 
+  --emerald: #b91010;
   --emerald-2:#34d399;
   --emerald-dark:#059669;
   --ink:#0f172a;
@@ -10614,6 +10614,7 @@ h6 {
 .carrusel-btn.next {
   right: 10px;
 }
+
 
 
 
