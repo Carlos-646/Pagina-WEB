@@ -9,7 +9,7 @@
   --blue: #007bff;
   /*Charly registraro los colores que usaremos*/
   /*inicio*/
-  --rich-black: #041C19;
+  --rich-black: #1c0404;
   --timber-green: #364436;
   --floral-white: #fffbf3;
   --Basil: #32612d;
@@ -10614,5 +10614,6 @@ h6 {
 .carrusel-btn.next {
   right: 10px;
 }
+
 
 
