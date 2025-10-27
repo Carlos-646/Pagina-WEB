@@ -1293,7 +1293,7 @@ kbd {
   padding: 0.2rem 0.4rem;
   font-size: 87.5%;
   color: #fff;
-  background-color: #364436;
+  background-color: #443636;
 }
 
 kbd kbd {
@@ -1305,7 +1305,7 @@ kbd kbd {
 pre {
   display: block;
   font-size: 87.5%;
-  color: #364436;
+  color:  #443636;
 }
 
 pre code {
@@ -4833,7 +4833,7 @@ input[type="button"].btn-block {
   padding: 0.25rem 0.75rem;
   font-size: 1.25rem;
   line-height: 1;
-  background-color: #364436;
+  background-color:  #443636;
   border-radius: 10px;
   border: 1px solid var(--rich-black);
 }
@@ -10614,6 +10614,7 @@ h6 {
 .carrusel-btn.next {
   right: 10px;
 }
+
 
 
 
