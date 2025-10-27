@@ -92,7 +92,7 @@
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle text-timber-green" data-toggle="dropdown">Más Paginas...</a>
                             <div class="dropdown-menu rounded-0 m-0">
-                                <a href="blog.html" class="dropdown-item text-timber-green">Nuestra Revista</a>
+                                
                                 <a href="single.html" class="dropdown-item text-timber-green">Sabías Qué…?</a>
                             </div>
                         </div>
@@ -168,171 +168,575 @@
     <!-- Final del encabezado de la página -->
 
 
-    <!-- "Inicio de la sección de Servicios" -->
-    <div class="container py-5">
-  <div class="text-center mb-5">
-    <h2 class="fw-bold text-dark">Nuestro Trabajo</h2>
-    <p class="text-muted">Diseñamos espacios únicos que combinan funcionalidad, estilo y confort.</p>
-  </div>
+ <!-- ====== INICIO | Venta de Hogares (Sección Interactiva) ====== -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
-  <div class="row g-4">
-    <!-- Residencial -->
-    <div class="col-lg-3 col-md-6">
-      <div class="card shadow-sm border-0 h-100" style="display: block !important;">
-        <div class="card-body text-center">
-          <i class="fas fa-home fa-2x text-dark mb-3"></i>
-          <h5 class="fw-bold text-dark">Residencial</h5>
-          <p class="text-dark">
-            Creamos hogares contemporáneos y funcionales que reflejan tu estilo de vida con elegancia y comodidad.
-          </p>
+<style>
+  /* Fondo y tipografía de la sección */
+  .vh-section {
+    position: relative;
+    background: radial-gradient(1200px 600px at 10% 10%, #e7f4eb 0%, #f6fbf7 38%, #fdfefe 70%),
+                linear-gradient(180deg, #f5fff8 0%, #ffffff 100%);
+    overflow: hidden;
+  }
+  .vh-section::before {
+    content:"";
+    position:absolute; inset:-40% -10% auto auto;
+    width:60vw; height:60vw; border-radius:50%;
+    background: radial-gradient(closest-side, rgba(91,140,81,.25), rgba(91,140,81,0));
+    filter: blur(20px);
+    pointer-events:none;
+  }
+  .vh-pill {
+    display:inline-block; padding:.35rem .75rem; border-radius:999px;
+    font-weight:600; font-size:.8rem; letter-spacing:.04em;
+    background:#e8f6ea; color:#2e6f54; border:1px solid #d8efdc;
+  }
+  .vh-title { font-weight:900; letter-spacing:.4px; }
+  .vh-sub { max-width:760px; margin:auto; }
+
+  /* Tarjetas */
+  .vh-card {
+    background: rgba(255,255,255,.7);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(46,111,84,.08);
+    border-radius: 18px;
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    box-shadow: 0 8px 24px rgba(0,0,0,.06);
+  }
+  .vh-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(46,111,84,.15);
+    border-color: rgba(46,111,84,.18);
+  }
+  .vh-icon {
+    width:64px; height:64px; display:grid; place-items:center;
+    border-radius:16px; margin:auto; margin-bottom:14px;
+    background: linear-gradient(135deg, #2e6f54 0%, #6fbf7a 100%);
+    color:#fff; font-size:1.5rem; box-shadow: 0 8px 18px rgba(46,111,84,.25);
+  }
+  .vh-badge {
+    background:#eaf7ee; color:#2e6f54; border:1px solid #d6eddc;
+    padding:.25rem .5rem; border-radius:8px; font-size:.75rem; font-weight:600;
+  }
+  .vh-list {
+    list-style:none; padding-left:0; margin:0;
+  }
+  .vh-list li {
+    margin:.35rem 0; color:#1e2d25;
+  }
+  .vh-list i {
+    color:#2e6f54; margin-right:.4rem;
+  }
+
+  /* Contadores */
+  .vh-counter-wrap {
+    border-radius:14px; padding:1rem 1.25rem; background:#f2f9f4;
+    border:1px solid #e1efe6;
+  }
+  .vh-kpi { font-weight:900; font-size:1.6rem; color:#2e6f54; }
+  .vh-kpi-sub { font-size:.9rem; color:#406a58; }
+
+  /* CTA */
+  .vh-cta {
+    background: linear-gradient(135deg, #2e6f54 0%, #6fbf7a 100%);
+    color:#fff; border-radius:18px; padding:28px 20px;
+    box-shadow: 0 10px 28px rgba(46,111,84,.25);
+  }
+  .vh-cta .btn-wh { background:#fff; color:#215942; border:none; }
+  .vh-cta .btn-wh:hover { filter:brightness(.95); }
+</style>
+
+<section class="vh-section py-5">
+  <div class="container">
+
+    <!-- Encabezado -->
+    <div class="text-center mb-4">
+      <span class="vh-pill">Conócenos</span>
+      <h2 class="vh-title display-6 mt-3 text-dark">Venta de Hogares con Confianza Total</h2>
+      <p class="vh-sub text-muted">
+        Te guiamos desde la búsqueda hasta la entrega con procesos claros, estudio de plusvalía y asesoría hipotecaria.
+        Vivir tu nuevo hogar nunca había sido tan sencillo.
+      </p>
+    </div>
+
+    <!-- KPIs / Contadores -->
+    <div class="row g-3 justify-content-center mb-4">
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="vh-counter-wrap text-center h-100">
+          <div class="vh-kpi" data-counter="72">0</div>
+          <div class="vh-kpi-sub">Casas vendidas</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="vh-counter-wrap text-center h-100">
+          <div class="vh-kpi" data-counter="95">0</div>
+          <div class="vh-kpi-sub">% de satisfacción</div>
+        </div>
+      </div>
+      <div class="col-12 col-md-4 col-lg-3">
+        <div class="vh-counter-wrap text-center h-100">
+          <div class="vh-kpi" data-counter="48">0</div>
+          <div class="vh-kpi-sub">h promedio de respuesta</div>
         </div>
       </div>
     </div>
 
-    <!-- Casa Club -->
-    <div class="col-lg-3 col-md-6">
-      <div class="card shadow-sm border-0 h-100" style="display: block !important;">
-        <div class="card-body text-center">
-          <i class="fas fa-building fa-2x text-dark mb-3"></i>
-          <h5 class="fw-bold text-dark">Casa Club</h5>
-          <p class="text-dark">
-            Diseñamos espacios sociales exclusivos que fomentan la convivencia, el confort y la experiencia comunitaria.
-          </p>
+    <!-- Tarjetas de valor -->
+    <div class="row g-4">
+      <!-- Match de Hogar -->
+      <div class="col-lg-3 col-md-6">
+        <div class="vh-card p-4 h-100">
+          <div class="vh-icon"><i class="fa-solid fa-house-circle-check"></i></div>
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <h5 class="mb-0">Match de Hogar</h5>
+            <span class="vh-badge" title="Te mostramos opciones que sí encajan contigo">Smart</span>
+          </div>
+          <p class="text-muted">Algoritmo de coincidencia por <em>presupuesto</em>, <em>zona</em> y <em>estilo de vida</em>.</p>
+          <ul class="vh-list">
+            <li><i class="fa-solid fa-check"></i> Recomendaciones personalizadas</li>
+            <li><i class="fa-solid fa-check"></i> Recorridos virtuales 360°</li>
+            <li><i class="fa-solid fa-check"></i> Agenda de visitas en 1 clic</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Asesoría Hipotecaria -->
+      <div class="col-lg-3 col-md-6">
+        <div class="vh-card p-4 h-100">
+          <div class="vh-icon"><i class="fa-solid fa-file-shield"></i></div>
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <h5 class="mb-0">Asesoría Hipotecaria</h5>
+            <span class="vh-badge">Finanzas</span>
+          </div>
+          <p class="text-muted">Comparamos bancos y simulamos tu crédito para la mejor tasa total.</p>
+          <ul class="vh-list">
+            <li><i class="fa-solid fa-check"></i> Precalificación en minutos</li>
+            <li><i class="fa-solid fa-check"></i> Sin letras chiquitas</li>
+            <li><i class="fa-solid fa-check"></i> Acompañamiento hasta la firma</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Plusvalía Predictiva -->
+      <div class="col-lg-3 col-md-6">
+        <div class="vh-card p-4 h-100">
+          <div class="vh-icon"><i class="fa-solid fa-chart-line"></i></div>
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <h5 class="mb-0">Plusvalía Predictiva</h5>
+            <span class="vh-badge">Data</span>
+          </div>
+          <p class="text-muted">Estudio de crecimiento urbano y proyección de valor a 3–5 años.</p>
+          <ul class="vh-list">
+            <li><i class="fa-solid fa-check"></i> Mapas de desarrollo</li>
+            <li><i class="fa-solid fa-check"></i> Reporte con escenarios</li>
+            <li><i class="fa-solid fa-check"></i> Recomendación de inversión</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Entrega Llave en Mano -->
+      <div class="col-lg-3 col-md-6">
+        <div class="vh-card p-4 h-100">
+          <div class="vh-icon"><i class="fa-solid fa-key"></i></div>
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <h5 class="mb-0">Entrega Llave en Mano</h5>
+            <span class="vh-badge">Premium</span>
+          </div>
+          <p class="text-muted">Mudanza, limpieza e instalación de servicios para habitar desde el día 1.</p>
+          <ul class="vh-list">
+            <li><i class="fa-solid fa-check"></i> Internet, luz, agua, gas</li>
+            <li><i class="fa-solid fa-check"></i> Checklist final de calidad</li>
+            <li><i class="fa-solid fa-check"></i> Soporte postventa 30 días</li>
+          </ul>
         </div>
       </div>
     </div>
 
-    <!-- Paisajismo -->
-    <div class="col-lg-3 col-md-6">
-      <div class="card shadow-sm border-0 h-100" style="display: block !important;">
-        <div class="card-body text-center">
-          <i class="fas fa-tree fa-2x text-dark mb-3"></i>
-          <h5 class="fw-bold text-dark">Paisajismo</h5>
-          <p class="text-dark">
-            Transformamos áreas verdes en entornos armónicos y sustentables que realzan la belleza natural.
-          </p>
-        </div>
+  <!-- ====== INICIO | CTA Premium con WhatsApp dinámico ====== -->
+<style>
+  .cta-wrap{
+    position:relative; border-radius:22px; overflow:hidden; padding:28px 22px;
+    background: radial-gradient(900px 420px at 0% 0%, #e8f6ee 0%, #f6fbf8 45%, #ffffff 85%);
+    border:1px solid #e1efe6; box-shadow:0 16px 40px rgba(0,0,0,.08);
+  }
+  .cta-wrap::before{
+    content:""; position:absolute; right:-10%; top:-40%;
+    width:60vw; height:60vw; border-radius:50%;
+    background: radial-gradient(closest-side, rgba(46,111,84,.18), rgba(46,111,84,0));
+    filter: blur(18px); pointer-events:none;
+  }
+  .cta-title{font-weight:900; letter-spacing:.3px}
+  .cta-sub{color:#455b51; opacity:.9}
+  .cta-badge{
+    display:inline-block; background:#e9f6ee; border:1px solid #d6ecdf; color:#2a5a47;
+    padding:.35rem .65rem; border-radius:999px; font-weight:700; font-size:.8rem;
+  }
+  .cta-glass{
+    background:rgba(255,255,255,.85); border:1px solid #e4efe8; backdrop-filter:blur(6px);
+    border-radius:14px; padding:.75rem 1rem;
+  }
+  .cta-mini{font-size:.85rem; color:#577066}
+  .cta-btn-main{
+    background: linear-gradient(135deg, #2e6f54, #6fbf7a); border:none; color:#fff;
+    border-radius:14px; padding:.9rem 1.1rem; font-weight:800;
+    box-shadow:0 10px 26px rgba(46,111,84,.2); transition:transform .15s ease, filter .15s ease;
+  }
+  .cta-btn-main:hover{ transform: translateY(-2px); filter:brightness(.96); }
+  .cta-btn-ghost{
+    border:1px solid #cfe6d8; color:#215942; background:#fff; border-radius:14px; padding:.9rem 1.1rem; font-weight:800;
+  }
+  .form-control.cta-in{ border-radius:12px; border:1px solid #dfece6; padding:.7rem .9rem; }
+  .cta-note{font-size:.8rem; color:#6b7c75}
+  @media (max-width: 991.98px){
+    .cta-actions{margin-top:12px}
+  }
+</style>
+
+<div class="cta-wrap mt-5">
+  <div class="row g-3 align-items-center">
+    <!-- Texto -->
+    <div class="col-lg-7">
+      <span class="cta-badge">Respuesta &lt; 24 h</span>
+      <h3 class="cta-title mt-2 mb-1">¿Agendamos tu primera visita hoy?</h3>
+      <p class="cta-sub mb-3">Te enviamos un catálogo curado según tu <strong>zona, presupuesto y fecha</strong>, y coordinamos visita sin compromiso.</p>
+
+      <!-- Mini confianza -->
+      <div class="cta-glass d-inline-flex align-items-center gap-3">
+        <div class="cta-mini"><strong>+70</strong> propiedades vendidas</div>
+        <div class="vr mx-2"></div>
+        <div class="cta-mini"><strong>95%</strong> nos recomienda</div>
+        <div class="vr mx-2"></div>
+        <div class="cta-mini">Transparencia total de costos</div>
       </div>
     </div>
 
-    <!-- Arquitectura -->
-    <div class="col-lg-3 col-md-6">
-      <div class="card shadow-sm border-0 h-100" style="display: block !important;">
-        <div class="card-body text-center">
-          <i class="fas fa-drafting-compass fa-2x text-dark mb-3"></i>
-          <h5 class="fw-bold text-dark">Arquitectura</h5>
-          <p class="text-dark">
-            Proyectos arquitectónicos innovadores que integran diseño, estética y funcionalidad en cada detalle.
-          </p>
+    <!-- Formulario + Acciones -->
+    <div class="col-lg-5">
+      <form id="ctaForm" class="row g-2">
+        <div class="col-12">
+          <label class="form-label mb-1">Zona de interés</label>
+          <input type="text" class="form-control cta-in" id="zona" placeholder="Ej. Juriquilla, Zibatá, Centro" />
         </div>
-      </div>
+        <div class="col-6">
+          <label class="form-label mb-1">Presupuesto (MXN)</label>
+          <input type="number" class="form-control cta-in" id="presupuesto" min="0" placeholder="2,500,000" />
+        </div>
+        <div class="col-6">
+          <label class="form-label mb-1">Fecha tentativa</label>
+          <input type="date" class="form-control cta-in" id="fecha" />
+        </div>
+
+        <div class="col-12 d-flex flex-wrap gap-2 cta-actions">
+          <!-- Botón principal (WhatsApp) -->
+          <a id="ctaWhats" class="btn cta-btn-main" target="_blank" href="https://wa.me/5210000000000">
+            <i class="fa-brands fa-whatsapp"></i> Recibir catálogo y agendar
+          </a>
+          <!-- Botón secundario -->
+          <a class="btn cta-btn-ghost" href="#propiedades">Ver propiedades</a>
+        </div>
+        <div class="col-12">
+          <div class="cta-note mt-2">Sin spam. Usamos tus datos solo para esta atención.</div>
+        </div>
+      </form>
     </div>
   </div>
 </div>
 
-    <!-- "Final de la sección de Servicios" -->
+<script>
+  // Configura tu número real de WhatsApp aquí:
+  const WHATS_NUMBER = "5210000000000"; // Ejemplo: 5214421234567
+
+  (function(){
+    const $ = (s)=>document.querySelector(s);
+    const whatsBtn = $('#ctaWhats');
+    const zona = $('#zona');
+    const presupuesto = $('#presupuesto');
+    const fecha = $('#fecha');
+
+    function buildMessage(){
+      const z = zona.value.trim();
+      const p = presupuesto.value.trim();
+      const f = fecha.value;
+
+      let msg = "Hola, me interesa recibir un catálogo y agendar visita.";
+      if(z) msg += `%0A• Zona: ${encodeURIComponent(z)}`;
+      if(p) msg += `%0A• Presupuesto: $${encodeURIComponent(Number(p).toLocaleString('es-MX'))} MXN`;
+      if(f){
+        const d = new Date(f);
+        const fechaMX = d.toLocaleDateString('es-MX',{year:'numeric',month:'long',day:'numeric'});
+        msg += `%0A• Fecha tentativa: ${encodeURIComponent(fechaMX)}`;
+      }
+      msg += "%0A%0A¿Me apoyan, por favor?";
+      return msg;
+    }
+
+    function updateLink(){
+      const href = `https://wa.me/${WHATS_NUMBER}?text=${buildMessage()}`;
+      whatsBtn.setAttribute('href', href);
+    }
+
+    ['input','change'].forEach(evt=>{
+      zona.addEventListener(evt, updateLink);
+      presupuesto.addEventListener(evt, updateLink);
+      fecha.addEventListener(evt, updateLink);
+    });
+    updateLink(); // set inicial
+  })();
+</script>
+<!-- ====== FIN | CTA Premium con WhatsApp dinámico ====== -->
+
+  </div>
+</section>
+
+<script>
+  // Contadores animados al entrar en viewport
+  (function(){
+    const els = document.querySelectorAll('.vh-kpi');
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          const el = entry.target;
+          const target = +el.dataset.counter;
+          const dur = 900; // ms
+          const start = performance.now();
+          const step = (t)=>{
+            const p = Math.min((t-start)/dur, 1);
+            el.textContent = Math.round(target * p);
+            if(p<1) requestAnimationFrame(step);
+          };
+          requestAnimationFrame(step);
+          io.unobserve(el);
+        }
+      });
+    },{threshold:.4});
+    els.forEach(e=>io.observe(e));
+  })();
+</script>
+<!-- ====== FIN | Venta de Hogares (Sección Interactiva) ====== -->
 
 
-    <!-- "Inicio de la sección de Características" -->
-    <div class="container-fluid bg-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-7 mt-5 py-5 pr-lg-5">
-                    <!--Charly cambio de color-->
-                    <h6 class="text-shamrock font-weight-normal text-uppercase mb-3">¿Por Qué Elegirnos?</h6>
-                    <h1 class="mb-4 section-title">Más de 5 años de experiencia en la industria del diseño de interiores</h1>
-                    <p class="mb-4 text-dark">Diseñamos con propósito y pasión, cuidando cada detalle para lograr espacios que inspiran, emocionan y se adaptan a tu estilo de vida.</p>
-                    <ul class="list-inline">
-                        <!--Charly cambio de color-->
-                        <li><h5><i class="far fa-check-square text-shamrock mr-3"></i>Promover La Armonía Y Mejorar La Calidad De Vida A Través De Un Diseño Consciente, Sustentable Y Estético.</h5></li>
-                        <li><h5><i class="far fa-check-square text-shamrock mr-3"></i>El Mejor Diseño de Interiores</h5></li>
-                        <li><h5><i class="far fa-check-square text-shamrock mr-3"></i>Clientes Satisfechos</h5></li>
-                    </ul>
-                    <a href="" class="btn btn-primary mt-3 py-2 px-4">Ver más</a>
-                </div>
-                <div class="col-lg-5">
-                    <div class="d-flex flex-column align-items-center justify-content-center h-100 overflow-hidden">
-                        <img class="h-100" src="img/c6af0b4dcdc0c7c8d54046fc92106639.jpg" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
+
+  <!-- ====== INICIO | Por qué Elegirnos (Versión Profesional sin Íconos) ====== -->
+<section class="container-fluid py-5" style="background: linear-gradient(180deg, #f8fbf9 0%, #ffffff 100%);">
+  <div class="container">
+
+    <!-- Encabezado -->
+    <div class="text-center mb-5">
+      <span style="background:#e9f6ee; color:#2e6f54; padding:6px 14px; border-radius:30px; font-weight:600; font-size:0.85rem;">
+        Nuestro Compromiso
+      </span>
+      <h2 class="fw-bold text-dark mt-3">Por Qué Nuestros Clientes Nos Eligen</h2>
+      <p class="text-muted" style="max-width:800px; margin:auto;">
+        Porque no solo vendemos propiedades, sino que acompañamos a cada cliente durante todo el proceso con transparencia, garantías reales y resultados comprobables.
+      </p>
     </div>
-    <!-- "Final de la sección de Características" -->
 
-
-<!-- Inicio de la sección de Servicios (con carrusel e imágenes pequeñas) -->
-<div class="container-fluid">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-5">
-                <div class="d-flex flex-column align-items-center justify-content-center h-50 overflow-hidden">
-                    <img class="h-100" src="img/Logo.jpg" alt="MOMED Logo">
-                </div>
-            </div>
-            <div class="col-md-7 py-5 pl-md-5">
-                <h6 class="text-shamrock font-weight-normal text-uppercase mb-3 pt-5">Servicios</h6>
-                <h1 class="mb-4 section-title">Algunos Servicios Que Ofrecemos</h1>
-
-                <div class="owl-carousel testimonial-carousel position-relative pb-5 mb-md-5" id="services-carousel">
-                    
-                    <!-- Slide 1: Introducción -->
-                    <div class="d-flex flex-column">
-                        <div class="d-flex align-items-center mb-3">
-                            <img src="img/Logo.jpg" class="img-fluid rounded-circle" style="width: 60px; height: 60px;" alt="Icono Servicios">
-                        </div>
-                        <p class="text-dark">
-                            En <strong>MOMED</strong>, ofrecemos una amplia gama de servicios para satisfacer todas tus necesidades de diseño y construcción.
-                            Desde la concepción del proyecto hasta la ejecución final, nuestro equipo está listo para ayudarte a crear el espacio de tus sueños.
-                        </p>
-                    </div>
-
-                    <!-- Slide 2: Arquitectura -->
-                    <div class="d-flex flex-column">
-                        <div class="d-flex align-items-center mb-3">
-                            <img src="img/construcción.jpg" class="img-fluid rounded-circle" style="width: 60px; height: 60px;" alt="Icono Arquitectura">
-                        </div>
-                        <h5 class="text-shamrock">Arquitectura</h5>
-                        <ul class="text-dark pl-3">
-                            <li>Diseño eficiente y sustentable</li>
-                            <li>Elaboración de planos</li>
-                            <li>Proyecto ejecutivo</li>
-                        </ul>
-                    </div>
-
-                    <!-- Slide 3: Construcción -->
-                    <div class="d-flex flex-column">
-                        <div class="d-flex align-items-center mb-3">
-                            <img src="img/arquitectura.jpg" class="img-fluid rounded-circle" style="width: 60px; height: 60px;" alt="Icono Construcción">
-                        </div>
-                        <h5 class="text-shamrock">Construcción</h5>
-                        <ul class="text-dark pl-3">
-                            <li>Vivienda</li>
-                            <li>Remodelaciones</li>
-                            <li>Ampliaciones</li>
-                            <li>Mantenimiento</li>
-                        </ul>
-                    </div>
-
-                    <!-- Slide 4: Otros Servicios -->
-                    <div class="d-flex flex-column">
-                        <div class="d-flex align-items-center mb-3">
-                            <img src="img/paisajismo.jpg" class="img-fluid rounded-circle" style="width: 60px; height: 60px;" alt="Icono Otros Servicios">
-                        </div>
-                        <h5 class="text-shamrock">Otros Servicios</h5>
-                        <ul class="text-dark pl-3">
-                            <li>Gestión y trámites</li>
-                            <li>Paisajismo</li>
-                            <li>Renders</li>
-                        </ul>
-                    </div>
-
-                </div>
-            </div>
-        </div>
+    <!-- Resultados / Métricas -->
+    <div class="row text-center mb-5">
+      <div class="col-md-4 mb-4">
+        <h3 class="fw-bold text-success">+70</h3>
+        <p class="text-dark">Casas vendidas con éxito</p>
+      </div>
+      <div class="col-md-4 mb-4">
+        <h3 class="fw-bold text-success">98%</h3>
+        <p class="text-dark">Clientes satisfechos con nuestro servicio</p>
+      </div>
+      <div class="col-md-4 mb-4">
+        <h3 class="fw-bold text-success">5 Años</h3>
+        <p class="text-dark">De experiencia en el sector inmobiliario</p>
+      </div>
     </div>
-</div>
-<!-- Final de la sección de Servicios -->
+
+    <!-- Diferenciales -->
+    <div class="row g-4 mb-5">
+      <div class="col-md-6 col-lg-3">
+        <div class="border rounded-4 p-4 h-100 shadow-sm">
+          <h5 class="fw-bold text-dark mb-3">Transparencia Total</h5>
+          <p class="text-muted mb-0">
+            Ofrecemos presupuestos claros, contratos detallados y comunicación constante. Sin costos ocultos ni letras pequeñas.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="border rounded-4 p-4 h-100 shadow-sm">
+          <h5 class="fw-bold text-dark mb-3">Asesoría Integral</h5>
+          <p class="text-muted mb-0">
+            Te acompañamos desde la búsqueda hasta la firma de escritura, incluyendo orientación legal y financiera personalizada.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="border rounded-4 p-4 h-100 shadow-sm">
+          <h5 class="fw-bold text-dark mb-3">Compromiso por Escrito</h5>
+          <p class="text-muted mb-0">
+            Todos nuestros compromisos se entregan en documento firmado para garantizar confianza y cumplimiento en cada paso.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="border rounded-4 p-4 h-100 shadow-sm">
+          <h5 class="fw-bold text-dark mb-3">Resultados Reales</h5>
+          <p class="text-muted mb-0">
+            Cada proyecto finalizado se traduce en clientes felices, inversiones seguras y hogares listos para habitar.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Comparativa -->
+    <div class="table-responsive mb-5">
+      <table class="table table-bordered align-middle text-center">
+        <thead style="background:#e9f6ee;">
+          <tr class="fw-bold text-dark">
+            <th>Aspecto</th>
+            <th>Nuestra Empresa</th>
+            <th>Promedio del Mercado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Asesoría personalizada</td>
+            <td class="text-success">Incluida en todos los planes</td>
+            <td class="text-muted">Limitada o con costo adicional</td>
+          </tr>
+          <tr>
+            <td>Compromisos por escrito</td>
+            <td class="text-success">Sí, firmados antes de iniciar</td>
+            <td class="text-muted">Generalmente no disponibles</td>
+          </tr>
+          <tr>
+            <td>Transparencia de precios</td>
+            <td class="text-success">Sin costos ocultos</td>
+            <td class="text-muted">Cobros extra al final del proceso</td>
+          </tr>
+          <tr>
+            <td>Garantía de entrega</td>
+            <td class="text-success">100% asegurada con contrato</td>
+            <td class="text-muted">No garantizada</td>
+          </tr>
+          <tr>
+            <td>Soporte postventa</td>
+            <td class="text-success">Sí, durante 30 días después de la entrega</td>
+            <td class="text-muted">Casi nunca incluido</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+
+    <!-- CTA -->
+    <div class="text-center mt-4">
+      <a href="https://wa.me/5210000000000" target="_blank" class="btn btn-success btn-lg px-5 py-3 rounded-pill">
+        Contáctanos y conoce nuestras garantías
+      </a>
+    </div>
+
+  </div>
+</section>
+<!-- ====== FIN | Por qué Elegirnos (Versión Profesional sin Íconos) ====== -->
+
+
+
+<!-- ========== INICIO | Conoce nuestras casas en venta (Mapa) ========== -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
+
+<style>
+  .homes-wrap{padding:24px 0}
+  .homes-title{font-weight:900; letter-spacing:.3px}
+  #mapHomes{width:100%; height:650px; border-radius:18px; box-shadow:0 14px 32px rgba(0,0,0,.08)}
+  /* Marcador con precio */
+  .house-pin{position:relative; transform:translate(-50%, -100%); white-space:nowrap}
+  .house-pin .tag{
+    background:#fff; border:1px solid #e1efe6; border-radius:10px; padding:.15rem .45rem;
+    font-weight:800; color:#1f4d3e; box-shadow:0 6px 14px rgba(0,0,0,.08); margin-bottom:4px; display:inline-block; font-size:.85rem
+  }
+  .house-pin .dot{width:16px; height:16px; border-radius:50%; border:3px solid #fff; box-shadow:0 0 0 2px rgba(0,0,0,.12); margin:auto}
+  /* Popup */
+  .popup-home{min-width:270px}
+  .popup-home img{width:100%; height:150px; object-fit:cover; border-radius:10px}
+  .popup-home h6{margin:.45rem 0 .1rem 0; font-weight:900}
+  .meta{color:#51635a}
+  .btn-mini{display:inline-block; padding:.35rem .6rem; border-radius:8px; font-weight:700; font-size:.82rem; text-decoration:none; background:#2e6f54; color:#fff}
+  .btn-mini:hover{filter:brightness(.95)}
+</style>
+
+<section class="container homes-wrap">
+  <h2 class="homes-title mb-3">Conoce nuestras casas en venta</h2>
+  <div id="mapHomes"></div>
+</section>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+<script>
+  // ===== EJEMPLOS (reemplaza con tus casas reales) =====
+  // Campos: {id,titulo,ciudad,lat,lng,precio,rec,ban,m2t,m2c,est, img, telefono}
+  const CASAS = [
+    // Querétaro
+    {id:'QRO-01', titulo:'Casa moderna en Juriquilla',  ciudad:'Querétaro', lat:20.706, lng:-100.448, precio:5300000, rec:3, ban:3, m2t:180, m2c:210, est:2, img:'img/casas/juriquilla1.jpg', telefono:'5214420000001'},
+    {id:'QRO-02', titulo:'El Refugio • nueva',         ciudad:'Querétaro', lat:20.627, lng:-100.332, precio:3450000, rec:3, ban:3, m2t:128, m2c:155, est:2, img:'img/casas/refugio1.jpg',   telefono:'5214420000004'},
+    // San Miguel de Allende
+    {id:'SMA-01', titulo:'Casa colonial con terraza',   ciudad:'San Miguel de Allende', lat:20.915, lng:-100.744, precio:8200000, rec:3, ban:3, m2t:200, m2c:240, est:1, img:'img/casas/sma1.jpg', telefono:'5214150000000'},
+    // San Juan del Río
+    {id:'SJR-01', titulo:'Casa en privada • SJR',       ciudad:'San Juan del Río', lat:20.386, lng:-100.000, precio:2650000, rec:2, ban:2, m2t:120, m2c:105, est:1, img:'img/casas/sjr1.jpg', telefono:'5214270000000'},
+    // Corregidora
+    {id:'COR-01', titulo:'Vista Real • jardín amplio',   ciudad:'Corregidora', lat:20.530, lng:-100.452, precio:4200000, rec:3, ban:3, m2t:210, m2c:190, est:2, img:'img/casas/cor1.jpg', telefono:'5214420000002'},
+    // Tequisquiapan
+    {id:'TEQ-01', titulo:'Casa de descanso con alberca',ciudad:'Tequisquiapan', lat:20.524, lng:-99.893, precio:3800000, rec:3, ban:2, m2t:300, m2c:170, est:2, img:'img/casas/teq1.jpg', telefono:'5214140000000'}
+  ];
+
+  // ===== Mapa =====
+  const map = L.map('mapHomes', {scrollWheelZoom:true});
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom:19, attribution:'&copy; OpenStreetMap'}).addTo(map);
+
+  const cluster = L.markerClusterGroup({showCoverageOnHover:false, maxClusterRadius:60});
+  map.addLayer(cluster);
+
+  const fmt = n => n.toLocaleString('es-MX',{style:'currency',currency:'MXN'});
+  const colorPorPrecio = p => p<=3000000 ? '#6fbf7a' : (p<=5000000 ? '#2e6f54' : '#2f8f83');
+
+  function createIcon(casa){
+    const color = colorPorPrecio(casa.precio);
+    const html = `
+      <div class="house-pin">
+        <span class="tag">${fmt(casa.precio)}</span>
+        <div class="dot" style="background:${color}"></div>
+      </div>`;
+    return L.divIcon({className:'', html, iconSize:[1,1], iconAnchor:[0,0]});
+  }
+
+  function popupHtml(c){
+    const dir = `https://www.google.com/maps/dir/?api=1&destination=${c.lat},${c.lng}`;
+    const wa  = c.telefono ? `https://wa.me/${c.telefono}?text=Hola,%20me%20interesa%20${encodeURIComponent(c.titulo)}%20en%20${encodeURIComponent(c.ciudad)}%20(${encodeURIComponent(fmt(c.precio))}).%20¿Podemos%20agendar%20una%20visita?` : '#';
+    return `
+      <div class="popup-home">
+        <img src="${c.img||'https://picsum.photos/seed/home/800/500'}" alt="">
+        <h6>${c.titulo}</h6>
+        <div class="meta">${c.ciudad} • ${c.rec} rec • ${c.ban} baños • ${c.m2t||'-'} m² terr. • ${c.m2c||'-'} m² const. • ${c.est||0} est.</div>
+        <div class="mt-2"><strong>${fmt(c.precio)}</strong></div>
+        <div class="mt-2 d-flex gap-2">
+          <a class="btn-mini" target="_blank" href="${dir}">Cómo llegar</a>
+          ${c.telefono ? `<a class="btn-mini" style="background:#1f8f5a" target="_blank" href="${wa}">WhatsApp</a>` : ''}
+        </div>
+      </div>`;
+  }
+
+  // Crear marcadores
+  const markers = CASAS.map(c=>{
+    const m = L.marker([c.lat, c.lng], {icon:createIcon(c)}).bindPopup(popupHtml(c));
+    m._data = c; cluster.addLayer(m); return m;
+  });
+
+  // Vista inicial a todos los puntos (QRO + SMA + SJR + Corregidora + Tequis)
+  if(markers.length) map.fitBounds(L.featureGroup(markers).getBounds().pad(0.2));
+  else map.setView([20.5888, -100.3899], 8);
+</script>
+<!-- ========== FIN | Conoce nuestras casas en venta (Mapa) ========== -->
+
+
 
     <!-- "Inicio del pie de página". -->
     <!--color Charly-->

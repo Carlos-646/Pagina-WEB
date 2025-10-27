@@ -345,7 +345,7 @@
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle text-timber-green" data-toggle="dropdown">Más Paginas...</a>
                             <div class="dropdown-menu rounded-0 m-0">
-                                <a href="blog.html" class="dropdown-item text-timber-green">Nuestra Revista</a>
+                                
                                 <a href="single.html" class="dropdown-item text-timber-green">Sabías Qué…?</a>
                             </div>
                         </div>
@@ -595,291 +595,247 @@
 </section>
 
 
-<!-- Sección de Urgencia -->
-<section class="section-card">
-  <div class="urgency, urgency-estilo">
-    <h2 class="letras-urgency">¡No Esperes Más!</h2>
-    <p class="text-urgency">Estas propiedades se están vendiendo rápidamente. Agenda tu visita hoy mismo y asegura tu nuevo hogar.</p>
-    <div class="urgency-ctas" style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
-      <a class="urgency-card, urgency-call" href="tel:+524423440411">📞 Llamar Ahora</a>
-      <a class="urgency-card, urgency-botton" onclick="openVisitModal()">📅 Agendar Visita</a>
+<!-- ========== INICIO | Urgencia estilo Airbnb ========== -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --accent:#FF385C;        /* Color Airbnb */
+    --accent-d:#e12c4f;
+    --ink:#222222;
+    --muted:#6b6b6b;
+    --stroke:#e9e9e9;
+    --bg:#fff;
+    --pill:#f7f7f7;
+    --success:#00A884;       /* WhatsApp */
+  }
+  .air-urg-wrap{
+    font-family:'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    padding:48px 16px; background:#ffffff;
+    border-top:1px solid #f1f1f1; border-bottom:1px solid #f1f1f1;
+  }
+  .air-urg{
+    max-width:1100px; margin:auto; display:grid; gap:24px;
+    grid-template-columns: 1.2fr .9fr; align-items:center;
+  }
+  @media (max-width: 992px){ .air-urg{grid-template-columns:1fr} }
+
+  /* Columna texto */
+  .air-eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--pill); border:1px solid var(--stroke);
+    padding:.45rem .7rem; border-radius:999px; font-weight:600; color:#333;
+  }
+  .air-eyebrow::before{
+    content:""; width:8px; height:8px; border-radius:50%; background:var(--accent);
+    box-shadow:0 0 0 4px rgba(255,56,92,.12);
+  }
+  .air-title{font-weight:800; font-size:clamp(28px,4vw,40px); line-height:1.1; margin:12px 0 8px; color:var(--ink)}
+  .air-sub{color:var(--muted); font-size:clamp(14px,2vw,16px)}
+
+  /* Contador en pills */
+  .air-count{display:flex; gap:10px; margin:16px 0 10px; flex-wrap:wrap}
+  .air-pill-time{
+    min-width:86px; text-align:center; border:1px solid var(--stroke); border-radius:12px; background:#fff;
+    padding:.6rem .7rem;
+    box-shadow:0 6px 16px rgba(0,0,0,.06);
+  }
+  .air-pill-time .n{font-weight:800; font-size:20px; color:var(--ink)}
+  .air-pill-time .l{font-size:12px; color:var(--muted)}
+
+  /* Barrita de urgencia */
+  .air-bar{height:10px; background:#f5f5f5; border-radius:999px; overflow:hidden; margin:8px 0 4px; max-width:360px}
+  .air-bar > span{display:block; height:100%; width:28%; background:linear-gradient(90deg, var(--accent), var(--accent-d)); transition:width .4s}
+
+  /* Tarjeta CTA a la derecha */
+  .air-card{
+    border:1px solid var(--stroke); border-radius:16px; background:#fff; padding:18px;
+    box-shadow:0 12px 28px rgba(0,0,0,.08);
+  }
+  .air-price{display:flex; align-items:baseline; gap:6px}
+  .air-price .p{font-weight:800; font-size:22px; color:var(--ink)}
+  .air-price .u{color:var(--muted); font-size:13px}
+
+  .air-dates{display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:12px}
+  .air-input, .air-select{
+    width:100%; border:1px solid var(--stroke); border-radius:12px; padding:.7rem .8rem; font-size:14px; color:var(--ink);
+    background:#fff; outline:none;
+  }
+  .air-input:focus, .air-select:focus{border-color:#d3d3d3}
+
+  .air-ctas{display:flex; gap:8px; margin-top:12px; flex-wrap:wrap}
+  .air-btn{
+    border-radius:12px; padding:.8rem 1rem; font-weight:800; border:1px solid var(--stroke); background:#fff; color:#222; text-decoration:none;
+  }
+  .air-btn:hover{filter:brightness(.98)}
+  .air-btn--primary{
+    background:var(--accent); color:#fff; border-color:var(--accent);
+    box-shadow:0 10px 22px rgba(255,56,92,.2);
+  }
+  .air-btn--primary:hover{background:var(--accent-d)}
+  .air-btn--wa{border-color:#cfe8db; color:#fff; background:var(--success)}
+  .air-small{font-size:12px; color:var(--muted); margin-top:8px}
+
+  /* Modal minimal Airbnb-ish */
+  .air-modal{position:fixed; inset:0; display:none; align-items:center; justify-content:center; background:rgba(0,0,0,.45); z-index:10000}
+  .air-modal.show{display:flex}
+  .air-sheet{
+    width:min(620px, 92vw); background:#fff; border:1px solid var(--stroke); border-radius:16px; padding:16px;
+    box-shadow:0 24px 60px rgba(0,0,0,.25);
+  }
+  .air-head{display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:6px}
+  .air-head h5{margin:0; font-weight:800}
+  .air-x{border:1px solid var(--stroke); background:#fff; border-radius:999px; width:34px; height:34px; display:grid; place-items:center; cursor:pointer}
+  .air-grid{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:8px}
+  .air-grid .full{grid-column:1/-1}
+  .air-actions{display:flex; gap:8px; justify-content:flex-end; margin-top:10px}
+</style>
+
+<section class="air-urg-wrap" aria-labelledby="urgTitle">
+  <div class="air-urg">
+    <!-- Izquierda: mensaje -->
+    <div>
+      <span class="air-eyebrow">Alta demanda · Nuevos tours hoy</span>
+      <h2 id="urgTitle" class="air-title">¡No esperes más!</h2>
+      <p class="air-sub">Estas propiedades se están moviendo rápido. Reserva tu visita y recibe un catálogo curado por zona y presupuesto.</p>
+
+      <div class="air-count" role="timer" aria-live="polite">
+        <div class="air-pill-time"><div id="h" class="n">00</div><div class="l">horas</div></div>
+        <div class="air-pill-time"><div id="m" class="n">00</div><div class="l">min</div></div>
+        <div class="air-pill-time"><div id="s" class="n">00</div><div class="l">seg</div></div>
+      </div>
+      <div class="air-bar" aria-hidden="true"><span id="bar"></span></div>
+      <div class="air-small">Quedan pocos horarios para hoy.</div>
+    </div>
+
+    <!-- Derecha: tarjeta de reserva -->
+    <div class="air-card" role="group" aria-label="Reserva de visita">
+      <div class="air-price"><span class="p">Agendar visita</span> <span class="u">gratis</span></div>
+      <div class="air-dates">
+        <input type="date" id="fFecha" class="air-input" aria-label="Fecha de visita">
+        <input type="time" id="fHora" class="air-input" aria-label="Hora de visita">
+        <input type="text" id="fZona" class="air-input" placeholder="Zona (Juriquilla, Zibatá…)" aria-label="Zona">
+        <input type="number" id="fPres" class="air-input" placeholder="Presupuesto (MXN)" aria-label="Presupuesto">
+        <select id="fRec" class="air-select"><option value="" disabled selected>Recámaras</option><option>2</option><option>3</option><option>4</option><option>5+</option></select>
+        <input type="text" id="fProp" class="air-input" placeholder="Propiedad (opcional)">
+      </div>
+      <div class="air-ctas">
+        <a class="air-btn" href="tel:+524423440411">📞 Llamar</a>
+        <a id="btnWA" class="air-btn air-btn--wa" target="_blank" href="#">💬 WhatsApp</a>
+        <button class="air-btn air-btn--primary" type="button" onclick="openVisitModal()">📅 Agendar</button>
+      </div>
+      <div class="air-small">Sin spam. Usamos tus datos solo para coordinar tu visita.</div>
     </div>
   </div>
 </section>
-<!-- "Final de la sección de casas" -->
 
-    <!-- "Inicio de la sección de Proyectos" -->
-    <div class="container-fluid py-5">
-        <div class="container py-5">
-            <div class="row justify-content-center">
-                <div class="col-lg-6 col-md-8 col text-center mb-4">
-                    <!--Charly cambio de color-->
-                    <h6 class="text-shamrock font-weight-normal text-uppercase mb-3">Trabajos Destacados</h6>
-                    <h1 class="mb-4">Nuestro Estilo Reflejado en Cada Espacio</h1>
-                </div>
-            </div>
-            <!-- Proyecto 1 - Categoría: first (Completo) -->
-            <div class="row mx-1 portfolio-container">
-                <div class="col-lg-4 col-md-6 col-sm-12 p-0 portfolio-item first">
-                    <div class="position-relative overflow-hidden">
-                        <div class="portfolio-img d-flex align-items-center justify-content-center">
-                             <!-- Sección de Imagenes -->
-                             <!--Dayan:ACOMODE LAS IMAGES A UN SOLO TAMAÑO PARA QUE SE VEAN MEJOR-->
-                             <!-- DAYAN:ALINIACION DE IMAGENES Y MARCO VERDE -->
-                            <img src="img/VESUVIO 1.png" alt="obra1" class="marco">
-                        </div>
-                        <div class="portfolio-text bg-secondary d-flex flex-column align-items-center justify-content-center">
-                            <h4 class="text-white mb-4">VESUVIO RESIDENCIAL</h4>
-                            <div class="d-flex align-items-center justify-content-center">
-                                <a class="btn btn-outline-primary m-1" href="">
-                                    <i class="fa fa-link"></i>
-                                </a>
-                                <!--DAYAN:CAMBIE LAS IMAGENES-->
-                                <!--  Categoría:(Completo) -->
-                                <!-- Agregando data-title para mostrar nombre en lightbox -->
-                                <a class="btn btn-outline-primary m-1" href="img/VESUVIO 1.png" data-lightbox="VESUVIO" data-title="VESUVIO RESIDENCIAL">
-                                    <i class="fa fa-eye"></i>
-                                </a>
-                                <a href="img/VESUVIO 2.png" data-lightbox="VESUVIO" data-title="VESUVIO RESIDENCIAL"></a>
-                                <a href="img/VESUVIO 3.png" data-lightbox="VESUVIO" data-title="VESUVIO RESIDENCIAL"></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-               
-                <!-- Proyecto 3 - Categoría: third (En Proceso) -->
-                <div class="col-lg-4 col-md-6 col-sm-12 p-0 portfolio-item first">
-                    <div class="position-relative overflow-hidden">
-                        <div class="portfolio-img d-flex align-items-center justify-content-center">
-                            <!-- DAYAN:ALINIACION DE IMAGENES Y MARCO VERDE -->
-                            <img src="img/TULIPAN 6.png" alt="obra3" class="marco">
-                        </div>
-                        <div class="portfolio-text bg-secondary d-flex flex-column align-items-center justify-content-center">
-                            <h4 class="text-white mb-4">TULIPAN RESIDENCIAL</h4>
-                            <div class="d-flex align-items-center justify-content-center">
-                                <a class="btn btn-outline-primary m-1" href="">
-                                    <i class="fa fa-link"></i>
-                                </a>
-                                <!-- Agregando data-title para mostrar nombre en lightbox -->
-                                <a class="btn btn-outline-primary m-1" href="img/TULIPAN 6.png" data-lightbox="TULIPAN" data-title="TULIPAN RESIDENCIAL">
-                                    <i class="fa fa-eye"></i>
-                                </a>
-                                <a href="img/TULIPAN 5.png" data-lightbox="TULIPAN" data-title="TULIPAN RESIDENCIAL"></a>
-                                <a href="img/TULIPAN 4.png" data-lightbox="TULIPAN" data-title="TULIPAN RESIDENCIAL"></a>
-                                <a href="img/TULIPAN 3.png" data-lightbox="TULIPAN" data-title="TULIPAN RESIDENCIAL"></a>
-                                <a href="img/TULIPAN 2.png" data-lightbox="TULIPAN" data-title="TULIPAN RESIDENCIAL"></a>
-                                <a href="img/TULIPAN 1.png" data-lightbox="TULIPAN" data-title="TULIPAN RESIDENCIAL"></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Proyecto nuevo - Categoría: En Proceso -->
-<div class="col-lg-4 col-md-6 col-sm-12 p-0 portfolio-item first">
-    <div class="position-relative overflow-hidden">
-        <div class="portfolio-img d-flex align-items-center justify-content-center">
-            <!-- Imagen nueva -->
-            <!-- DAYAN:ALINIACION DE IMAGENES Y MARCO VERDE -->
-            <img src="img/SERENDIPIA 1.png" alt="obra en proceso" class="marco">
-        </div>
-        <div class="portfolio-text bg-secondary d-flex flex-column align-items-center justify-content-center">
-            <h4 class="text-white mb-4">SERENDIPIA RESIDENCIAL</h4>
-            <div class="d-flex align-items-center justify-content-center">
-                <a class="btn btn-outline-primary m-1" href="">
-                    <i class="fa fa-link"></i>
-                </a>
-                <!-- Agregando data-title para mostrar nombre en lightbox -->
-                <a class="btn btn-outline-primary m-1" href="img/SERENDIPIA 1.png" data-lightbox="SERENDIPIA" data-title="SERENDIPIA RESIDENCIAL">
-                    <i class="fa fa-eye"></i>
-                </a>
-                <a href="img/SERENDIPIA 2.png" data-lightbox="SERENDIPIA" data-title="SERENDIPIA RESIDENCIAL"></a>
-                <a href="img/SERENDIPIA 3.png" data-lightbox="SERENDIPIA" data-title="SERENDIPIA RESIDENCIAL"></a>
-                <a href="img/SERENDIPIA 4.png" data-lightbox="SERENDIPIA" data-title="SERENDIPIA RESIDENCIAL"></a>
-            </div>
-        </div>
+<!-- Modal -->
+<div class="air-modal" id="visitModal" role="dialog" aria-modal="true" aria-labelledby="visitT">
+  <div class="air-sheet">
+    <div class="air-head">
+      <h5 id="visitT">Confirmar visita por WhatsApp</h5>
+      <button class="air-x" type="button" aria-label="Cerrar" onclick="closeVisitModal()">✕</button>
     </div>
+    <p style="color:var(--muted);margin:0 0 6px">Revisa los datos y confirma. Te responderemos en menos de 24 h.</p>
+    <form id="visitForm" onsubmit="sendVisit(event)">
+      <div class="air-grid">
+        <input class="full air-input" type="text" id="vNombre" placeholder="Tu nombre" required>
+        <input class="air-input" type="date" id="vFecha" required>
+        <input class="air-input" type="time" id="vHora" required>
+        <input class="air-input" type="text" id="vZona" placeholder="Zona" required>
+        <input class="air-input" type="number" id="vPres" placeholder="Presupuesto (MXN)" required>
+        <select class="air-select" id="vRec" required><option value="" disabled selected>Recámaras</option><option>2</option><option>3</option><option>4</option><option>5+</option></select>
+        <input class="full air-input" type="text" id="vProp" placeholder="Propiedad (opcional)">
+      </div>
+      <div class="air-actions">
+        <button type="button" class="air-btn" onclick="closeVisitModal()">Cancelar</button>
+        <button type="submit" class="air-btn air-btn--primary">Confirmar por WhatsApp</button>
+      </div>
+    </form>
+  </div>
 </div>
-                 <!-- Proyecto 3 - Categoría:(Completo) -->
-                <div class="col-lg-4 col-md-6 col-sm-12 p-0 portfolio-item first">
-                    <div class="position-relative overflow-hidden">
-                        <div class="portfolio-img d-flex align-items-center justify-content-center">
-                           <!-- DAYAN:ALINIACION DE IMAGENES Y MARCO VERDE -->
-                           <img src="img/INNOVA 1.png" alt="obra4" class="marco">
-                        </div>
-                        <div class="portfolio-text bg-secondary d-flex flex-column align-items-center justify-content-center">
-                            <h4 class="text-white mb-4">INNOVA RESIDENCIAL</h4>
-                            <div class="d-flex align-items-center justify-content-center">
-                                <a class="btn btn-outline-primary m-1" href="">
-                                    <i class="fa fa-link"></i>
-                                </a>
-                                <!-- Agregando data-title para mostrar nombre en lightbox -->
-                                <a class="btn btn-outline-primary m-1" href="img/INNOVA 1.png" data-lightbox="INNOVA" data-title="INNOVA RESIDENCIAL">
-                                    <i class="fa fa-eye"></i>
-                                </a>
-                                <a href="img/INNOVA 2.png" data-lightbox="INNOVA" data-title="INNOVA RESIDENCIAL"></a>
-                                <a href="img/INNOVA 3.png" data-lightbox="INNOVA" data-title="INNOVA RESIDENCIAL"></a>
-                                <a href="img/INNOVA 4.png" data-lightbox="INNOVA" data-title="INNOVA RESIDENCIAL"></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-              <!-- Proyecto nuevo - Categoría: Completo -->
-<div class="col-lg-4 col-md-6 col-sm-12 p-0 portfolio-item first">
-    <div class="position-relative overflow-hidden">
-        <div class="portfolio-img d-flex align-items-center justify-content-center">
-            <!-- DAYAN:ALINIACION DE IMAGENES Y MARCO VERDE -->
-            <img src="img/PERGOLA 1.png" alt="obra completa" class="marco">
-        </div>
-        <div class="portfolio-text bg-secondary d-flex flex-column align-items-center justify-content-center">
-            <h4 class="text-white mb-4">PERGOLA DE DISEÑO</h4>
-            <div class="d-flex align-items-center justify-content-center">
-                <a class="btn btn-outline-primary m-1" href="https://www.instagram.com/p/DL1jRDSAP6x/?igsh=bjV2b24wcTBsOXR2" target="_blank" rel="noopener noreferrer">
-                    <i class="fa fa-link"></i>
-                </a>
-                <!-- Agregando data-title para mostrar nombre en lightbox -->
-                <a class="btn btn-outline-primary m-1" href="img/PERGOLA 1.png" data-lightbox="PERGOLA" data-title="PERGOLA DE DISEÑO">
-                    <i class="fa fa-eye"></i>
-                </a>
-                <a href="img/PERGOLA 2.png" data-lightbox="PERGOLA" data-title="PERGOLA DE DISEÑO"></a>
-                <a href="img/PERGOLA 3.png" data-lightbox="PERGOLA" data-title="PERGOLA DE DISEÑO"></a>
-                <a href="img/PERGOLA 6.png" data-lightbox="PERGOLA" data-title="PERGOLA DE DISEÑO"></a>
-                <a href="img/PERGOLA 8.jpg" data-lightbox="PERGOLA" data-title="PERGOLA DE DISEÑO"></a>
-                <a href="img/PERGOLA 9.jpg" data-lightbox="PERGOLA" data-title="PERGOLA DE DISEÑO"></a>
-                <a href="img/PERGOLA 10.jpg" data-lightbox="PERGOLA" data-title="PERGOLA DE DISEÑO"></a>
-                <a href="img/PERGOLA 11.jpeg" data-lightbox="PERGOLA" data-title="PERGOLA DE DISEÑO"></a>
-                <a href="img/PERGOLA 12.jpg" data-lightbox="PERGOLA" data-title="PERGOLA DE DISEÑO"></a>
-                <a href="img/PERGOLA 13.jpg" data-lightbox="PERGOLA" data-title="PERGOLA DE DISEÑO"></a>
-                <a href="img/PERGOLA 14.jpg" data-lightbox="PERGOLA" data-title="PERGOLA DE DISEÑO"></a>
-            </div>
-        </div>
-    </div>
-</div> 
-<!-- Proyecto - Categoría: Completo -->
-                <div class="col-lg-4 col-md-6 col-sm-12 p-0 portfolio-item third">
-                    <div class="position-relative overflow-hidden">
-                        <div class="portfolio-img d-flex align-items-center justify-content-center">
-                           <!-- DAYAN:ALINIACION DE IMAGENES Y MARCO VERDE -->
-                           <img src="img/DSC_4664.JPG" alt="obra4" class="marco">
-                        </div>
-                        <div class="portfolio-text bg-secondary d-flex flex-column align-items-center justify-content-center">
-                            <h4 class="text-white mb-4">DISEÑO DE INTERIORES</h4>
-                            <div class="d-flex align-items-center justify-content-center">
-                                <a class="btn btn-outline-primary m-1" href="https://www.instagram.com/reel/DJTSrY-A8Hx/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" rel="noopener noreferrer">
-                                    <i class="fa fa-link"></i>
-                                </a>
-                                <!-- Agregando data-title para mostrar nombre en lightbox -->
-                                <a class="btn btn-outline-primary m-1" href="img/DSC_4664.JPG" data-lightbox="INTERIORES" data-title="DISEÑO DE INTERIORES">
-                                    <i class="fa fa-eye"></i>
-                                </a>
-                                <a href="img/Escaleras.jpeg" data-lightbox="INTERIORES" data-title="DISEÑO DE INTERIORES - Escaleras"></a>
-                                <a href="img/DSC_4893.JPG" data-lightbox="INTERIORES" data-title="DISEÑO DE INTERIORES"></a>
-                                <a href="img/DSC_4685.JPG" data-lightbox="INTERIORES" data-title="DISEÑO DE INTERIORES"></a>
-                                <a href="img/DSC_4631.JPG" data-lightbox="INTERIORES" data-title="DISEÑO DE INTERIORES"></a>
-                                <a href="img/DSC_4630.JPG" data-lightbox="INTERIORES" data-title="DISEÑO DE INTERIORES"></a>
-                                <a href="img/DSC_4621.JPG" data-lightbox="INTERIORES" data-title="DISEÑO DE INTERIORES"></a>
-                                <a href="img/DSC_4619.JPG" data-lightbox="INTERIORES" data-title="DISEÑO DE INTERIORES"></a>
-                                <a href="img/DSC_4582.JPG" data-lightbox="INTERIORES" data-title="DISEÑO DE INTERIORES"></a>
-                                <a href="img/DSC_4576.JPG" data-lightbox="INTERIORES" data-title="DISEÑO DE INTERIORES"></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Proyecto - Categoría:(Completo) -->
-                <div class="col-lg-4 col-md-6 col-sm-12 p-0 portfolio-item third">
-                    <div class="position-relative overflow-hidden">
-                        <div class="portfolio-img d-flex align-items-center justify-content-center">
-                           <!-- DAYAN:ALINIACION DE IMAGENES Y MARCO VERDE -->
-                           <img src="img/CONST10 (1).jpg" alt="obra4" class="marco">
-                        </div>
-                        <div class="portfolio-text bg-secondary d-flex flex-column align-items-center justify-content-center">
-                            <h4 class="text-white mb-4">CONSTRUCCION</h4>
-                            <div class="d-flex align-items-center justify-content-center">
-                                <a class="btn btn-outline-primary m-1" href="">
-                                    <i class="fa fa-link"></i>
-                                </a>
-                                <!-- Agregando data-title para mostrar nombre en lightbox -->
-                                <a class="btn btn-outline-primary m-1" href="img/CONST10 (1).jpg" data-lightbox="CONSTRUCCION" data-title="CONSTRUCCION">
-                                    <i class="fa fa-eye"></i>
-                                </a>
-                                <a href="img/CONST11.jpg" data-lightbox="CONSTRUCCION" data-title="CONSTRUCCION"></a>
-                                <a href="img/CONST10.jpg" data-lightbox="CONSTRUCCION" data-title="CONSTRUCCION"></a>
-                                <a href="img/CONST9.jpg" data-lightbox="CONSTRUCCION" data-title="CONSTRUCCION"></a>
-                                <a href="img/CONST8.jpg" data-lightbox="CONSTRUCCION" data-title="CONSTRUCCION"></a>
-                                <a href="img/CONST7.jpg" data-lightbox="CONSTRUCCION" data-title="CONSTRUCCION"></a>
-                                <a href="img/CONST6.jpg" data-lightbox="CONSTRUCCION" data-title="CONSTRUCCION"></a>
-                                <a href="img/CONST5.jpg" data-lightbox="CONSTRUCCION" data-title="CONSTRUCCION"></a>
-                                <a href="img/CONST4.jpg" data-lightbox="CONSTRUCCION" data-title="CONSTRUCCION"></a>
-                                <a href="img/CONST3.jpg" data-lightbox="CONSTRUCCION" data-title="CONSTRUCCION"></a>
-                                <a href="img/CONST1.jpg" data-lightbox="CONSTRUCCION" data-title="CONSTRUCCION"></a>
-                                <a href="img/CONST 2.jpg" data-lightbox="CONSTRUCCION" data-title="CONSTRUCCION"></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<script>
+  /* ===== Countdown 36h estilo simple ===== */
+  (function(){
+    const end = new Date(Date.now() + 36*60*60*1000);
+    const $ = s=>document.querySelector(s);
+    const total = end - new Date();
+    function tick(){
+      const diff = Math.max(0, end - new Date());
+      const h = Math.floor(diff/3600000);
+      const m = Math.floor((diff%3600000)/60000);
+      const s = Math.floor((diff%60000)/1000);
+      $('#h').textContent = String(h).padStart(2,'0');
+      $('#m').textContent = String(m).padStart(2,'0');
+      $('#s').textContent = String(s).padStart(2,'0');
+      const pct = 100 - Math.round(diff/total*100);
+      $('#bar').style.width = Math.min(100, Math.max(18, pct)) + '%';
+    }
+    tick(); setInterval(tick, 1000);
+  })();
 
-                <div class="col-lg-4 col-md-6 col-sm-12 p-0 portfolio-item first">
-                    <div class="position-relative overflow-hidden">
-                        <div class="portfolio-img d-flex align-items-center justify-content-center">
-                            <!-- Sección de Imagenes -->
-                            <!-- Categoría: third (En Proceso) -->
-                            <!-- DAYAN:ALINIACION DE IMAGENES Y MARCO VERDE -->
-                            <img src="img/HG 1.png" alt="obra6" class="marco">
-                        </div>
-                        <div class="portfolio-text bg-secondary d-flex flex-column align-items-center justify-content-center">
-                            <h4 class="text-white mb-4">HIGH GARDENS</h4>
-                            <div class="d-flex align-items-center justify-content-center">
-                                <a class="btn btn-outline-primary m-1" href="https://www.instagram.com/p/DHYvBotAgoO/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" rel="noopener noreferrer">
-                                    <i class="fa fa-link"></i>
-                                </a>
-                                <!-- Agregando data-title para mostrar nombre en lightbox -->
-                                <a class="btn btn-outline-primary m-1" href="img/HG 1.png" data-lightbox="portfolio" data-title="HIGH GARDENS">
-                                    <i class="fa fa-eye"></i>
-                                </a>
-                                <a href="img/HG 2.png" data-lightbox="portfolio" data-title="HIGH GARDENS"></a>
-                                <a href="img/HG 4.jpg" data-lightbox="portfolio" data-title="HIGH GARDENS"></a>
-                                <a href="img/HERRERIA.JPG" data-lightbox="portfolio" data-title="HIGH GARDENS"></a>
-                                <a href="img/DSC_4880.JPG" data-lightbox="portfolio" data-title="HIGH GARDENS"></a>
-                                <a href="img/H3.jpg" data-lightbox="portfolio" data-title="HIGH GARDENS"></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            <!--Vermas-->
-                <div class="col-lg-4 col-md-6 col-sm-12 p-0 portfolio-item">
-                    <div class="position-relative overflow-hidden">
-                        <div class="portfolio-img d-flex align-items-center justify-content-center">
-                            <img src="img/IMG_4560.JPG" alt="obra6" class="marco">
-                        </div>
-                        <div class="portfolio-text bg-secondary d-flex flex-column align-items-center justify-content-center">
-                            <h4 class="text-white mb-4">PERGOLAS</h4>
-                            <div class="d-flex align-items-center justify-content-center">
-                                <a class="btn btn-outline-primary m-1" href="">
-                                    <i class="fa fa-link"></i>
-                                </a>
-                                <!-- Agregando data-title para mostrar nombre en lightbox -->
-                                <a class="btn btn-outline-primary m-1" href="img/IMG_4560.JPG" data-lightbox="PERGOLAS" data-title="PERGOLAS">
-                                    <i class="fa fa-eye"></i>
-                                </a>
-                                <a href="img/IMG-20250824-WA0050.jpg" data-lightbox="PERGOLAS" data-title="PERGOLAS"></a>
-                                <a href="img/IMG_20250803_192550_700.jpg" data-lightbox="PERGOLAS" data-title="PERGOLAS"></a>
-                                <a href="img/IMG_4560.JPG" data-lightbox="PERGOLAS" data-title="PERGOLAS"></a>
-                                <a href="img/PERGOLA 4.png" data-lightbox="PERGOLAS" data-title="PERGOLAS"></a>
-                                <a href="img/IMG_20250803_192550_790.jpg" data-lightbox="PERGOLAS" data-title="PERGOLAS"></a>
-                                <a href="img/IMG_20250803_192549_528.jpg" data-lightbox="PERGOLAS" data-title="PERGOLAS"></a>
-                                <a href="img/IMG_20250803_192550_635.jpg" data-lightbox="PERGOLAS" data-title="PERGOLAS"></a>
-                                <a href="img/IMG_20250803_192549_904.jpg" data-lightbox="PERGOLAS" data-title="PERGOLAS"></a>
-                                <a href="img/IMG_4366.JPG" data-lightbox="PERGOLAS" data-title="PERGOLAS"></a>
-                                <a href="img/IMG_4578.JPG" data-lightbox="PERGOLAS" data-title="PERGOLAS"></a>
-                                <a href="img/IMG_4591.JPG" data-lightbox="PERGOLAS" data-title="PERGOLAS"></a>
-                                <a href="img/IMG_4621.JPG" data-lightbox="PERGOLAS" data-title="PERGOLAS"></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- "Final de la sección de Proyectos" -->
+  /* ===== Modal ===== */
+  const modal = document.getElementById('visitModal');
+  function openVisitModal(){
+    // Prellenar con valores de la tarjeta
+    document.getElementById('vFecha').value = document.getElementById('fFecha').value;
+    document.getElementById('vHora').value  = document.getElementById('fHora').value;
+    document.getElementById('vZona').value  = document.getElementById('fZona').value;
+    document.getElementById('vPres').value  = document.getElementById('fPres').value;
+    document.getElementById('vRec').value   = document.getElementById('fRec').value || '';
+    document.getElementById('vProp').value  = document.getElementById('fProp').value;
+    modal.classList.add('show'); document.body.style.overflow='hidden';
+  }
+  function closeVisitModal(){ modal.classList.remove('show'); document.body.style.overflow=''; }
+
+  /* ===== WhatsApp dinámico (card + modal) ===== */
+  const WHATS = '5214423440411'; // <-- Cambia a tu número real
+  function buildMsg({nombre, fecha, hora, zona, pres, rec, prop}){
+    const fmx = fecha ? new Date(fecha).toLocaleDateString('es-MX',{year:'numeric',month:'long',day:'numeric'}) : '';
+    const presFmt = pres ? Number(pres).toLocaleString('es-MX') : '';
+    let msg = 'Hola, quiero agendar una visita.';
+    if(nombre) msg += `%0A• Nombre: ${encodeURIComponent(nombre)}`;
+    if(prop)   msg += `%0A• Propiedad: ${encodeURIComponent(prop)}`;
+    if(zona)   msg += `%0A• Zona: ${encodeURIComponent(zona)}`;
+    if(presFmt)msg += `%0A• Presupuesto: $${presFmt} MXN`;
+    if(rec)    msg += `%0A• Recámaras: ${encodeURIComponent(rec)}`;
+    if(fmx||hora) msg += `%0A• Fecha/Hora: ${encodeURIComponent(fmx + (hora?(' ' + hora):''))}`;
+    msg += `%0A%0A¿Me apoyan con disponibilidad?`;
+    return `https://wa.me/${WHATS}?text=${msg}`;
+  }
+
+  // Botón WhatsApp de la tarjeta (en vivo)
+  (function(){
+    const btn = document.getElementById('btnWA');
+    const take = id => document.getElementById(id)?.value?.trim();
+    function upd(){
+      btn.href = buildMsg({
+        nombre:'', fecha:take('fFecha'), hora:take('fHora'),
+        zona:take('fZona'), pres:take('fPres'), rec:take('fRec'), prop:take('fProp')
+      });
+    }
+    ['fFecha','fHora','fZona','fPres','fRec','fProp'].forEach(id=>{
+      const el = document.getElementById(id);
+      el && el.addEventListener('input', upd);
+    });
+    upd();
+  })();
+
+  // Envío desde modal
+  function sendVisit(e){
+    e.preventDefault();
+    const v = id => document.getElementById(id).value.trim();
+    const link = buildMsg({
+      nombre:v('vNombre'), fecha:v('vFecha'), hora:v('vHora'),
+      zona:v('vZona'), pres:v('vPres'), rec:v('vRec'), prop:v('vProp')
+    });
+    window.open(link, '_blank'); closeVisitModal();
+  }
+</script>
+<!-- ========== FIN | Urgencia estilo Airbnb ========== -->
+
+
+ 
 
     <script>
         function openModal(modalId) {
