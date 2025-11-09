@@ -10615,7 +10615,30 @@ h6 {
   right: 10px;
 }
 
+/* Compactar espacio entre el hero y esta sección */
+.air-about.air-tight{
+  margin-top: -90px !important;   /* súbela (ajusta a -70 / -110 si quieres) */
+  padding-top: 0 !important;
+}
 
+/* Quita márgenes altos por defecto en el contenido interno */
+.air-about-wrap{ padding: 0 16px; max-width: 1100px; margin: 0 auto; }
+.air-about-head{ margin: 0 !important; }
+.air-eyebrow{ display:inline-block; margin: 0 0 10px !important; }
+.air-title{ margin: 0 0 8px !important; }
+.air-lead{ margin: 8px auto 0 !important; max-width: 800px; }
+
+/* Asegura que el hero no deje cola de espacio */
+.hero, .hero-section{ margin-bottom: 0 !important; padding-bottom: 0 !important; }
+
+/* Si usas utilidades Bootstrap (py-5, my-5) alrededor, suavízalas */
+.py-5{ padding-top: 2rem !important; padding-bottom: 2rem !important; }
+.my-5{ margin-top: 1.5rem !important; margin-bottom: 1.5rem !important; }
+
+/* Responsive: ajusta el “pegado” en pantallas grandes */
+@media (min-width: 992px){
+  .air-about.air-tight{ margin-top: -120px !important; }
+}
 
 
 
