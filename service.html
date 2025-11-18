@@ -1,89 +1,259 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="utf-8" />
-  <title>MOMED SERVICIOS</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Fonts / Icons / Bootstrap -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald:wght@400;500;600&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<head>
+  <meta charset="utf-8">
+  <title>MOMED PAGINA PRINCIPAL</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="MOMED Arquitectura, Construcción y Diseño" name="description">
+
+  <!-- Iconos y Tipografías -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald:wght@400;500;600&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- (Opcional) tus libs y css global -->
+  <!-- Flaticon -->
   <link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
+
+  <!-- Librerías opcionales -->
   <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
   <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+  <!-- Tu hoja de estilos principal -->
   <link href="css/style.css" rel="stylesheet">
 
+  <!-- EmailJS SDK (opcional) -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function () {
+      emailjs.init("fBsDQAPpy2ke_o-zr");
+    })();
+  </script>
+
+  <!-- ===== ESTILOS PERSONALIZADOS ===== -->
   <style>
-    :root{
-      --bcd-accent:#10b981;
+    :root {
+      --bcd-deep: #0f172a;
+      --bcd-primary: #1a3c34;
+      --bcd-accent: #10b981;
+      --airbnb-red: #FF385C;
       --glass-bg: rgba(17, 24, 39, .35);
-      --glass-border: rgba(255,255,255,.14);
+      --glass-border: rgba(255, 255, 255, .14);
     }
-    body{margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; background:#fff;}
-    /* ===== NAV del INDEX (idéntica) ===== */
-    .nav-glass{
-      position:fixed; top:20px; left:50%; transform:translateX(-50%);
-      width:min(1180px,92%); z-index:1030;
-      background:var(--glass-bg); border:1px solid var(--glass-border);
-      border-radius:18px; backdrop-filter:blur(10px);
-      box-shadow:0 10px 30px rgba(0,0,0,.25); transition:.3s ease;
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: #fff;
+      color: #0f172a;
     }
-    .nav-glass.nav-scrolled{
-      top:0; left:0; transform:none; width:100%; border-radius:0;
-      background:rgba(17,24,39,.93); border-color:rgba(255,255,255,.08);
-      box-shadow:0 10px 25px rgba(0,0,0,.35);
+
+    /* ===== NAVBAR ===== */
+    .nav-glass {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(1180px, 92%);
+      z-index: 1030;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 18px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, .25);
+      transition: .3s ease;
     }
-    .navbar{padding:.45rem 1rem;}
-    .navbar-nav .nav-link{
-      color:#fff !important; font-weight:600; border-radius:12px;
-      padding:.6rem 1rem !important; font-size:1rem; transition:.25s ease;
+
+    .nav-glass.nav-scrolled {
+      top: 0;
+      left: 0;
+      transform: none;
+      width: 100%;
+      border-radius: 0;
+      background: rgba(17, 24, 39, .93);
+      border-color: rgba(255, 255, 255, .08);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, .35);
     }
-    .navbar-nav .nav-link:hover{background:rgba(255,255,255,.1);}
-    .dropdown-menu{
-      background:rgba(15,23,42,.96); border:1px solid rgba(255,255,255,.1); border-radius:14px;
+
+    .navbar {
+      padding: .45rem 1rem;
     }
-    .dropdown-item{color:#e5e7eb; font-weight:600;}
-    .dropdown-item:hover{background:rgba(255,255,255,.08); color:#fff;}
-    .pill{
-      background:rgba(16,185,129,.25); color:#d1fae5; border:1px solid rgba(16,185,129,.4);
-      padding:.45rem .9rem; border-radius:999px; font-weight:700;
-      display:inline-flex; align-items:center; gap:.45rem; transition:.25s ease;
+
+    .navbar-nav .nav-link {
+      color: #fff !important;
+      font-weight: 600;
+      border-radius: 12px;
+      padding: .6rem 1rem !important;
+      font-size: 1rem;
+      transition: all .25s ease;
     }
-    .pill:hover{background:var(--bcd-accent); color:#053325;}
-    /* Espaciador para nav fijo */
-    .spacer{height:110px;}
-    @media (max-width: 991.98px){
-      .navbar-collapse{
-        background:rgba(17,24,39,.95); border:1px solid rgba(255,255,255,.08);
-        border-radius:14px; padding:.5rem; margin-top:.5rem;
+
+    .navbar-nav .nav-link:hover {
+      background: rgba(255, 255, 255, .1);
+    }
+
+    .dropdown-menu {
+      background: rgba(15, 23, 42, .96);
+      border: 1px solid rgba(255, 255, 255, .1);
+      border-radius: 14px;
+    }
+
+    .dropdown-item {
+      color: #e5e7eb;
+      font-weight: 600;
+    }
+
+    .dropdown-item:hover {
+      background: rgba(255, 255, 255, .08);
+      color: #fff;
+    }
+
+    .pill {
+      background: rgba(16, 185, 129, .25);
+      color: #d1fae5;
+      border: 1px solid rgba(16, 185, 129, .4);
+      padding: .45rem .9rem;
+      border-radius: 999px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      transition: all .25s ease;
+    }
+
+    .pill:hover {
+      background: var(--bcd-accent);
+      color: #053325;
+    }
+
+    /* ===== HERO ===== */
+    header.hero {
+      position: relative;
+      min-height: 92vh;
+      width: 100%;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
+
+    .hero .hero-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(.78);
+      transform: scale(1.03);
+    }
+
+    .hero .overlay {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(60% 60% at 50% 40%, rgba(0, 0, 0, .25) 0%, rgba(0, 0, 0, .6) 100%);
+    }
+
+    .hero .content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 0 1rem;
+      max-width: 1100px;
+    }
+
+    .hero h1 {
+      font-family: Oswald, Inter, Arial;
+      font-weight: 800;
+      letter-spacing: .5px;
+      font-size: clamp(2rem, 4vw + 1rem, 4rem);
+      margin-bottom: .6rem;
+      color: #ffffff;
+      text-transform: uppercase;
+    }
+
+    .hero p {
+      margin: 0 auto 1.3rem;
+      max-width: 820px;
+      font-size: clamp(1rem, .6vw + .9rem, 1.2rem);
+      color: var(--airbnb-red);
+      font-weight: 600;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: .75rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-ghost,
+    .btn-accent {
+      border: 1px solid rgba(255, 255, 255, .25);
+      color: #fff;
+      background: transparent;
+      padding: .85rem 1.2rem;
+      border-radius: 999px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      transition: .25s ease;
+    }
+
+    .btn-ghost:hover {
+      transform: translateY(-1px);
+      border-color: #fff;
+    }
+
+    .btn-accent {
+      background: var(--bcd-accent);
+      border-color: transparent;
+      color: #06281f;
+    }
+
+    .btn-accent:hover {
+      filter: brightness(1.05);
+    }
+
+    main {
+      padding: 4rem 1rem;
+    }
+
+    @media (max-width: 991.98px) {
+      .navbar-collapse {
+        background: rgba(17, 24, 39, .95);
+        border: 1px solid rgba(255, 255, 255, .08);
+        border-radius: 14px;
+        padding: .5rem;
+        margin-top: .5rem;
       }
-      .pill{width:100%; justify-content:center;}
+
+      .pill {
+        width: 100%;
+        justify-content: center;
+      }
     }
   </style>
 </head>
+
 <body>
 
-  <!-- ===== NAVBAR (igual al index) ===== -->
+  
+
+  <!-- ===== NAVBAR FLOTANTE CENTRADA SIN LOGO ===== -->
   <div class="nav-glass" id="glassNav">
     <nav class="navbar navbar-expand-lg navbar-dark justify-content-center">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-              aria-controls="navbarCollapse" aria-expanded="false" aria-label="Menú">
+        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Menú">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse justify-content-center" id="navbarCollapse">
         <ul class="navbar-nav align-items-lg-center text-center">
-          <li class="nav-item"><a href="index.html" class="nav-link">Hogar</a></li>
-          <li class="nav-item"><a href="service.html" class="nav-link active">Servicios</a></li>
+          <li class="nav-item"><a href="index.html" class="nav-link active">Hogar</a></li>
+          <li class="nav-item"><a href="service.html" class="nav-link">Servicios</a></li>
           <li class="nav-item"><a href="project.html" class="nav-link">Proyectos</a></li>
           <li class="nav-item"><a href="contact.html" class="nav-link">Contacto</a></li>
 
-     
-
-          <!-- Pastillas como en el index -->
           <li class="nav-item mx-2 my-1 my-lg-0">
             <a class="pill" href="https://wa.me/524421317870" target="_blank" rel="noopener">
               <i class="fab fa-whatsapp"></i> WhatsApp
@@ -99,23 +269,45 @@
     </nav>
   </div>
 
-  <!-- Espaciador para que no quede pegado arriba -->
-  <div class="spacer"></div>
+  <!-- ===== HERO ===== -->
+  <header class="hero" id="hogar">
+    <img class="hero-img" src="img/numu-fachada.webp" alt="Residencia moderna BCD">
+    <div class="overlay"></div>
 
-  <!-- (intencionalmente vacío) -->
+    <div class="content">
+      <h1>“Servicios de Vivienda y Hospedaje”</h1>
+      <p>CALIDAD Y CONFIANZA</p>
+      <div class="cta-row">
+        <a href="project.html" class="btn-accent"><i class="fas fa-images"></i> Ver Proyectos</a>
+        <a href="service.html" class="btn-ghost"><i class="fas fa-th-large"></i> Nuestros Servicios</a>
+        <a href="contact.html" class="btn-ghost"><i class="far fa-calendar-check"></i> Agenda una Cita</a>
+      </div>
+    </div>
+  </header>
 
-  <!-- JS -->
+  <!-- ===== CONTENIDO PRINCIPAL ===== -->
+  <main>
+    <!-- Aquí continúa tu contenido del sitio -->
+  </main>
+
+  <!-- JS Bootstrap -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- Efecto del Navbar al hacer scroll -->
   <script>
     const glassNav = document.getElementById('glassNav');
-    function onScroll(){ if(window.scrollY>40) glassNav.classList.add('nav-scrolled'); else glassNav.classList.remove('nav-scrolled'); }
-    document.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+    function onScroll() {
+      if (window.scrollY > 40) glassNav.classList.add('nav-scrolled');
+      else glassNav.classList.remove('nav-scrolled');
+    }
+    document.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
   </script>
+
 </body>
 </html>
-
 
 
 
@@ -601,8 +793,6 @@
       </div>
     </div>
 
-   
-
 
 <style>
   :root{
@@ -690,51 +880,28 @@
 
 
 <!-- ========== INICIO | Conoce nuestras casas en venta (Mapa) ========== -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
-<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
-
-<style>
-  .homes-wrap{padding:24px 0}
-  .homes-title{font-weight:900; letter-spacing:.3px}
-  #mapHomes{width:100%; height:650px; border-radius:18px; box-shadow:0 14px 32px rgba(0,0,0,.08)}
-  /* Marcador con precio */
-  .house-pin{position:relative; transform:translate(-50%, -100%); white-space:nowrap}
-  .house-pin .tag{
-    background:#fff; border:1px solid #e1efe6; border-radius:10px; padding:.15rem .45rem;
-    font-weight:800; color:#1f4d3e; box-shadow:0 6px 14px rgba(0,0,0,.08); margin-bottom:4px; display:inline-block; font-size:.85rem
-  }
-  .house-pin .dot{width:16px; height:16px; border-radius:50%; border:3px solid #fff; box-shadow:0 0 0 2px rgba(0,0,0,.12); margin:auto}
-  /* Popup */
-  .popup-home{min-width:270px}
-  .popup-home img{width:100%; height:150px; object-fit:cover; border-radius:10px}
-  .popup-home h6{margin:.45rem 0 .1rem 0; font-weight:900}
-  .meta{color:#51635a}
-  .btn-mini{display:inline-block; padding:.35rem .6rem; border-radius:8px; font-weight:700; font-size:.82rem; text-decoration:none; background:#2e6f54; color:#fff}
-  .btn-mini:hover{filter:brightness(.95)}
-</style>
-
-<!-- ====== INICIO | Mapa de Casas (Estilo Airbnb mejorado) ====== -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
-<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 
 <section class="container homes-wrap text-center my-5">
   <div class="air-homes-head mb-4">
     <span class="air-eyebrow">Casas Disponibles</span>
     <h2 class="air-homes-title">Explora <span>Tu Próximo Hogar</span></h2>
+
     <!-- Filtros -->
     <div class="filter-bar mt-3">
       <button class="chip is-active" data-filter="todos">Todos</button>
       <button class="chip" data-filter="venta">Venta en Querétaro</button>
       <button class="chip" data-filter="renta">Renta vacacional en San Miguel</button>
-      <small class="ml-2 text-muted d-block d-md-inline" id="countLabel">Mostrando 0 propiedades</small>
+      <small class="ml-2 text-muted d-block d-md-inline" id="countLabel">
+        Mostrando 0 propiedades
+      </small>
     </div>
   </div>
 
   <div id="mapHomes"></div>
+
   <div class="legend mt-2 small">
-    <span class="pill pill-venta"></span> Venta (precio total) 
+    <span class="pill pill-venta"></span> Venta (precio total)
     <span class="pill pill-renta ml-2"></span> Renta vacacional (precio por noche)
   </div>
 </section>
@@ -745,13 +912,18 @@
     --ink:#222; --muted:#6b6b6b; --line:#e9e9e9;
     --venta:#2e6f54; --renta:#2563eb;
   }
+
   .homes-wrap{ max-width:1100px; margin:auto; padding:0 1rem; }
+
   .air-homes-head .air-eyebrow{
     display:inline-block; padding:.45rem .9rem; border-radius:999px;
     background:#FFF0F3; border:1px solid var(--line); color:var(--accent);
     font-weight:700; font-size:.85rem; letter-spacing:.05em; text-transform:uppercase;
   }
-  .air-homes-title{ margin-top:.7rem; font-weight:900; font-size:clamp(1.8rem,4vw,2.3rem); color:var(--ink); }
+  .air-homes-title{
+    margin-top:.7rem; font-weight:900;
+    font-size:clamp(1.8rem,4vw,2.3rem); color:var(--ink);
+  }
   .air-homes-title span{ color:var(--accent); }
 
   .filter-bar .chip{
@@ -759,8 +931,12 @@
     border:1px solid var(--line); background:#fff; color:#333; font-weight:600;
     transition:.2s; cursor:pointer; outline:0;
   }
-  .filter-bar .chip:hover{ transform:translateY(-1px); box-shadow:0 6px 18px rgba(0,0,0,.06); }
-  .filter-bar .chip.is-active{ background:#fff; border-color:#ffd6e0; color:var(--accent-d); }
+  .filter-bar .chip:hover{
+    transform:translateY(-1px); box-shadow:0 6px 18px rgba(0,0,0,.06);
+  }
+  .filter-bar .chip.is-active{
+    background:#fff; border-color:#ffd6e0; color:var(--accent-d);
+  }
 
   #mapHomes{
     width:100%; height:550px; border-radius:18px; overflow:hidden;
@@ -775,7 +951,10 @@
     border-radius:12px; box-shadow:0 6px 16px rgba(0,0,0,.16); border:1px solid rgba(0,0,0,.06);
     white-space:nowrap;
   }
-  .house-pin .dot{ width:10px; height:10px; border-radius:999px; margin:.35rem auto 0; box-shadow:0 0 0 2px #fff; }
+  .house-pin .dot{
+    width:10px; height:10px; border-radius:999px; margin:.35rem auto 0;
+    box-shadow:0 0 0 2px #fff;
+  }
 
   /* Popup */
   .leaflet-popup-content{ margin:8px 10px; }
@@ -788,139 +967,131 @@
   }
   .btn-mini:hover{ background:#e5e7eb; }
 
-  .legend .pill{ display:inline-block; width:12px; height:12px; border-radius:50%; vertical-align:middle; margin-right:.35rem; }
-  .pill-venta{ background:var(--venta); } .pill-renta{ background:var(--renta); }
+  .legend .pill{
+    display:inline-block; width:12px; height:12px; border-radius:50%;
+    vertical-align:middle; margin-right:.35rem;
+  }
+  .pill-venta{ background:var(--venta); }
+  .pill-renta{ background:var(--renta); }
 </style>
-<!-- ====== FIN | Mapa de Casas (Estilo Airbnb mejorado) ====== -->
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 <script>
-/* ==========================================================
-   DATA: Venta (QRO) + Renta Vacacional (SMA)
-   Campos: {id, operacion:'venta'|'renta', titulo, ciudad, lat, lng, precio, rec, ban, m2t, m2c, est, img, telefono}
-   Nota: precios y coordenadas aproximadas; reemplaza por tus datos reales
-========================================================== */
+  /* =========================
+     DATA de casas
+  ========================== */
 
-// ---- Querétaro (VENTA) ----
-const VENTA_QRO = [
-  {id:'QRO-01', operacion:'venta', titulo:'Juriquilla • casa moderna', ciudad:'Querétaro (Juriquilla)', lat:20.704, lng:-100.455, precio:5300000, rec:3, ban:3, m2t:180, m2c:210, est:2, img:'img/casa-juriquilla-arquipartners_15.jpg', telefono:'5214420000001'},
-  {id:'QRO-02', operacion:'venta', titulo:'El Refugio • nueva', ciudad:'Querétaro (El Refugio)', lat:20.627, lng:-100.332, precio:3450000, rec:3, ban:3, m2t:128, m2c:155, est:2, img:'img/PHOTO-2018-10-10-14-56-07_0.jpg', telefono:'5214420000004'},
-  {id:'QRO-03', operacion:'venta', titulo:'Zibatá • vista al campo', ciudad:'El Marqués (Zibatá)', lat:20.668, lng:-100.329, precio:4700000, rec:3, ban:3, m2t:160, m2c:190, est:2, img:'img/68f1777db422c.jpg', telefono:'5214420000005'},
-  {id:'QRO-04', operacion:'venta', titulo:'Centro Sur • departamento', ciudad:'Querétaro (Centro Sur)', lat:20.567, lng:-100.382, precio:4150000, rec:2, ban:2, m2t:0, m2c:110, est:2, img:'img/61846299-ed1f-42c9-809c-28f1b949bd86.jpeg', telefono:'5214420000006'},
-  {id:'QRO-05', operacion:'venta', titulo:'Milenio III • roof garden', ciudad:'Querétaro (Milenio III)', lat:20.588, lng:-100.352, precio:3990000, rec:3, ban:3, m2t:128, m2c:170, est:2, img:'img/EB-MH8190.webp', telefono:'5214420000007'},
-  {id:'QRO-06', operacion:'venta', titulo:'El Campanario • residencial', ciudad:'Querétaro (El Campanario)', lat:20.635, lng:-100.376, precio:13900000, rec:4, ban:5, m2t:420, m2c:480, est:3, img:'img/EB-MH8190.webp', telefono:'5214420000008'},
-  {id:'QRO-07', operacion:'venta', titulo:'Cumbres del Lago', ciudad:'Querétaro (Cumbres del Lago)', lat:20.741, lng:-100.456, precio:6100000, rec:3, ban:4, m2t:220, m2c:250, est:2, img:'img/EB-MR9850.webp', telefono:'5214420000010'},
-  {id:'QRO-08', operacion:'venta', titulo:'Jurica • una planta', ciudad:'Querétaro (Jurica)', lat:20.665, lng:-100.447, precio:8900000, rec:4, ban:4, m2t:520, m2c:320, est:3, img:'img/VentaCasaJuricaCampestre-2.jpg', telefono:'5214420000011'},
-  {id:'QRO-09', operacion:'venta', titulo:'El Pueblito • Corregidora', ciudad:'Corregidora (El Pueblito)', lat:20.541, lng:-100.446, precio:3250000, rec:3, ban:2, m2t:150, m2c:130, est:2, img:'img/811c933e-201c-4184-a112-cc6da214c5ee.webp', telefono:'5214420000012'},
-  {id:'QRO-10', operacion:'venta', titulo:'Vista Real • jardín amplio', ciudad:'Corregidora (Vista Real)', lat:20.530, lng:-100.452, precio:4200000, rec:3, ban:3, m2t:210, m2c:190, est:2, img:'img/6ecefd8d.avif', telefono:'5214420000002'},
-  {id:'QRO-11', operacion:'venta', titulo:'Santa Rosa Jáuregui', ciudad:'Querétaro (SRJ)', lat:20.801, lng:-100.444, precio:2850000, rec:3, ban:2, m2t:140, m2c:120, est:2, img:'img/grand-juriquilla-santa-rosa-de-jauregui-queretaro-queretaro-28802356-foto-02.jpg', telefono:'5214420000013'},
-  {id:'QRO-12', operacion:'venta', titulo:'La Pradera • El Marqués', ciudad:'El Marqués (La Pradera)', lat:20.642, lng:-100.238, precio:2350000, rec:2, ban:2, m2t:105, m2c:95, est:1, img:'img/1507699626.webp', telefono:'5214420000014'}
-];
+  // Venta en Querétaro
+  const VENTA_QRO = [
+    {id:'QRO-01', operacion:'venta', titulo:'Juriquilla • casa moderna', ciudad:'Querétaro (Juriquilla)', lat:20.704, lng:-100.455, precio:5300000, rec:3, ban:3, m2t:180, m2c:210, est:2, img:'img/casa-juriquilla-arquipartners_15.jpg'},
+    {id:'QRO-02', operacion:'venta', titulo:'El Refugio • nueva', ciudad:'Querétaro (El Refugio)', lat:20.627, lng:-100.332, precio:3450000, rec:3, ban:3, m2t:128, m2c:155, est:2, img:'img/PHOTO-2018-10-10-14-56-07_0.jpg'},
+    {id:'QRO-03', operacion:'venta', titulo:'Zibatá • vista al campo', ciudad:'El Marqués (Zibatá)', lat:20.668, lng:-100.329, precio:4700000, rec:3, ban:3, m2t:160, m2c:190, est:2, img:'img/68f1777db422c.jpg'},
+    {id:'QRO-04', operacion:'venta', titulo:'Centro Sur • departamento', ciudad:'Querétaro (Centro Sur)', lat:20.567, lng:-100.382, precio:4150000, rec:2, ban:2, m2t:0, m2c:110, est:2, img:'img/61846299-ed1f-42c9-809c-28f1b949bd86.jpeg'}
+  ];
 
-// ---- San Miguel de Allende (RENTA VACACIONAL) ----
-const RENTA_SMA = [
-  {id:'SMA-01', operacion:'renta', titulo:'Centro • casa colonial con terraza', ciudad:'San Miguel de Allende (Centro)', lat:20.914, lng:-100.744, precio:5200, rec:3, ban:3, m2t:0, m2c:0, est:0, img:'img/1535428193.jpg', telefono:'524421317870'},
-  {id:'SMA-02', operacion:'renta', titulo:'San Antonio • roof con vista', ciudad:'San Miguel (San Antonio)', lat:20.907, lng:-100.736, precio:3800, rec:2, ban:2, img:'img/rooftop-san-miguel-de-allende-rooftopmara.webp', telefono:'524421317870'},
-  {id:'SMA-03', operacion:'renta', titulo:'Guadiana • jardín y asador', ciudad:'San Miguel (Guadiana)', lat:20.910, lng:-100.741, precio:4500, rec:3, ban:3, img:'img/Casa_Encuentros_LiveIn_SMA-2.jpeg', telefono:'524421317870'},
-  {id:'SMA-04', operacion:'renta', titulo:'Los Frailes • casa con alberca', ciudad:'San Miguel (Los Frailes)', lat:20.892, lng:-100.731, precio:5600, rec:4, ban:3, img:'img/e4be52c4.avif', telefono:'524421317870'},
-  {id:'SMA-05', operacion:'renta', titulo:'Atotonilco • retiro con capilla', ciudad:'Atotonilco', lat:21.015, lng:-100.793, precio:6800, rec:4, ban:4, img:'img/a9c0781c-4cda-4e1b-a186-350667e0225c.avif', telefono:'524421317870'},
-  {id:'SMA-06', operacion:'renta', titulo:'El Paraíso • casa boutique', ciudad:'San Miguel (El Paraíso)', lat:20.919, lng:-100.724, precio:4200, rec:2, ban:2, img:'img/7823a016.avif', telefono:'524421317870'},
-  {id:'SMA-07', operacion:'renta', titulo:'La Lejona • familiar', ciudad:'San Miguel (La Lejona)', lat:20.890, lng:-100.728, precio:3600, rec:3, ban:2, img:'img/353248052.jpg', telefono:'524421317870'},
-  {id:'SMA-08', operacion:'renta', titulo:'Otomí Club Hípico • vista lago', ciudad:'San Miguel (Otomí)', lat:20.980, lng:-100.716, precio:7200, rec:4, ban:4, img:'img/EB-MZ1327.webp', telefono:'524421317870'},
-  {id:'SMA-09', operacion:'renta', titulo:'Ventanas Golf • lujo', ciudad:'San Miguel (Ventanas)', lat:20.940, lng:-100.746, precio:8500, rec:4, ban:5, img:'img/1498043119.webp', telefono:'524421317870'},
-  {id:'SMA-10', operacion:'renta', titulo:'Guadiana • casita estudio', ciudad:'San Miguel (Guadiana)', lat:20.909, lng:-100.739, precio:2200, rec:1, ban:1, img:'img/vrrjlclSpkDSokQwxYwDpu0bPoDryLu6k9K8vVKJ.jpg', telefono:'524421317870'}
-];
+  // Renta vacacional San Miguel
+  const RENTA_SMA = [
+    {id:'SMA-01', operacion:'renta', titulo:'Centro • casa colonial', ciudad:'San Miguel (Centro)', lat:20.914, lng:-100.744, precio:5200, rec:3, ban:3, img:'img/1535428193.jpg'},
+    {id:'SMA-02', operacion:'renta', titulo:'San Antonio • roof con vista', ciudad:'San Miguel (San Antonio)', lat:20.907, lng:-100.736, precio:3800, rec:2, ban:2, img:'img/rooftop-san-miguel-de-allende-rooftopmara.webp'},
+    {id:'SMA-03', operacion:'renta', titulo:'Guadiana • jardín y asador', ciudad:'San Miguel (Guadiana)', lat:20.910, lng:-100.741, precio:4500, rec:3, ban:3, img:'img/Casa_Encuentros_LiveIn_SMA-2.jpeg'}
+  ];
 
-const CASAS = [...VENTA_QRO, ...RENTA_SMA];
+  const CASAS = [...VENTA_QRO, ...RENTA_SMA];
 
-/* =========================
-   MAPA + UI
-========================= */
-const map = L.map('mapHomes', {scrollWheelZoom:true});
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom:19, attribution:'&copy; OpenStreetMap'}).addTo(map);
+  /* =========================
+     MAPA
+  ========================== */
 
-const cluster = L.markerClusterGroup({showCoverageOnHover:false, maxClusterRadius:60});
-map.addLayer(cluster);
+  const map = L.map('mapHomes', {
+    scrollWheelZoom: true
+  }).setView([20.5888, -100.3899], 10); // centro Qro
 
-const fmtVenta = n => n.toLocaleString('es-MX',{style:'currency',currency:'MXN'});
-const fmtRenta = n => `${n.toLocaleString('es-MX',{style:'currency',currency:'MXN'})}/noche`;
-const precioTexto = c => c.operacion === 'renta' ? fmtRenta(c.precio) : fmtVenta(c.precio);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; OpenStreetMap'
+  }).addTo(map);
 
-function colorPorTipo(c){
-  if(c.operacion === 'renta') return 'var(--renta)';
-  // Venta: escala por precio
-  if(c.precio<=3000000) return '#6fbf7a';
-  if(c.precio<=5000000) return 'var(--venta)';
-  return '#2f8f83';
-}
+  const allMarkers = [];
+  const fmtVenta = n => n.toLocaleString('es-MX',{style:'currency',currency:'MXN'});
+  const fmtRenta = n => `${n.toLocaleString('es-MX',{style:'currency',currency:'MXN'})}/noche`;
+  const precioTexto = c => c.operacion === 'renta' ? fmtRenta(c.precio) : fmtVenta(c.precio);
 
-function createIcon(casa){
-  const color = colorPorTipo(casa);
-  const html = `
-    <div class="house-pin">
-      <span class="tag">${precioTexto(casa)}</span>
-      <div class="dot" style="background:${color}"></div>
-    </div>`;
-  return L.divIcon({className:'', html, iconSize:[1,1], iconAnchor:[0,0]});
-}
-
-function popupHtml(c){
-  const dir = `https://www.google.com/maps/dir/?api=1&destination=${c.lat},${c.lng}`;
-  const wa  = c.telefono ? `https://wa.me/${c.telefono}?text=Hola,%20me%20interesa%20${encodeURIComponent(c.titulo)}%20en%20${encodeURIComponent(c.ciudad)}%20(${encodeURIComponent(precioTexto(c))}).%20¿Podemos%20agendar%20${c.operacion==='renta'?'fechas':'una visita'}?` : '#';
-  const etiqueta = c.operacion==='renta' ? 'Renta vacacional' : 'Venta';
-  return `
-    <div class="popup-home">
-      <img src="${c.img||'https://picsum.photos/seed/home/800/500'}" alt="">
-      <h6>${c.titulo}</h6>
-      <div class="meta">${etiqueta} • ${c.ciudad} • ${c.rec||'-'} rec • ${c.ban||'-'} baños ${c.m2t?`• ${c.m2t} m² terr.`:''} ${c.m2c?`• ${c.m2c} m² const.`:''}</div>
-      <div class="mt-2"><strong>${precioTexto(c)}</strong></div>
-      <div class="mt-2 d-flex gap-2">
-        <a class="btn-mini" target="_blank" href="${dir}">Cómo llegar</a>
-        ${c.telefono ? `<a class="btn-mini" style="background:#1f8f5a;color:#fff;border-color:#198754" target="_blank" href="${wa}">WhatsApp</a>` : ''}
-      </div>
-    </div>`;
-}
-
-// Crear marcadores + almacenar referencia
-let allMarkers = [];
-function renderMarkers(filter = 'todos'){
-  cluster.clearLayers();
-  allMarkers = [];
-  const items = CASAS.filter(c=>{
-    if(filter==='venta') return c.operacion==='venta';
-    if(filter==='renta') return c.operacion==='renta';
-    return true;
-  });
-  items.forEach(c=>{
-    const m = L.marker([c.lat, c.lng], {icon:createIcon(c)}).bindPopup(popupHtml(c));
-    m._data = c; allMarkers.push(m); cluster.addLayer(m);
-  });
-  if(allMarkers.length){
-    map.fitBounds(L.featureGroup(allMarkers).getBounds().pad(0.2), {maxZoom:14});
-  }else{
-    map.setView([20.5888, -100.3899], 9);
+  function colorPorTipo(c){
+    return c.operacion === 'renta' ? 'var(--renta)' : 'var(--venta)';
   }
-  document.getElementById('countLabel').textContent = `Mostrando ${items.length} propiedades`;
-}
 
-// Filtros UI
-document.querySelectorAll('.chip').forEach(btn=>{
-  btn.addEventListener('click', ()=>{
-    document.querySelectorAll('.chip').forEach(b=>b.classList.remove('is-active'));
-    btn.classList.add('is-active');
-    renderMarkers(btn.dataset.filter);
+  function createIcon(casa){
+    const color = colorPorTipo(casa);
+    const html = `
+      <div class="house-pin">
+        <span class="tag">${precioTexto(casa)}</span>
+        <div class="dot" style="background:${color}"></div>
+      </div>`;
+    return L.divIcon({className:'', html, iconSize:[1,1], iconAnchor:[0,0]});
+  }
+
+  function popupHtml(c){
+    const dir = `https://www.google.com/maps/dir/?api=1&destination=${c.lat},${c.lng}`;
+    return `
+      <div class="popup-home">
+        <img src="${c.img}" alt="">
+        <h6>${c.titulo}</h6>
+        <div class="meta">
+          ${c.operacion === 'renta' ? 'Renta vacacional' : 'Venta'} • ${c.ciudad} •
+          ${c.rec||'-'} rec • ${c.ban||'-'} baños
+        </div>
+        <div class="mt-2"><strong>${precioTexto(c)}</strong></div>
+        <div class="mt-2">
+          <a class="btn-mini" target="_blank" href="${dir}">Cómo llegar</a>
+        </div>
+      </div>`;
+  }
+
+  let currentMarkers = [];
+
+  function renderMarkers(filter='todos'){
+    // borrar marcadores actuales
+    currentMarkers.forEach(m => map.removeLayer(m));
+    currentMarkers = [];
+
+    const items = CASAS.filter(c=>{
+      if(filter === 'venta') return c.operacion === 'venta';
+      if(filter === 'renta') return c.operacion === 'renta';
+      return true;
+    });
+
+    items.forEach(casa=>{
+      const marker = L.marker([casa.lat, casa.lng], {icon:createIcon(casa)})
+                      .addTo(map)
+                      .bindPopup(popupHtml(casa));
+      currentMarkers.push(marker);
+    });
+
+    if(items.length){
+      const group = L.featureGroup(currentMarkers);
+      map.fitBounds(group.getBounds().pad(0.2), {maxZoom:14});
+    }
+
+    document.getElementById('countLabel').textContent =
+      `Mostrando ${items.length} propiedades`;
+  }
+
+  // Filtros
+  document.querySelectorAll('.chip').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      document.querySelectorAll('.chip').forEach(b=>b.classList.remove('is-active'));
+      btn.classList.add('is-active');
+      renderMarkers(btn.dataset.filter);
+    });
   });
-});
 
-// Render inicial
-renderMarkers('todos');
+  // Render inicial
+  renderMarkers('todos');
 </script>
+<!-- ========== FIN | Conoce nuestras casas en venta (Mapa) ========== -->
 
 
 
-
-    <!-- "Inicio del pie de página". -->
     <!--color Charly-->
     <div class="container-fluid bg-rich-black text-white py-5 px-sm-3 px-md-5">
         <div class="row pt-5">
@@ -1026,114 +1197,6 @@ renderMarkers('todos');
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-
-    <!--Inicio de Musica de Fondo Playlist mejorado por Charly -->
- <link rel="stylesheet" href="style.css">
-
-<audio id="musicaFondo" loop preload="auto" muted style="display: none;">
-</audio>
-
-<button onclick="toggleAudio()" class="musica-banner" id="botonMusica">
-    🔊 Música
-</button>
-
-<script>
-    const canciones = [
-        "Musica/In Memoriam.mp3", 
-            "Musica/Jealous Girl.mp3",
-            "Musica/La Mer.mp3",
-            "Musica/Late Night Alumni.mp3", 
-            "Musica/Leaving Me.mp3",
-            "Musica/Lost Love.mp3",
-            "Musica/Love Story - Indila.mp3", 
-            "Musica/My life.mp3",
-            "Musica/My World.mp3",
-            "Musica/Norah Jones.mp3", 
-            "Musica/Romance.mp3",
-            "Musica/Stacey Kent.mp3",
-            "Musica/Studying You.mp3",
-            "Musica/Welcome Back.mp3",
-            "Musica/Withering.mp3",
-            "Musica/Coming Home.mp3",
-            "Musica/Father Ocean.mp3",
-            "Musica/Give Me a Kiss.mp3",
-            "Musica/Hunting.mp3",
-            "Musica/I know.mp3",
-            "Musica/I love You Always Forever.mp3"
-    ];
-
-    const audio = document.getElementById('musicaFondo');
-    const botonMusica = document.getElementById('botonMusica');
-    let isPlaying = false;
-    let cancionActual = 0;
-
-    function iniciarMusica() {
-        audio.src = canciones[cancionActual];
-        audio.volume = 0;    // empieza en silencio
-        audio.muted = false;
-
-        audio.play().then(() => {
-            isPlaying = true;
-            botonMusica.innerText = "🔊 " + obtenerNombreCancion();
-            botonMusica.classList.add('playing');
-
-            // Subir volumen gradualmente en ~1s
-            let v = 0;
-            const fade = setInterval(() => {
-                if (v >= 0.7) {
-                    clearInterval(fade);
-                } else {
-                    v += 0.05;
-                    audio.volume = v;
-                }
-            }, 100);
-        }).catch(err => {
-            console.log("⚠️ Autoplay bloqueado:", err);
-        });
-    }
-
-    function obtenerNombreCancion() {
-        const nombreCompleto = canciones[cancionActual];
-        const nombre = nombreCompleto.split('/').pop().replace('.mp3', '');
-        return nombre.length > 20 ? nombre.substring(0, 20) + '...' : nombre;
-    }
-
-    // Cuando termine una canción, pasa a la siguiente
-    audio.addEventListener('ended', function() {
-        cancionActual = (cancionActual + 1) % canciones.length;
-        audio.src = canciones[cancionActual];
-        audio.play().then(() => {
-            botonMusica.innerText = "🔊 " + obtenerNombreCancion();
-        });
-    });
-
-    function toggleAudio() {
-        if (isPlaying) {
-            audio.pause();
-            botonMusica.innerText = "🔇 Pausado";
-            botonMusica.classList.remove('playing');
-        } else {
-            audio.play().then(() => {
-                botonMusica.innerText = "🔊 " + obtenerNombreCancion();
-                botonMusica.classList.add('playing');
-            });
-        }
-        isPlaying = !isPlaying;
-    }
-
-    // 🎵 Activar música en la primera interacción (scroll, clic o touch)
-    function activarMusicaConInteraccion() {
-        iniciarMusica();
-        document.removeEventListener('scroll', activarMusicaConInteraccion);
-        document.removeEventListener('click', activarMusicaConInteraccion);
-        document.removeEventListener('touchstart', activarMusicaConInteraccion);
-    }
-
-    document.addEventListener('scroll', activarMusicaConInteraccion, { once: true });
-    document.addEventListener('click', activarMusicaConInteraccion, { once: true });
-    document.addEventListener('touchstart', activarMusicaConInteraccion, { once: true });
-</script>
-<!--Fin de la reproduccion de Musica-->
 
 
 <!-- Script para manejar el envío de comentarios con EmailJS -->

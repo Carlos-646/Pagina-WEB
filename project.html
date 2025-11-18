@@ -1,1472 +1,1261 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
-    <meta charset="utf-8">
-    <title>MOMED PROJECTOS</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Free HTML Templates" name="keywords">
-    <meta content="Free HTML Templates" name="description">
+  <meta charset="utf-8">
+  <title>MOMED PAGINA PRINCIPAL</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="MOMED Arquitectura, Construcción y Diseño" name="description">
 
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+  <!-- Iconos y Tipografías -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald:wght@400;500;600&family=Inter:wght@400;600;700;800&display=swap"
+    rel="stylesheet">
 
-    <!-- Google Web Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet"> 
+  <!-- Flaticon -->
+  <link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
 
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+  <!-- Librerías opcionales -->
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
 
-    <!-- Flaticon Font -->
-    <link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
+  <!-- Tu hoja de estilos principal -->
+  <link href="css/style.css" rel="stylesheet">
 
-    <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+  <!-- EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function () {
+      emailjs.init("fBsDQAPpy2ke_o-zr");
+    })();
+  </script>
 
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+  <!-- ===== ESTILOS PERSONALIZADOS PRINCIPALES ===== -->
+  <style>
+    :root {
+      --bcd-deep: #0f172a;
+      --bcd-primary: #1a3c34;
+      --bcd-accent: #10b981;
+      --airbnb-red: #FF385C;
+      --glass-bg: rgba(17, 24, 39, .35);
+      --glass-border: rgba(255, 255, 255, .14);
+    }
 
-    <!-- Agregando CSS para evitar duplicación de imágenes en Lightbox -->
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: #fff;
+      color: #0f172a;
+    }
+
+    /* ===== NAVBAR ===== */
+    .nav-glass {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(1180px, 92%);
+      z-index: 1030;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 18px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, .25);
+      transition: .3s ease;
+    }
+
+    .nav-glass.nav-scrolled {
+      top: 0;
+      left: 0;
+      transform: none;
+      width: 100%;
+      border-radius: 0;
+      background: rgba(17, 24, 39, .93);
+      border-color: rgba(255, 255, 255, .08);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, .35);
+    }
+
+    .navbar {
+      padding: .45rem 1rem;
+    }
+
+    .navbar-nav .nav-link {
+      color: #fff !important;
+      font-weight: 600;
+      border-radius: 12px;
+      padding: .6rem 1rem !important;
+      font-size: 1rem;
+      transition: all .25s ease;
+    }
+
+    .navbar-nav .nav-link:hover {
+      background: rgba(255, 255, 255, .1);
+    }
+
+    .dropdown-menu {
+      background: rgba(15, 23, 42, .96);
+      border: 1px solid rgba(255, 255, 255, .1);
+      border-radius: 14px;
+    }
+
+    .dropdown-item {
+      color: #e5e7eb;
+      font-weight: 600;
+    }
+
+    .dropdown-item:hover {
+      background: rgba(255, 255, 255, .08);
+      color: #fff;
+    }
+
+    .pill {
+      background: rgba(16, 185, 129, .25);
+      color: #d1fae5;
+      border: 1px solid rgba(16, 185, 129, .4);
+      padding: .45rem .9rem;
+      border-radius: 999px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      transition: all .25s ease;
+    }
+
+    .pill:hover {
+      background: var(--bcd-accent);
+      color: #053325;
+    }
+
+    /* ===== HERO ===== */
+    header.hero {
+      position: relative;
+      min-height: 92vh;
+      width: 100%;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
+
+    .hero .hero-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(.78);
+      transform: scale(1.03);
+    }
+
+    .hero .overlay {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(60% 60% at 50% 40%, rgba(0, 0, 0, .25) 0%, rgba(0, 0, 0, .6) 100%);
+    }
+
+    .hero .content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 0 1rem;
+      max-width: 1100px;
+    }
+
+    .hero h1 {
+      font-family: Oswald, Inter, Arial;
+      font-weight: 800;
+      letter-spacing: .5px;
+      font-size: clamp(2rem, 4vw + 1rem, 4rem);
+      margin-bottom: .6rem;
+      color: #ffffff;
+      text-transform: uppercase;
+    }
+
+    .hero p {
+      margin: 0 auto 1.3rem;
+      max-width: 820px;
+      font-size: clamp(1rem, .6vw + .9rem, 1.2rem);
+      color: var(--airbnb-red);
+      font-weight: 600;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: .75rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-ghost,
+    .btn-accent {
+      border: 1px solid rgba(255, 255, 255, .25);
+      color: #fff;
+      background: transparent;
+      padding: .85rem 1.2rem;
+      border-radius: 999px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      transition: .25s ease;
+      text-decoration: none;
+    }
+
+    .btn-ghost:hover {
+      transform: translateY(-1px);
+      border-color: #fff;
+    }
+
+    .btn-accent {
+      background: var(--bcd-accent);
+      border-color: transparent;
+      color: #06281f;
+    }
+
+    .btn-accent:hover {
+      filter: brightness(1.05);
+    }
+
+    main {
+      padding: 4rem 1rem 0;
+    }
+
+    @media (max-width: 991.98px) {
+      .navbar-collapse {
+        background: rgba(17, 24, 39, .95);
+        border: 1px solid rgba(255, 255, 255, .08);
+        border-radius: 14px;
+        padding: .5rem;
+        margin-top: .5rem;
+      }
+
+      .pill {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===== NAVBAR FLOTANTE CENTRADA SIN LOGO ===== -->
+  <div class="nav-glass" id="glassNav">
+    <nav class="navbar navbar-expand-lg navbar-dark justify-content-center">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-center" id="navbarCollapse">
+        <ul class="navbar-nav align-items-lg-center text-center">
+          <li class="nav-item"><a href="index.html" class="nav-link active">Hogar</a></li>
+          <li class="nav-item"><a href="service.html" class="nav-link">Servicios</a></li>
+          <li class="nav-item"><a href="project.html" class="nav-link">Proyectos</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contacto</a></li>
+
+          <li class="nav-item mx-2 my-1 my-lg-0">
+            <a class="pill" href="https://wa.me/524421317870" target="_blank" rel="noopener">
+              <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+          </li>
+          <li class="nav-item mx-2 my-1 my-lg-0">
+            <a class="pill" href="mailto:programadoresingenieros@gmail.com">
+              <i class="fas fa-envelope"></i> Email
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <header class="hero" id="hogar">
+    <img class="hero-img" src="img/CASA-VILLETA_13-1024x683.webp" alt="Residencia moderna BCD">
+    <div class="overlay"></div>
+
+    <div class="content">
+      <h1>“Propiedades Destacadas”</h1>
+      <p>EXPLORA Y ELIGE</p>
+      <div class="cta-row">
+        <a href="project.html" class="btn-accent"><i class="fas fa-images"></i> Ver Proyectos</a>
+        <a href="service.html" class="btn-ghost"><i class="fas fa-th-large"></i> Nuestros Servicios</a>
+        <a href="contact.html" class="btn-ghost"><i class="far fa-calendar-check"></i> Agenda una Cita</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Efecto del Navbar al hacer scroll -->
+  <script>
+    const glassNav = document.getElementById('glassNav');
+    function onScroll() {
+      if (window.scrollY > 40) glassNav.classList.add('nav-scrolled');
+      else glassNav.classList.remove('nav-scrolled');
+    }
+    document.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  </script>
+
+  <!-- ===== CONTENIDO PRINCIPAL ===== -->
+  <main>
+    <!-- "Inicio de la sección de casas" -->
+    <!-- FONDO CLARO del encabezado -->
+    <section class="section-light" style="background:#fffbf3;">
+      <div class="section-wrap section-wrap-stock">
+        <div style="display:flex;justify-content:center;margin-bottom:18px;">
+          <div class="encabezado">
+            <span class="encabezado-stock"></span>¡Disponibles Ahora!
+          </div>
+        </div>
+
+        <h1 class="letrero">
+          Casas en <span style="color:#03ac13;">Stock</span>
+        </h1>
+
+        <p class="slogan">No Pierdas La Oportunidad De Encontrar Tu Escape Perfecto.<br>
+          Propiedades ideales para una escapada inolvidable.</p>
+
+        <div class="stats-grid-cards">
+          <div class="inicio-carta">
+            <div class="numero">15+</div>
+            <div class="inicio-letras">Casas Disponibles</div>
+          </div>
+          <div class="inicio-carta">
+            <div class="numero">24h</div>
+            <div class="inicio-letras">Entrega Inmediata</div>
+          </div>
+          <div class="inicio-carta">
+            <div class="numero">100%</div>
+            <div class="inicio-letras">Estancias Verificadas</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de Cards de Casas -->
+    <section class="section-wrap section-wrap-card">
+      <div class="owl-carousel casas-stock-carousel team-carousel position-relative">
+
+        <!-- Card AGUA -->
+        <article class="card carta-modelo">
+          <div class="card-media card-media-efect">
+            <img class="card-img card-img-efect" src="img/8fc3b17e-d9cd-49eb-abfb-6a48dd0e1071.avif" alt="Casa Elemento Agua">
+            <span class="badge-top badge-right stock">En Stock</span>
+          </div>
+
+          <div class="card-body" style="padding:20px 22px 26px;">
+            <h3 class="card-title card-title-letra">Casa Karina - San Miguel Allende</h3>
+            <p class="card-desc card-desc-letra">6 huéspedes · 2 habitaciones · 2 camas · 2.5 baños</p>
+
+            <div class="card-row card-row-efect">
+              <span class="price precio-casas">$23,000</span>
+              <span class="hint hint-card">Ideal vacacional</span>
+            </div>
+
+            <div class="card-actions efecto">
+              <!-- Botón Ver Más (Lightbox) -->
+              <a class="ver-mas"
+                href="img/acc5014e-f173-4761-83a5-f7397a2dc8bc.avif"
+                data-lightbox="galeriaAgua"
+                data-title="Casa Elemento Agua">
+                Ver más
+              </a>
+
+              <!-- Galería oculta -->
+              <a href="img/acc5014e-f173-4761-83a5-f7397a2dc8bc.avif" data-lightbox="galeriaAgua"></a>
+              <a href="img/1d7689ef-b623-41f4-800d-3316709a2c1c.avif" data-lightbox="galeriaAgua"></a>
+              <a href="img/10631d54-92a3-4b9c-840e-34ca872f9531.avif" data-lightbox="galeriaAgua"></a>
+              <a href="img/7d525c7f-799f-434e-b52c-fe0e205f7fc7.avif" data-lightbox="galeriaAgua"></a>
+              <a href="img/56deed66-7385-40d5-9047-fa388a3c8291.avif" data-lightbox="galeriaAgua"></a>
+              <a href="img/34b8d2e6-596f-4cb3-bf59-27e5b6010b43.avif" data-lightbox="galeriaAgua"></a>
+
+              <!-- Botón IR con estilo Airbnb -->
+              <a class="ver-mas"
+                href="https://maps.app.goo.gl/cjHXMDTdutoLMwP59"
+                target="_blank"
+                style="background-color:#FF385C; color:#fff;">
+                <i class="fas fa-map-marker-alt mr-1"></i>IR
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card TIERRA -->
+        <article class="card carta-modelo">
+          <div class="card-media card-media-efect">
+            <img class="card-img card-img-efect" src="img/231d2a7d-551d-4371-a0ae-e8907f0da3ee.avif" alt="Casa Elemento Tierra">
+            <span class="badge-top badge-right stock">En Stock</span>
+          </div>
+
+          <div class="card-body" style="padding:20px 22px 26px;">
+            <h3 class="card-title card-title-letra">Casa Carlota - San Miguel Allende</h3>
+            <p class="card-desc card-desc-letra">11 huéspedes · 4 habitaciones · 6 camas · 4 baños</p>
+
+            <div class="card-row card-row-efect">
+              <span class="price precio-casas">$13,000</span>
+              <span class="hint hint-card">Ideal vacacional</span>
+            </div>
+
+            <div class="card-actions efecto">
+              <!-- Botón Ver Más (Lightbox) -->
+              <a class="ver-mas"
+                href="img/4b3dc909-af20-46ae-b45a-0495c7f35403.avif"
+                data-lightbox="galeriaTierra"
+                data-title="Casa Elemento Tierra">
+                Ver más
+              </a>
+
+              <!-- Galería oculta -->
+              <a href="img/e9652533-d981-4a82-970b-b45d201d0904.avif" data-lightbox="galeriaTierra"></a>
+              <a href="img/90ce4a65-49e8-4660-8320-29024a7688bc.avif" data-lightbox="galeriaTierra"></a>
+              <a href="img/7d51f2d3-30fd-49aa-b58d-a66743f5bd24.avif" data-lightbox="galeriaTierra"></a>
+              <a href="img/5ce3b236-5ded-413b-a45a-f26bdc49d13a.avif" data-lightbox="galeriaTierra"></a>
+              <a href="img/ce0ab39e-a8bc-4e2d-99f3-652f2ac6de8c.avif" data-lightbox="galeriaTierra"></a>
+
+              <!-- Botón IR con estilo Airbnb -->
+              <a class="ver-mas"
+                href="https://maps.app.goo.gl/7RbHwYe5NVFMt4SW8"
+                target="_blank"
+                style="background-color:#FF385C; color:#fff;">
+                <i class="fas fa-map-marker-alt mr-1"></i>IR
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card FUEGO -->
+        <article class="card carta-modelo">
+          <div class="card-media card-media-efect">
+            <img class="card-img card-img-efect" src="img/68a69b94-c563-49f0-bb97-7c94cac01cd8.avif" alt="Casa Elemento Fuego">
+            <span class="badge-top badge-right stock">En Stock</span>
+          </div>
+
+          <div class="card-body" style="padding:20px 22px 26px;">
+            <h3 class="card-title card-title-letra">Vivienda - San Miguel Allende</h3>
+            <p class="card-desc card-desc-letra">2 huéspedes · 1 habitación · 1 cama · 1 baño · estudio</p>
+
+            <div class="card-row card-row-efect">
+              <span class="price precio-casas">$10,000</span>
+              <span class="hint hint-card">Entrega inmediata</span>
+            </div>
+
+            <div class="card-actions efecto">
+              <!-- Botón Ver Más (Lightbox) -->
+              <a class="ver-mas"
+                href="img/11e0557a-7001-4fe9-9e53-36c853910fb8.avif"
+                data-lightbox="galeriaFuego"
+                data-title="Casa Elemento Fuego">
+                Ver más
+              </a>
+
+              <!-- Galería oculta -->
+              <a href="img/c8536f69-bef6-42d7-9aac-1d96b70b84ad.avif" data-lightbox="galeriaFuego"></a>
+              <a href="img/c062827d-ba77-4368-9a29-940852c38794.avif" data-lightbox="galeriaFuego"></a>
+              <a href="img/e1923cb7-4517-4e70-876b-c8177a435dcf.avif" data-lightbox="galeriaFuego"></a>
+              <a href="img/324616e0-dc90-4f04-92d1-7decd3c3f6ce.avif" data-lightbox="galeriaFuego"></a>
+              <a href="img/c66bdb20-eecf-4727-bee7-957d83b42489.avif" data-lightbox="galeriaFuego"></a>
+              <a href="img/8e90c5d7-6995-4496-ab23-f78aa13c9b4b.avif" data-lightbox="galeriaFuego"></a>
+              <a href="img/430031b3-5f57-4334-9b52-517403a02f1a.avif" data-lightbox="galeriaFuego"></a>
+
+              <!-- Botón IR con estilo Airbnb -->
+              <a class="ver-mas"
+                href="https://maps.app.goo.gl/UC8GhXakhkk2xwHX8"
+                target="_blank"
+                style="background-color:#FF385C; color:#fff;">
+                <i class="fas fa-map-marker-alt mr-1"></i>IR
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card AIRE -->
+        <article class="card carta-modelo">
+          <div class="card-media card-media-efect">
+            <img class="card-img card-img-efect" src="img/5e912b77-535f-4c26-8c93-ad5cecdea137.avif" alt="Casa Elemento Aire">
+            <span class="badge-top badge-right stock">En Stock</span>
+          </div>
+
+          <div class="card-body" style="padding:20px 22px 26px;">
+            <h3 class="card-title card-title-letra">Casa de Espejo - San Miguel Allende</h3>
+            <p class="card-desc card-desc-letra">9 huéspedes · 4 habitaciones · 5 camas · 4.5 baños</p>
+
+            <div class="card-row card-row-efect">
+              <span class="price precio-casas">$30,000</span>
+              <span class="hint hint-card">Vista panorámica</span>
+            </div>
+
+            <div class="card-actions efecto">
+              <!-- Botón Ver Más (Lightbox) -->
+              <a class="ver-mas"
+                href="img/22814953-545b-4255-b9bd-a5dd68d43232.avif"
+                data-lightbox="galeriaAire"
+                data-title="Casa Elemento Aire">
+                Ver más
+              </a>
+
+              <!-- Galería oculta -->
+              <a href="img/e5d00fea-1ed8-40da-8dca-4decde719f5e.avif" data-lightbox="galeriaAire"></a>
+              <a href="img/911e1fc2-f73f-484a-a60f-2f4500c029e8.avif" data-lightbox="galeriaAire"></a>
+              <a href="img/0f092874-7611-4d1d-be9c-43cf514702b6.avif" data-lightbox="galeriaAire"></a>
+              <a href="img/cc454341-8a7c-451c-91f4-f1586f6184ae.avif" data-lightbox="galeriaAire"></a>
+              <a href="img/c7223aa8-e1ca-4cab-b1a7-e3705cd556df.avif" data-lightbox="galeriaAire"></a>
+              <a href="img/66e6c155-8b25-4cc4-8bf7-f07868b07548.jpeg" data-lightbox="galeriaAire"></a>
+              <a href="img/ba39f80d-5d6d-45fc-9ec4-9dce5bf6ca9e.avif" data-lightbox="galeriaAire"></a>
+
+              <!-- Botón IR con estilo Airbnb -->
+              <a class="ver-mas"
+                href="https://maps.app.goo.gl/8d6ZcbGriwVwbPe86"
+                target="_blank"
+                style="background-color:#FF385C; color:#fff;">
+                <i class="fas fa-map-marker-alt mr-1"></i>IR
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ========== INICIO | Urgencia estilo Airbnb ========== -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
-        /* Mejorado CSS para ocultar elementos clonados y aumentar espacio */
-        .owl-carousel .cloned {
-            pointer-events: none !important;
-        }
-        
-        .owl-carousel .cloned [data-lightbox],
-        .owl-carousel .cloned a[data-lightbox] {
-            display: none !important;
-            pointer-events: none !important;
-            visibility: hidden !important;
-        }
-        
-        /* Aumentar espacio entre cartas del carrusel (cambiado de "Reducir" a "Aumentar") */
-        .casas-stock-carousel {
-            padding: 30px 0 !important;
-        }
-        
-        .casas-stock-carousel .owl-stage {
-            padding: 20px 0;
-        }
-        
-        /* Asegurar que las cartas tengan espacio adicional */
-        .casas-stock-carousel .owl-item {
-            padding: 0 15px;
-        }
+      :root {
+        --accent: #FF385C;
+        --accent-d: #e12c4f;
+        --ink: #222222;
+        --muted: #6b6b6b;
+        --stroke: #e9e9e9;
+        --bg: #fff;
+        --pill: #f7f7f7;
+        --success: #00A884;
+      }
 
-        /* Ajustando botones para que estén en la misma línea horizontal */
-        .ver-mas {
-            display: inline-flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-            text-align: center !important;
-            padding: 8px 20px !important;
-            line-height: 1.2 !important;
-            width: auto !important;
-            min-width: 120px !important;
+      .air-urg-wrap {
+        font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        padding: 48px 16px;
+        background: #ffffff;
+        border-top: 1px solid #f1f1f1;
+        border-bottom: 1px solid #f1f1f1;
+      }
+
+      .air-urg {
+        max-width: 1100px;
+        margin: auto;
+        display: grid;
+        gap: 24px;
+        grid-template-columns: 1.2fr .9fr;
+        align-items: center;
+      }
+
+      @media (max-width: 992px) {
+        .air-urg {
+          grid-template-columns: 1fr;
         }
+      }
 
-        /* Contenedor de botones en línea horizontal */
-        .card-actions {
-            display: flex !important;
-            flex-direction: row !important;
-            align-items: center !important;
-            justify-content: center !important;
-            gap: 12px !important;
-            margin-top: 15px !important;
-            flex-wrap: nowrap !important; /* Cambiado de wrap a nowrap para evitar que se apilen */
-        }
-        /* </CHANGE> */
+      .air-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--pill);
+        border: 1px solid var(--stroke);
+        padding: .45rem .7rem;
+        border-radius: 999px;
+        font-weight: 600;
+        color: #333;
+      }
 
-        /* Agregando estilos para los botones de navegación del carrusel */
-        .team-carousel .owl-nav,
-        .service-carousel .owl-nav {
-            position: absolute;
-            width: 100%;
-            height: 40px;
-            top: 50%;
-            left: 0;
-            margin-top: -20px;
-            padding: 0 45px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            z-index: 1;
-        }
+      .air-eyebrow::before {
+        content: "";
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--accent);
+        box-shadow: 0 0 0 4px rgba(255, 56, 92, .12);
+      }
 
-        .team-carousel .owl-nav .owl-prev,
-        .team-carousel .owl-nav .owl-next,
-        .service-carousel .owl-nav .owl-prev,
-        .service-carousel .owl-nav .owl-next {
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #ffffff;
-            background: #03ac13;
-            font-size: 22px;
-            opacity: 0.1;
-            transition: .3s;
-            border-radius: 4px;
-            cursor: pointer;
-        }
+      .air-title {
+        font-weight: 800;
+        font-size: clamp(28px, 4vw, 40px);
+        line-height: 1.1;
+        margin: 12px 0 8px;
+        color: var(--ink);
+      }
 
-        .team-carousel:hover .owl-nav .owl-prev,
-        .team-carousel:hover .owl-nav .owl-next,
-        .service-carousel:hover .owl-nav .owl-prev,
-        .service-carousel:hover .owl-nav .owl-next {
-            opacity: 1;
-        }
+      .air-sub {
+        color: var(--muted);
+        font-size: clamp(14px, 2vw, 16px);
+      }
 
-        .team-carousel .owl-nav .owl-prev:hover,
-        .team-carousel .owl-nav .owl-next:hover,
-        .service-carousel .owl-nav .owl-prev:hover,
-        .service-carousel .owl-nav .owl-next:hover {
-            background: #028a0f;
-            transform: scale(1.1);
-        }
+      .air-card {
+        border: 1px solid var(--stroke);
+        border-radius: 16px;
+        background: #fff;
+        padding: 18px;
+        box-shadow: 0 12px 28px rgba(0, 0, 0, .08);
+      }
 
-        /* Estilos para los dots (indicadores) del carrusel */
-        .team-carousel .owl-dots,
-        .service-carousel .owl-dots {
-            text-align: center;
-            margin-top: 25px;
-        }
+      .air-price {
+        display: flex;
+        align-items: baseline;
+        gap: 6px;
+      }
 
-        .team-carousel .owl-dots .owl-dot,
-        .service-carousel .owl-dots .owl-dot {
-            display: inline-block;
-            margin: 0 5px;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: #ddd;
-            transition: .3s;
-        }
+      .air-price .p {
+        font-weight: 800;
+        font-size: 22px;
+        color: var(--ink);
+      }
 
-        .team-carousel .owl-dots .owl-dot.active,
-        .service-carousel .owl-dots .owl-dot.active {
-            background: #03ac13;
-            width: 30px;
-            border-radius: 10px;
-        }
+      .air-price .u {
+        color: var(--muted);
+        font-size: 13px;
+      }
 
-        /* Agregando media queries para reducir espacio en blanco en móviles */
-        /* Haciendo los estilos más agresivos para sobrescribir CSS externo */
-        @media (max-width: 992px) {
-            /* Tablets */
-            .section-light {
-                padding-top: 25px !important;
-                padding-bottom: 15px !important;
-                margin-bottom: 0 !important;
-            }
-            
-            .section-wrap,
-            .section-wrap-stock {
-                padding-top: 15px !important;
-                padding-bottom: 15px !important;
-                margin-top: 0 !important;
-                margin-bottom: 0 !important;
-            }
-            
-            .section-wrap-card {
-                padding-top: 15px !important;
-                padding-bottom: 30px !important;
-                margin-top: 0 !important;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            /* Móviles */
-            .section-light {
-                padding-top: 20px !important;
-                padding-bottom: 10px !important;
-                margin-bottom: 0 !important;
-                min-height: auto !important;
-            }
-            
-            .section-wrap,
-            .section-wrap-stock {
-                padding-top: 10px !important;
-                padding-bottom: 10px !important;
-                margin-top: 0 !important;
-                margin-bottom: 0 !important;
-                min-height: auto !important;
-            }
-            
-            .section-wrap-card {
-                padding-top: 10px !important;
-                padding-bottom: 20px !important;
-                margin-top: 0 !important;
-                min-height: auto !important;
-            }
-            
-            /* Reducir espaciado en el contenedor del carrusel */
-            .casas-stock-carousel {
-                padding: 15px 0 !important;
-                margin-top: 0 !important;
-            }
-            
-            .casas-stock-carousel .owl-stage {
-                padding: 10px 0 !important;
-            }
-            
-            /* Grid de estadísticas en 2 columnas para móviles */
-            .stats-grid-cards {
-                margin-bottom: 15px !important;
-                margin-top: 10px !important;
-                gap: 12px !important;
-                display: grid !important;
-                grid-template-columns: repeat(2, 1fr) !important;
-            }
-            
-            /* El tercer elemento (100% Financiamiento) ocupará toda la fila */
-            .stats-grid-cards .inicio-carta:nth-child(3) {
-                grid-column: 1 / -1 !important;
-            }
-            
-            .letrero {
-                margin-bottom: 12px !important;
-            }
-            
-            .slogan {
-                margin-bottom: 15px !important;
-            }
-            
-            /* Reducir padding en las cards de casas */
-            .carta-modelo {
-                margin-bottom: 15px !important;
-            }
+      .air-dates {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        margin-top: 12px;
+      }
 
-            /* Ajustar botones para móviles - reducir padding y min-width para que quepan en la misma línea */
-            .ver-mas {
-                padding: 6px 12px !important;
-                min-width: 90px !important;
-                font-size: 13px !important;
-            }
+      .air-input,
+      .air-select {
+        width: 100%;
+        border: 1px solid var(--stroke);
+        border-radius: 12px;
+        padding: .7rem .8rem;
+        font-size: 14px;
+        color: var(--ink);
+        background: #fff;
+        outline: none;
+      }
 
-            .card-actions {
-                gap: 8px !important;
-                flex-wrap: nowrap !important;
-            }
-            /* </CHANGE> */
-        }
+      .air-input:focus,
+      .air-select:focus {
+        border-color: #d3d3d3;
+      }
 
-        /* Media query adicional para pantallas muy pequeñas */
-        @media (max-width: 480px) {
-            .ver-mas {
-                padding: 6px 10px !important;
-                min-width: 80px !important;
-                font-size: 12px !important;
-            }
+      .air-ctas {
+        display: flex;
+        gap: 8px;
+        margin-top: 12px;
+        flex-wrap: wrap;
+      }
 
-            .card-actions {
-                gap: 6px !important;
-            }
-        }
-        /* </CHANGE> */
+      .air-btn {
+        border-radius: 12px;
+        padding: .8rem 1rem;
+        font-weight: 800;
+        border: 1px solid var(--stroke);
+        background: #fff;
+        color: #222;
+        text-decoration: none;
+      }
+
+      .air-btn:hover {
+        filter: brightness(.98);
+      }
+
+      .air-btn--primary {
+        background: var(--accent);
+        color: #fff;
+        border-color: var(--accent);
+        box-shadow: 0 10px 22px rgba(255, 56, 92, .2);
+      }
+
+      .air-btn--primary:hover {
+        background: var(--accent-d);
+      }
+
+      .air-btn--wa {
+        border-color: #cfe8db;
+        color: #fff;
+        background: var(--success);
+      }
+
+      .air-small {
+        font-size: 12px;
+        color: var(--muted);
+        margin-top: 8px;
+      }
+
+      .air-modal {
+        position: fixed;
+        inset: 0;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 0, 0, .45);
+        z-index: 10000;
+      }
+
+      .air-modal.show {
+        display: flex;
+      }
+
+      .air-sheet {
+        width: min(620px, 92vw);
+        background: #fff;
+        border: 1px solid var(--stroke);
+        border-radius: 16px;
+        padding: 16px;
+        box-shadow: 0 24px 60px rgba(0, 0, 0, .25);
+      }
+
+      .air-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        margin-bottom: 6px;
+      }
+
+      .air-head h5 {
+        margin: 0;
+        font-weight: 800;
+      }
+
+      .air-x {
+        border: 1px solid var(--stroke);
+        background: #fff;
+        border-radius: 999px;
+        width: 34px;
+        height: 34px;
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+      }
+
+      .air-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-top: 8px;
+      }
+
+      .air-grid .full {
+        grid-column: 1/-1;
+      }
+
+      .air-actions {
+        display: flex;
+        gap: 8px;
+        justify-content: flex-end;
+        margin-top: 10px;
+      }
     </style>
 
-    <!-- EmailJS SDK -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function(){
-            // Inicializar EmailJS con tu Public Key
-            emailjs.init("fBsDQAPpy2ke_o-zr"); // Reemplaza con tu Public Key de EmailJS
-        })();
-    </script>
+    <section class="air-urg-wrap" aria-labelledby="urgTitle">
+      <div class="air-urg">
+        <!-- Izquierda: mensaje -->
+        <div>
+          <span class="air-eyebrow">ALTA DEMANDA · </span>
+          <h2 id="urgTitle" class="air-title">VIVE LA EXPERIENCIA EN PERSONA</h2>
+          <p class="air-sub">
+            Agenda un recorrido privado y recibe un catálogo personalizado según zona, estilo y presupuesto.
+          </p>
 
-</head>
-<body>
-    <!-- "Inicio de la barra superior". -->
-    <div class="container-fluid bg-rich-black py-3">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 text-center text-lg-left mb-2 mb-lg-0">
-                    <div class="d-inline-flex align-items-center">
-                        <a class="text-white pr-3" href="">Preguntas Frecuentes</a>
-                        <span class="text-white">|</span>
-                        <a class="text-white px-3" href="contact.html">Ayuda</a>
-
-                        <span class="text-white">|</span>
-                        <a class="text-white pl-3" href="mailto:soportemomed@googlegroups.com">Soporte Técnico</a>
-
-                    </div>
-                </div>
-                <div class="col-md-6 text-center text-lg-right">
-                    <!--Charly, agregado y redireccion a la red social de Facebook-->
-                    <div class="d-inline-flex align-items-center">
-                        <a class="text-white px-3" 
-   href="https://www.facebook.com/p/MOMED-100075915498484/" 
-   target="_blank" 
-   rel="noopener noreferrer">
-   <i class="fab fa-facebook-f"></i></a>
-                        </a>
-                        </a>
-                        </a>
-                        <!--Charly, Agregado y redireccion a la red social de Instagram-->
-                        <a class="text-white px-3" 
-   href="https://www.instagram.com/momed_arquitectura/?fbclid=IwY2xjawLGf-BleHRuA2FlbQIxMABicmlkETFGa0swOWpHN1dwZFBnSjFCAR4vy0A4iqyH8xGg_F4HKCoKwFYCBsZsAib7CEpJ7LOA2ehIvoU_87OjTcg6mg_aem_h4qptahWIcuug3rvusXuBg" 
-   target="_blank" 
-   rel="noopener noreferrer">
-   <i class="fab fa-instagram"></i></a>
-                        </a>
-                    </div>
-                </div>
-            </div>
+          <div class="air-small">
+            🌴 <strong>Casas De Descanso</strong> · Agenda en menos de 1 minuto, nosotros nos encargamos del resto.
+          </div>
         </div>
-    </div>
-    <!-- "Final de la barra superior". -->
 
-<!-- Inicio de la barra de Navegación -->
-<div class="container-fluid position-relative nav-bar p-0">
-    <div class="container position-relative" style="z-index: 9;">
-        <!--charly Cambio el color-->
-        <nav class="navbar navbar-expand-lg bg-floral-white navbar-dark py-3 py-lg-0 pl-3 pl-lg-5">
-            <a href="" class="navbar-brand">
-               <!--DAYAN:CAMBIO RUTA DE LOGO DE TEXTO A LOGO DE IMAGEN-->
-               <img src="img/b0edbe9b-d7c6-4503-9ab5-405744cc50cf.png" alt="Logo BCD" style="height: 150px;">
-
-            </a>
-            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
-                <div class="navbar-nav ml-auto py-0">
-                    <!--Brayan:CAMBIO TEXTOs A Español-->
-                    <a href="index.html" class="nav-item text-rich-black nav-link active">Hogar</a>
-                        
-                        <a href="service.html" class="nav-item text-timber-green nav-link">Servicios</a> 
-                        <a href="project.html" class="nav-item text-timber-green nav-link">Proyectos</a> 
-                        
-                        <a href="contact.html" class="nav-item text-timber-green nav-link">Contacto</a>       
-                        <div class="nav-item dropdown">
-                        
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </div>
-    </div>
-<!-- Final de la barra de Navegación -->
-
-   <div class="container-fluid bg-timber-green py-3">
-  <div class="container">
-    <div class="row justify-content-center">
-
-      <!-- Bloque Correo -->
-      <div class="col-lg-6 d-flex mb-3 mb-lg-0">
-  <div class="d-inline-flex text-left align-items-start">
-    <!-- Ícono de correo con enlace -->
-    <a href="mailto:momedproyectos@gmail.com" class="mr-3">
-      <i class="fas fa-envelope fa-2x" style="color: #03ac13;"></i>
-    </a>
-    <!-- Texto e email -->
-    <div class="d-flex flex-column">
-      <h5 class="text-floral-white mb-1">Envíanos un correo electrónico</h5>
-      <a href="mailto:programadoresingenieros@gmail.com" class="text-floral-white" style="text-decoration: none;">
-        programadoresingenieros@gmail.com
-      </a>
-    </div>
-  </div>
-</div>
-
-
-      <!-- Bloque WhatsApp -->
-      <div class="col-lg-6 d-flex">
-        <div class="d-inline-flex text-left align-items-start">
-          <a href="https://wa.me/524423440411" target="_blank">
-            <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" 
-                 alt="WhatsApp" 
-                 style="width: 36px; height: 36px;" class="mr-3">
-          </a>
-          <div class="d-flex flex-column">
-            <h5 class="text-floral-white mb-1">Contáctanos</h5>
-            <a href="https://wa.me/524421317870" target="_blank" class="text-floral-white" style="text-decoration: none;">
-                  +52 442 1317870
-            </a>
+        <!-- Derecha: tarjeta de reserva -->
+        <div class="air-card" role="group" aria-label="Formulario para agendar visita">
+          <div class="air-price">
+            <span class="p">AGENDA AHORA</span> <span class="u"></span>
+          </div>
+          <div class="air-dates">
+            <input type="date" id="fFecha" class="air-input" aria-label="Fecha de visita">
+            <input type="time" id="fHora" class="air-input" aria-label="Hora de visita">
+            <input type="text" id="fZona" class="air-input" placeholder="Zona (Juriquilla, Zibatá…)" aria-label="Zona">
+            <input type="number" id="fPres" class="air-input" placeholder="Presupuesto (MXN)" aria-label="Presupuesto">
+            <select id="fRec" class="air-select" aria-label="Número de recámaras">
+              <option value="" disabled selected>Recámaras</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5+</option>
+            </select>
+            <input type="text" id="fProp" class="air-input" placeholder="Propiedad (opcional)" aria-label="Propiedad">
+          </div>
+          <div class="air-ctas">
+            <a class="air-btn" href="tel:+524423440411">📞 Llamar</a>
+            <a id="btnWA" class="air-btn air-btn--wa" target="_blank" href="#">💬 WhatsApp</a>
+            <button class="air-btn air-btn--primary" type="button" onclick="openVisitModal()">📅 AGENDA AHORA</button>
+          </div>
+          <div class="air-small">
+            Sin spam. Usamos tus datos solo para coordinar tu visita.
           </div>
         </div>
       </div>
-            </div>
+    </section>
+
+    <!-- Modal estilo Airbnb -->
+    <div class="air-modal" id="visitModal" role="dialog" aria-modal="true" aria-labelledby="visitT">
+      <div class="air-sheet">
+        <div class="air-head">
+          <h5 id="visitT">Confirmar visita por WhatsApp</h5>
+          <button class="air-x" type="button" aria-label="Cerrar" onclick="closeVisitModal()">✕</button>
         </div>
-    </div>
-    <!-- "Final de la sección debajo de la barra de navegación" -->
-
-
-    <!-- "Inicio del encabezado de la página". -->
-     <!--Charly cambio de color de fondo-->
-    <div class="container-fluid bg-rich-black py-5">
-        <div class="container py-5">
-            <div class="row align-items-center py-4">
-                <link href="https://fonts.googleapis.com/css2?family=Great Vibes&display=swap" rel="stylesheet">
-
-                <div class="col-md-6 text-center text-md-left">
-                 <!-- Agregada la frase principal con mejor estilo -->
-                 <h1 class="mb-4 mb-md-0 text-floral-white" 
-                 <h1>TU FUTURO <span style="color:#10b981;">EMPIEZA</span> AQUÍ</h1>
-
-                 </h1>
-                </div>
-                <div class="col-md-6 text-center text-md-right">
-                    <div class="d-inline-flex align-items-center">
-                        <a class="btn btn-outline-primary" href="">Hogar</a>
-                        <i class="fas fa-angle-double-right text-juniper mx-2"></i>
-                        <a class="btn btn-outline-primary disabled" href="">Nuestros Proyectos</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- "Final del encabezado de la página". -->
-
-<!-- "Inicio de la sección de casas" -->
-<!-- Reemplazando sección de casas con diseño moderno fusionado -->
-
-<!-- FONDO CLARO del encabezado -->
-<section class="section-light" style="background:#fffbf3;">
-  <div class="section-wrap, section-wrap-stock">
-    <div style="display:flex;justify-content:center;margin-bottom:18px;">
-      <div class="encabezado">
-        <span class="encabezado-stock"></span>¡Disponibles Ahora!
-      </div>
-    </div>
-
-    <h1 class="letrero">
-      Casas en <span style="color:#03ac13;">Stock</span>
-    </h1>
-
-    <p class="slogan">No pierdas la oportunidad de encontrar tu hogar ideal.<br>
-      Propiedades listas para entrega inmediata.</p>
-
-    <div class="stats-grid-cards">
-  <div class="inicio-carta">
-    <div class="numero">15+</div>
-    <div class="inicio-letras">Casas Disponibles</div>
-  </div>
-  <div class="inicio-carta">
-    <div class="numero">24h</div>
-    <div class="inicio-letras">Entrega Inmediata</div>
-  </div>
-  <div class="inicio-carta">
-    <div class="numero">100%</div>
-    <div class="inicio-letras">Financiamiento</div>
-  </div>
-</div>
-</section>
-
-<!-- Sección de Cards de Casas -->
-<section class="section-wrap, section-wrap-card">
-  <div class="owl-carousel casas-stock-carousel team-carousel position-relative">
-
-    <!-- Card AGUA -->
-    <article class="card, carta-modelo">
-      <div class="card-media, card-media-efect">
-        <img class="card-img, card-img-efect" src="img/FACHADA PPAL 1 agua.jpg" alt="Casa Elemento Agua">
-         <!-- Agregado icono de gota de agua -->
-        
-        <span class="badge-top badge-right, stock">En Stock</span>
-      </div>
-      <div class="card-body" style="padding:20px 22px 26px;">
-        <h3 class="card-title, card-title-letra">Casa Elemento Agua</h3>
-        <p class="card-desc, card-desc-letra">3 habitaciones • 2 baños • Vista al mar</p>
-        <div class="card-row, card-row-efect">
-          <span class="price, precio-casas">$320,000</span>
-          <span class="hint, hint-card">Ideal vacacional</span>
-        </div>
-        <div class="card-actions efecto" >
-        <a class="ver-mas" href="img/FACHADA PPAL 1 agua.jpg" data-lightbox="galeriaAgua" data-title="Casa Elemento Agua">
-        Ver más</a>
-        <!-- imágenes adicionales ocultas -->
-       <a href="img/FACHADA PPAL agua.jpg" data-lightbox="galeriaAgua" data-title="Casa Elemento Agua"></a>
-       <a href="img/planta baja agua.png" data-lightbox="galeriaAgua" data-title="Casa Elemento Agua"></a>
-       <a href="img/planta alta agua.jpg" data-lightbox="galeriaAgua" data-title="Casa Elemento Agua"></a>
-        <a href="img/FACHADA POSTERIOR agua.png" data-lightbox="galeriaAgua" data-title="Casa Elemento Agua"></a>
-       <a href="img/SALA AGUA.jpg" data-lightbox="galeriaAgua" data-title="Casa Elemento Agua"></a>
-       <a href="img/COCINA.png" data-lightbox="galeriaAgua" data-title="Casa Elemento Agua"></a>
-        <!-- Eliminado margin-top del botón Áreas para alinearlo con Ver más -->
-        <button class="ver-mas" onclick="openMapModal()" style="background-color: #03ac13;">
-          <i class="fas fa-map-marker-alt mr-1"></i>Áreas
-        </button>
-    </div>
-    </article>
-
-    <!-- Card TIERRA -->
-    <article class="card, carta-modelo">
-      <div class="card-media, card-media-efect">
-        <img class="card-img, card-img-efect" src="img/FACHADA PPAL tierra.png" alt="Casa Elemento Fuego">
-         <!-- Agregado icono de montaña para tierra -->
-       
-        <span class="badge-top badge-right, stock">En Stock</span>
-      </div>
-      <div class="card-body" style="padding:20px 22px 26px;">
-        <h3 class="card-title, card-title-letra">Casa Elemento Tierra</h3>
-        <p class="card-desc, card-desc-letra">4 habitaciones • 3 baños • Terraza con asador</p>
-        <div class="card-row, card-row-efect">
-          <span class="price, precio-casas">$890,000</span>
-          <span class="hint, hint-card">Entrega inmediata</span>
-        </div>
-        <div class="card-actions efecto">
-        <a class="ver-mas" href="img/FACHADA PPAL tierra.png" data-lightbox="galeriaTierra" data-title="Casa Elemento Tierra">
-        Ver más</a>
-        
-        <a href="img/PERSPECTIVA tierra.png" data-lightbox="galeriaTierra" data-title="Casa Elemento Tierra"></a>
-        <a href="img/PERSPECTIVA 1 tierra.png" data-lightbox="galeriaTierra" data-title="Casa Elemento Tierra"></a>
-        <a href="img/TIERRA PLANTA BAJA.png" data-lightbox="galeriaTierra" data-title="Casa Elemento Tierra"></a>
-        <a href="img/TIERRA PLANTA ALTA.png" data-lightbox="galeriaTierra" data-title="Casa Elemento Tierra"></a>
-        <a href="img/ESCALERAS PLANTA ALTA tierra.png" data-lightbox="galeriaTierra" data-title="Casa Elemento Tierra"></a>
-        <!-- Eliminado margin-top del botón Áreas para alinearlo con Ver más -->
-        <button class="ver-mas" onclick="openMapModal()" style="background-color: #03ac13;">
-          <i class="fas fa-map-marker-alt mr-1"></i>Áreas
-        </button>
-    </div>
-    </article>
-
-    <!-- Card FUEGO -->
-    <article class="card, carta-modelo">
-      <div class="card-media, card-media-efect">
-        <img class="card-img, card-img-efect" src="img/FACHADA PPPAL fuego.jpg" alt="Casa Elemento Fuego">
-         <!-- Agregado icono de fuego -->
-        
-        <span class="badge-top badge-right, stock">En Stock</span>
-      </div>
-      <div class="card-body" style="padding:20px 22px 26px;">
-        <h3 class="card-title, card-title-letra">Casa Elemento Fuego</h3>
-        <p class="card-desc, card-desc-letra">4 habitaciones • 3 baños • Terraza con asador</p>
-        <div class="card-row, card-row-efect">
-          <span class="price, precio-casas">$350,000</span>
-          <span class="hint, hint-card">Entrega inmediata</span>
-        </div>
-        <div class="card-actions efecto">
-        <a class="ver-mas" href="img/FACHADA PPPAL fuego.jpg" data-lightbox="galeriaFuego" data-title="Casa Elemento Fuego">
-        Ver más</a>
-        <a href="img/FUEGO BAJA.png" data-lightbox="galeriaFuego" data-title="Casa Elemento Fuego"></a>
-        <a href="img/FUEGO ALTA.png" data-lightbox="galeriaFuego" data-title="Casa Elemento Fuego"></a>
-        <a href="img/SALA fuego.png" data-lightbox="galeriaFuego" data-title="Casa Elemento Fuego"></a>
-        <a href="img/ESCALERAS fuego.png" data-lightbox="galeriaFuego" data-title="Casa Elemento Fuego"></a>
-        <a href="img/COCINA fuego.png" data-lightbox="galeriaFuego" data-title="Casa Elemento Fuego"></a>
-        <a href="img/COMEDOR fuego.png" data-lightbox="galeriaFuego" data-title="Casa Elemento Fuego"></a>
-        <a href="img/FOGATERO fuego.png" data-lightbox="galeriaFuego" data-title="Casa Elemento Fuego"></a>
-        <!-- Eliminado margin-top del botón Áreas para alinearlo con Ver más -->
-        <button class="ver-mas" onclick="openMapModal()" style="background-color: #03ac13;">
-          <i class="fas fa-map-marker-alt mr-1"></i>Áreas
-        </button>
-    </div>
-    </article>
-
-    <!-- Card AIRE -->
-    <article class="card, carta-modelo">
-      <div class="card-media, card-media-efect">
-        <img class="card-img, card-img-efect" src="img/FACHADA PPAL (2) viento.png" alt="Casa Elemento Aire">
-         <!-- Agregado icono de viento para aire -->
-        
-        <span class="badge-top badge-right, stock">En Stock</span>
-      </div>
-      <div class="card-body" style="padding:20px 22px 26px;">
-        <h3 class="card-title, card-title-letra">Casa Elemento Aire</h3>
-        <p class="card-desc, card-desc-letra">2 habitaciones • 2 baños • Terraza elevada</p>
-        <div class="card-row, card-row-efect">
-          <span class="price, precio-casas">$310,000</span>
-          <span class="hint, hint-card">Vista panorámica</span>
-        </div>
-        <div class="card-actions efecto">
-        <a class="ver-mas" href="img/FACHADA PPAL (2) viento.png" data-lightbox="galeriaAire" data-title="Casa Elemento Aire">
-        Ver más</a>
-        <a href="img/VIENTO PLANTA BAJA.png" data-lightbox="galeriaAire" data-title="Casa Elemento Aire"></a>
-        <a href="img/VIENTO PLANTA ALTA.png" data-lightbox="galeriaAire" data-title="Casa Elemento Aire"></a>
-        <a href="img/SALA ACCESO viento.jpeg" data-lightbox="galeriaAire" data-title="Casa Elemento Aire"></a>
-        <a href="img/ESCALERAS Y SALA viento.jpg" data-lightbox="galeriaAire" data-title="Casa Elemento Aire"></a>
-        <a href="img/SALA NOCTURNO viento.jpg" data-lightbox="galeriaAire" data-title="Casa Elemento Aire"></a>
-        <a href="img/RECAMARA viento.jpg" data-lightbox="galeriaAire" data-title="Casa Elemento Aire"></a>
-        <a href="img/BAÑO DOBLE ALTURA viento.jpg" data-lightbox="galeriaAire" data-title="Casa Elemento Aire"></a>
-        <!-- Eliminado margin-top del botón Áreas para alinearlo con Ver más -->
-        <button class="ver-mas" onclick="openMapModal()" style="background-color: #03ac13;">
-          <i class="fas fa-map-marker-alt mr-1"></i>Áreas
-        </button>
-    </div>
-    </article>
-  </div>
-</section>
-
-
-<!-- ========== INICIO | Urgencia estilo Airbnb ========== -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --accent:#FF385C;        /* Color Airbnb */
-    --accent-d:#e12c4f;
-    --ink:#222222;
-    --muted:#6b6b6b;
-    --stroke:#e9e9e9;
-    --bg:#fff;
-    --pill:#f7f7f7;
-    --success:#00A884;       /* WhatsApp */
-  }
-  .air-urg-wrap{
-    font-family:'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    padding:48px 16px; background:#ffffff;
-    border-top:1px solid #f1f1f1; border-bottom:1px solid #f1f1f1;
-  }
-  .air-urg{
-    max-width:1100px; margin:auto; display:grid; gap:24px;
-    grid-template-columns: 1.2fr .9fr; align-items:center;
-  }
-  @media (max-width: 992px){ .air-urg{grid-template-columns:1fr} }
-
-  /* Columna texto */
-  .air-eyebrow{
-    display:inline-flex; align-items:center; gap:8px;
-    background:var(--pill); border:1px solid var(--stroke);
-    padding:.45rem .7rem; border-radius:999px; font-weight:600; color:#333;
-  }
-  .air-eyebrow::before{
-    content:""; width:8px; height:8px; border-radius:50%; background:var(--accent);
-    box-shadow:0 0 0 4px rgba(255,56,92,.12);
-  }
-  .air-title{font-weight:800; font-size:clamp(28px,4vw,40px); line-height:1.1; margin:12px 0 8px; color:var(--ink)}
-  .air-sub{color:var(--muted); font-size:clamp(14px,2vw,16px)}
-
-  /* Contador en pills */
-  .air-count{display:flex; gap:10px; margin:16px 0 10px; flex-wrap:wrap}
-  .air-pill-time{
-    min-width:86px; text-align:center; border:1px solid var(--stroke); border-radius:12px; background:#fff;
-    padding:.6rem .7rem;
-    box-shadow:0 6px 16px rgba(0,0,0,.06);
-  }
-  .air-pill-time .n{font-weight:800; font-size:20px; color:var(--ink)}
-  .air-pill-time .l{font-size:12px; color:var(--muted)}
-
-  /* Barrita de urgencia */
-  .air-bar{height:10px; background:#f5f5f5; border-radius:999px; overflow:hidden; margin:8px 0 4px; max-width:360px}
-  .air-bar > span{display:block; height:100%; width:28%; background:linear-gradient(90deg, var(--accent), var(--accent-d)); transition:width .4s}
-
-  /* Tarjeta CTA a la derecha */
-  .air-card{
-    border:1px solid var(--stroke); border-radius:16px; background:#fff; padding:18px;
-    box-shadow:0 12px 28px rgba(0,0,0,.08);
-  }
-  .air-price{display:flex; align-items:baseline; gap:6px}
-  .air-price .p{font-weight:800; font-size:22px; color:var(--ink)}
-  .air-price .u{color:var(--muted); font-size:13px}
-
-  .air-dates{display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:12px}
-  .air-input, .air-select{
-    width:100%; border:1px solid var(--stroke); border-radius:12px; padding:.7rem .8rem; font-size:14px; color:var(--ink);
-    background:#fff; outline:none;
-  }
-  .air-input:focus, .air-select:focus{border-color:#d3d3d3}
-
-  .air-ctas{display:flex; gap:8px; margin-top:12px; flex-wrap:wrap}
-  .air-btn{
-    border-radius:12px; padding:.8rem 1rem; font-weight:800; border:1px solid var(--stroke); background:#fff; color:#222; text-decoration:none;
-  }
-  .air-btn:hover{filter:brightness(.98)}
-  .air-btn--primary{
-    background:var(--accent); color:#fff; border-color:var(--accent);
-    box-shadow:0 10px 22px rgba(255,56,92,.2);
-  }
-  .air-btn--primary:hover{background:var(--accent-d)}
-  .air-btn--wa{border-color:#cfe8db; color:#fff; background:var(--success)}
-  .air-small{font-size:12px; color:var(--muted); margin-top:8px}
-
-  /* Modal minimal Airbnb-ish */
-  .air-modal{position:fixed; inset:0; display:none; align-items:center; justify-content:center; background:rgba(0,0,0,.45); z-index:10000}
-  .air-modal.show{display:flex}
-  .air-sheet{
-    width:min(620px, 92vw); background:#fff; border:1px solid var(--stroke); border-radius:16px; padding:16px;
-    box-shadow:0 24px 60px rgba(0,0,0,.25);
-  }
-  .air-head{display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:6px}
-  .air-head h5{margin:0; font-weight:800}
-  .air-x{border:1px solid var(--stroke); background:#fff; border-radius:999px; width:34px; height:34px; display:grid; place-items:center; cursor:pointer}
-  .air-grid{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:8px}
-  .air-grid .full{grid-column:1/-1}
-  .air-actions{display:flex; gap:8px; justify-content:flex-end; margin-top:10px}
-</style>
-
-<section class="air-urg-wrap" aria-labelledby="urgTitle">
-  <div class="air-urg">
-    <!-- Izquierda: mensaje -->
-    <div>
-      <span class="air-eyebrow">Alta demanda · Nuevos tours hoy</span>
-      <h2 id="urgTitle" class="air-title">¡No esperes más!</h2>
-      <p class="air-sub">Estas propiedades se están moviendo rápido. Reserva tu visita y recibe un catálogo curado por zona y presupuesto.</p>
-
-      <div class="air-count" role="timer" aria-live="polite">
-        <div class="air-pill-time"><div id="h" class="n">00</div><div class="l">horas</div></div>
-        <div class="air-pill-time"><div id="m" class="n">00</div><div class="l">min</div></div>
-        <div class="air-pill-time"><div id="s" class="n">00</div><div class="l">seg</div></div>
-      </div>
-      <div class="air-bar" aria-hidden="true"><span id="bar"></span></div>
-      <div class="air-small">Quedan pocos horarios para hoy.</div>
-    </div>
-
-    <!-- Derecha: tarjeta de reserva -->
-    <div class="air-card" role="group" aria-label="Reserva de visita">
-      <div class="air-price"><span class="p">Agendar visita</span> <span class="u">gratis</span></div>
-      <div class="air-dates">
-        <input type="date" id="fFecha" class="air-input" aria-label="Fecha de visita">
-        <input type="time" id="fHora" class="air-input" aria-label="Hora de visita">
-        <input type="text" id="fZona" class="air-input" placeholder="Zona (Juriquilla, Zibatá…)" aria-label="Zona">
-        <input type="number" id="fPres" class="air-input" placeholder="Presupuesto (MXN)" aria-label="Presupuesto">
-        <select id="fRec" class="air-select"><option value="" disabled selected>Recámaras</option><option>2</option><option>3</option><option>4</option><option>5+</option></select>
-        <input type="text" id="fProp" class="air-input" placeholder="Propiedad (opcional)">
-      </div>
-      <div class="air-ctas">
-        <a class="air-btn" href="tel:+524423440411">📞 Llamar</a>
-        <a id="btnWA" class="air-btn air-btn--wa" target="_blank" href="#">💬 WhatsApp</a>
-        <button class="air-btn air-btn--primary" type="button" onclick="openVisitModal()">📅 Agendar</button>
-      </div>
-      <div class="air-small">Sin spam. Usamos tus datos solo para coordinar tu visita.</div>
-    </div>
-  </div>
-</section>
-
-<!-- Modal -->
-<div class="air-modal" id="visitModal" role="dialog" aria-modal="true" aria-labelledby="visitT">
-  <div class="air-sheet">
-    <div class="air-head">
-      <h5 id="visitT">Confirmar visita por WhatsApp</h5>
-      <button class="air-x" type="button" aria-label="Cerrar" onclick="closeVisitModal()">✕</button>
-    </div>
-    <p style="color:var(--muted);margin:0 0 6px">Revisa los datos y confirma. Te responderemos en menos de 24 h.</p>
-    <form id="visitForm" onsubmit="sendVisit(event)">
-      <div class="air-grid">
-        <input class="full air-input" type="text" id="vNombre" placeholder="Tu nombre" required>
-        <input class="air-input" type="date" id="vFecha" required>
-        <input class="air-input" type="time" id="vHora" required>
-        <input class="air-input" type="text" id="vZona" placeholder="Zona" required>
-        <input class="air-input" type="number" id="vPres" placeholder="Presupuesto (MXN)" required>
-        <select class="air-select" id="vRec" required><option value="" disabled selected>Recámaras</option><option>2</option><option>3</option><option>4</option><option>5+</option></select>
-        <input class="full air-input" type="text" id="vProp" placeholder="Propiedad (opcional)">
-      </div>
-      <div class="air-actions">
-        <button type="button" class="air-btn" onclick="closeVisitModal()">Cancelar</button>
-        <button type="submit" class="air-btn air-btn--primary">Confirmar por WhatsApp</button>
-      </div>
-    </form>
-  </div>
-</div>
-
-<script>
-  /* ===== Countdown 36h estilo simple ===== */
-  (function(){
-    const end = new Date(Date.now() + 36*60*60*1000);
-    const $ = s=>document.querySelector(s);
-    const total = end - new Date();
-    function tick(){
-      const diff = Math.max(0, end - new Date());
-      const h = Math.floor(diff/3600000);
-      const m = Math.floor((diff%3600000)/60000);
-      const s = Math.floor((diff%60000)/1000);
-      $('#h').textContent = String(h).padStart(2,'0');
-      $('#m').textContent = String(m).padStart(2,'0');
-      $('#s').textContent = String(s).padStart(2,'0');
-      const pct = 100 - Math.round(diff/total*100);
-      $('#bar').style.width = Math.min(100, Math.max(18, pct)) + '%';
-    }
-    tick(); setInterval(tick, 1000);
-  })();
-
-  /* ===== Modal ===== */
-  const modal = document.getElementById('visitModal');
-  function openVisitModal(){
-    // Prellenar con valores de la tarjeta
-    document.getElementById('vFecha').value = document.getElementById('fFecha').value;
-    document.getElementById('vHora').value  = document.getElementById('fHora').value;
-    document.getElementById('vZona').value  = document.getElementById('fZona').value;
-    document.getElementById('vPres').value  = document.getElementById('fPres').value;
-    document.getElementById('vRec').value   = document.getElementById('fRec').value || '';
-    document.getElementById('vProp').value  = document.getElementById('fProp').value;
-    modal.classList.add('show'); document.body.style.overflow='hidden';
-  }
-  function closeVisitModal(){ modal.classList.remove('show'); document.body.style.overflow=''; }
-
-  /* ===== WhatsApp dinámico (card + modal) ===== */
-  const WHATS = '5214423440411'; // <-- Cambia a tu número real
-  function buildMsg({nombre, fecha, hora, zona, pres, rec, prop}){
-    const fmx = fecha ? new Date(fecha).toLocaleDateString('es-MX',{year:'numeric',month:'long',day:'numeric'}) : '';
-    const presFmt = pres ? Number(pres).toLocaleString('es-MX') : '';
-    let msg = 'Hola, quiero agendar una visita.';
-    if(nombre) msg += `%0A• Nombre: ${encodeURIComponent(nombre)}`;
-    if(prop)   msg += `%0A• Propiedad: ${encodeURIComponent(prop)}`;
-    if(zona)   msg += `%0A• Zona: ${encodeURIComponent(zona)}`;
-    if(presFmt)msg += `%0A• Presupuesto: $${presFmt} MXN`;
-    if(rec)    msg += `%0A• Recámaras: ${encodeURIComponent(rec)}`;
-    if(fmx||hora) msg += `%0A• Fecha/Hora: ${encodeURIComponent(fmx + (hora?(' ' + hora):''))}`;
-    msg += `%0A%0A¿Me apoyan con disponibilidad?`;
-    return `https://wa.me/${WHATS}?text=${msg}`;
-  }
-
-  // Botón WhatsApp de la tarjeta (en vivo)
-  (function(){
-    const btn = document.getElementById('btnWA');
-    const take = id => document.getElementById(id)?.value?.trim();
-    function upd(){
-      btn.href = buildMsg({
-        nombre:'', fecha:take('fFecha'), hora:take('fHora'),
-        zona:take('fZona'), pres:take('fPres'), rec:take('fRec'), prop:take('fProp')
-      });
-    }
-    ['fFecha','fHora','fZona','fPres','fRec','fProp'].forEach(id=>{
-      const el = document.getElementById(id);
-      el && el.addEventListener('input', upd);
-    });
-    upd();
-  })();
-
-  // Envío desde modal
-  function sendVisit(e){
-    e.preventDefault();
-    const v = id => document.getElementById(id).value.trim();
-    const link = buildMsg({
-      nombre:v('vNombre'), fecha:v('vFecha'), hora:v('vHora'),
-      zona:v('vZona'), pres:v('vPres'), rec:v('vRec'), prop:v('vProp')
-    });
-    window.open(link, '_blank'); closeVisitModal();
-  }
-</script>
-<!-- ========== FIN | Urgencia estilo Airbnb ========== -->
-
-
- 
-
-    <script>
-        function openModal(modalId) {
-            document.getElementById(modalId).style.display = 'block';
-            document.body.style.overflow = 'hidden'; // Prevenir scroll del body
-        }
-
-        function closeModal(modalId) {
-            document.getElementById(modalId).style.display = 'none';
-            document.body.style.overflow = 'auto'; // Restaurar scroll del body
-        }
-
-        function contactarVenta(nombreCasa) {
-            const mensaje = `Hola, estoy interesado en la ${nombreCasa}. Me gustaría recibir más información sobre esta propiedad.`;
-            const whatsappUrl = `https://wa.me/524423440411?text=${encodeURIComponent(mensaje)}`;
-            window.open(whatsappUrl, '_blank');
-        }
-
-        function agendarVisita(nombreCasa) {
-            const mensaje = `Hola, me gustaría agendar una visita para conocer la ${nombreCasa}. ¿Cuándo sería posible?`;
-            const whatsappUrl = `https://wa.me/524423440411?text=${encodeURIComponent(mensaje)}`;
-            window.open(whatsappUrl, '_blank');
-        }
-
-        // Cerrar modal al hacer clic fuera del contenido
-        window.onclick = function(event) {
-            const modals = document.querySelectorAll('.modal-casa');
-            modals.forEach(modal => {
-                if (event.target === modal) {
-                    modal.style.display = 'none';
-                    document.body.style.overflow = 'auto';
-                }
-            });
-        }
-
-        // Cerrar modal con tecla Escape
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                const modals = document.querySelectorAll('.modal-casa');
-                modals.forEach(modal => {
-                    if (modal.style.display === 'block') {
-                        modal.style.display = 'none';
-                        document.body.style.overflow = 'auto';
-                    }
-                });
-                closeMapModal();
-            }
-        });
-
-        // Funciones para el modal de agendar visita
-        const WHATSAPP_NUM = "524423440411";
-
-        function openVisitModal(){
-            const m = document.getElementById('visitModal');
-            m.classList.add('show');
-            const d = document.getElementById('vf_date');
-            const today = new Date();
-            const yyyy = today.getFullYear();
-            const mm = String(today.getMonth()+1).padStart(2,'0');
-            const dd = String(today.getDate()).padStart(2,'0');
-            d.min = `${yyyy}-${mm}-${dd}`;
-        }
-        function closeVisitModal(){
-            document.getElementById('visitModal').classList.remove('show');
-        }
-
-        function openMapModal() {
-            const modal = document.getElementById('mapModal');
-            modal.style.display = 'block';
-            modal.classList.add('show');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeMapModal() {
-            const modal = document.getElementById('mapModal');
-            modal.style.display = 'none';
-            modal.classList.remove('show');
-            document.body.style.overflow = 'auto';
-        }
-
-        function showError(msg){
-            const e = document.getElementById('vf_error');
-            e.textContent = msg; e.hidden = false;
-            setTimeout(()=>{ e.hidden = true; }, 4000);
-        }
-
-        function submitVisit(ev){
-            ev.preventDefault();
-            const name = document.getElementById('vf_name').value.trim();
-            const phone = document.getElementById('vf_phone').value.trim();
-            const date = document.getElementById('vf_date').value;
-            const time = document.getElementById('vf_time').value;
-            const notes = document.getElementById('vf_notes').value.trim();
-
-            if(!name || !phone || !date || !time){ return showError('Completa los campos requeridos (*)'); }
-
-            const chosen = new Date(`${date}T${time}`);
-            if(chosen < new Date()){ return showError('Elige una fecha y hora futuras.'); }
-
-            const nice = chosen.toLocaleString([], {weekday:'long', year:'numeric', month:'long', day:'numeric', hour:'2-digit', minute:'2-digit'});
-
-            const msg = `¡Hola! Quiero agendar una visita:\n` +
-                        `• Nombre: ${name}\n` +
-                        `• Teléfono: ${phone}\n` +
-                        `• Fecha y hora: ${nice}\n` +
-                        (notes ? `• Comentarios: ${notes}` : '');
-
-            const url = `https://wa.me/${WHATSAPP_NUM}?text=${encodeURIComponent(msg)}`;
-            window.open(url, '_blank', 'noopener');
-            closeVisitModal();
-        }
-
-        function downloadICS(){
-            const name = document.getElementById('vf_name').value.trim() || 'Cliente';
-            const date = document.getElementById('vf_date').value;
-            const time = document.getElementById('vf_time').value;
-            const notes = document.getElementById('vf_notes').value.trim();
-
-            if(!date || !time){ return showError('Selecciona fecha y hora para crear el .ics'); }
-
-            const start = new Date(`${date}T${time}:00`);
-            const end = new Date(start.getTime() + 60*60*1000); // 1 h
-
-            const fmt = d => d.toISOString().replace(/[-:]/g,'').split('.')[0] + 'Z';
-            const ics =
-`BEGIN:VCALENDAR
-VERSION:2.0
-CALSCALE:GREGORIAN
-METHOD:PUBLISH
-BEGIN:VEVENT
-UID:${Date.now()}@agenda
-DTSTAMP:${fmt(new Date())}
-DTSTART:${fmt(start)}
-DTEND:${fmt(end)}
-SUMMARY:Visita a propiedad
-DESCRIPTION:Visita agendada por ${name}${notes ? "\\n" + notes.replace(/\n/g,'\\n') : ""}
-END:VEVENT
-END:VCALENDAR`;
-
-            const blob = new Blob([ics], {type:'text/calendar;charset=utf-8'});
-            const a = document.createElement('a');
-            a.href = URL.createObjectURL(blob);
-            a.download = 'visita_propiedad.ics';
-            document.body.appendChild(a); a.click(); a.remove();
-        }
-    </script>
-
-    <!-- Modal de Agenda de Visita -->
-    <div id="visitModal" class="visit-modal" aria-hidden="true">
-      <div class="visit-backdrop" onclick="closeVisitModal()"></div>
-
-      <div class="visit-card" role="dialog" aria-modal="true" aria-labelledby="visitTitle">
-        <button class="visit-close" onclick="closeVisitModal()" aria-label="Cerrar">×</button>
-
-        <h3 id="visitTitle" class="visit-title">Agendar visita</h3>
-        <p class="visit-sub">Elige fecha y hora para visitar la propiedad y deja tus datos de contacto.</p>
-
-        <form id="visitForm" onsubmit="submitVisit(event)">
-          <div class="visit-grid">
-            <label class="field">
-              <span>Nombre completo *</span>
-              <input id="vf_name" type="text" required>
-            </label>
-
-            <label class="field">
-              <span>Teléfono (WhatsApp) *</span>
-              <input id="vf_phone" type="tel" inputmode="tel" pattern="[0-9+\-()\\s]{8,}" required>
-            </label>
-
-            <label class="field">
-              <span>Fecha *</span>
-              <input id="vf_date" type="date" required>
-            </label>
-
-            <label class="field">
-              <span>Hora *</span>
-              <input id="vf_time" type="time" required>
-            </label>
+        <p style="color:var(--muted);margin:0 0 6px">Revisa los datos y confirma. Te responderemos en menos de 24 h.</p>
+        <form id="visitForm" onsubmit="sendVisit(event)">
+          <div class="air-grid">
+            <input class="full air-input" type="text" id="vNombre" placeholder="Tu nombre" required>
+            <input class="air-input" type="date" id="vFecha" required>
+            <input class="air-input" type="time" id="vHora" required>
+            <input class="air-input" type="text" id="vZona" placeholder="Zona" required>
+            <input class="air-input" type="number" id="vPres" placeholder="Presupuesto (MXN)" required>
+            <select class="air-select" id="vRec" required>
+              <option value="" disabled selected>Recámaras</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5+</option>
+            </select>
+            <input class="full air-input" type="text" id="vProp" placeholder="Propiedad (opcional)">
           </div>
-
-          <label class="field">
-            <span>Comentarios (opcional)</span>
-            <textarea id="vf_notes" rows="3" placeholder="Ej. Vamos 2 personas, preferimos tarde…"></textarea>
-          </label>
-
-          <div class="visit-actions">
-            <button type="button" class="btn btn-ghost" onclick="downloadICS()">Añadir a mi calendario (.ics)</button>
-            <button type="submit" class="btn btn-primary">Enviar por WhatsApp</button>
+          <div class="air-actions">
+            <button type="button" class="air-btn" onclick="closeVisitModal()">Cancelar</button>
+            <button type="submit" class="air-btn air-btn--primary">Confirmar por WhatsApp</button>
           </div>
-
-          <p id="vf_error" class="visit-error" hidden></p>
         </form>
       </div>
     </div>
 
-    <!-- Agregado Modal de Mapa de Google Maps -->
+    <script>
+      /* ===== Modal Airbnb | abrir/cerrar y WhatsApp dinámico ===== */
+      const modal = document.getElementById('visitModal');
+
+      function openVisitModal() {
+        // Prellenar con valores de la tarjeta
+        document.getElementById('vFecha').value = document.getElementById('fFecha').value;
+        document.getElementById('vHora').value = document.getElementById('fHora').value;
+        document.getElementById('vZona').value = document.getElementById('fZona').value;
+        document.getElementById('vPres').value = document.getElementById('fPres').value;
+        document.getElementById('vRec').value = document.getElementById('fRec').value || '';
+        document.getElementById('vProp').value = document.getElementById('fProp').value;
+        modal.classList.add('show');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeVisitModal() {
+        modal.classList.remove('show');
+        document.body.style.overflow = '';
+      }
+
+      const WHATS = '5214423440411';
+
+      function buildMsg({ nombre, fecha, hora, zona, pres, rec, prop }) {
+        const fmx = fecha ? new Date(fecha).toLocaleDateString('es-MX', { year: 'numeric', month: 'long', day: 'numeric' }) : '';
+        const presFmt = pres ? Number(pres).toLocaleString('es-MX') : '';
+        let msg = 'Hola, quiero agendar una visita.';
+        if (nombre) msg += `%0A• Nombre: ${encodeURIComponent(nombre)}`;
+        if (prop) msg += `%0A• Propiedad: ${encodeURIComponent(prop)}`;
+        if (zona) msg += `%0A• Zona: ${encodeURIComponent(zona)}`;
+        if (presFmt) msg += `%0A• Presupuesto: $${presFmt} MXN`;
+        if (rec) msg += `%0A• Recámaras: ${encodeURIComponent(rec)}`;
+        if (fmx || hora) msg += `%0A• Fecha/Hora: ${encodeURIComponent(fmx + (hora ? (' ' + hora) : ''))}`;
+        msg += `%0A%0A¿Me apoyan con disponibilidad?`;
+        return `https://wa.me/${WHATS}?text=${msg}`;
+      }
+
+      // Botón WhatsApp de la tarjeta (en vivo)
+      (function () {
+        const btn = document.getElementById('btnWA');
+        const take = id => document.getElementById(id)?.value?.trim();
+        function upd() {
+          btn.href = buildMsg({
+            nombre: '',
+            fecha: take('fFecha'),
+            hora: take('fHora'),
+            zona: take('fZona'),
+            pres: take('fPres'),
+            rec: take('fRec'),
+            prop: take('fProp')
+          });
+        }
+        ['fFecha', 'fHora', 'fZona', 'fPres', 'fRec', 'fProp'].forEach(id => {
+          const el = document.getElementById(id);
+          el && el.addEventListener('input', upd);
+        });
+        upd();
+      })();
+
+      // Envío desde modal
+      function sendVisit(e) {
+        e.preventDefault();
+        const v = id => document.getElementById(id).value.trim();
+        const link = buildMsg({
+          nombre: v('vNombre'),
+          fecha: v('vFecha'),
+          hora: v('vHora'),
+          zona: v('vZona'),
+          pres: v('vPres'),
+          rec: v('vRec'),
+          prop: v('vProp')
+        });
+        window.open(link, '_blank');
+        closeVisitModal();
+      }
+    </script>
+
+    <!-- Galerías de imágenes para cada casa (overlay tipo slider propio) -->
+    <div id="galeriaAgua" class="gallery-overlay">
+      <div class="gallery-content">
+        <span class="close-gallery" onclick="closeGallery('galeriaAgua')">&times;</span>
+        <img id="currentImageAgua" src="img/SALA AGUA.jpg" alt="Casa Elemento Agua">
+        <div class="gallery-nav prev" onclick="changeImageAgua(-1)">&#10094;</div>
+        <div class="gallery-nav next" onclick="changeImageAgua(1)">&#10095;</div>
+      </div>
+    </div>
+
+    <div id="galeriaFuego" class="gallery-overlay">
+      <div class="gallery-content">
+        <span class="close-gallery" onclick="closeGallery('galeriaFuego')">&times;</span>
+        <img id="currentImageFuego" src="img/VESUVIO 1.png" alt="Casa Elemento Fuego">
+        <div class="gallery-nav prev" onclick="changeImageFuego(-1)">&#10094;</div>
+        <div class="gallery-nav next" onclick="changeImageFuego(1)">&#10095;</div>
+      </div>
+    </div>
+
+    <div id="galeriaAire" class="gallery-overlay">
+      <div class="gallery-content">
+        <span class="close-gallery" onclick="closeGallery('galeriaAire')">&times;</span>
+        <img id="currentImageAire" src="img/SALA.jpeg" alt="Casa Elemento Aire">
+        <div class="gallery-nav prev" onclick="changeImageAire(-1)">&#10094;</div>
+        <div class="gallery-nav next" onclick="changeImageAire(1)">&#10095;</div>
+      </div>
+    </div>
+
+    <div id="galeriaTierra" class="gallery-overlay">
+      <div class="gallery-content">
+        <span class="close-gallery" onclick="closeGallery('galeriaTierra')">&times;</span>
+        <img id="currentImageTierra" src="img/SALA.jpeg" alt="Casa Elemento Tierra">
+        <div class="gallery-nav prev" onclick="changeImageTierra(-1)">&#10094;</div>
+        <div class="gallery-nav next" onclick="changeImageTierra(1)">&#10095;</div>
+      </div>
+    </div>
+
+    <!-- Modal de Mapa de Google Maps -->
     <div id="mapModal" class="visit-modal" aria-hidden="true" style="display: none;">
       <div class="visit-backdrop" onclick="closeMapModal()"></div>
 
-      <!-- Ajustado el modal para que sea más horizontal y sin espacios extra -->
-      <div class="visit-card" role="dialog" aria-modal="true" aria-labelledby="mapTitle" style="max-width: 1200px; width: 95%; max-height: 85vh; padding: 25px 25px 20px 25px;">
+      <div class="visit-card" role="dialog" aria-modal="true" aria-labelledby="mapTitle"
+        style="max-width: 1200px; width: 95%; max-height: 85vh; padding: 25px 25px 20px 25px;">
         <button class="visit-close" onclick="closeMapModal()" aria-label="Cerrar">×</button>
 
         <h3 id="mapTitle" class="visit-title" style="margin-bottom: 8px;">
           <i class="fas fa-map-marker-alt mr-2" style="color: #03ac13;"></i>
           Posibles Áreas de Construcción
         </h3>
-        <p class="visit-sub" style="margin-bottom: 15px;">Santiago de Querétaro - Zonas disponibles para construir tu hogar</p>
+        <p class="visit-sub" style="margin-bottom: 15px;">Santiago de Querétaro - Zonas disponibles para construir tu
+          hogar</p>
 
-        <!-- Contenedor del mapa con overflow hidden para evitar que sobresalga -->
-        <div style="width: 100%; height: 420px; border-radius: 10px; overflow: hidden; margin-top: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border: 2px solid #e0e0e0;">
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119825.02894418!2d-100.49965760000001!3d20.6164546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d35b8fdc5b9255%3A0x97b094aa561b832f!2sSantiago%20de%20Quer%C3%A9taro%2C%20Qro.!5e0!3m2!1ses!2smx!4v1234567890123!5m2!1ses!2smx" 
-            width="100%" 
-            height="100%" 
-            style="border:0; display: block;" 
-            allowfullscreen="" 
-            loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
+        <div
+          style="width: 100%; height: 420px; border-radius: 10px; overflow: hidden; margin-top: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border: 2px solid #e0e0e0;">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119825.02894418!2d-100.49965760000001!3d20.6164546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d35b8fdc5b9255%3A0x97b094aa561b832f!2sSantiago%20de%20Quer%C3%A9taro%2C%20Qro.!5e0!3m2!1ses!2smx!4v1234567890123!5m2!1ses!2smx"
+            width="100%" height="100%" style="border:0; display: block;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
-        <!-- </CHANGE> Eliminada la sección de texto informativo y botones de contacto -->
       </div>
     </div>
 
-    <!--Inicio de Musica de Fondo Playlist mejorado por Charly -->
-<link rel="stylesheet" href="style.css">
+  </main>
 
-<audio id="musicaFondo" loop preload="auto" muted style="display: none;">
-</audio>
-
-<button onclick="toggleAudio()" class="musica-banner" id="botonMusica">
-    🔊 Música
-</button>
-
-<script>
-    const canciones = [
-        "Musica/Hunting.mp3",
-            "Musica/My World.mp3",
-            "Musica/Norah Jones.mp3", 
-            "Musica/Romance.mp3",
-            "Musica/I love You Always Forever.mp3",
-            "Musica/In Memoriam.mp3", 
-            "Musica/Jealous Girl.mp3",
-            "Musica/La Mer.mp3",
-            "Musica/Late Night Alumni.mp3", 
-            "Musica/Leaving Me.mp3",
-            "Musica/Lost Love.mp3",
-            "Musica/Love Story - Indila.mp3", 
-            "Musica/My life.mp3",
-            "Musica/Stacey Kent.mp3",
-            "Musica/Studying You.mp3",
-            "Musica/Welcome Back.mp3",
-            "Musica/Withering.mp3",
-            "Musica/Coming Home.mp3",
-            "Musica/Father Ocean.mp3",
-            "Musica/Give Me a Kiss.mp3",
-            "Musica/I know.mp3"
-    ];
-
-    const audio = document.getElementById('musicaFondo');
-    const botonMusica = document.getElementById('botonMusica');
-    let isPlaying = false;
-    let cancionActual = 0;
-
-    function iniciarMusica() {
-        audio.src = canciones[cancionActual];
-        audio.volume = 0;    // empieza en silencio
-        audio.muted = false;
-
-        audio.play().then(() => {
-            isPlaying = true;
-            botonMusica.innerText = "🔊 " + obtenerNombreCancion();
-            botonMusica.classList.add('playing');
-
-            // Subir volumen gradualmente en ~1s
-            let v = 0;
-            const fade = setInterval(() => {
-                if (v >= 0.7) {
-                    clearInterval(fade);
-                } else {
-                    v += 0.05;
-                    audio.volume = v;
-                }
-            }, 100);
-        }).catch(err => {
-            console.log("⚠️ Autoplay bloqueado:", err);
-        });
+  <!-- Scripts para modales, galerías y mapa -->
+  <script>
+    function openModal(modalId) {
+      document.getElementById(modalId).style.display = 'block';
+      document.body.style.overflow = 'hidden';
     }
 
-    function obtenerNombreCancion() {
-        const nombreCompleto = canciones[cancionActual];
-        const nombre = nombreCompleto.split('/').pop().replace('.mp3', '');
-        return nombre.length > 20 ? nombre.substring(0, 20) + '...' : nombre;
+    function closeModal(modalId) {
+      document.getElementById(modalId).style.display = 'none';
+      document.body.style.overflow = 'auto';
     }
 
-    // Cuando termine una canción, pasa a la siguiente
-    audio.addEventListener('ended', function() {
-        cancionActual = (cancionActual + 1) % canciones.length;
-        audio.src = canciones[cancionActual];
-        audio.play().then(() => {
-            botonMusica.innerText = "🔊 " + obtenerNombreCancion();
+    function contactarVenta(nombreCasa) {
+      const mensaje = `Hola, estoy interesado en la ${nombreCasa}. Me gustaría recibir más información sobre esta propiedad.`;
+      const whatsappUrl = `https://wa.me/524423440411?text=${encodeURIComponent(mensaje)}`;
+      window.open(whatsappUrl, '_blank');
+    }
+
+    function agendarVisita(nombreCasa) {
+      const mensaje = `Hola, me gustaría agendar una visita para conocer la ${nombreCasa}. ¿Cuándo sería posible?`;
+      const whatsappUrl = `https://wa.me/524423440411?text=${encodeURIComponent(mensaje)}`;
+      window.open(whatsappUrl, '_blank');
+    }
+
+    // Cerrar modal al hacer clic fuera del contenido
+    window.onclick = function (event) {
+      const modals = document.querySelectorAll('.modal-casa');
+      modals.forEach(modal => {
+        if (event.target === modal) {
+          modal.style.display = 'none';
+          document.body.style.overflow = 'auto';
+        }
+      });
+    }
+
+    // Cerrar modal con tecla Escape
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') {
+        const modals = document.querySelectorAll('.modal-casa');
+        modals.forEach(modal => {
+          if (modal.style.display === 'block') {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+          }
         });
+        closeMapModal();
+      }
     });
 
-    function toggleAudio() {
-        if (isPlaying) {
-            audio.pause();
-            botonMusica.innerText = "🔇 Pausado";
-            botonMusica.classList.remove('playing');
-        } else {
-            audio.play().then(() => {
-                botonMusica.innerText = "🔊 " + obtenerNombreCancion();
-                botonMusica.classList.add('playing');
-            });
-        }
-        isPlaying = !isPlaying;
+    function openMapModal() {
+      const modal = document.getElementById('mapModal');
+      modal.style.display = 'block';
+      modal.classList.add('show');
+      document.body.style.overflow = 'hidden';
     }
 
-    // 🎵 Activar música en la primera interacción (scroll, clic o touch)
-    function activarMusicaConInteraccion() {
-        iniciarMusica();
-        document.removeEventListener('scroll', activarMusicaConInteraccion);
-        document.removeEventListener('click', activarMusicaConInteraccion);
-        document.removeEventListener('touchstart', activarMusicaConInteraccion);
+    function closeMapModal() {
+      const modal = document.getElementById('mapModal');
+      modal.style.display = 'none';
+      modal.classList.remove('show');
+      document.body.style.overflow = 'auto';
     }
 
-    document.addEventListener('scroll', activarMusicaConInteraccion, { once: true });
-    document.addEventListener('click', activarMusicaConInteraccion, { once: true });
-    document.addEventListener('touchstart', activarMusicaConInteraccion, { once: true });
-</script>
-<!--Fin de la reproduccion de Musica-->
+    // Galerías overlay personalizadas
+    function openGallery(galleryId) {
+      document.getElementById(galleryId).style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
 
-    <!-- Scripts para la galería de casas -->
-    <script>
-        function openGallery(galleryId) {
-            document.getElementById(galleryId).style.display = 'flex';
-            document.body.style.overflow = 'hidden';
+    function closeGallery(galleryId) {
+      document.getElementById(galleryId).style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+
+    document.addEventListener('click', function (event) {
+      const galleries = document.querySelectorAll('.gallery-overlay');
+      galleries.forEach(gallery => {
+        if (event.target === gallery) {
+          gallery.style.display = 'none';
+          document.body.style.overflow = 'auto';
         }
+      });
+    });
 
-        function closeGallery(galleryId) {
-            document.getElementById(galleryId).style.display = 'none';
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') {
+        const galleries = document.querySelectorAll('.gallery-overlay');
+        galleries.forEach(gallery => {
+          if (gallery.style.display === 'flex') {
+            gallery.style.display = 'none';
             document.body.style.overflow = 'auto';
-        }
+          }
+        });
+      }
+    });
 
-        // Cerrar galerías al hacer clic fuera de ellas
-        document.addEventListener('click', function(event) {
-            const galleries = document.querySelectorAll('.gallery-overlay');
-            galleries.forEach(gallery => {
-                if (event.target === gallery) {
-                    gallery.style.display = 'none';
-                    document.body.style.overflow = 'auto';
-                }
+    const imagesAgua = ["img/SALA AGUA.jpg", "img/AGUA 2.jpg", "img/AGUA 3.jpg"];
+    let currentImageIndexAgua = 0;
+
+    const imagesFuego = ["img/VESUVIO 1.png", "img/VESUVIO 2.png", "img/VESUVIO 3.png"];
+    let currentImageIndexFuego = 0;
+
+    const imagesAire = ["img/SALA.jpeg", "img/AIRE 2.jpg", "img/AIRE 3.jpg"];
+    let currentImageIndexAire = 0;
+
+    const imagesTierra = ["img/VESUVIO 1.png", "img/VESUVIO 2.png", "img/VESUVIO 3.png"];
+    let currentImageIndexTierra = 0;
+
+    function changeImageAgua(n) {
+      currentImageIndexAgua = (currentImageIndexAgua + n + imagesAgua.length) % imagesAgua.length;
+      document.getElementById('currentImageAgua').src = imagesAgua[currentImageIndexAgua];
+    }
+
+    function changeImageFuego(n) {
+      currentImageIndexFuego = (currentImageIndexFuego + n + imagesFuego.length) % imagesFuego.length;
+      document.getElementById('currentImageFuego').src = imagesFuego[currentImageIndexFuego];
+    }
+
+    function changeImageAire(n) {
+      currentImageIndexAire = (currentImageIndexAire + n + imagesAire.length) % imagesAire.length;
+      document.getElementById('currentImageAire').src = imagesAire[currentImageIndexAire];
+    }
+
+    function changeImageTierra(n) {
+      currentImageIndexTierra = (currentImageIndexTierra + n + imagesTierra.length) % imagesTierra.length;
+      document.getElementById('currentImageTierra').src = imagesTierra[currentImageIndexTierra];
+    }
+  </script>
+
+  <!-- "Inicio del pie de página". -->
+  <div class="container-fluid bg-rich-black text-white py-5 px-sm-3 px-md-5">
+    <div class="row pt-5">
+      <div class="col-lg-3 col-md-6 mb-5">
+        <h4 class="text-shamrock mb-4">Contáctanos</h4>
+        <p><i class="fa fa-phone-alt mr-2"></i>+52 442 1317870</p>
+        <p><i class="fa fa-envelope mr-2"></i>programadoresingenieros@gmail.com</p>
+        <div class="d-flex justify-content-start mt-4">
+          <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;"
+            href="#"><i class="fab fa-facebook-f"></i></a>
+          <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;"
+            href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 mb-5">
+        <h4 class="text-shamrock mb-4">Accesos Directos</h4>
+        <div class="d-flex flex-column justify-content-start">
+          <a class="text-white mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Inicio</a>
+          <a class="text-white mb-2" href="about.html"><i class="fa fa-angle-right mr-2"></i>Sobre Nosotros</a>
+          <a class="text-white mb-2" href="service.html"><i class="fa fa-angle-right mr-2"></i>Nuestros Servicios</a>
+          <a class="text-white mb-2" href="project.html"><i class="fa fa-angle-right mr-2"></i>Nuestros Proyectos</a>
+          <a class="text-white" href="contact.html"><i class="fa fa-angle-right mr-2"></i>Contáctanos</a>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 mb-5">
+        <h4 class="text-shamrock mb-4">Secciones Populares</h4>
+        <div class="d-flex flex-column justify-content-start">
+          <a class="text-white mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Inicio</a>
+          <a class="text-white mb-2" href="filtros.html"><i class="fa fa-angle-right mr-2"></i>Diseñame</a>
+          <a class="text-white mb-2" href="single.html"><i class="fa fa-angle-right mr-2"></i>Sabías Qué…?</a>
+          <a class="text-white mb-2" href="project.html"><i class="fa fa-angle-right mr-2"></i>Nuestros Proyectos</a>
+          <a class="text-white" href="contact.html"><i class="fa fa-angle-right mr-2"></i>Contáctanos</a>
+        </div>
+      </div>
+
+      <!--Inicio de comentarios-->
+      <div class="col-lg-3 col-md-6 mb-5">
+        <h4 class="text-shamrock mb-4">Déjanos tu opinión</h4>
+        <form id="comentarios-form">
+          <div class="form-group">
+            <input type="text" name="nombre" class="form-control border-0" placeholder="Nombre Completo"
+              required="required" />
+          </div>
+          <div class="form-group">
+            <textarea name="comentario" class="form-control border-0"
+              placeholder="Escribe tu comentario aquí..." rows="4" required="required"></textarea>
+          </div>
+          <div>
+            <button class="btn btn-unified btn-primary btn-block border-0" type="submit">Enviar</button>
+          </div>
+        </form>
+      </div>
+      <!--Final de comentarios-->
+    </div>
+
+    <div class="container border-top border-secondary pt-5">
+      <p class="m-0 text-center text-white">
+        &copy; <a class="text-white font-weight-bold" href="#">ING.BCD</a>. Todos los derechos reservados.
+        <a class="text-white font-weight-bold" href="https://htmlcodex.com"></a>
+      </p>
+    </div>
+  </div>
+  <!-- "Final del pie de página". -->
+
+  <!-- Botón de volver arriba -->
+  <a href="#" class="btn btn-lg btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+  <!-- JavaScript Librerías (solo una vez) -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="lib/isotope/isotope.pkgd.min.js"></script>
+  <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+  <!-- JavaScript personalizado principal -->
+  <script src="js/main.js"></script>
+
+  <!-- Script para manejar el envío de comentarios con EmailJS -->
+  <script>
+    document.getElementById('comentarios-form').addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      const formData = new FormData(this);
+      const templateParams = {
+        from_name: formData.get('nombre'),
+        message: formData.get('comentario'),
+        fecha: new Date().toLocaleDateString('es-ES')
+      };
+
+      emailjs.send('service_uovpo9g', 'template_q54exgf', templateParams)
+        .then(function (response) {
+          alert('¡Comentario enviado exitosamente!');
+          document.getElementById('comentarios-form').reset();
+        }, function (error) {
+          alert('Error al enviar el comentario. Por favor intenta de nuevo.');
+          console.error('Error:', error);
+        });
+    });
+  </script>
+
+  <!-- Script para inicializar el carrusel de casas en stock -->
+  <script>
+    $(document).ready(function () {
+      $(".casas-stock-carousel").owlCarousel({
+        autoplay: true,
+        autoplayTimeout: 5000,
+        autoplaySpeed: 1000,
+        autoplayHoverPause: true,
+        smartSpeed: 1000,
+        margin: 40,
+        dots: true,
+        loop: true,
+        rewind: true,
+        nav: true,
+        navText: [
+          '<i class="fa fa-angle-left" aria-hidden="true"></i>',
+          '<i class="fa fa-angle-right" aria-hidden="true"></i>'
+        ],
+        responsive: {
+          0: {
+            items: 1
+          },
+          576: {
+            items: 1
+          },
+          768: {
+            items: 1
+          },
+          992: {
+            items: 2
+          }
+        },
+        onInitialized: function (event) {
+          setTimeout(function () {
+            $('.owl-carousel .cloned [data-lightbox]').each(function () {
+              $(this).removeAttr('data-lightbox');
+              $(this).removeAttr('data-title');
+              $(this).css('pointer-events', 'none');
             });
-        });
-
-        // Cerrar galerías con tecla Escape
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                const galleries = document.querySelectorAll('.gallery-overlay');
-                galleries.forEach(gallery => {
-                    if (gallery.style.display === 'flex') {
-                        gallery.style.display = 'none';
-                        document.body.style.overflow = 'auto';
-                    }
-                });
-            }
-        });
-    </script>
-
-    <!-- Estilos para las galerías de casas -->
-
-    <!-- Galerías de imágenes para cada casa -->
-    <div id="galeriaAgua" class="gallery-overlay">
-        <div class="gallery-content">
-            <span class="close-gallery" onclick="closeGallery('galeriaAgua')">&times;</span>
-            <img id="currentImageAgua" src="img/SALA AGUA.jpg" alt="Casa Elemento Agua">
-            <div class="gallery-nav prev" onclick="changeImageAgua(-1)">&#10094;</div>
-            <div class="gallery-nav next" onclick="changeImageAgua(1)">&#10095;</div>
-        </div>
-    </div>
-
-    <div id="galeriaFuego" class="gallery-overlay">
-        <div class="gallery-content">
-            <span class="close-gallery" onclick="closeGallery('galeriaFuego')">&times;</span>
-            <img id="currentImageFuego" src="img/VESUVIO 1.png" alt="Casa Elemento Fuego">
-            <div class="gallery-nav prev" onclick="changeImageFuego(-1)">&#10094;</div>
-            <div class="gallery-nav next" onclick="changeImageFuego(1)">&#10095;</div>
-        </div>
-    </div>
-
-    <div id="galeriaAire" class="gallery-overlay">
-        <div class="gallery-content">
-            <span class="close-gallery" onclick="closeGallery('galeriaAire')">&times;</span>
-            <img id="currentImageAire" src="img/SALA.jpeg" alt="Casa Elemento Aire">
-            <div class="gallery-nav prev" onclick="changeImageAire(-1)">&#10094;</div>
-            <div class="gallery-nav next" onclick="changeImageAire(1)">&#10095;</div>
-        </div>
-    </div>
-
-    <div id="galeriaTierra" class="gallery-overlay">
-        <div class="gallery-content">
-            <span class="close-gallery" onclick="closeGallery('galeriaTierra')">&times;</span>
-            <img id="currentImageTierra" src="img/SALA.jpeg" alt="Casa Elemento Tierra">
-            <div class="gallery-nav prev" onclick="changeImageTierra(-1)">&#10094;</div>
-            <div class="gallery-nav next" onclick="changeImageTierra(1)">&#10095;</div>
-        </div>
-    </div>
-
-    <!-- JavaScript para la funcionalidad de las galerías -->
-    <script>
-        const imagesAgua = ["img/SALA AGUA.jpg", "img/AGUA 2.jpg", "img/AGUA 3.jpg"];
-        let currentImageIndexAgua = 0;
-
-        const imagesFuego = ["img/VESUVIO 1.png", "img/VESUVIO 2.png", "img/VESUVIO 3.png"];
-        let currentImageIndexFuego = 0;
-
-        const imagesAire = ["img/SALA.jpeg", "img/AIRE 2.jpg", "img/AIRE 3.jpg"];
-        let currentImageIndexAire = 0;
-
-        const imagesTierra = ["img/VESUVIO 1.png", "img/VESUVIO 2.png", "img/VESUVIO 3.png"];
-        let currentImageIndexTierra = 0;
-
-        function changeImageAgua(n) {
-            currentImageIndexAgua = (currentImageIndexAgua + n + imagesAgua.length) % imagesAgua.length;
-            document.getElementById('currentImageAgua').src = imagesAgua[currentImageIndexAgua];
+          }, 100);
+        },
+        onTranslated: function (event) {
+          $('.owl-carousel .cloned [data-lightbox]').each(function () {
+            $(this).removeAttr('data-lightbox');
+            $(this).removeAttr('data-title');
+            $(this).css('pointer-events', 'none');
+          });
         }
+      });
 
-        function changeImageFuego(n) {
-            currentImageIndexFuego = (currentImageIndexFuego + n + imagesFuego.length) % imagesFuego.length;
-            document.getElementById('currentImageFuego').src = imagesFuego[currentImageIndexFuego];
-        }
-
-        function changeImageAire(n) {
-            currentImageIndexAire = (currentImageIndexAire + n + imagesAire.length) % imagesAire.length;
-            document.getElementById('currentImageAire').src = imagesAire[currentImageIndexAire];
-        }
-
-        function changeImageTierra(n) {
-            currentImageIndexTierra = (currentImageIndexTierra + n + imagesTierra.length) % imagesTierra.length;
-            document.getElementById('currentImageTierra').src = imagesTierra[currentImageIndexTierra];
-        }
-    </script>
-
-    <!-- Script para manejar el envío de comentarios con EmailJS -->
-    <script>
-        document.getElementById('comentarios-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            
-            // Obtener los datos del formulario
-            const formData = new FormData(this);
-            const templateParams = {
-                from_name: formData.get('nombre'),
-                message: formData.get('comentario'),
-                fecha: new Date().toLocaleDateString('es-ES')
-            };
-            
-            // Enviar email usando EmailJS
-            emailjs.send('service_uovpo9g', 'template_q54exgf', templateParams)
-                .then(function(response) {
-                    alert('¡Comentario enviado exitosamente!');
-                    document.getElementById('comentarios-form').reset();
-                }, function(error) {
-                    alert('Error al enviar el comentario. Por favor intenta de nuevo.');
-                    console.error('Error:', error);
-                });
+      setTimeout(function () {
+        $('.owl-carousel .cloned [data-lightbox]').each(function () {
+          $(this).removeAttr('data-lightbox');
+          $(this).removeAttr('data-title');
+          $(this).css('pointer-events', 'none');
         });
-    </script>
-
-    <!-- "Inicio del pie de página". -->
-    <!--color Charly-->
-    <div class="container-fluid bg-rich-black text-white py-5 px-sm-3 px-md-5">
-        <div class="row pt-5">
-            <div class="col-lg-3 col-md-6 mb-5">
-                <!--Charly cambio de color-->
-                <h4 class="text-shamrock mb-4">Contáctanos</h4>
-                <p><i class="fa fa-phone-alt mr-2"></i>+52 442 1317870</p>
-                
-                <p><i class="fa fa-envelope mr-2"></i>programadoresingenieros@gmail.com</p>
-                <div class="d-flex justify-content-start mt-4">
-                    
-                    <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-facebook-f"></i></a>
-                    
-                    <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;" href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 mb-5">
-                <!--Charly cambio de color-->
-                 <h4 class="text-shamrock mb-4">Accesos Directos</h4>
-<div class="d-flex flex-column justify-content-start">
-    <a class="text-white mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Inicio</a>
-    <a class="text-white mb-2" href="about.html"><i class="fa fa-angle-right mr-2"></i>Sobre Nosotros</a>
-    <a class="text-white mb-2" href="service.html"><i class="fa fa-angle-right mr-2"></i>Nuestros Servicios</a>
-    <a class="text-white mb-2" href="project.html"><i class="fa fa-angle-right mr-2"></i>Nuestros Proyectos</a>
-    <a class="text-white" href="contact.html"><i class="fa fa-angle-right mr-2"></i>Contáctanos</a>
-</div>
-
-            </div>
-            <div class="col-lg-3 col-md-6 mb-5">
-                <!--Charly agregado del color-->
-                <h4 class="text-shamrock mb-4">Secciones Populares</h4>
-<div class="d-flex flex-column justify-content-start">
-    <a class="text-white mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Inicio</a>
-    <a class="text-white mb-2" href="filtros.html"><i class="fa fa-angle-right mr-2"></i>Diseñame</a>
-    <a class="text-white mb-2" href="single.html"><i class="fa fa-angle-right mr-2"></i>Sabías Qué…?</a>
-    <a class="text-white mb-2" href="project.html"><i class="fa fa-angle-right mr-2"></i>Nuestros Proyectos</a>
-    <a class="text-white" href="contact.html"><i class="fa fa-angle-right mr-2"></i>Contáctanos</a>
-</div>
-</div>
-
-<!--Inicio de comentarios-->
-    <div class="col-lg-3 col-md-6 mb-5">
-                <!--Charly agregado del color-->
-                <h4 class="text-shamrock mb-4">Déjanos tu opinión</h4>
-                <!-- Agregado id al formulario y corregido el tipo de input para comentario -->
-                <form id="comentarios-form">
-                    <div class="form-group">
-                        <input type="text" name="nombre" class="form-control border-0" placeholder="Nombre Completo" required="required" />
-                    </div>
-                    <div class="form-group">
-                        <!-- Cambiado de type="email" a textarea para comentarios -->
-                        <textarea name="comentario" class="form-control border-0" placeholder="Escribe tu comentario aquí..." rows="4" required="required"></textarea>
-                    </div>
-                    <div>
-                        <!-- Botón de envío con estilo unificado -->
-                        <button class="btn btn-unified btn-primary btn-block border-0" type="submit">Enviar</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-<!--Final de comentarios-->
-
-
-        <div class="container border-top border-secondary pt-5">
-            <p class="m-0 text-center text-white">
-                &copy; <a class="text-white font-weight-bold" href="#">ING.BCD</a>. Todos los derechos reservados.
-                <a class="text-white font-weight-bold" href="https://htmlcodex.com"></a>
-            </p>
-        </div>
-    </div>
-    <!-- "Final del pie de página". -->
-
-
-    <!-- Agregado botón de retornar arriba con mejor posicionamiento -->
-    <a href="#" class="btn btn-lg btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
-
-
-    <!-- JavaScript Librerias -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/isotope/isotope.pkgd.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
-
-    <!-- Agregado JavaScript personalizado para funcionalidades -->
-    <script src="js/main.js"></script>
-
-    <!-- Script para manejar el formulario de comentarios -->
-    <script>
-        // Manejar envío de comentarios
-        document.getElementById('comentarios-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const nombre = this.nombre.value;
-            const comentario = this.comentario.value;
-            
-            // Aquí puedes agregar la lógica para enviar el comentario
-            // Por ejemplo, usando EmailJS o enviando a un servidor
-            
-            alert('¡Gracias por tu comentario, ' + nombre + '! Lo hemos recibido correctamente.');
-            this.reset();
-        });
-    </script>
-
-    <!-- Script para inicializar el carrusel de casas en stock -->
-    <script>
-        $(document).ready(function(){
-            const carousel = $(".casas-stock-carousel").owlCarousel({
-                autoplay: true,
-                autoplayTimeout: 5000,
-                autoplaySpeed: 1000,
-                autoplayHoverPause: true,
-                smartSpeed: 1000,
-                margin: 40, // Reducido de 150 a 40 para que las cards estén más juntas y no se empalmen con los botones
-                dots: true,
-                loop: true,
-                rewind: true,
-                nav: true,
-                navText: [
-                    '<i class="fa fa-angle-left" aria-hidden="true"></i>',
-                    '<i class="fa fa-angle-right" aria-hidden="true"></i>'
-                ],
-                responsive: {
-                    0:{
-                        items:1
-                    },
-                    576:{
-                        items:1
-                    },
-                    768:{
-                        items:1.5
-                    },
-                    992:{
-                        items:2
-                    }
-                },
-                onInitialized: function(event) {
-                    setTimeout(function() {
-                        $('.owl-carousel .cloned [data-lightbox]').each(function() {
-                            $(this).removeAttr('data-lightbox');
-                            $(this).removeAttr('data-title');
-                            $(this).css('pointer-events', 'none');
-                        });
-                    }, 100);
-                },
-                onTranslated: function(event) {
-                    $('.owl-carousel .cloned [data-lightbox]').each(function() {
-                        $(this).removeAttr('data-lightbox');
-                        $(this).removeAttr('data-title');
-                        $(this).css('pointer-events', 'none');
-                    });
-                }
-            });
-            
-            setTimeout(function() {
-                $('.owl-carousel .cloned [data-lightbox]').each(function() {
-                    $(this).removeAttr('data-lightbox');
-                    $(this).removeAttr('data-title');
-                    $(this).css('pointer-events', 'none');
-                });
-            }, 500);
-        });
-    </script>
+      }, 500);
+    });
+  </script>
 
 </body>
 </html>

@@ -1,211 +1,550 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
-    <meta charset="utf-8">
-    <title>MOMED CONTACTANOS</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Free HTML Templates" name="keywords">
-    <meta content="Free HTML Templates" name="description">
+  <meta charset="utf-8">
+  <title>MOMED PAGINA PRINCIPAL</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="MOMED Arquitectura, Construcción y Diseño" name="description">
 
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+  <!-- Iconos y Tipografías -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald:wght@400;500;600&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Google Web Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet"> 
+  <!-- Flaticon -->
+  <link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
 
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+  <!-- Librerías opcionales -->
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
 
-    <!-- Flaticon Font -->
-    <link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
+  <!-- Tu hoja de estilos principal -->
+  <link href="css/style.css" rel="stylesheet">
 
-    <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+  <!-- EmailJS SDK (opcional) -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function () {
+      emailjs.init("fBsDQAPpy2ke_o-zr");
+    })();
+  </script>
 
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+  <!-- ===== ESTILOS PERSONALIZADOS ===== -->
+  <style>
+    :root {
+      --bcd-deep: #0f172a;
+      --bcd-primary: #1a3c34;
+      --bcd-accent: #10b981;
+      --airbnb-red: #FF385C;
+      --glass-bg: rgba(17, 24, 39, .35);
+      --glass-border: rgba(255, 255, 255, .14);
+    }
 
-    <!-- EmailJS SDK -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function(){
-            // Inicializar EmailJS con tu Public Key
-            emailjs.init("fBsDQAPpy2ke_o-zr"); // Reemplaza con tu Public Key de EmailJS
-        })();
-    </script>
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: #fff;
+      color: #0f172a;
+    }
+
+    /* ===== NAVBAR ===== */
+    .nav-glass {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(1180px, 92%);
+      z-index: 1030;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 18px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, .25);
+      transition: .3s ease;
+    }
+
+    .nav-glass.nav-scrolled {
+      top: 0;
+      left: 0;
+      transform: none;
+      width: 100%;
+      border-radius: 0;
+      background: rgba(17, 24, 39, .93);
+      border-color: rgba(255, 255, 255, .08);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, .35);
+    }
+
+    .navbar {
+      padding: .45rem 1rem;
+    }
+
+    .navbar-nav .nav-link {
+      color: #fff !important;
+      font-weight: 600;
+      border-radius: 12px;
+      padding: .6rem 1rem !important;
+      font-size: 1rem;
+      transition: all .25s ease;
+    }
+
+    .navbar-nav .nav-link:hover {
+      background: rgba(255, 255, 255, .1);
+    }
+
+    .dropdown-menu {
+      background: rgba(15, 23, 42, .96);
+      border: 1px solid rgba(255, 255, 255, .1);
+      border-radius: 14px;
+    }
+
+    .dropdown-item {
+      color: #e5e7eb;
+      font-weight: 600;
+    }
+
+    .dropdown-item:hover {
+      background: rgba(255, 255, 255, .08);
+      color: #fff;
+    }
+
+    .pill {
+      background: rgba(16, 185, 129, .25);
+      color: #d1fae5;
+      border: 1px solid rgba(16, 185, 129, .4);
+      padding: .45rem .9rem;
+      border-radius: 999px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      transition: all .25s ease;
+    }
+
+    .pill:hover {
+      background: var(--bcd-accent);
+      color: #053325;
+    }
+
+    /* ===== HERO ===== */
+    header.hero {
+      position: relative;
+      min-height: 92vh;
+      width: 100%;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
+
+    .hero .hero-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(.78);
+      transform: scale(1.03);
+    }
+
+    .hero .overlay {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(60% 60% at 50% 40%, rgba(0, 0, 0, .25) 0%, rgba(0, 0, 0, .6) 100%);
+    }
+
+    .hero .content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 0 1rem;
+      max-width: 1100px;
+    }
+
+    .hero h1 {
+      font-family: Oswald, Inter, Arial;
+      font-weight: 800;
+      letter-spacing: .5px;
+      font-size: clamp(2rem, 4vw + 1rem, 4rem);
+      margin-bottom: .6rem;
+      color: #ffffff;
+      text-transform: uppercase;
+    }
+
+    .hero p {
+      margin: 0 auto 1.3rem;
+      max-width: 820px;
+      font-size: clamp(1rem, .6vw + .9rem, 1.2rem);
+      color: var(--airbnb-red);
+      font-weight: 600;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: .75rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-ghost,
+    .btn-accent {
+      border: 1px solid rgba(255, 255, 255, .25);
+      color: #fff;
+      background: transparent;
+      padding: .85rem 1.2rem;
+      border-radius: 999px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      transition: .25s ease;
+    }
+
+    .btn-ghost:hover {
+      transform: translateY(-1px);
+      border-color: #fff;
+    }
+
+    .btn-accent {
+      background: var(--bcd-accent);
+      border-color: transparent;
+      color: #06281f;
+    }
+
+    .btn-accent:hover {
+      filter: brightness(1.05);
+    }
+
+    main {
+      padding: 4rem 1rem;
+    }
+
+    @media (max-width: 991.98px) {
+      .navbar-collapse {
+        background: rgba(17, 24, 39, .95);
+        border: 1px solid rgba(255, 255, 255, .08);
+        border-radius: 14px;
+        padding: .5rem;
+        margin-top: .5rem;
+      }
+
+      .pill {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <!-- "Inicio de la barra superior". -->
-    <div class="container-fluid bg-rich-black py-3">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 text-center text-lg-left mb-2 mb-lg-0">
-                    <div class="d-inline-flex align-items-center">
-                        <a class="text-white pr-3" href="">Preguntas Frecuentes</a>
-                        <span class="text-white">|</span>
-                        <a class="text-white px-3" href="contact.html">Ayuda</a>
 
-                        <span class="text-white">|</span>
-                        <a class="text-white pl-3" href="mailto:soportemomed@googlegroups.com">Soporte Técnico</a>
+  <!-- ===== NAVBAR FLOTANTE CENTRADA SIN LOGO ===== -->
+  <div class="nav-glass" id="glassNav">
+    <nav class="navbar navbar-expand-lg navbar-dark justify-content-center">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-                    </div>
-                </div>
-                <div class="col-md-6 text-center text-lg-right">
-                    <!--Charly, agregado y redireccion a la red social de Facebook-->
-                    <div class="d-inline-flex align-items-center">
-                        <a class="text-white px-3" 
-   href="https://www.facebook.com/p/MOMED-100075915498484/" 
-   target="_blank" 
-   rel="noopener noreferrer">
-   <i class="fab fa-facebook-f"></i></a>
-                        <!--Charly, Agregado y redireccion a la red social de Instagram-->
-                        <a class="text-white px-3" 
-   href="https://www.instagram.com/momed_arquitectura/?fbclid=IwY2xjawLGf-BleHRuA2FlbQIxMABicmlkETFGa0swOWpHN1dwZFBnSjFCAR4vy0A4iqyH8xGg_F4HKCoKwFYCBsZsAib7CEpJ7LOA2ehIvoU_87OjTcg6mg_aem_h4qptahWIcuug3rvusXuBg" 
-   target="_blank" 
-   rel="noopener noreferrer">
-   <i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- "Inicio de la barra superior". -->
+      <div class="collapse navbar-collapse justify-content-center" id="navbarCollapse">
+        <ul class="navbar-nav align-items-lg-center text-center">
+          <li class="nav-item"><a href="index.html" class="nav-link active">Hogar</a></li>
+          <li class="nav-item"><a href="service.html" class="nav-link">Servicios</a></li>
+          <li class="nav-item"><a href="project.html" class="nav-link">Proyectos</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contacto</a></li>
 
-
-<div class="container-fluid position-relative nav-bar p-0">
-    <div class="container position-relative" style="z-index: 9;">
-        <!--charly Cambio el color-->
-        <nav class="navbar navbar-expand-lg bg-floral-white navbar-dark py-3 py-lg-0 pl-3 pl-lg-5">
-            <a href="" class="navbar-brand">
-               <!--DAYAN:CAMBIO RUTA DE LOGO DE TEXTO A LOGO DE IMAGEN-->
-               <img src="img/b0edbe9b-d7c6-4503-9ab5-405744cc50cf.png" alt="Logo BCD" style="height: 150px;">
-
+          <li class="nav-item mx-2 my-1 my-lg-0">
+            <a class="pill" href="https://wa.me/524421317870" target="_blank" rel="noopener">
+              <i class="fab fa-whatsapp"></i> WhatsApp
             </a>
-            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
-                <div class="navbar-nav ml-auto py-0">
-                    <!--Brayan:CAMBIO TEXTOs A Español-->
-                    <a href="index.html" class="nav-item text-rich-black nav-link active">Hogar</a>
-                        
-                        <a href="service.html" class="nav-item text-timber-green nav-link">Servicios</a> 
-                        <a href="project.html" class="nav-item text-timber-green nav-link">Proyectos</a> 
-                          
-                        <a href="contact.html" class="nav-item text-timber-green nav-link">Contacto</a>       
-                        <div class="nav-item dropdown">
-                        
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </div>
-    </div>
-
-    <div class="container-fluid bg-timber-green py-3">
-  <div class="container">
-    <div class="row justify-content-center">
-
-      <!-- Bloque Correo -->
-      <div class="col-lg-6 d-flex mb-3 mb-lg-0">
-  <div class="d-inline-flex text-left align-items-start">
-    <!-- Ícono de correo con enlace -->
-    <a href="mailto:momedproyectos@gmail.com" class="mr-3">
-      <i class="fas fa-envelope fa-2x" style="color: #03ac13;"></i>
-    </a>
-    <!-- Texto e email -->
-    <div class="d-flex flex-column">
-      <h5 class="text-floral-white mb-1">Envíanos un correo electrónico</h5>
-      <a href="mailto:programadoresingenieros@gmail.com" class="text-floral-white" style="text-decoration: none;">
-        programadoresingenieros@gmail.com
-      </a>
-    </div>
+          </li>
+          <li class="nav-item mx-2 my-1 my-lg-0">
+            <a class="pill" href="mailto:programadoresingenieros@gmail.com">
+              <i class="fas fa-envelope"></i> Email
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
   </div>
-</div>
 
+  <!-- ===== HERO ===== -->
+  <header class="hero" id="hogar">
+    <img class="hero-img" src="img/f.elconfidencial.com_original_ae2_cb6_e3d_ae2cb6e3d0488a8c5b7ee7291e5b9d17.jpg" alt="Residencia moderna BCD">
+    <div class="overlay"></div>
 
-      <!-- Bloque WhatsApp -->
-      <div class="col-lg-6 d-flex">
-        <div class="d-inline-flex text-left align-items-start">
-          <a href="https://wa.me/524423440411" target="_blank">
-            <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" 
-                 alt="WhatsApp" 
-                 style="width: 36px; height: 36px;" class="mr-3">
-          </a>
-          <div class="d-flex flex-column">
-            <h5 class="text-floral-white mb-1">Contáctanos</h5>
-            <a href="https://wa.me/524421317870" target="_blank" class="text-floral-white" style="text-decoration: none;">
-                  +52 442 1317870
-            </a>
+    <div class="content">
+      <h1>“Reserva tu Estancia”</h1>
+      <p>ATENCIÓN INMEDIATA</p>
+      <div class="cta-row">
+        <a href="project.html" class="btn-accent"><i class="fas fa-images"></i> Ver Proyectos</a>
+        <a href="service.html" class="btn-ghost"><i class="fas fa-th-large"></i> Nuestros Servicios</a>
+        <a href="contact.html" class="btn-ghost"><i class="far fa-calendar-check"></i> Agenda una Cita</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== CONTENIDO PRINCIPAL ===== -->
+  <main>
+    <!-- Aquí continúa tu contenido del sitio -->
+  </main>
+
+  <!-- JS Bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- Efecto del Navbar al hacer scroll -->
+  <script>
+    const glassNav = document.getElementById('glassNav');
+    function onScroll() {
+      if (window.scrollY > 40) glassNav.classList.add('nav-scrolled');
+      else glassNav.classList.remove('nav-scrolled');
+    }
+    document.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  </script>
+
+</body>
+</html>
+
+<!-- ============= SECCIÓN DE CONTACTO · SUPER WOW ============= -->
+<section class="contact-hero py-5">
+  <div class="container">
+    <div class="row align-items-center justify-content-center">
+
+      <!-- Columna Izquierda: Info / Llamado -->
+      <div class="col-lg-5 mb-4 mb-lg-0">
+        <div class="contact-badge mb-3">
+          <span class="dot"></span>
+          RESPUESTA RÁPIDA · ATENCIÓN PERSONALIZADA
+        </div>
+
+        <h2 class="contact-title text-uppercase">
+          TU PRÓXIMO HOGAR
+        </h2>
+        <p class="contact-sub">
+          Cuéntanos qué buscas: casa en venta, casa de descanso o inversión tipo Airbnb. 
+          Un asesor te ayudará a elegir la mejor opción según tu zona y presupuesto.
+        </p>
+
+        <div class="contact-tags mb-4">
+          <span class="tag"><i class="fas fa-home"></i> Casas en Venta</span>
+          <span class="tag"><i class="fas fa-umbrella-beach"></i> Casas de Descanso</span>
+          <span class="tag"><i class="fas fa-key"></i> Rentas tipo Airbnb</span>
+        </div>
+
+        <div class="contact-highlight mb-3">
+          <i class="fas fa-bolt"></i>
+          <div>
+            <strong>Tiempo de respuesta promedio:</strong><br>
+            menos de 24 horas en días hábiles.
           </div>
         </div>
+
+        <div class="contact-trust">
+          <i class="fas fa-shield-alt"></i>
+          Tus datos están protegidos. Solo los usamos para darte seguimiento a tu consulta.
+        </div>
       </div>
+
+      <!-- Columna Derecha: Formulario -->
+      <div class="col-lg-7">
+        <div class="p-5 shadow-lg rounded bg-white contact-card">
+          <!-- Encabezado formulario -->
+          <div class="text-center mb-4">
+            <h3 class="contact-form-title text-uppercase mb-1">CONTÁCTANOS</h3>
+            <p class="text-muted mb-0">Déjanos tus datos y un asesor te escribirá lo antes posible.</p>
+          </div>
+
+          <form id="contactForm" onsubmit="sendMail(event)">
+            <!-- Nombre -->
+            <div class="form-group mb-4">
+              <label for="name" class="form-label">Nombre completo</label>
+              <div class="input-group input-group-lg">
+                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                <input type="text" class="form-control" id="name" placeholder="Ej. Damián Castillo" required />
+              </div>
             </div>
-        </div>
-    </div>
-    <!-- "Final del contenido bajo la barra de navegación". -->
 
+            <!-- Correo -->
+            <div class="form-group mb-4">
+              <label for="email" class="form-label">Correo electrónico</label>
+              <div class="input-group input-group-lg">
+                <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                <input type="email" class="form-control" id="email" placeholder="ejemplo@correo.com" required />
+              </div>
+            </div>
 
-    <!-- "Inicio del encabezado de la página". -->
-     <!--Charly cambio de color-->
-   <!-- Sección de contacto -->
-<div class="container-fluid bg-light py-5">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-8">
-        
-        <!-- Encabezado -->
-        <div class="text-center mb-5">
-          <h2 class="text-dark text-uppercase">Comunícate con Nosotros</h2>
-          <p class="text-muted">Déjanos tus datos y te responderemos lo antes posible.</p>
+            <!-- Tema -->
+            <div class="form-group mb-4">
+              <label for="subject" class="form-label">Tema de consulta</label>
+              <div class="input-group input-group-lg">
+                <span class="input-group-text"><i class="fas fa-tag"></i></span>
+                <input type="text" class="form-control" id="subject" placeholder="Cotización, dudas, soporte..." required />
+              </div>
+            </div>
+
+            <!-- Mensaje -->
+            <div class="form-group mb-4">
+              <label for="message" class="form-label">Tu mensaje</label>
+              <textarea class="form-control" id="message" rows="5" placeholder="Escribe aquí tu mensaje..." required></textarea>
+            </div>
+
+            <!-- Mensaje de estado -->
+            <div id="statusMessage" class="mb-3" style="display: none;"></div>
+
+            <!-- Botones -->
+            <div class="row g-3 align-items-center">
+              <div class="col-md-7 mb-3 mb-md-0">
+                <button class="btn btn-primary w-100 py-3 contact-main-btn" type="submit" id="sendMessageButton">
+                  <i class="fas fa-paper-plane mr-2"></i>
+                  <span id="buttonText">ENVIAR MENSAJE</span>
+                </button>
+              </div>
+              <div class="col-md-5">
+                <a href="https://wa.me/524423440411?text=Hola%2C%20quiero%20informes%20sobre%20las%20propiedades."
+                   target="_blank"
+                   class="btn w-100 py-3 contact-wa-btn">
+                  <i class="fab fa-whatsapp mr-2"></i> ESCRIBIR POR WHATSAPP
+                </a>
+              </div>
+            </div>
+
+          </form>
         </div>
-        
-        <!-- Formulario -->
-<div class="p-5 shadow rounded bg-white">
-  <form id="contactForm" onsubmit="sendMail(event)">
-    
-    <div class="form-group mb-4">
-      <label for="name" class="form-label">Nombre completo</label>
-      <div class="input-group">
-        <span class="input-group-text"><i class="fas fa-user"></i></span>
-        <input type="text" class="form-control" id="name" placeholder="Ej. Damián Castillo" required />
       </div>
+
     </div>
-    
-    <div class="form-group mb-4">
-      <label for="email" class="form-label">Correo electrónico</label>
-      <div class="input-group">
-        <span class="input-group-text"><i class="fas fa-envelope"></i></span>
-        <input type="email" class="form-control" id="email" placeholder="ejemplo@correo.com" required />
-      </div>
-    </div>
-    
-    <div class="form-group mb-4">
-      <label for="subject" class="form-label">Tema de consulta</label>
-      <div class="input-group">
-        <span class="input-group-text"><i class="fas fa-tag"></i></span>
-        <input type="text" class="form-control" id="subject" placeholder="Cotización, dudas, soporte..." required />
-      </div>
-    </div>
-    
-    <div class="form-group mb-4">
-      <label for="message" class="form-label">Tu mensaje</label>
-      <textarea class="form-control" id="message" rows="5" placeholder="Escribe aquí tu mensaje..." required></textarea>
-    </div>
-    
-    <!-- Agregado div para mostrar estado del envío -->
-    <div id="statusMessage" class="mb-3" style="display: none;"></div>
-    
-    <button class="btn btn-primary w-100 py-3" type="submit" id="sendMessageButton">
-      <i class="fas fa-paper-plane mr-2"></i> <span id="buttonText">Enviar Mensaje</span>
-    </button>
-    
-  </form>
-</div>
+  </div>
+</section>
+
+<!-- ============= ESTILOS PERSONALIZADOS CONTACTO ============= -->
+<style>
+  .contact-hero{
+    background: radial-gradient(circle at top left, #fdf2ff 0, #eef9ff 35%, #f7f7f7 100%);
+  }
+  .contact-title{
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    letter-spacing: .08em;
+    color:#111827;
+    font-size: 1.9rem;
+  }
+  .contact-sub{
+    color:#4b5563;
+    margin-top:1rem;
+    font-size: .98rem;
+  }
+  .contact-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:.55rem;
+    padding:.35rem .9rem;
+    border-radius:999px;
+    background:rgba(16,185,129,.08);
+    color:#047857;
+    font-size:.75rem;
+    text-transform:uppercase;
+    letter-spacing:.12em;
+    font-weight:600;
+  }
+  .contact-badge .dot{
+    width:.5rem;
+    height:.5rem;
+    border-radius:999px;
+    background:linear-gradient(135deg,#22c55e,#14b8a6);
+    box-shadow:0 0 0 6px rgba(34,197,94,.25);
+  }
+  .contact-tags .tag{
+    display:inline-flex;
+    align-items:center;
+    gap:.4rem;
+    font-size:.8rem;
+    padding:.45rem .75rem;
+    border-radius:999px;
+    background:rgba(15,118,110,.06);
+    color:#0f766e;
+    margin:.2rem .2rem .2rem 0;
+    font-weight:500;
+  }
+  .contact-tags .tag i{
+    font-size:.9rem;
+  }
+  .contact-highlight{
+    display:flex;
+    gap:.65rem;
+    padding:.75rem 1rem;
+    border-radius:1rem;
+    background:#ecfdf5;
+    color:#065f46;
+    font-size:.86rem;
+    align-items:flex-start;
+  }
+  .contact-highlight i{
+    font-size:1.2rem;
+    margin-top:.15rem;
+  }
+  .contact-trust{
+    display:flex;
+    align-items:center;
+    gap:.5rem;
+    font-size:.8rem;
+    color:#6b7280;
+    margin-top:.6rem;
+  }
+  .contact-trust i{
+    color:#10b981;
+  }
+
+  .contact-card{
+    border-radius:1.5rem !important;
+    border:1px solid rgba(15,23,42,.06);
+  }
+  .contact-form-title{
+    font-family:'Oswald',sans-serif;
+    letter-spacing:.12em;
+    font-size:1rem;
+  }
+
+  .input-group-text{
+    background:#f9fafb;
+    border-right:0;
+  }
+  .input-group-lg > .form-control{
+    border-left:0;
+  }
+  .form-control:focus, .form-select:focus{
+    box-shadow:0 0 0 .18rem rgba(56,189,248,.25);
+    border-color:#0ea5e9;
+  }
+
+  .contact-main-btn{
+    border-radius:999px;
+    font-weight:600;
+    letter-spacing:.05em;
+    text-transform:uppercase;
+  }
+  .contact-wa-btn{
+    border-radius:999px;
+    font-weight:600;
+    font-size:.8rem;
+    background:#16a34a;
+    border:none;
+    color:#fff;
+    text-transform:uppercase;
+    letter-spacing:.06em;
+  }
+  .contact-wa-btn:hover{
+    background:#15803d;
+    color:#fff;
+  }
+
+  @media (max-width: 767.98px){
+    .contact-title{
+      font-size:1.5rem;
+    }
+  }
+</style>
 
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <script>
@@ -283,8 +622,6 @@ function sendMail(event) {
 </div>
 
     <!-- "Inicio de la sección de contacto" -->
-
-
 
     <!-- "Inicio del pie de página". -->
     <!--color Charly-->
@@ -390,113 +727,6 @@ function sendMail(event) {
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
 
-    <!--Inicio de Musica de Fondo Playlist mejorado por Charly -->
-<link rel="stylesheet" href="style.css">
-
-<audio id="musicaFondo" loop preload="auto" muted style="display: none;">
-</audio>
-
-<button onclick="toggleAudio()" class="musica-banner" id="botonMusica">
-    🔊 Música
-</button>
-
-<script>
-    const canciones = [
-        "Musica/Give Me a Kiss.mp3",
-            "Musica/Hunting.mp3", 
-            "Musica/I know.mp3",
-            "Musica/I love You Always Forever.mp3",
-            "Musica/In Memoriam.mp3", 
-            "Musica/Jealous Girl.mp3",
-            "Musica/La Mer.mp3",
-            "Musica/Late Night Alumni.mp3", 
-            "Musica/Leaving Me.mp3",
-            "Musica/Lost Love.mp3",
-            "Musica/Love Story - Indila.mp3", 
-            "Musica/My life.mp3",
-            "Musica/My World.mp3",
-            "Musica/Norah Jones.mp3", 
-            "Musica/Romance.mp3",
-            "Musica/Stacey Kent.mp3",
-            "Musica/Studying You.mp3",
-            "Musica/Welcome Back.mp3",
-            "Musica/Withering.mp3",
-            "Musica/Coming Home.mp3",
-            "Musica/Father Ocean.mp3"
-    ];
-
-    const audio = document.getElementById('musicaFondo');
-    const botonMusica = document.getElementById('botonMusica');
-    let isPlaying = false;
-    let cancionActual = 0;
-
-    function iniciarMusica() {
-        audio.src = canciones[cancionActual];
-        audio.volume = 0;    // empieza en silencio
-        audio.muted = false;
-
-        audio.play().then(() => {
-            isPlaying = true;
-            botonMusica.innerText = "🔊 " + obtenerNombreCancion();
-            botonMusica.classList.add('playing');
-
-            // Subir volumen gradualmente en ~1s
-            let v = 0;
-            const fade = setInterval(() => {
-                if (v >= 0.7) {
-                    clearInterval(fade);
-                } else {
-                    v += 0.05;
-                    audio.volume = v;
-                }
-            }, 100);
-        }).catch(err => {
-            console.log("⚠️ Autoplay bloqueado:", err);
-        });
-    }
-
-    function obtenerNombreCancion() {
-        const nombreCompleto = canciones[cancionActual];
-        const nombre = nombreCompleto.split('/').pop().replace('.mp3', '');
-        return nombre.length > 20 ? nombre.substring(0, 20) + '...' : nombre;
-    }
-
-    // Cuando termine una canción, pasa a la siguiente
-    audio.addEventListener('ended', function() {
-        cancionActual = (cancionActual + 1) % canciones.length;
-        audio.src = canciones[cancionActual];
-        audio.play().then(() => {
-            botonMusica.innerText = "🔊 " + obtenerNombreCancion();
-        });
-    });
-
-    function toggleAudio() {
-        if (isPlaying) {
-            audio.pause();
-            botonMusica.innerText = "🔇 Pausado";
-            botonMusica.classList.remove('playing');
-        } else {
-            audio.play().then(() => {
-                botonMusica.innerText = "🔊 " + obtenerNombreCancion();
-                botonMusica.classList.add('playing');
-            });
-        }
-        isPlaying = !isPlaying;
-    }
-
-    // 🎵 Activar música en la primera interacción (scroll, clic o touch)
-    function activarMusicaConInteraccion() {
-        iniciarMusica();
-        document.removeEventListener('scroll', activarMusicaConInteraccion);
-        document.removeEventListener('click', activarMusicaConInteraccion);
-        document.removeEventListener('touchstart', activarMusicaConInteraccion);
-    }
-
-    document.addEventListener('scroll', activarMusicaConInteraccion, { once: true });
-    document.addEventListener('click', activarMusicaConInteraccion, { once: true });
-    document.addEventListener('touchstart', activarMusicaConInteraccion, { once: true });
-</script>
-<!--Fin de la reproduccion de Musica-->
  <!-- Script para manejar el envío de comentarios con EmailJS -->
     <script>
         document.getElementById('comentarios-form').addEventListener('submit', function(event) {
