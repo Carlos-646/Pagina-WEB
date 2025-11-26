@@ -3,1179 +3,1056 @@
 
 <head>
   <meta charset="utf-8">
-  <title>MOMED PAGINA PRINCIPAL</title>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta content="MOMED Arquitectura, Construcción y Diseño" name="description">
+  <title>MOMED · Propiedades</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta content="Casas de descanso y renta vacacional tipo Airbnb. Propiedades listas para disfrutar o invertir." name="description">
 
   <!-- Iconos y Tipografías -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald:wght@400;500;600&family=Inter:wght@400;600;700;800&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
+  <!-- SF Pro (tipografía Apple para títulos de casas) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sf-font/2.0.0/sf-font.min.css">
 
-  <!-- Flaticon -->
+  <!-- Flaticon y Lightbox (por si los usas en otras páginas) -->
   <link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
-
-  <!-- Librerías opcionales -->
-  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
   <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-
-  <!-- Tu hoja de estilos principal -->
-  <link href="css/style.css" rel="stylesheet">
 
   <!-- EmailJS SDK -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <script type="text/javascript">
+  <script>
     (function () {
       emailjs.init("fBsDQAPpy2ke_o-zr");
     })();
   </script>
 
-  <!-- ===== ESTILOS PERSONALIZADOS PRINCIPALES ===== -->
+  <!-- ===== ESTILO APPLE / PROPIEDADES ===== -->
   <style>
     :root {
-      --bcd-deep: #0f172a;
-      --bcd-primary: #1a3c34;
-      --bcd-accent: #10b981;
-      --airbnb-red: #FF385C;
-      --glass-bg: rgba(17, 24, 39, .35);
-      --glass-border: rgba(255, 255, 255, .14);
+      --bg-page: #f5f5f7;
+      --text-main: #1d1d1f;
+      --text-soft: #6e6e73;
+      --accent-blue: #0071e3;
+      --accent-blue-hover: #147ce5;
+      --accent-green: #10b981;
+      --accent-airbnb: #FF385C;
+      --footer-bg: #020617;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
-      margin: 0;
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background: #fff;
-      color: #0f172a;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui,
+        "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg-page);
+      color: var(--text-main);
     }
 
-    /* ===== NAVBAR ===== */
-    .nav-glass {
-      position: fixed;
-      top: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: min(1180px, 92%);
-      z-index: 1030;
-      background: var(--glass-bg);
-      border: 1px solid var(--glass-border);
-      border-radius: 18px;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, .25);
-      transition: .3s ease;
+    img {
+      max-width: 100%;
+      display: block;
     }
 
-    .nav-glass.nav-scrolled {
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ===== NAVBAR ESTILO APPLE.COM ===== */
+
+    .nav-apple {
+      position: sticky;
       top: 0;
-      left: 0;
-      transform: none;
-      width: 100%;
-      border-radius: 0;
-      background: rgba(17, 24, 39, .93);
-      border-color: rgba(255, 255, 255, .08);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, .35);
+      z-index: 1000;
+      height: 44px;
+      background: rgba(0, 0, 0, 0.92);
+      backdrop-filter: blur(18px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
-    .navbar {
-      padding: .45rem 1rem;
+    .nav-inner {
+      width: min(980px, 100%);
+      padding-inline: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #f5f5f7;
+      font-size: 13px;
     }
 
-    .navbar-nav .nav-link {
-      color: #fff !important;
+    .nav-logo {
       font-weight: 600;
-      border-radius: 12px;
-      padding: .6rem 1rem !important;
-      font-size: 1rem;
-      transition: all .25s ease;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-size: 12px;
     }
 
-    .navbar-nav .nav-link:hover {
-      background: rgba(255, 255, 255, .1);
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
     }
 
-    .dropdown-menu {
-      background: rgba(15, 23, 42, .96);
-      border: 1px solid rgba(255, 255, 255, .1);
-      border-radius: 14px;
+    .nav-link {
+      color: #f5f5f7;
+      opacity: .75;
+      transition: opacity .18s ease;
+      white-space: nowrap;
     }
 
-    .dropdown-item {
-      color: #e5e7eb;
-      font-weight: 600;
+    .nav-link:hover,
+    .nav-link.active {
+      opacity: 1;
     }
 
-    .dropdown-item:hover {
-      background: rgba(255, 255, 255, .08);
-      color: #fff;
-    }
-
-    .pill {
-      background: rgba(16, 185, 129, .25);
-      color: #d1fae5;
-      border: 1px solid rgba(16, 185, 129, .4);
-      padding: .45rem .9rem;
-      border-radius: 999px;
-      font-weight: 700;
+    .nav-pill {
+      padding: 6px 12px;
+      border-radius: 980px;
+      border: 1px solid rgba(255, 255, 255, 0.24);
       display: inline-flex;
       align-items: center;
-      gap: .45rem;
-      transition: all .25s ease;
+      gap: 6px;
+      font-size: 12px;
+      opacity: 1;
     }
 
-    .pill:hover {
-      background: var(--bcd-accent);
-      color: #053325;
+    .nav-pill i {
+      font-size: 14px;
     }
 
-    /* ===== HERO ===== */
-    header.hero {
-      position: relative;
-      min-height: 92vh;
+    .hide-mobile {
+      display: inline;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        gap: 12px;
+      }
+
+      .hide-mobile {
+        display: none;
+      }
+    }
+
+    /* ===== SECCIONES FULLSCREEN ===== */
+
+    main {
       width: 100%;
-      display: grid;
-      place-items: center;
+    }
+
+    .fs-section {
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
       overflow: hidden;
     }
 
-    .hero .hero-img {
+    .fs-inner {
+      width: min(1060px, 100%);
+      margin: 0 auto;
+      padding: 70px 16px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 32px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .fs-inner.center {
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .fs-inner.split {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      align-items: center;
+      gap: 32px;
+    }
+
+    .fs-hero {
+      background:
+        radial-gradient(circle at 0% 0%, #1e293b 0, #020617 45%, #000 100%);
+      color: #f5f5f7;
+    }
+
+    .fs-hero-bg {
       position: absolute;
       inset: 0;
+      z-index: 0;
+      opacity: .8;
+    }
+
+    .fs-hero-bg img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      filter: brightness(.78);
-      transform: scale(1.03);
+      object-position: center;
+      filter: brightness(0.78) saturate(1.05);
     }
 
-    .hero .overlay {
+    .fs-hero::before {
+      content: "";
       position: absolute;
       inset: 0;
-      background: radial-gradient(60% 60% at 50% 40%, rgba(0, 0, 0, .25) 0%, rgba(0, 0, 0, .6) 100%);
-    }
-
-    .hero .content {
-      position: relative;
+      background:
+        radial-gradient(900px 500px at 0% 0%, rgba(56, 189, 248, .3), transparent 70%),
+        radial-gradient(900px 500px at 100% 0%, rgba(16, 185, 129, .35), transparent 70%),
+        linear-gradient(to bottom, rgba(0, 0, 0, .25), rgba(0, 0, 0, .9));
+      mix-blend-mode: soft-light;
       z-index: 1;
-      text-align: center;
-      padding: 0 1rem;
-      max-width: 1100px;
     }
 
-    .hero h1 {
-      font-family: Oswald, Inter, Arial;
-      font-weight: 800;
-      letter-spacing: .5px;
-      font-size: clamp(2rem, 4vw + 1rem, 4rem);
-      margin-bottom: .6rem;
-      color: #ffffff;
+    .fs-label,
+    .fs-label-dark {
+      font-size: 13px;
+      letter-spacing: .26em;
       text-transform: uppercase;
+      margin-bottom: 8px;
     }
 
-    .hero p {
-      margin: 0 auto 1.3rem;
-      max-width: 820px;
-      font-size: clamp(1rem, .6vw + .9rem, 1.2rem);
-      color: var(--airbnb-red);
-      font-weight: 600;
+    .fs-label {
+      color: #e5e5ea;
     }
 
-    .cta-row {
+    .fs-title {
+      font-size: clamp(32px, 4vw, 44px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 4px;
+    }
+
+    .fs-title-light {
+      color: #f5f5f7;
+    }
+
+    .fs-subtitle {
+      font-size: clamp(14px, 1.8vw, 18px);
+      font-weight: 500;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: #a5f3fc;
+      margin-bottom: 16px;
+    }
+
+    .fs-body {
+      font-size: 15px;
+      max-width: 580px;
+      line-height: 1.6;
+      margin-top: 8px;
+      margin-bottom: 20px;
+      color: #e5e7eb;
+    }
+
+    .fs-buttons {
       display: flex;
-      gap: .75rem;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 8px;
       justify-content: center;
+    }
+
+    .btn-blue,
+    .btn-outline-light {
+      padding: 10px 20px;
+      border-radius: 980px;
+      font-size: 14px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      border: 1px solid transparent;
+      white-space: nowrap;
+      transition: background .18s ease, color .18s ease, transform .18s ease,
+        box-shadow .18s ease, border-color .18s ease;
+    }
+
+    .btn-blue {
+      background: var(--accent-blue);
+      color: #fff;
+      box-shadow: 0 14px 32px rgba(0, 0, 0, .45);
+    }
+
+    .btn-blue:hover {
+      background: var(--accent-blue-hover);
+      transform: translateY(-1px);
+      box-shadow: 0 18px 44px rgba(0, 0, 0, .65);
+    }
+
+    .btn-outline-light {
+      background: transparent;
+      color: #f5f5f7;
+      border-color: #f5f5f7;
+    }
+
+    .btn-outline-light:hover {
+      background: rgba(255, 255, 255, .08);
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+      justify-content: center;
+    }
+
+    .badge-pill {
+      border-radius: 980px;
+      padding: 4px 10px;
+      font-size: 11px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      border: 1px solid rgba(148, 163, 184, .7);
+      color: #f5f5f7;
+      background: rgba(15, 23, 42, .6);
+    }
+
+    /* ===== SECCIONES CLARAS ===== */
+
+    .section-light {
+      padding: 80px 16px 40px;
+      background: #f5f5f7;
+    }
+
+    .section-wrap {
+      max-width: 1140px;
+      margin: 0 auto;
+    }
+
+    .letrero {
+      text-align: center;
+      font-size: clamp(2rem, 3vw, 2.6rem);
+      font-weight: 800;
+      margin-bottom: .4rem;
+      letter-spacing: -.03em;
+    }
+
+    .slogan {
+      text-align: center;
+      color: var(--text-soft);
+      max-width: 620px;
+      margin: 0 auto 32px;
+      font-size: .98rem;
+    }
+
+    .stats-grid-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 18px;
+      margin-top: 10px;
+    }
+
+    .inicio-carta {
+      min-width: 180px;
+      padding: 16px 18px;
+      border-radius: 999px;
+      border: 1px solid #e5e7eb;
+      background: #ffffff;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, .05);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .inicio-carta .numero {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 2px;
+    }
+
+    .inicio-carta .inicio-letras {
+      font-size: .8rem;
+      text-transform: uppercase;
+      letter-spacing: .13em;
+      color: var(--text-soft);
+    }
+
+    /* ===== GRID DE PROPIEDADES (CARTAS 3D) ===== */
+
+    .properties-section {
+      padding: 40px 16px 80px;
+      background: #f5f5f7;
+    }
+
+    .properties-grid {
+      max-width: 1140px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 26px;
+    }
+
+    @media (max-width: 900px) {
+      .fs-inner.split {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .properties-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .fs-inner {
+        padding-top: 80px;
+        padding-bottom: 70px;
+      }
+    }
+
+    .property-card {
+      background: radial-gradient(circle at top, #0b1120 0, #020617 55%);
+      border-radius: 26px;
+      border: 1px solid rgba(148, 163, 184, .4);
+      box-shadow: 0 22px 60px rgba(15, 23, 42, .7);
+      color: #f9fafb;
+      overflow: hidden;
+      position: relative;
+      transform-style: preserve-3d;
+      transform-origin: center center;
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    }
+
+    .property-card::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background:
+        radial-gradient(circle at 0 0, rgba(56, 189, 248, .28), transparent 55%),
+        radial-gradient(circle at 100% 0, rgba(248, 250, 252, .06), transparent 45%);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .3s ease;
+      mix-blend-mode: screen;
+    }
+
+    .property-card:hover {
+      box-shadow: 0 32px 80px rgba(15, 23, 42, .95);
+      border-color: rgba(148, 163, 184, .8);
+    }
+
+    .property-card:hover::before {
+      opacity: 1;
+    }
+
+    .property-media {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .property-media img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      transform: scale(1.03);
+      transition: transform .6s ease-out, filter .3s ease-out;
+      filter: saturate(1.1) contrast(1.05);
+    }
+
+    .property-card:hover .property-media img {
+      transform: scale(1.08);
+      filter: saturate(1.2) contrast(1.1);
+    }
+
+    .badge-top-stock {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      background: rgba(15, 23, 42, .88);
+      border-radius: 999px;
+      padding: .18rem .75rem;
+      font-size: .7rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      border: 1px solid rgba(148, 163, 184, .7);
+    }
+
+    .property-body {
+      padding: 18px 20px 20px;
+    }
+
+    /* AQUÍ LA TIPOGRAFÍA APPLE Y EN BLANCO PARA LOS TÍTULOS */
+    .property-title,
+    .card-title-letra {
+      font-family: "SF Pro Display", "SF Pro Text", -apple-system, BlinkMacSystemFont, system-ui, sans-serif !important;
+      font-size: 1.06rem;
+      font-weight: 600;
+      color: #ffffff !important;
+      margin-bottom: 4px;
+    }
+
+    .property-meta,
+    .card-desc-letra {
+      font-size: .86rem;
+      color: #cbd5f5;
+      margin-bottom: 10px;
+    }
+
+    .amenities-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+
+    .amenity-chip {
+      background: rgba(15, 23, 42, .8);
+      border-radius: 999px;
+      padding: 3px 9px;
+      font-size: .72rem;
+      color: #e5e7eb;
+      border: 1px solid rgba(148, 163, 184, .6);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .amenity-chip i {
+      font-size: .8rem;
+    }
+
+    .property-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 10px;
+      margin-top: 4px;
       flex-wrap: wrap;
     }
 
-    .btn-ghost,
-    .btn-accent {
-      border: 1px solid rgba(255, 255, 255, .25);
-      color: #fff;
-      background: transparent;
-      padding: .85rem 1.2rem;
+    .property-price {
+      font-size: 1.1rem;
+      font-weight: 800;
+    }
+
+    .property-hint {
+      font-size: .8rem;
+      color: #a5b4fc;
+    }
+
+    .property-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: flex-end;
+    }
+
+    .chip-btn {
       border-radius: 999px;
-      font-weight: 700;
+      border: 1px solid rgba(248, 250, 252, .2);
+      padding: .46rem .9rem;
+      font-size: .78rem;
+      font-weight: 600;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+      background: rgba(15, 23, 42, .82);
+      color: #f9fafb;
+      transition: .25s ease;
       display: inline-flex;
       align-items: center;
-      gap: .5rem;
-      transition: .25s ease;
-      text-decoration: none;
+      gap: 6px;
     }
 
-    .btn-ghost:hover {
-      transform: translateY(-1px);
-      border-color: #fff;
+    .chip-btn:hover {
+      transform: translateY(-2px);
+      border-color: #ffffff;
+      background: rgba(15, 23, 42, .98);
+      box-shadow: 0 14px 40px rgba(15, 23, 42, .9);
     }
 
-    .btn-accent {
-      background: var(--bcd-accent);
-      border-color: transparent;
-      color: #06281f;
+    .chip-btn.secondary {
+      background: var(--accent-airbnb);
+      border-color: var(--accent-airbnb);
+      color: #fff;
     }
 
-    .btn-accent:hover {
+    .chip-btn.secondary:hover {
       filter: brightness(1.05);
+      box-shadow: 0 16px 40px rgba(255, 56, 92, .5);
     }
 
-    main {
-      padding: 4rem 1rem 0;
+    /* ===== CTA FINAL ===== */
+
+    .fs-section-cta {
+      background: #000;
+      color: #f5f5f7;
     }
 
-    @media (max-width: 991.98px) {
-      .navbar-collapse {
-        background: rgba(17, 24, 39, .95);
-        border: 1px solid rgba(255, 255, 255, .08);
-        border-radius: 14px;
-        padding: .5rem;
-        margin-top: .5rem;
-      }
+    .fs-inner.center p.fs-body {
+      color: #d4d4d8;
+    }
 
-      .pill {
-        width: 100%;
-        justify-content: center;
-      }
+    /* ===== ANIMACIÓN REVEAL + TILT 3D ===== */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity .9s cubic-bezier(.19, 1, .22, 1),
+        transform .9s cubic-bezier(.19, 1, .22, 1);
+      will-change: opacity, transform;
+    }
+
+    .reveal.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .tilt-card:hover {
+      /* solo para que funcione bien el efecto base si JS no carga */
+      transform: translateY(-4px);
+    }
+
+    /* ===== FOOTER ===== */
+
+    footer {
+      background: var(--footer-bg);
+      color: #e5e7eb;
+      padding-top: 48px;
+      margin-top: 0;
+    }
+
+    .footer-link {
+      color: #e5e7eb;
+      font-size: 14px;
+      margin-bottom: 8px;
+      display: inline-block;
+      opacity: .85;
+    }
+
+    .footer-link:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+
+    .footer-social a {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: 1px solid #e5e7eb;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 8px;
+      color: #e5e7eb;
+      opacity: .85;
+      transition: background .18s ease, color .18s ease, opacity .18s ease;
+    }
+
+    .footer-social a:hover {
+      opacity: 1;
+      background: #e5e7eb;
+      color: #0f172a;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(148, 163, 184, .45);
+      margin-top: 32px;
+      padding: 16px 0 26px;
+      font-size: 12px;
+      text-align: center;
+      color: #9ca3af;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- ===== NAVBAR FLOTANTE CENTRADA SIN LOGO ===== -->
-  <div class="nav-glass" id="glassNav">
-    <nav class="navbar navbar-expand-lg navbar-dark justify-content-center">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Menú">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse justify-content-center" id="navbarCollapse">
-        <ul class="navbar-nav align-items-lg-center text-center">
-          <li class="nav-item"><a href="index.html" class="nav-link active">Hogar</a></li>
-          <li class="nav-item"><a href="service.html" class="nav-link">Servicios</a></li>
-          <li class="nav-item"><a href="project.html" class="nav-link">Proyectos</a></li>
-          <li class="nav-item"><a href="contact.html" class="nav-link">Contacto</a></li>
-
-          <li class="nav-item mx-2 my-1 my-lg-0">
-            <a class="pill" href="https://wa.me/524421317870" target="_blank" rel="noopener">
-              <i class="fab fa-whatsapp"></i> WhatsApp
-            </a>
-          </li>
-          <li class="nav-item mx-2 my-1 my-lg-0">
-            <a class="pill" href="mailto:programadoresingenieros@gmail.com">
-              <i class="fas fa-envelope"></i> Email
-            </a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </div>
-
-  <!-- ===== HERO ===== -->
-  <header class="hero" id="hogar">
-    <img class="hero-img" src="img/CASA-VILLETA_13-1024x683.webp" alt="Residencia moderna BCD">
-    <div class="overlay"></div>
-
-    <div class="content">
-      <h1>“Propiedades Destacadas”</h1>
-      <p>EXPLORA Y ELIGE</p>
-      <div class="cta-row">
-        <a href="project.html" class="btn-accent"><i class="fas fa-images"></i> Ver Proyectos</a>
-        <a href="service.html" class="btn-ghost"><i class="fas fa-th-large"></i> Nuestros Servicios</a>
-        <a href="contact.html" class="btn-ghost"><i class="far fa-calendar-check"></i> Agenda una Cita</a>
-      </div>
+  <!-- NAVBAR -->
+  <header class="nav-apple">
+    <div class="nav-inner">
+      <div class="nav-logo">MOMED</div>
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Hogar</a>
+        <a href="service.html" class="nav-link">Servicios</a>
+        <a href="project.html" class="nav-link active">Propiedades</a>
+        <a href="contact.html" class="nav-link hide-mobile">Contacto</a>
+        <a href="https://wa.me/524421317870" target="_blank" rel="noopener" class="nav-pill">
+          <i class="ri-whatsapp-line"></i><span class="hide-mobile">WhatsApp</span>
+        </a>
+      </nav>
     </div>
   </header>
 
-  <!-- Efecto del Navbar al hacer scroll -->
-  <script>
-    const glassNav = document.getElementById('glassNav');
-    function onScroll() {
-      if (window.scrollY > 40) glassNav.classList.add('nav-scrolled');
-      else glassNav.classList.remove('nav-scrolled');
-    }
-    document.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-  </script>
-
-  <!-- ===== CONTENIDO PRINCIPAL ===== -->
   <main>
-    <!-- "Inicio de la sección de casas" -->
-    <!-- FONDO CLARO del encabezado -->
-    <section class="section-light" style="background:#fffbf3;">
-      <div class="section-wrap section-wrap-stock">
-        <div style="display:flex;justify-content:center;margin-bottom:18px;">
-          <div class="encabezado">
-            <span class="encabezado-stock"></span>¡Disponibles Ahora!
-          </div>
+
+    <!-- ===== HERO PROPIEDADES ===== -->
+    <section class="fs-section fs-hero">
+      <div class="fs-hero-bg">
+        <img src="img/CASA-VILLETA_13-1024x683.webp" alt="Casa moderna de descanso">
+      </div>
+
+      <div class="fs-inner center">
+        <div class="fs-label">CASAS DE DESCANSO · RENTA VACACIONAL</div>
+        <h1 class="fs-title fs-title-light">Casas pensadas para disfrutar.</h1>
+        <div class="fs-subtitle">listas para vivir o rentar</div>
+
+        <p class="fs-body">
+          Propiedades seleccionadas en zonas exclusivas, listas para usarse como casa de descanso o renta tipo Airbnb.
+          Amenidades, vistas y espacios diseñados para desconectar.
+        </p>
+
+        <div class="fs-buttons">
+          <a href="#stock" class="btn-blue"><i class="ri-home-4-line"></i> Ver casas disponibles</a>
+          <a href="contact.html" class="btn-outline-light"><i class="ri-calendar-check-line"></i> Agendar visita</a>
         </div>
 
-        <h1 class="letrero">
-          Casas en <span style="color:#03ac13;">Stock</span>
-        </h1>
+        <div class="badge-row">
+          <span class="badge-pill">San Miguel de Allende</span>
+          <span class="badge-pill">Querétaro</span>
+          <span class="badge-pill">Listas para entrega</span>
+        </div>
+      </div>
+    </section>
 
-        <p class="slogan">No Pierdas La Oportunidad De Encontrar Tu Escape Perfecto.<br>
-          Propiedades ideales para una escapada inolvidable.</p>
+    <!-- ===== CASAS EN STOCK ===== -->
+    <section id="stock" class="section-light reveal">
+      <div class="section-wrap">
+        <h2 class="letrero">
+          Casas en <span style="color:#03ac13;">Stock</span>
+        </h2>
+        <p class="slogan">
+          No pierdas la oportunidad de elegir tu próxima casa de descanso o tu siguiente renta vacacional.
+          Propiedades listas para disfrutarse o generar ingresos.
+        </p>
 
         <div class="stats-grid-cards">
           <div class="inicio-carta">
             <div class="numero">15+</div>
-            <div class="inicio-letras">Casas Disponibles</div>
+            <div class="inicio-letras">Casas disponibles</div>
           </div>
           <div class="inicio-carta">
             <div class="numero">24h</div>
-            <div class="inicio-letras">Entrega Inmediata</div>
+            <div class="inicio-letras">Entrega rápida</div>
           </div>
           <div class="inicio-carta">
             <div class="numero">100%</div>
-            <div class="inicio-letras">Estancias Verificadas</div>
+            <div class="inicio-letras">Estancias verificadas</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Sección de Cards de Casas -->
-    <section class="section-wrap section-wrap-card">
-      <div class="owl-carousel casas-stock-carousel team-carousel position-relative">
+    <!-- ===== GRID DE PROPIEDADES ===== -->
+    <section class="properties-section reveal">
+      <div class="properties-grid">
 
-        <!-- Card AGUA -->
-        <article class="card carta-modelo">
-          <div class="card-media card-media-efect">
-            <img class="card-img card-img-efect" src="img/8fc3b17e-d9cd-49eb-abfb-6a48dd0e1071.avif" alt="Casa Elemento Agua">
-            <span class="badge-top badge-right stock">En Stock</span>
+        <!-- Casa AGUA -->
+        <article class="property-card tilt-card">
+          <div class="property-media">
+            <img src="img/8fc3b17e-d9cd-49eb-abfb-6a48dd0e1071.avif" alt="Casa Karina · San Miguel de Allende">
+            <span class="badge-top-stock">En stock</span>
           </div>
+          <div class="property-body">
+            <h3 class="property-title">Casa Karina · San Miguel de Allende</h3>
+            <p class="property-meta">6 huéspedes · 2 habitaciones · 2 camas · 2.5 baños</p>
 
-          <div class="card-body" style="padding:20px 22px 26px;">
-            <h3 class="card-title card-title-letra">Casa Karina - San Miguel Allende</h3>
-            <p class="card-desc card-desc-letra">6 huéspedes · 2 habitaciones · 2 camas · 2.5 baños</p>
-
-            <div class="card-row card-row-efect">
-              <span class="price precio-casas">$23,000</span>
-              <span class="hint hint-card">Ideal vacacional</span>
+            <div class="amenities-row">
+              <span class="amenity-chip"><i class="fas fa-swimming-pool"></i> Alberca climatizada</span>
+              <span class="amenity-chip"><i class="fas fa-fire"></i> Chimenea</span>
+              <span class="amenity-chip"><i class="fas fa-mug-hot"></i> Terraza con vista</span>
             </div>
 
-            <div class="card-actions efecto">
-              <!-- Botón Ver Más (Lightbox) -->
-              <a class="ver-mas"
-                href="img/acc5014e-f173-4761-83a5-f7397a2dc8bc.avif"
-                data-lightbox="galeriaAgua"
-                data-title="Casa Elemento Agua">
-                Ver más
-              </a>
+            <div class="property-footer">
+              <div>
+                <div class="property-price">$23,000</div>
+                <div class="property-hint">Estancia vacacional completa</div>
+              </div>
+              <div class="property-actions">
+                <a class="chip-btn"
+                  href="img/acc5014e-f173-4761-83a5-f7397a2dc8bc.avif"
+                  data-lightbox="galeriaAgua"
+                  data-title="Casa Karina · San Miguel de Allende">
+                  Ver fotos
+                </a>
+                <!-- Galería adicional -->
+                <a href="img/1d7689ef-b623-41f4-800d-3316709a2c1c.avif" data-lightbox="galeriaAgua"></a>
+                <a href="img/10631d54-92a3-4b9c-840e-34ca872f9531.avif" data-lightbox="galeriaAgua"></a>
+                <a href="img/7d525c7f-799f-434e-b52c-fe0e205f7fc7.avif" data-lightbox="galeriaAgua"></a>
+                <a href="img/56deed66-7385-40d5-9047-fa388a3c8291.avif" data-lightbox="galeriaAgua"></a>
+                <a href="img/34b8d2e6-596f-4cb3-bf59-27e5b6010b43.avif" data-lightbox="galeriaAgua"></a>
 
-              <!-- Galería oculta -->
-              <a href="img/acc5014e-f173-4761-83a5-f7397a2dc8bc.avif" data-lightbox="galeriaAgua"></a>
-              <a href="img/1d7689ef-b623-41f4-800d-3316709a2c1c.avif" data-lightbox="galeriaAgua"></a>
-              <a href="img/10631d54-92a3-4b9c-840e-34ca872f9531.avif" data-lightbox="galeriaAgua"></a>
-              <a href="img/7d525c7f-799f-434e-b52c-fe0e205f7fc7.avif" data-lightbox="galeriaAgua"></a>
-              <a href="img/56deed66-7385-40d5-9047-fa388a3c8291.avif" data-lightbox="galeriaAgua"></a>
-              <a href="img/34b8d2e6-596f-4cb3-bf59-27e5b6010b43.avif" data-lightbox="galeriaAgua"></a>
-
-              <!-- Botón IR con estilo Airbnb -->
-              <a class="ver-mas"
-                href="https://maps.app.goo.gl/cjHXMDTdutoLMwP59"
-                target="_blank"
-                style="background-color:#FF385C; color:#fff;">
-                <i class="fas fa-map-marker-alt mr-1"></i>IR
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Card TIERRA -->
-        <article class="card carta-modelo">
-          <div class="card-media card-media-efect">
-            <img class="card-img card-img-efect" src="img/231d2a7d-551d-4371-a0ae-e8907f0da3ee.avif" alt="Casa Elemento Tierra">
-            <span class="badge-top badge-right stock">En Stock</span>
-          </div>
-
-          <div class="card-body" style="padding:20px 22px 26px;">
-            <h3 class="card-title card-title-letra">Casa Carlota - San Miguel Allende</h3>
-            <p class="card-desc card-desc-letra">11 huéspedes · 4 habitaciones · 6 camas · 4 baños</p>
-
-            <div class="card-row card-row-efect">
-              <span class="price precio-casas">$13,000</span>
-              <span class="hint hint-card">Ideal vacacional</span>
-            </div>
-
-            <div class="card-actions efecto">
-              <!-- Botón Ver Más (Lightbox) -->
-              <a class="ver-mas"
-                href="img/4b3dc909-af20-46ae-b45a-0495c7f35403.avif"
-                data-lightbox="galeriaTierra"
-                data-title="Casa Elemento Tierra">
-                Ver más
-              </a>
-
-              <!-- Galería oculta -->
-              <a href="img/e9652533-d981-4a82-970b-b45d201d0904.avif" data-lightbox="galeriaTierra"></a>
-              <a href="img/90ce4a65-49e8-4660-8320-29024a7688bc.avif" data-lightbox="galeriaTierra"></a>
-              <a href="img/7d51f2d3-30fd-49aa-b58d-a66743f5bd24.avif" data-lightbox="galeriaTierra"></a>
-              <a href="img/5ce3b236-5ded-413b-a45a-f26bdc49d13a.avif" data-lightbox="galeriaTierra"></a>
-              <a href="img/ce0ab39e-a8bc-4e2d-99f3-652f2ac6de8c.avif" data-lightbox="galeriaTierra"></a>
-
-              <!-- Botón IR con estilo Airbnb -->
-              <a class="ver-mas"
-                href="https://maps.app.goo.gl/7RbHwYe5NVFMt4SW8"
-                target="_blank"
-                style="background-color:#FF385C; color:#fff;">
-                <i class="fas fa-map-marker-alt mr-1"></i>IR
-              </a>
+                <a class="chip-btn secondary"
+                  href="https://maps.app.goo.gl/cjHXMDTdutoLMwP59"
+                  target="_blank">
+                  <i class="fas fa-map-marker-alt"></i> Ubicación
+                </a>
+              </div>
             </div>
           </div>
         </article>
 
-        <!-- Card FUEGO -->
-        <article class="card carta-modelo">
-          <div class="card-media card-media-efect">
-            <img class="card-img card-img-efect" src="img/68a69b94-c563-49f0-bb97-7c94cac01cd8.avif" alt="Casa Elemento Fuego">
-            <span class="badge-top badge-right stock">En Stock</span>
+        <!-- Casa TIERRA -->
+        <article class="property-card tilt-card">
+          <div class="property-media">
+            <img src="img/231d2a7d-551d-4371-a0ae-e8907f0da3ee.avif" alt="Casa Carlota · San Miguel de Allende">
+            <span class="badge-top-stock">En stock</span>
           </div>
+          <div class="property-body">
+            <h3 class="property-title">Casa Carlota · San Miguel de Allende</h3>
+            <p class="property-meta">11 huéspedes · 4 habitaciones · 6 camas · 4 baños</p>
 
-          <div class="card-body" style="padding:20px 22px 26px;">
-            <h3 class="card-title card-title-letra">Vivienda - San Miguel Allende</h3>
-            <p class="card-desc card-desc-letra">2 huéspedes · 1 habitación · 1 cama · 1 baño · estudio</p>
-
-            <div class="card-row card-row-efect">
-              <span class="price precio-casas">$10,000</span>
-              <span class="hint hint-card">Entrega inmediata</span>
+            <div class="amenities-row">
+              <span class="amenity-chip"><i class="fas fa-users"></i> Ideal para grupos</span>
+              <span class="amenity-chip"><i class="fas fa-tree"></i> Jardín amplio</span>
+              <span class="amenity-chip"><i class="fas fa-car"></i> Estacionamiento privado</span>
             </div>
 
-            <div class="card-actions efecto">
-              <!-- Botón Ver Más (Lightbox) -->
-              <a class="ver-mas"
-                href="img/11e0557a-7001-4fe9-9e53-36c853910fb8.avif"
-                data-lightbox="galeriaFuego"
-                data-title="Casa Elemento Fuego">
-                Ver más
-              </a>
+            <div class="property-footer">
+              <div>
+                <div class="property-price">$13,000</div>
+                <div class="property-hint">Perfecta para familias</div>
+              </div>
+              <div class="property-actions">
+                <a class="chip-btn"
+                  href="img/4b3dc909-af20-46ae-b45a-0495c7f35403.avif"
+                  data-lightbox="galeriaTierra"
+                  data-title="Casa Carlota · San Miguel de Allende">
+                  Ver fotos
+                </a>
+                <!-- Galería adicional -->
+                <a href="img/e9652533-d981-4a82-970b-b45d201d0904.avif" data-lightbox="galeriaTierra"></a>
+                <a href="img/90ce4a65-49e8-4660-8320-29024a7688bc.avif" data-lightbox="galeriaTierra"></a>
+                <a href="img/7d51f2d3-30fd-49aa-b58d-a66743f5bd24.avif" data-lightbox="galeriaTierra"></a>
+                <a href="img/5ce3b236-5ded-413b-a45a-f26bdc49d13a.avif" data-lightbox="galeriaTierra"></a>
+                <a href="img/ce0ab39e-a8bc-4e2d-99f3-652f2ac6de8c.avif" data-lightbox="galeriaTierra"></a>
 
-              <!-- Galería oculta -->
-              <a href="img/c8536f69-bef6-42d7-9aac-1d96b70b84ad.avif" data-lightbox="galeriaFuego"></a>
-              <a href="img/c062827d-ba77-4368-9a29-940852c38794.avif" data-lightbox="galeriaFuego"></a>
-              <a href="img/e1923cb7-4517-4e70-876b-c8177a435dcf.avif" data-lightbox="galeriaFuego"></a>
-              <a href="img/324616e0-dc90-4f04-92d1-7decd3c3f6ce.avif" data-lightbox="galeriaFuego"></a>
-              <a href="img/c66bdb20-eecf-4727-bee7-957d83b42489.avif" data-lightbox="galeriaFuego"></a>
-              <a href="img/8e90c5d7-6995-4496-ab23-f78aa13c9b4b.avif" data-lightbox="galeriaFuego"></a>
-              <a href="img/430031b3-5f57-4334-9b52-517403a02f1a.avif" data-lightbox="galeriaFuego"></a>
+                <a class="chip-btn secondary"
+                  href="https://maps.app.goo.gl/7RbHwYe5NVFMt4SW8"
+                  target="_blank">
+                  <i class="fas fa-map-marker-alt"></i> Ubicación
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
 
-              <!-- Botón IR con estilo Airbnb -->
-              <a class="ver-mas"
-                href="https://maps.app.goo.gl/UC8GhXakhkk2xwHX8"
-                target="_blank"
-                style="background-color:#FF385C; color:#fff;">
-                <i class="fas fa-map-marker-alt mr-1"></i>IR
-              </a>
+        <!-- Casa FUEGO -->
+        <article class="property-card tilt-card">
+          <div class="property-media">
+            <img src="img/68a69b94-c563-49f0-bb97-7c94cac01cd8.avif" alt="Vivienda estudio · San Miguel de Allende">
+            <span class="badge-top-stock">En stock</span>
+          </div>
+          <div class="property-body">
+            <h3 class="property-title">Vivienda estudio · San Miguel de Allende</h3>
+            <p class="property-meta">2 huéspedes · 1 habitación · 1 cama · 1 baño · estudio</p>
+
+            <div class="amenities-row">
+              <span class="amenity-chip"><i class="fas fa-wifi"></i> WiFi alta velocidad</span>
+              <span class="amenity-chip"><i class="fas fa-laptop"></i> Espacio de trabajo</span>
+              <span class="amenity-chip"><i class="fas fa-mug-hot"></i> Cocina equipada</span>
+            </div>
+
+            <div class="property-footer">
+              <div>
+                <div class="property-price">$10,000</div>
+                <div class="property-hint">Ideal para estancias largas</div>
+              </div>
+              <div class="property-actions">
+                <a class="chip-btn"
+                  href="img/11e0557a-7001-4fe9-9e53-36c853910fb8.avif"
+                  data-lightbox="galeriaFuego"
+                  data-title="Vivienda estudio · San Miguel de Allende">
+                  Ver fotos
+                </a>
+                <!-- Galería adicional -->
+                <a href="img/c8536f69-bef6-42d7-9aac-1d96b70b84ad.avif" data-lightbox="galeriaFuego"></a>
+                <a href="img/c062827d-ba77-4368-9a29-940852c38794.avif" data-lightbox="galeriaFuego"></a>
+                <a href="img/e1923cb7-4517-4e70-876b-c8177a435dcf.avif" data-lightbox="galeriaFuego"></a>
+                <a href="img/324616e0-dc90-4f04-92d1-7decd3c3f6ce.avif" data-lightbox="galeriaFuego"></a>
+                <a href="img/c66bdb20-eecf-4727-bee7-957d83b42489.avif" data-lightbox="galeriaFuego"></a>
+                <a href="img/8e90c5d7-6995-4496-ab23-f78aa13c9b4b.avif" data-lightbox="galeriaFuego"></a>
+                <a href="img/430031b3-5f57-4334-9b52-517403a02f1a.avif" data-lightbox="galeriaFuego"></a>
+
+                <a class="chip-btn secondary"
+                  href="https://maps.app.goo.gl/UC8GhXakhkk2xwHX8"
+                  target="_blank">
+                  <i class="fas fa-map-marker-alt"></i> Ubicación
+                </a>
+              </div>
             </div>
           </div>
         </article>
 
-        <!-- Card AIRE -->
-        <article class="card carta-modelo">
-          <div class="card-media card-media-efect">
-            <img class="card-img card-img-efect" src="img/5e912b77-535f-4c26-8c93-ad5cecdea137.avif" alt="Casa Elemento Aire">
-            <span class="badge-top badge-right stock">En Stock</span>
+        <!-- Casa AIRE -->
+        <article class="property-card tilt-card">
+          <div class="property-media">
+            <img src="img/5e912b77-535f-4c26-8c93-ad5cecdea137.avif" alt="Casa de Espejo · San Miguel de Allende">
+            <span class="badge-top-stock">En stock</span>
           </div>
+          <div class="property-body">
+            <h3 class="property-title">Casa de Espejo · San Miguel de Allende</h3>
+            <p class="property-meta">9 huéspedes · 4 habitaciones · 5 camas · 4.5 baños</p>
 
-          <div class="card-body" style="padding:20px 22px 26px;">
-            <h3 class="card-title card-title-letra">Casa de Espejo - San Miguel Allende</h3>
-            <p class="card-desc card-desc-letra">9 huéspedes · 4 habitaciones · 5 camas · 4.5 baños</p>
-
-            <div class="card-row card-row-efect">
-              <span class="price precio-casas">$30,000</span>
-              <span class="hint hint-card">Vista panorámica</span>
+            <div class="amenities-row">
+              <span class="amenity-chip"><i class="fas fa-mountain"></i> Vista panorámica</span>
+              <span class="amenity-chip"><i class="fas fa-hot-tub"></i> Jacuzzi</span>
+              <span class="amenity-chip"><i class="fas fa-glass-cheers"></i> Roof top</span>
             </div>
 
-            <div class="card-actions efecto">
-              <!-- Botón Ver Más (Lightbox) -->
-              <a class="ver-mas"
-                href="img/22814953-545b-4255-b9bd-a5dd68d43232.avif"
-                data-lightbox="galeriaAire"
-                data-title="Casa Elemento Aire">
-                Ver más
-              </a>
+            <div class="property-footer">
+              <div>
+                <div class="property-price">$30,000</div>
+                <div class="property-hint">Experiencia premium</div>
+              </div>
+              <div class="property-actions">
+                <a class="chip-btn"
+                  href="img/22814953-545b-4255-b9bd-a5dd68d43232.avif"
+                  data-lightbox="galeriaAire"
+                  data-title="Casa de Espejo · San Miguel de Allende">
+                  Ver fotos
+                </a>
+                <!-- Galería adicional -->
+                <a href="img/e5d00fea-1ed8-40da-8dca-4decde719f5e.avif" data-lightbox="galeriaAire"></a>
+                <a href="img/911e1fc2-f73f-484a-a60f-2f4500c029e8.avif" data-lightbox="galeriaAire"></a>
+                <a href="img/0f092874-7611-4d1d-be9c-43cf514702b6.avif" data-lightbox="galeriaAire"></a>
+                <a href="img/cc454341-8a7c-451c-91f4-f1586f6184ae.avif" data-lightbox="galeriaAire"></a>
+                <a href="img/c7223aa8-e1ca-4cab-b1a7-e3705cd556df.avif" data-lightbox="galeriaAire"></a>
+                <a href="img/66e6c155-8b25-4cc4-8bf7-f07868b07548.jpeg" data-lightbox="galeriaAire"></a>
+                <a href="img/ba39f80d-5d6d-45fc-9ec4-9dce5bf6ca9e.avif" data-lightbox="galeriaAire"></a>
 
-              <!-- Galería oculta -->
-              <a href="img/e5d00fea-1ed8-40da-8dca-4decde719f5e.avif" data-lightbox="galeriaAire"></a>
-              <a href="img/911e1fc2-f73f-484a-a60f-2f4500c029e8.avif" data-lightbox="galeriaAire"></a>
-              <a href="img/0f092874-7611-4d1d-be9c-43cf514702b6.avif" data-lightbox="galeriaAire"></a>
-              <a href="img/cc454341-8a7c-451c-91f4-f1586f6184ae.avif" data-lightbox="galeriaAire"></a>
-              <a href="img/c7223aa8-e1ca-4cab-b1a7-e3705cd556df.avif" data-lightbox="galeriaAire"></a>
-              <a href="img/66e6c155-8b25-4cc4-8bf7-f07868b07548.jpeg" data-lightbox="galeriaAire"></a>
-              <a href="img/ba39f80d-5d6d-45fc-9ec4-9dce5bf6ca9e.avif" data-lightbox="galeriaAire"></a>
-
-              <!-- Botón IR con estilo Airbnb -->
-              <a class="ver-mas"
-                href="https://maps.app.goo.gl/8d6ZcbGriwVwbPe86"
-                target="_blank"
-                style="background-color:#FF385C; color:#fff;">
-                <i class="fas fa-map-marker-alt mr-1"></i>IR
-              </a>
+                <a class="chip-btn secondary"
+                  href="https://maps.app.goo.gl/8d6ZcbGriwVwbPe86"
+                  target="_blank">
+                  <i class="fas fa-map-marker-alt"></i> Ubicación
+                </a>
+              </div>
             </div>
           </div>
         </article>
+
       </div>
     </section>
 
-    <!-- ========== INICIO | Urgencia estilo Airbnb ========== -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    <style>
-      :root {
-        --accent: #FF385C;
-        --accent-d: #e12c4f;
-        --ink: #222222;
-        --muted: #6b6b6b;
-        --stroke: #e9e9e9;
-        --bg: #fff;
-        --pill: #f7f7f7;
-        --success: #00A884;
-      }
-
-      .air-urg-wrap {
-        font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-        padding: 48px 16px;
-        background: #ffffff;
-        border-top: 1px solid #f1f1f1;
-        border-bottom: 1px solid #f1f1f1;
-      }
-
-      .air-urg {
-        max-width: 1100px;
-        margin: auto;
-        display: grid;
-        gap: 24px;
-        grid-template-columns: 1.2fr .9fr;
-        align-items: center;
-      }
-
-      @media (max-width: 992px) {
-        .air-urg {
-          grid-template-columns: 1fr;
-        }
-      }
-
-      .air-eyebrow {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        background: var(--pill);
-        border: 1px solid var(--stroke);
-        padding: .45rem .7rem;
-        border-radius: 999px;
-        font-weight: 600;
-        color: #333;
-      }
-
-      .air-eyebrow::before {
-        content: "";
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background: var(--accent);
-        box-shadow: 0 0 0 4px rgba(255, 56, 92, .12);
-      }
-
-      .air-title {
-        font-weight: 800;
-        font-size: clamp(28px, 4vw, 40px);
-        line-height: 1.1;
-        margin: 12px 0 8px;
-        color: var(--ink);
-      }
-
-      .air-sub {
-        color: var(--muted);
-        font-size: clamp(14px, 2vw, 16px);
-      }
-
-      .air-card {
-        border: 1px solid var(--stroke);
-        border-radius: 16px;
-        background: #fff;
-        padding: 18px;
-        box-shadow: 0 12px 28px rgba(0, 0, 0, .08);
-      }
-
-      .air-price {
-        display: flex;
-        align-items: baseline;
-        gap: 6px;
-      }
-
-      .air-price .p {
-        font-weight: 800;
-        font-size: 22px;
-        color: var(--ink);
-      }
-
-      .air-price .u {
-        color: var(--muted);
-        font-size: 13px;
-      }
-
-      .air-dates {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 8px;
-        margin-top: 12px;
-      }
-
-      .air-input,
-      .air-select {
-        width: 100%;
-        border: 1px solid var(--stroke);
-        border-radius: 12px;
-        padding: .7rem .8rem;
-        font-size: 14px;
-        color: var(--ink);
-        background: #fff;
-        outline: none;
-      }
-
-      .air-input:focus,
-      .air-select:focus {
-        border-color: #d3d3d3;
-      }
-
-      .air-ctas {
-        display: flex;
-        gap: 8px;
-        margin-top: 12px;
-        flex-wrap: wrap;
-      }
-
-      .air-btn {
-        border-radius: 12px;
-        padding: .8rem 1rem;
-        font-weight: 800;
-        border: 1px solid var(--stroke);
-        background: #fff;
-        color: #222;
-        text-decoration: none;
-      }
-
-      .air-btn:hover {
-        filter: brightness(.98);
-      }
-
-      .air-btn--primary {
-        background: var(--accent);
-        color: #fff;
-        border-color: var(--accent);
-        box-shadow: 0 10px 22px rgba(255, 56, 92, .2);
-      }
-
-      .air-btn--primary:hover {
-        background: var(--accent-d);
-      }
-
-      .air-btn--wa {
-        border-color: #cfe8db;
-        color: #fff;
-        background: var(--success);
-      }
-
-      .air-small {
-        font-size: 12px;
-        color: var(--muted);
-        margin-top: 8px;
-      }
-
-      .air-modal {
-        position: fixed;
-        inset: 0;
-        display: none;
-        align-items: center;
-        justify-content: center;
-        background: rgba(0, 0, 0, .45);
-        z-index: 10000;
-      }
-
-      .air-modal.show {
-        display: flex;
-      }
-
-      .air-sheet {
-        width: min(620px, 92vw);
-        background: #fff;
-        border: 1px solid var(--stroke);
-        border-radius: 16px;
-        padding: 16px;
-        box-shadow: 0 24px 60px rgba(0, 0, 0, .25);
-      }
-
-      .air-head {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 8px;
-        margin-bottom: 6px;
-      }
-
-      .air-head h5 {
-        margin: 0;
-        font-weight: 800;
-      }
-
-      .air-x {
-        border: 1px solid var(--stroke);
-        background: #fff;
-        border-radius: 999px;
-        width: 34px;
-        height: 34px;
-        display: grid;
-        place-items: center;
-        cursor: pointer;
-      }
-
-      .air-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
-        margin-top: 8px;
-      }
-
-      .air-grid .full {
-        grid-column: 1/-1;
-      }
-
-      .air-actions {
-        display: flex;
-        gap: 8px;
-        justify-content: flex-end;
-        margin-top: 10px;
-      }
-    </style>
-
-    <section class="air-urg-wrap" aria-labelledby="urgTitle">
-      <div class="air-urg">
-        <!-- Izquierda: mensaje -->
+    <!-- ===== CTA FINAL: HABLAR DE TU PROYECTO ===== -->
+    <section class="fs-section fs-section-cta">
+      <div class="fs-inner center">
         <div>
-          <span class="air-eyebrow">ALTA DEMANDA · </span>
-          <h2 id="urgTitle" class="air-title">VIVE LA EXPERIENCIA EN PERSONA</h2>
-          <p class="air-sub">
-            Agenda un recorrido privado y recibe un catálogo personalizado según zona, estilo y presupuesto.
+          <div class="fs-label">LISTO PARA EL SIGUIENTE PASO</div>
+          <h2 class="fs-title fs-title-light">Cuéntanos qué tipo de propiedad estás buscando.</h2>
+          <p class="fs-body">
+            Zona, presupuesto, número de recámaras y si es para descanso, renta vacacional o inversión.
+            Te preparamos opciones a tu medida y un recorrido privado.
           </p>
 
-          <div class="air-small">
-            🌴 <strong>Casas De Descanso</strong> · Agenda en menos de 1 minuto, nosotros nos encargamos del resto.
-          </div>
-        </div>
-
-        <!-- Derecha: tarjeta de reserva -->
-        <div class="air-card" role="group" aria-label="Formulario para agendar visita">
-          <div class="air-price">
-            <span class="p">AGENDA AHORA</span> <span class="u"></span>
-          </div>
-          <div class="air-dates">
-            <input type="date" id="fFecha" class="air-input" aria-label="Fecha de visita">
-            <input type="time" id="fHora" class="air-input" aria-label="Hora de visita">
-            <input type="text" id="fZona" class="air-input" placeholder="Zona (Juriquilla, Zibatá…)" aria-label="Zona">
-            <input type="number" id="fPres" class="air-input" placeholder="Presupuesto (MXN)" aria-label="Presupuesto">
-            <select id="fRec" class="air-select" aria-label="Número de recámaras">
-              <option value="" disabled selected>Recámaras</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5+</option>
-            </select>
-            <input type="text" id="fProp" class="air-input" placeholder="Propiedad (opcional)" aria-label="Propiedad">
-          </div>
-          <div class="air-ctas">
-            <a class="air-btn" href="tel:+524423440411">📞 Llamar</a>
-            <a id="btnWA" class="air-btn air-btn--wa" target="_blank" href="#">💬 WhatsApp</a>
-            <button class="air-btn air-btn--primary" type="button" onclick="openVisitModal()">📅 AGENDA AHORA</button>
-          </div>
-          <div class="air-small">
-            Sin spam. Usamos tus datos solo para coordinar tu visita.
+          <div class="fs-buttons">
+            <a href="contact.html" class="btn-blue">
+              <i class="ri-calendar-check-line"></i> Agendar una cita
+            </a>
+            <a href="https://wa.me/524421317870" target="_blank" rel="noopener"
+              class="btn-outline-light">
+              <i class="ri-whatsapp-line"></i> Escribir por WhatsApp
+            </a>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- Modal estilo Airbnb -->
-    <div class="air-modal" id="visitModal" role="dialog" aria-modal="true" aria-labelledby="visitT">
-      <div class="air-sheet">
-        <div class="air-head">
-          <h5 id="visitT">Confirmar visita por WhatsApp</h5>
-          <button class="air-x" type="button" aria-label="Cerrar" onclick="closeVisitModal()">✕</button>
-        </div>
-        <p style="color:var(--muted);margin:0 0 6px">Revisa los datos y confirma. Te responderemos en menos de 24 h.</p>
-        <form id="visitForm" onsubmit="sendVisit(event)">
-          <div class="air-grid">
-            <input class="full air-input" type="text" id="vNombre" placeholder="Tu nombre" required>
-            <input class="air-input" type="date" id="vFecha" required>
-            <input class="air-input" type="time" id="vHora" required>
-            <input class="air-input" type="text" id="vZona" placeholder="Zona" required>
-            <input class="air-input" type="number" id="vPres" placeholder="Presupuesto (MXN)" required>
-            <select class="air-select" id="vRec" required>
-              <option value="" disabled selected>Recámaras</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5+</option>
-            </select>
-            <input class="full air-input" type="text" id="vProp" placeholder="Propiedad (opcional)">
-          </div>
-          <div class="air-actions">
-            <button type="button" class="air-btn" onclick="closeVisitModal()">Cancelar</button>
-            <button type="submit" class="air-btn air-btn--primary">Confirmar por WhatsApp</button>
-          </div>
-        </form>
-      </div>
-    </div>
-
-    <script>
-      /* ===== Modal Airbnb | abrir/cerrar y WhatsApp dinámico ===== */
-      const modal = document.getElementById('visitModal');
-
-      function openVisitModal() {
-        // Prellenar con valores de la tarjeta
-        document.getElementById('vFecha').value = document.getElementById('fFecha').value;
-        document.getElementById('vHora').value = document.getElementById('fHora').value;
-        document.getElementById('vZona').value = document.getElementById('fZona').value;
-        document.getElementById('vPres').value = document.getElementById('fPres').value;
-        document.getElementById('vRec').value = document.getElementById('fRec').value || '';
-        document.getElementById('vProp').value = document.getElementById('fProp').value;
-        modal.classList.add('show');
-        document.body.style.overflow = 'hidden';
-      }
-
-      function closeVisitModal() {
-        modal.classList.remove('show');
-        document.body.style.overflow = '';
-      }
-
-      const WHATS = '5214423440411';
-
-      function buildMsg({ nombre, fecha, hora, zona, pres, rec, prop }) {
-        const fmx = fecha ? new Date(fecha).toLocaleDateString('es-MX', { year: 'numeric', month: 'long', day: 'numeric' }) : '';
-        const presFmt = pres ? Number(pres).toLocaleString('es-MX') : '';
-        let msg = 'Hola, quiero agendar una visita.';
-        if (nombre) msg += `%0A• Nombre: ${encodeURIComponent(nombre)}`;
-        if (prop) msg += `%0A• Propiedad: ${encodeURIComponent(prop)}`;
-        if (zona) msg += `%0A• Zona: ${encodeURIComponent(zona)}`;
-        if (presFmt) msg += `%0A• Presupuesto: $${presFmt} MXN`;
-        if (rec) msg += `%0A• Recámaras: ${encodeURIComponent(rec)}`;
-        if (fmx || hora) msg += `%0A• Fecha/Hora: ${encodeURIComponent(fmx + (hora ? (' ' + hora) : ''))}`;
-        msg += `%0A%0A¿Me apoyan con disponibilidad?`;
-        return `https://wa.me/${WHATS}?text=${msg}`;
-      }
-
-      // Botón WhatsApp de la tarjeta (en vivo)
-      (function () {
-        const btn = document.getElementById('btnWA');
-        const take = id => document.getElementById(id)?.value?.trim();
-        function upd() {
-          btn.href = buildMsg({
-            nombre: '',
-            fecha: take('fFecha'),
-            hora: take('fHora'),
-            zona: take('fZona'),
-            pres: take('fPres'),
-            rec: take('fRec'),
-            prop: take('fProp')
-          });
-        }
-        ['fFecha', 'fHora', 'fZona', 'fPres', 'fRec', 'fProp'].forEach(id => {
-          const el = document.getElementById(id);
-          el && el.addEventListener('input', upd);
-        });
-        upd();
-      })();
-
-      // Envío desde modal
-      function sendVisit(e) {
-        e.preventDefault();
-        const v = id => document.getElementById(id).value.trim();
-        const link = buildMsg({
-          nombre: v('vNombre'),
-          fecha: v('vFecha'),
-          hora: v('vHora'),
-          zona: v('vZona'),
-          pres: v('vPres'),
-          rec: v('vRec'),
-          prop: v('vProp')
-        });
-        window.open(link, '_blank');
-        closeVisitModal();
-      }
-    </script>
-
-    <!-- Galerías de imágenes para cada casa (overlay tipo slider propio) -->
-    <div id="galeriaAgua" class="gallery-overlay">
-      <div class="gallery-content">
-        <span class="close-gallery" onclick="closeGallery('galeriaAgua')">&times;</span>
-        <img id="currentImageAgua" src="img/SALA AGUA.jpg" alt="Casa Elemento Agua">
-        <div class="gallery-nav prev" onclick="changeImageAgua(-1)">&#10094;</div>
-        <div class="gallery-nav next" onclick="changeImageAgua(1)">&#10095;</div>
-      </div>
-    </div>
-
-    <div id="galeriaFuego" class="gallery-overlay">
-      <div class="gallery-content">
-        <span class="close-gallery" onclick="closeGallery('galeriaFuego')">&times;</span>
-        <img id="currentImageFuego" src="img/VESUVIO 1.png" alt="Casa Elemento Fuego">
-        <div class="gallery-nav prev" onclick="changeImageFuego(-1)">&#10094;</div>
-        <div class="gallery-nav next" onclick="changeImageFuego(1)">&#10095;</div>
-      </div>
-    </div>
-
-    <div id="galeriaAire" class="gallery-overlay">
-      <div class="gallery-content">
-        <span class="close-gallery" onclick="closeGallery('galeriaAire')">&times;</span>
-        <img id="currentImageAire" src="img/SALA.jpeg" alt="Casa Elemento Aire">
-        <div class="gallery-nav prev" onclick="changeImageAire(-1)">&#10094;</div>
-        <div class="gallery-nav next" onclick="changeImageAire(1)">&#10095;</div>
-      </div>
-    </div>
-
-    <div id="galeriaTierra" class="gallery-overlay">
-      <div class="gallery-content">
-        <span class="close-gallery" onclick="closeGallery('galeriaTierra')">&times;</span>
-        <img id="currentImageTierra" src="img/SALA.jpeg" alt="Casa Elemento Tierra">
-        <div class="gallery-nav prev" onclick="changeImageTierra(-1)">&#10094;</div>
-        <div class="gallery-nav next" onclick="changeImageTierra(1)">&#10095;</div>
-      </div>
-    </div>
-
-    <!-- Modal de Mapa de Google Maps -->
-    <div id="mapModal" class="visit-modal" aria-hidden="true" style="display: none;">
-      <div class="visit-backdrop" onclick="closeMapModal()"></div>
-
-      <div class="visit-card" role="dialog" aria-modal="true" aria-labelledby="mapTitle"
-        style="max-width: 1200px; width: 95%; max-height: 85vh; padding: 25px 25px 20px 25px;">
-        <button class="visit-close" onclick="closeMapModal()" aria-label="Cerrar">×</button>
-
-        <h3 id="mapTitle" class="visit-title" style="margin-bottom: 8px;">
-          <i class="fas fa-map-marker-alt mr-2" style="color: #03ac13;"></i>
-          Posibles Áreas de Construcción
-        </h3>
-        <p class="visit-sub" style="margin-bottom: 15px;">Santiago de Querétaro - Zonas disponibles para construir tu
-          hogar</p>
-
-        <div
-          style="width: 100%; height: 420px; border-radius: 10px; overflow: hidden; margin-top: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border: 2px solid #e0e0e0;">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119825.02894418!2d-100.49965760000001!3d20.6164546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d35b8fdc5b9255%3A0x97b094aa561b832f!2sSantiago%20de%20Quer%C3%A9taro%2C%20Qro.!5e0!3m2!1ses!2smx!4v1234567890123!5m2!1ses!2smx"
-            width="100%" height="100%" style="border:0; display: block;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-      </div>
-    </div>
 
   </main>
 
-  <!-- Scripts para modales, galerías y mapa -->
-  <script>
-    function openModal(modalId) {
-      document.getElementById(modalId).style.display = 'block';
-      document.body.style.overflow = 'hidden';
-    }
+  <!-- ===== FOOTER UNIFICADO MOMED ===== -->
+  <footer>
+    <div class="container py-4">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 mb-4">
+          <h5 class="mb-3">Contáctanos</h5>
+          <p style="font-size:14px;"><i class="fa fa-phone-alt mr-2"></i>+52 442 131 7870</p>
+          <p style="font-size:14px;"><i class="fa fa-envelope mr-2"></i>programadoresingenieros@gmail.com</p>
+          <div class="footer-social mt-3">
+            <a href="https://www.facebook.com/p/MOMED-100075915498484/" target="_blank" rel="noopener">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com/momed_arquitectura/" target="_blank" rel="noopener">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
 
-    function closeModal(modalId) {
-      document.getElementById(modalId).style.display = 'none';
-      document.body.style.overflow = 'auto';
-    }
+        <div class="col-lg-4 col-md-6 mb-4">
+          <h5 class="mb-3">Secciones</h5>
+          <a href="index.html" class="footer-link">Inicio</a><br>
+          <a href="service.html" class="footer-link">Nuestros servicios</a><br>
+          <a href="project.html" class="footer-link">Nuestras propiedades</a><br>
+          <a href="contact.html" class="footer-link">Contáctanos</a>
+        </div>
 
-    function contactarVenta(nombreCasa) {
-      const mensaje = `Hola, estoy interesado en la ${nombreCasa}. Me gustaría recibir más información sobre esta propiedad.`;
-      const whatsappUrl = `https://wa.me/524423440411?text=${encodeURIComponent(mensaje)}`;
-      window.open(whatsappUrl, '_blank');
-    }
-
-    function agendarVisita(nombreCasa) {
-      const mensaje = `Hola, me gustaría agendar una visita para conocer la ${nombreCasa}. ¿Cuándo sería posible?`;
-      const whatsappUrl = `https://wa.me/524423440411?text=${encodeURIComponent(mensaje)}`;
-      window.open(whatsappUrl, '_blank');
-    }
-
-    // Cerrar modal al hacer clic fuera del contenido
-    window.onclick = function (event) {
-      const modals = document.querySelectorAll('.modal-casa');
-      modals.forEach(modal => {
-        if (event.target === modal) {
-          modal.style.display = 'none';
-          document.body.style.overflow = 'auto';
-        }
-      });
-    }
-
-    // Cerrar modal con tecla Escape
-    document.addEventListener('keydown', function (event) {
-      if (event.key === 'Escape') {
-        const modals = document.querySelectorAll('.modal-casa');
-        modals.forEach(modal => {
-          if (modal.style.display === 'block') {
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-          }
-        });
-        closeMapModal();
-      }
-    });
-
-    function openMapModal() {
-      const modal = document.getElementById('mapModal');
-      modal.style.display = 'block';
-      modal.classList.add('show');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeMapModal() {
-      const modal = document.getElementById('mapModal');
-      modal.style.display = 'none';
-      modal.classList.remove('show');
-      document.body.style.overflow = 'auto';
-    }
-
-    // Galerías overlay personalizadas
-    function openGallery(galleryId) {
-      document.getElementById(galleryId).style.display = 'flex';
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeGallery(galleryId) {
-      document.getElementById(galleryId).style.display = 'none';
-      document.body.style.overflow = 'auto';
-    }
-
-    document.addEventListener('click', function (event) {
-      const galleries = document.querySelectorAll('.gallery-overlay');
-      galleries.forEach(gallery => {
-        if (event.target === gallery) {
-          gallery.style.display = 'none';
-          document.body.style.overflow = 'auto';
-        }
-      });
-    });
-
-    document.addEventListener('keydown', function (event) {
-      if (event.key === 'Escape') {
-        const galleries = document.querySelectorAll('.gallery-overlay');
-        galleries.forEach(gallery => {
-          if (gallery.style.display === 'flex') {
-            gallery.style.display = 'none';
-            document.body.style.overflow = 'auto';
-          }
-        });
-      }
-    });
-
-    const imagesAgua = ["img/SALA AGUA.jpg", "img/AGUA 2.jpg", "img/AGUA 3.jpg"];
-    let currentImageIndexAgua = 0;
-
-    const imagesFuego = ["img/VESUVIO 1.png", "img/VESUVIO 2.png", "img/VESUVIO 3.png"];
-    let currentImageIndexFuego = 0;
-
-    const imagesAire = ["img/SALA.jpeg", "img/AIRE 2.jpg", "img/AIRE 3.jpg"];
-    let currentImageIndexAire = 0;
-
-    const imagesTierra = ["img/VESUVIO 1.png", "img/VESUVIO 2.png", "img/VESUVIO 3.png"];
-    let currentImageIndexTierra = 0;
-
-    function changeImageAgua(n) {
-      currentImageIndexAgua = (currentImageIndexAgua + n + imagesAgua.length) % imagesAgua.length;
-      document.getElementById('currentImageAgua').src = imagesAgua[currentImageIndexAgua];
-    }
-
-    function changeImageFuego(n) {
-      currentImageIndexFuego = (currentImageIndexFuego + n + imagesFuego.length) % imagesFuego.length;
-      document.getElementById('currentImageFuego').src = imagesFuego[currentImageIndexFuego];
-    }
-
-    function changeImageAire(n) {
-      currentImageIndexAire = (currentImageIndexAire + n + imagesAire.length) % imagesAire.length;
-      document.getElementById('currentImageAire').src = imagesAire[currentImageIndexAire];
-    }
-
-    function changeImageTierra(n) {
-      currentImageIndexTierra = (currentImageIndexTierra + n + imagesTierra.length) % imagesTierra.length;
-      document.getElementById('currentImageTierra').src = imagesTierra[currentImageIndexTierra];
-    }
-  </script>
-
-  <!-- "Inicio del pie de página". -->
-  <div class="container-fluid bg-rich-black text-white py-5 px-sm-3 px-md-5">
-    <div class="row pt-5">
-      <div class="col-lg-3 col-md-6 mb-5">
-        <h4 class="text-shamrock mb-4">Contáctanos</h4>
-        <p><i class="fa fa-phone-alt mr-2"></i>+52 442 1317870</p>
-        <p><i class="fa fa-envelope mr-2"></i>programadoresingenieros@gmail.com</p>
-        <div class="d-flex justify-content-start mt-4">
-          <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;"
-            href="#"><i class="fab fa-facebook-f"></i></a>
-          <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 38px; height: 38px;"
-            href="#"><i class="fab fa-instagram"></i></a>
+        <div class="col-lg-4 col-md-12 mb-4">
+          <h5 class="mb-3">Déjanos tu opinión</h5>
+          <form id="comentarios-form">
+            <div class="form-group mb-2">
+              <input type="text" name="nombre" class="form-control border-0"
+                placeholder="Nombre completo" required />
+            </div>
+            <div class="form-group mb-2">
+              <textarea name="comentario" class="form-control border-0"
+                rows="3" placeholder="Escribe tu comentario..." required></textarea>
+            </div>
+            <button class="btn btn-blue btn-block border-0" type="submit">Enviar</button>
+          </form>
         </div>
       </div>
 
-      <div class="col-lg-3 col-md-6 mb-5">
-        <h4 class="text-shamrock mb-4">Accesos Directos</h4>
-        <div class="d-flex flex-column justify-content-start">
-          <a class="text-white mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Inicio</a>
-          <a class="text-white mb-2" href="about.html"><i class="fa fa-angle-right mr-2"></i>Sobre Nosotros</a>
-          <a class="text-white mb-2" href="service.html"><i class="fa fa-angle-right mr-2"></i>Nuestros Servicios</a>
-          <a class="text-white mb-2" href="project.html"><i class="fa fa-angle-right mr-2"></i>Nuestros Proyectos</a>
-          <a class="text-white" href="contact.html"><i class="fa fa-angle-right mr-2"></i>Contáctanos</a>
-        </div>
+      <div class="footer-bottom">
+        &copy; <span class="font-weight-bold">ING.BCD</span>. Todos los derechos reservados.
       </div>
-
-      <div class="col-lg-3 col-md-6 mb-5">
-        <h4 class="text-shamrock mb-4">Secciones Populares</h4>
-        <div class="d-flex flex-column justify-content-start">
-          <a class="text-white mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Inicio</a>
-          <a class="text-white mb-2" href="filtros.html"><i class="fa fa-angle-right mr-2"></i>Diseñame</a>
-          <a class="text-white mb-2" href="single.html"><i class="fa fa-angle-right mr-2"></i>Sabías Qué…?</a>
-          <a class="text-white mb-2" href="project.html"><i class="fa fa-angle-right mr-2"></i>Nuestros Proyectos</a>
-          <a class="text-white" href="contact.html"><i class="fa fa-angle-right mr-2"></i>Contáctanos</a>
-        </div>
-      </div>
-
-      <!--Inicio de comentarios-->
-      <div class="col-lg-3 col-md-6 mb-5">
-        <h4 class="text-shamrock mb-4">Déjanos tu opinión</h4>
-        <form id="comentarios-form">
-          <div class="form-group">
-            <input type="text" name="nombre" class="form-control border-0" placeholder="Nombre Completo"
-              required="required" />
-          </div>
-          <div class="form-group">
-            <textarea name="comentario" class="form-control border-0"
-              placeholder="Escribe tu comentario aquí..." rows="4" required="required"></textarea>
-          </div>
-          <div>
-            <button class="btn btn-unified btn-primary btn-block border-0" type="submit">Enviar</button>
-          </div>
-        </form>
-      </div>
-      <!--Final de comentarios-->
     </div>
+  </footer>
 
-    <div class="container border-top border-secondary pt-5">
-      <p class="m-0 text-center text-white">
-        &copy; <a class="text-white font-weight-bold" href="#">ING.BCD</a>. Todos los derechos reservados.
-        <a class="text-white font-weight-bold" href="https://htmlcodex.com"></a>
-      </p>
-    </div>
-  </div>
-  <!-- "Final del pie de página". -->
-
-  <!-- Botón de volver arriba -->
-  <a href="#" class="btn btn-lg btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
-
-  <!-- JavaScript Librerías (solo una vez) -->
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-  <script src="lib/easing/easing.min.js"></script>
-  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-  <script src="lib/isotope/isotope.pkgd.min.js"></script>
+  <!-- JS LIBRERÍAS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
   <script src="lib/lightbox/js/lightbox.min.js"></script>
 
-  <!-- JavaScript personalizado principal -->
-  <script src="js/main.js"></script>
-
-  <!-- Script para manejar el envío de comentarios con EmailJS -->
+  <!-- REVEAL + TILT 3D + EMAILJS -->
   <script>
+    // Reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.18 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Tilt 3D
+    document.querySelectorAll('.tilt-card').forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+        const rotateX = y * -10;
+        const rotateY = x * 10;
+        card.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'perspective(900px) rotateX(0deg) rotateY(0deg) translateY(0px)';
+      });
+    });
+
+    // Comentarios EmailJS
     document.getElementById('comentarios-form').addEventListener('submit', function (event) {
       event.preventDefault();
 
@@ -1183,79 +1060,20 @@
       const templateParams = {
         from_name: formData.get('nombre'),
         message: formData.get('comentario'),
-        fecha: new Date().toLocaleDateString('es-ES')
+        fecha: new Date().toLocaleDateString('es-MX')
       };
 
       emailjs.send('service_uovpo9g', 'template_q54exgf', templateParams)
-        .then(function (response) {
+        .then(function () {
           alert('¡Comentario enviado exitosamente!');
-          document.getElementById('comentarios-form').reset();
+          event.target.reset();
         }, function (error) {
-          alert('Error al enviar el comentario. Por favor intenta de nuevo.');
-          console.error('Error:', error);
+          alert('Error al enviar el comentario. Intenta de nuevo.');
+          console.error(error);
         });
-    });
-  </script>
-
-  <!-- Script para inicializar el carrusel de casas en stock -->
-  <script>
-    $(document).ready(function () {
-      $(".casas-stock-carousel").owlCarousel({
-        autoplay: true,
-        autoplayTimeout: 5000,
-        autoplaySpeed: 1000,
-        autoplayHoverPause: true,
-        smartSpeed: 1000,
-        margin: 40,
-        dots: true,
-        loop: true,
-        rewind: true,
-        nav: true,
-        navText: [
-          '<i class="fa fa-angle-left" aria-hidden="true"></i>',
-          '<i class="fa fa-angle-right" aria-hidden="true"></i>'
-        ],
-        responsive: {
-          0: {
-            items: 1
-          },
-          576: {
-            items: 1
-          },
-          768: {
-            items: 1
-          },
-          992: {
-            items: 2
-          }
-        },
-        onInitialized: function (event) {
-          setTimeout(function () {
-            $('.owl-carousel .cloned [data-lightbox]').each(function () {
-              $(this).removeAttr('data-lightbox');
-              $(this).removeAttr('data-title');
-              $(this).css('pointer-events', 'none');
-            });
-          }, 100);
-        },
-        onTranslated: function (event) {
-          $('.owl-carousel .cloned [data-lightbox]').each(function () {
-            $(this).removeAttr('data-lightbox');
-            $(this).removeAttr('data-title');
-            $(this).css('pointer-events', 'none');
-          });
-        }
-      });
-
-      setTimeout(function () {
-        $('.owl-carousel .cloned [data-lightbox]').each(function () {
-          $(this).removeAttr('data-lightbox');
-          $(this).removeAttr('data-title');
-          $(this).css('pointer-events', 'none');
-        });
-      }, 500);
     });
   </script>
 
 </body>
+
 </html>
