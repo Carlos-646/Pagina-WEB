@@ -526,7 +526,7 @@
         <a href="service.html" class="nav-link active">Servicios</a>
         <a href="project.html" class="nav-link">Proyectos</a>
         <a href="contact.html" class="nav-link hide-mobile">Contacto</a>
-        <a href="https://wa.me/524421317870" target="_blank" rel="noopener" class="nav-pill">
+        <a href="https://wa.me/524424520418" target="_blank" rel="noopener" class="nav-pill">
           <i class="ri-whatsapp-line"></i><span class="hide-mobile">WhatsApp</span>
         </a>
       </nav>
@@ -570,18 +570,17 @@
           <div class="fs-label-dark">SERVICIO 01</div>
           <h2 class="fs-title fs-title-dark">Asesor Inmobiliario</h2>
           <p class="fs-body-dark fs-body-left">
-            Buscamos contigo la propiedad ideal, filtrando por zona, presupuesto y estilo de vida.
-            Te guiamos en visitas, negociación y firma para que tomes decisiones con total tranquilidad.
+            ¿Necesitas orientación? Nuestro equipo está listo para brindarte la mejor alternativa según tus necesidades.
+Contacta a un asesor especializado.
           </p>
 
-          <div class="badge-row">
-            <span class="badge-pill-dark">Selección de zona</span>
-            <span class="badge-pill-dark">Análisis de opciones</span>
-            <span class="badge-pill-dark">Acompañamiento legal</span>
-          </div>
+        <div class="badge-row">
+  <span class="badge-pill-dark">Mejores zonas</span>
+  <span class="badge-pill-dark">Espacios verificados</span>
+  <span class="badge-pill-dark">Reservación segura</span>
+</div>
 
           <div class="fs-buttons left" style="margin-top:18px;">
-            <a href="project.html" class="btn-blue">Ver casas en venta</a>
             <a href="contact.html" class="btn-outline">Quiero empezar</a>
           </div>
         </div>
@@ -612,7 +611,7 @@
 
           <div class="fs-buttons left" style="margin-top:18px;">
             <a href="project.html" class="btn-blue">Ver casas vacacionales</a>
-            <a href="https://wa.me/524421317870" target="_blank" rel="noopener"
+            <a href="https://wa.me/524424520418" target="_blank" rel="noopener"
               class="btn-outline-light"><i class="ri-whatsapp-line"></i> Cotizar estancia</a>
           </div>
         </div>
@@ -655,30 +654,145 @@
       </div>
     </section>
 
-    <!-- ===== PANTALLA 5: CTA FINAL ===== -->
-    <section class="fs-section fs-dark">
-      <div class="fs-inner center">
-        <div>
-          <div class="fs-label">LISTO PARA EL SIGUIENTE PASO</div>
-          <h2 class="fs-title fs-title-light">Cuéntanos Qué Necesitas </h2>
-          <p class="fs-body">
-            Platicanos qué buscas y hacemos el resto por ti.
-          </p>
+    <!-- ===== MAPA COMPLETO AIRBNBS & CASAS EN SAN MIGUEL DE ALLENDE ===== -->
 
-          <div class="fs-buttons center">
-            <a href="contact.html" class="btn-blue">
-              <i class="ri-calendar-check-line"></i> Agenda una cita
-            </a>
-            <a href="https://wa.me/524421317870" target="_blank" rel="noopener"
-              class="btn-outline-light">
-              <i class="ri-whatsapp-line"></i> Escríbenos por WhatsApp
-            </a>
-          </div>
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+/>
+
+<section style="width:100%; padding:0; margin:0;">
+  
+  <!-- HEADER NEGRO -->
+  <div style="
+      background:#000;
+      text-align:center;
+      padding:70px 20px;
+    ">
+    
+    <div style="
+        font-size:32px;
+        font-weight:800;
+        letter-spacing:1px;
+        color:#fff;
+        text-transform:uppercase;
+      ">
+      MAPA DE HOSPEDAJES SAN MIGUEL
+    </div>
+
+  </div>
+
+  <!-- MAPA -->
+  <div id="airbnbMapAll" style="width:100%; height:90vh;"></div>
+
+</section>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script>
+  const mapAll = L.map('airbnbMapAll', {
+    zoomControl: true,
+    scrollWheelZoom: true
+  }).setView([20.9144, -100.7439], 13);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors'
+  }).addTo(mapAll);
+
+  const iconHouse = L.icon({
+    iconUrl: "https://cdn-icons-png.flaticon.com/512/684/684908.png",
+    iconSize: [35, 35],
+    iconAnchor: [17, 35],
+    popupAnchor: [0, -30]
+  });
+
+  const allStays = [
+    {
+      name: "Casa Karina",
+      price: "$23,000 MXN",
+      desc: "6 huéspedes · Alberca climatizada",
+      coords: [20.9148, -100.7445],
+      img: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6"
+    },
+    {
+      name: "Casa Carlota",
+      price: "$13,000 MXN",
+      desc: "Ideal para familias · Jardín amplio",
+      coords: [20.9182, -100.7382],
+      img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
+    },
+    {
+      name: "Vivienda Studio",
+      price: "$10,000 MXN",
+      desc: "WiFi alta velocidad · Estudio",
+      coords: [20.9098, -100.7525],
+      img: "https://images.unsplash.com/photo-1523217582562-09d0def993a6"
+    },
+    {
+      name: "Casa de Espejo",
+      price: "$30,000 MXN",
+      desc: "Jacuzzi · Rooftop",
+      coords: [20.9205, -100.7475],
+      img: "https://images.unsplash.com/photo-1613977257363-707ba9348227"
+    },
+    {
+      name: "Casa de Campo con alberca",
+      price: "$15,000 MXN",
+      desc: "8 huéspedes · Piscina · Terraza con asador",
+      coords: [20.9000, -100.7600],
+      img: "https://images.pexels.com/photos/261102/pexels-photo-261102.jpeg"
+    },
+    {
+      name: "Casa Besame Mucho",
+      price: "$12,000 MXN",
+      desc: "4 recámaras · Alberca privada · Barbacoa",
+      coords: [20.9070, -100.7460],
+      img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
+    },
+    {
+      name: "Casa Mila B&B",
+      price: "$9,500 MXN",
+      desc: "Bed & Breakfast · Piscina · Jacuzzi",
+      coords: [20.9155, -100.7400],
+      img: "https://images.unsplash.com/photo-1604079627915-78a9a78bb3c1"
+    },
+    {
+      name: "Casa Correo",
+      price: "$11,200 MXN",
+      desc: "Amplia · Rooftop · Estacionamiento",
+      coords: [20.9160, -100.7480],
+      img: "https://images.unsplash.com/photo-1554995207-c18c203602cb"
+    }
+  ];
+
+  allStays.forEach(stay => {
+    L.marker(stay.coords, { icon: iconHouse })
+      .addTo(mapAll)
+      .bindPopup(`
+        <div style="width:240px;">
+          <img src="${stay.img}" 
+               style="width:100%; border-radius:10px; margin-bottom:8px;">
+          <h3 style="margin:4px 0;">${stay.name}</h3>
+          <p style="font-weight:bold; color:#ff385c;">${stay.price}</p>
+          <p style="font-size:13px;">${stay.desc}</p>
+          <a href="#"
+             style="
+               display:block;
+               text-align:center;
+               padding:8px;
+               margin-top:8px;
+               background:#ff385c;
+               color:white;
+               border-radius:8px;
+               text-decoration:none;
+               font-weight:bold;
+             ">
+             Ver Propiedad
+          </a>
         </div>
-      </div>
-    </section>
-
-  </main>
+      `);
+  });
+</script>
 
 
 
