@@ -5,17 +5,16 @@
   <meta charset="utf-8">
   <title>BX · Propiedades</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta content="Propiedades listas para disfrutar o invertir." name="description">
+  <meta content="Propiedades listas para disfrutar o invertir en San Miguel de Allende." name="description">
 
   <!-- Iconos y Tipografías -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css">
-  <!-- SF Pro (tipografía Apple para títulos de casas) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sf-font/2.0.0/sf-font.min.css">
 
-  <!-- Flaticon y Lightbox (por si los usas en otras páginas) -->
+  <!-- Librerías -->
   <link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
   <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
 
@@ -27,7 +26,6 @@
     })();
   </script>
 
-  <!-- ===== ESTILO APPLE / PROPIEDADES ===== -->
   <style>
     :root {
       --bg-page: #f5f5f7;
@@ -38,6 +36,11 @@
       --accent-green: #10b981;
       --accent-airbnb: #FF385C;
       --footer-bg: #020617;
+      --dark-1: #020617;
+      --dark-2: #0b1120;
+      --dark-3: #111827;
+      --line-soft: rgba(148, 163, 184, .28);
+      --white-soft: #f8fafc;
     }
 
     * {
@@ -51,8 +54,7 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui,
-        "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       background: var(--bg-page);
       color: var(--text-main);
     }
@@ -67,8 +69,7 @@
       color: inherit;
     }
 
-    /* ===== NAVBAR ESTILO APPLE.COM ===== */
-
+    /* ===== NAVBAR ===== */
     .nav-apple {
       position: sticky;
       top: 0;
@@ -146,8 +147,7 @@
       }
     }
 
-    /* ===== SECCIONES FULLSCREEN ===== */
-
+    /* ===== ESTRUCTURA GENERAL ===== */
     main {
       width: 100%;
     }
@@ -187,9 +187,9 @@
       gap: 32px;
     }
 
+    /* ===== HERO ===== */
     .fs-hero {
-      background:
-        radial-gradient(circle at 0% 0%, #1e293b 0, #020617 45%, #000 100%);
+      background: radial-gradient(circle at 0% 0%, #1e293b 0, #020617 45%, #000 100%);
       color: #f5f5f7;
     }
 
@@ -281,8 +281,7 @@
       gap: 6px;
       border: 1px solid transparent;
       white-space: nowrap;
-      transition: background .18s ease, color .18s ease, transform .18s ease,
-        box-shadow .18s ease, border-color .18s ease;
+      transition: background .18s ease, color .18s ease, transform .18s ease, box-shadow .18s ease, border-color .18s ease;
     }
 
     .btn-blue {
@@ -295,6 +294,7 @@
       background: var(--accent-blue-hover);
       transform: translateY(-1px);
       box-shadow: 0 18px 44px rgba(0, 0, 0, .65);
+      color: #fff;
     }
 
     .btn-outline-light {
@@ -305,6 +305,7 @@
 
     .btn-outline-light:hover {
       background: rgba(255, 255, 255, .08);
+      color: #fff;
     }
 
     .badge-row {
@@ -327,7 +328,6 @@
     }
 
     /* ===== SECCIONES CLARAS ===== */
-
     .section-light {
       padding: 80px 16px 40px;
       background: #f5f5f7;
@@ -388,8 +388,7 @@
       color: var(--text-soft);
     }
 
-    /* ===== GRID DE PROPIEDADES (CARTAS 3D) ===== */
-
+    /* ===== PROPIEDADES ===== */
     .properties-section {
       padding: 40px 16px 80px;
       background: #f5f5f7;
@@ -401,24 +400,6 @@
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 26px;
-    }
-
-    @media (max-width: 900px) {
-      .fs-inner.split {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-
-      .properties-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .fs-inner {
-        padding-top: 80px;
-        padding-bottom: 70px;
-      }
     }
 
     .property-card {
@@ -492,7 +473,6 @@
       padding: 18px 20px 20px;
     }
 
-    /* AQUÍ LA TIPOGRAFÍA APPLE Y EN BLANCO PARA LOS TÍTULOS */
     .property-title,
     .card-title-letra {
       font-family: "SF Pro Display", "SF Pro Text", -apple-system, BlinkMacSystemFont, system-ui, sans-serif !important;
@@ -579,6 +559,7 @@
       border-color: #ffffff;
       background: rgba(15, 23, 42, .98);
       box-shadow: 0 14px 40px rgba(15, 23, 42, .9);
+      color: #fff;
     }
 
     .chip-btn.secondary {
@@ -592,24 +573,278 @@
       box-shadow: 0 16px 40px rgba(255, 56, 92, .5);
     }
 
-    /* ===== CTA FINAL ===== */
-
-    .fs-section-cta {
-      background: #000;
-      color: #f5f5f7;
+    /* ===== NUEVA SECCIÓN TURÍSTICA ===== */
+    .sma-guide-section {
+      background:
+        radial-gradient(circle at top left, rgba(14, 165, 233, 0.12), transparent 28%),
+        radial-gradient(circle at top right, rgba(16, 185, 129, 0.12), transparent 26%),
+        linear-gradient(180deg, #020617 0%, #0b1120 45%, #111827 100%);
+      color: #f8fafc;
+      padding: 90px 16px;
+      position: relative;
+      overflow: hidden;
     }
 
-    .fs-inner.center p.fs-body {
-      color: #d4d4d8;
+    .sma-guide-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
-    /* ===== ANIMACIÓN REVEAL + TILT 3D ===== */
+    .sma-guide-head {
+      text-align: center;
+      max-width: 860px;
+      margin: 0 auto 42px;
+    }
 
+    .sma-guide-kicker {
+      font-size: 12px;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: #93c5fd;
+      margin-bottom: 14px;
+    }
+
+    .sma-guide-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      margin-bottom: 14px;
+      color: #ffffff;
+    }
+
+    .sma-guide-text {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: #cbd5e1;
+      margin: 0 auto;
+    }
+
+    .sma-subtitle-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin: 54px 0 20px;
+    }
+
+    .sma-subtitle-row h3 {
+      margin: 0;
+      font-size: 1.55rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: #fff;
+    }
+
+    .sma-mini-note {
+      color: #93c5fd;
+      font-size: .92rem;
+      font-weight: 500;
+    }
+
+    .sma-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .sma-card {
+      background: rgba(15, 23, 42, 0.82);
+      border: 1px solid rgba(148, 163, 184, 0.22);
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+      backdrop-filter: blur(16px);
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sma-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 34px 70px rgba(0, 0, 0, 0.48);
+      border-color: rgba(255, 255, 255, 0.28);
+    }
+
+    .sma-card-media {
+      position: relative;
+      overflow: hidden;
+      height: 235px;
+    }
+
+    .sma-card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .55s ease;
+    }
+
+    .sma-card:hover .sma-card-media img {
+      transform: scale(1.06);
+    }
+
+    .sma-badge-top {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      z-index: 2;
+      background: rgba(2, 6, 23, 0.84);
+      border: 1px solid rgba(255,255,255,0.18);
+      color: #fff;
+      font-size: .72rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      border-radius: 999px;
+      padding: 6px 12px;
+    }
+
+    .sma-card-body {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      flex: 1;
+    }
+
+    .sma-card-title {
+      margin: 0;
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.02em;
+    }
+
+    .sma-card-desc {
+      margin: 0;
+      color: #cbd5e1;
+      line-height: 1.65;
+      font-size: .96rem;
+    }
+
+    .sma-info-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .sma-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 6px 11px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,.25);
+      background: rgba(255,255,255,.04);
+      color: #e2e8f0;
+      font-size: .78rem;
+    }
+
+    .sma-chip i {
+      color: #7dd3fc;
+    }
+
+    .sma-review-box {
+      background: rgba(255,255,255,0.045);
+      border: 1px solid rgba(148,163,184,.18);
+      border-radius: 18px;
+      padding: 14px 14px 12px;
+    }
+
+    .sma-review-label {
+      font-size: .72rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: #93c5fd;
+      margin-bottom: 7px;
+    }
+
+    .sma-review-text {
+      margin: 0;
+      color: #e5e7eb;
+      font-size: .9rem;
+      line-height: 1.6;
+    }
+
+    .sma-card-footer {
+      margin-top: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .sma-price {
+      font-size: 1.08rem;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .sma-price small {
+      display: block;
+      font-size: .78rem;
+      color: #93c5fd;
+      font-weight: 500;
+      margin-top: 2px;
+    }
+
+    .sma-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .sma-btn,
+    .sma-btn-outline {
+      border-radius: 999px;
+      padding: 10px 16px;
+      font-size: .82rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: .22s ease;
+      border: 1px solid transparent;
+    }
+
+    .sma-btn {
+      background: #0071e3;
+      color: #fff;
+    }
+
+    .sma-btn:hover {
+      background: #1482f0;
+      color: #fff;
+      transform: translateY(-1px);
+    }
+
+    .sma-btn-outline {
+      border-color: rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.04);
+      color: #fff;
+    }
+
+    .sma-btn-outline:hover {
+      background: rgba(255,255,255,0.09);
+      color: #fff;
+      transform: translateY(-1px);
+    }
+
+    .sma-footnote {
+      max-width: 1000px;
+      margin: 28px auto 0;
+      text-align: center;
+      color: #94a3b8;
+      font-size: .88rem;
+      line-height: 1.6;
+    }
+
+    /* ===== REVEAL ===== */
     .reveal {
       opacity: 0;
       transform: translateY(40px);
-      transition: opacity .9s cubic-bezier(.19, 1, .22, 1),
-        transform .9s cubic-bezier(.19, 1, .22, 1);
+      transition: opacity .9s cubic-bezier(.19, 1, .22, 1), transform .9s cubic-bezier(.19, 1, .22, 1);
       will-change: opacity, transform;
     }
 
@@ -619,12 +854,10 @@
     }
 
     .tilt-card:hover {
-      /* solo para que funcione bien el efecto base si JS no carga */
       transform: translateY(-4px);
     }
 
     /* ===== FOOTER ===== */
-
     footer {
       background: var(--footer-bg);
       color: #e5e7eb;
@@ -673,6 +906,45 @@
       text-align: center;
       color: #9ca3af;
     }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1100px) {
+      .sma-cards-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 900px) {
+      .fs-inner.split {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .properties-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .sma-cards-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .sma-card-media {
+        height: 220px;
+      }
+
+      .sma-guide-section {
+        padding: 72px 16px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .fs-inner {
+        padding-top: 80px;
+        padding-bottom: 70px;
+      }
+    }
   </style>
 </head>
 
@@ -696,18 +968,15 @@
 
   <main>
 
-    <!-- ===== HERO PROPIEDADES ===== -->
+    <!-- ===== HERO ===== -->
     <section class="fs-section fs-hero">
       <div class="fs-hero-bg">
         <img src="img/habitacion-casas-de-lujo.jpg" alt="Casa moderna de descanso">
       </div>
 
       <div class="fs-inner center">
-        <div class="fs-label">PROYECTOS · BX </div>
+        <div class="fs-label">PROYECTOS · BX</div>
         <h1 class="fs-title fs-title-light">Nuestro Catálogo.</h1>
-        
-
-        
 
         <div class="fs-buttons">
           <a href="#stock" class="btn-blue"><i class="ri-home-4-line"></i> Ver casas disponibles</a>
@@ -717,50 +986,49 @@
         <div class="badge-row">
           <span class="badge-pill">San Miguel de Allende</span>
           <span class="badge-pill">Querétaro</span>
-          <span class="badge-pill">Listas para entrega</span>
+          <span class="badge-pill">Listas para tu descanso</span>
         </div>
       </div>
     </section>
 
- <!-- ===== CASAS EN STOCK ===== -->
-<section id="stock" class="section-light reveal" style="color:#000 !important;">
-  <div class="section-wrap">
+    <!-- ===== CASAS EN STOCK ===== -->
+    <section id="stock" class="section-light reveal" style="color:#000 !important;">
+      <div class="section-wrap">
 
-    <h2 class="letrero" style="color:#000 !important;">
-      Casas en Stock
-    </h2>
+        <h2 class="letrero" style="color:#000 !important;">
+          Casas en Stock
+        </h2>
 
-    <p class="slogan" style="color:#000 !important;">
-      No pierdas la oportunidad de elegir tu próxima casa de descanso o tu siguiente renta vacacional.
-      Propiedades listas para disfrutarse.
-    </p>
+        <p class="slogan" style="color:#000 !important;">
+          No pierdas la oportunidad de elegir tu próxima casa de descanso o tu siguiente renta vacacional.
+          Propiedades listas para disfrutarse.
+        </p>
 
-    <div class="stats-grid-cards">
-      <div class="inicio-carta">
-        <div class="numero" style="color:#000 !important;">15+</div>
-        <div class="inicio-letras" style="color:#000 !important;">Casas disponibles</div>
+        <div class="stats-grid-cards">
+          <div class="inicio-carta">
+            <div class="numero" style="color:#000 !important;">15+</div>
+            <div class="inicio-letras" style="color:#000 !important;">Casas disponibles</div>
+          </div>
+
+          <div class="inicio-carta">
+            <div class="numero" style="color:#000 !important;">24h</div>
+            <div class="inicio-letras" style="color:#000 !important;">Entrega rápida</div>
+          </div>
+
+          <div class="inicio-carta">
+            <div class="numero" style="color:#000 !important;">100%</div>
+            <div class="inicio-letras" style="color:#000 !important;">Estancias verificadas</div>
+          </div>
+        </div>
+
       </div>
-
-      <div class="inicio-carta">
-        <div class="numero" style="color:#000 !important;">24h</div>
-        <div class="inicio-letras" style="color:#000 !important;">Entrega rápida</div>
-      </div>
-
-      <div class="inicio-carta">
-        <div class="numero" style="color:#000 !important;">100%</div>
-        <div class="inicio-letras" style="color:#000 !important;">Estancias verificadas</div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
+    </section>
 
     <!-- ===== GRID DE PROPIEDADES ===== -->
     <section class="properties-section reveal">
       <div class="properties-grid">
 
-        <!-- Casa AGUA -->
+        <!-- Casa Karina -->
         <article class="property-card tilt-card">
           <div class="property-media">
             <img src="img/8fc3b17e-d9cd-49eb-abfb-6a48dd0e1071.avif" alt="Casa Karina · San Miguel de Allende">
@@ -788,7 +1056,7 @@
                   data-title="Casa Karina · San Miguel de Allende">
                   Ver fotos
                 </a>
-                <!-- Galería adicional -->
+
                 <a href="img/1d7689ef-b623-41f4-800d-3316709a2c1c.avif" data-lightbox="galeriaAgua"></a>
                 <a href="img/10631d54-92a3-4b9c-840e-34ca872f9531.avif" data-lightbox="galeriaAgua"></a>
                 <a href="img/7d525c7f-799f-434e-b52c-fe0e205f7fc7.avif" data-lightbox="galeriaAgua"></a>
@@ -797,7 +1065,7 @@
 
                 <a class="chip-btn secondary"
                   href="https://maps.app.goo.gl/cjHXMDTdutoLMwP59"
-                  target="_blank">
+                  target="_blank" rel="noopener">
                   <i class="fas fa-map-marker-alt"></i> Ubicación
                 </a>
               </div>
@@ -805,7 +1073,7 @@
           </div>
         </article>
 
-        <!-- Casa TIERRA -->
+        <!-- Casa Carlota -->
         <article class="property-card tilt-card">
           <div class="property-media">
             <img src="img/231d2a7d-551d-4371-a0ae-e8907f0da3ee.avif" alt="Casa Carlota · San Miguel de Allende">
@@ -833,7 +1101,7 @@
                   data-title="Casa Carlota · San Miguel de Allende">
                   Ver fotos
                 </a>
-                <!-- Galería adicional -->
+
                 <a href="img/e9652533-d981-4a82-970b-b45d201d0904.avif" data-lightbox="galeriaTierra"></a>
                 <a href="img/90ce4a65-49e8-4660-8320-29024a7688bc.avif" data-lightbox="galeriaTierra"></a>
                 <a href="img/7d51f2d3-30fd-49aa-b58d-a66743f5bd24.avif" data-lightbox="galeriaTierra"></a>
@@ -842,7 +1110,7 @@
 
                 <a class="chip-btn secondary"
                   href="https://maps.app.goo.gl/7RbHwYe5NVFMt4SW8"
-                  target="_blank">
+                  target="_blank" rel="noopener">
                   <i class="fas fa-map-marker-alt"></i> Ubicación
                 </a>
               </div>
@@ -850,7 +1118,7 @@
           </div>
         </article>
 
-        <!-- Casa FUEGO -->
+        <!-- Vivienda estudio -->
         <article class="property-card tilt-card">
           <div class="property-media">
             <img src="img/68a69b94-c563-49f0-bb97-7c94cac01cd8.avif" alt="Vivienda estudio · San Miguel de Allende">
@@ -878,7 +1146,7 @@
                   data-title="Vivienda estudio · San Miguel de Allende">
                   Ver fotos
                 </a>
-                <!-- Galería adicional -->
+
                 <a href="img/c8536f69-bef6-42d7-9aac-1d96b70b84ad.avif" data-lightbox="galeriaFuego"></a>
                 <a href="img/c062827d-ba77-4368-9a29-940852c38794.avif" data-lightbox="galeriaFuego"></a>
                 <a href="img/e1923cb7-4517-4e70-876b-c8177a435dcf.avif" data-lightbox="galeriaFuego"></a>
@@ -889,7 +1157,7 @@
 
                 <a class="chip-btn secondary"
                   href="https://maps.app.goo.gl/UC8GhXakhkk2xwHX8"
-                  target="_blank">
+                  target="_blank" rel="noopener">
                   <i class="fas fa-map-marker-alt"></i> Ubicación
                 </a>
               </div>
@@ -897,7 +1165,7 @@
           </div>
         </article>
 
-        <!-- Casa AIRE -->
+        <!-- Casa de Espejo -->
         <article class="property-card tilt-card">
           <div class="property-media">
             <img src="img/5e912b77-535f-4c26-8c93-ad5cecdea137.avif" alt="Casa de Espejo · San Miguel de Allende">
@@ -925,7 +1193,7 @@
                   data-title="Casa de Espejo · San Miguel de Allende">
                   Ver fotos
                 </a>
-                <!-- Galería adicional -->
+
                 <a href="img/e5d00fea-1ed8-40da-8dca-4decde719f5e.avif" data-lightbox="galeriaAire"></a>
                 <a href="img/911e1fc2-f73f-484a-a60f-2f4500c029e8.avif" data-lightbox="galeriaAire"></a>
                 <a href="img/0f092874-7611-4d1d-be9c-43cf514702b6.avif" data-lightbox="galeriaAire"></a>
@@ -936,7 +1204,7 @@
 
                 <a class="chip-btn secondary"
                   href="https://maps.app.goo.gl/8d6ZcbGriwVwbPe86"
-                  target="_blank">
+                  target="_blank" rel="noopener">
                   <i class="fas fa-map-marker-alt"></i> Ubicación
                 </a>
               </div>
@@ -947,138 +1215,324 @@
       </div>
     </section>
 
-   <!-- ===== CTA FINAL: HABLAR DE TU PROYECTO ===== -->
-<style>
-  /* ===== ESTILOS CTA FINAL ===== */
+    <!-- ===== NUEVA SECCIÓN: QUÉ HACER EN SAN MIGUEL ===== -->
+    <section class="sma-guide-section reveal">
+      <div class="sma-guide-wrap">
 
-  .fs-section-cta {
-    padding: 90px 0;
-    background: #000; /* tu fondo */
-    color: #fff;
-    text-align: center;
-  }
+        <div class="sma-guide-head">
+          <div class="sma-guide-kicker">Descubre San Miguel de Allende</div>
+          <h2 class="sma-guide-title">Qué hacer, dónde comer y cómo vivir una estancia inolvidable.</h2>
+          <p class="sma-guide-text">
+            Una gran estancia no solo se trata de la casa ideal, sino también de las experiencias que rodean cada viaje.
+            Aquí encontrarás actividades imperdibles, rincones icónicos y restaurantes recomendados para disfrutar al máximo San Miguel de Allende.
+          </p>
+        </div>
 
-  .fs-label {
-    font-size: 13px;
-    letter-spacing: 3px;
-    font-weight: 500;
-    opacity: 0.8;
-    margin-bottom: 18px;
-  }
+        <!-- Actividades -->
+        <div class="sma-subtitle-row">
+          <h3>Planes imperdibles en San Miguel</h3>
+          <div class="sma-mini-note">Cultura, arte, vistas y naturaleza</div>
+        </div>
 
-  .fs-title-light {
-    font-size: 42px;
-    font-weight: 800;
-    line-height: 1.15;
-    margin-bottom: 20px;
-  }
+        <div class="sma-cards-grid">
 
-  /* ===== SUBTÍTULO CENTRADO (CORRECCIÓN DEFINITIVA) ===== */
-  .fs-body-center {
-    text-align: center !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    display: block;
-    max-width: 850px;
-    font-size: 17px;
-    line-height: 1.55;
-    opacity: 0.92;
-    margin-bottom: 35px;
-  }
+          <article class="sma-card tilt-card">
+            <div class="sma-card-media">
+              <span class="sma-badge-top">Imperdible</span>
+              <img src="img/jardinprincipalallende.jpeg" alt="Parroquia y Jardín Allende">
+            </div>
+            <div class="sma-card-body">
+              <h4 class="sma-card-title">Parroquia y Jardín Allende</h4>
+              <p class="sma-card-desc">
+                El corazón de San Miguel de Allende. Perfecto para caminar por el centro, tomar fotos, disfrutar músicos en vivo y sentir la esencia colonial de la ciudad.
+              </p>
 
-  /* ===== BOTONES ===== */
-  .fs-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-  }
+              <div class="sma-info-row">
+                <span class="sma-chip"><i class="ri-map-pin-2-line"></i> Centro histórico</span>
+                <span class="sma-chip"><i class="ri-time-line"></i> 1 a 2 horas</span>
+                <span class="sma-chip"><i class="ri-camera-lens-line"></i> Ideal para fotos</span>
+              </div>
 
-  .btn-blue {
-    background: #0276ff;
-    color: #fff;
-    padding: 12px 26px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-  }
+              <div class="sma-review-box">
+                <div class="sma-review-label">Reseña</div>
+                <p class="sma-review-text">
+                  “Es una visita obligada para cualquier huésped que quiera conocer la parte más icónica y viva de San Miguel.”
+                </p>
+              </div>
 
-  .btn-blue:hover {
-    background: #005ad1;
-  }
+              <div class="sma-card-footer">
+                <div class="sma-price">
+                  Acceso libre
+                  <small>Paseo ideal de día o al atardecer</small>
+                </div>
+                <div class="sma-actions">
+                  <a href="https://maps.app.goo.gl/zGQNHWVH9Pu2uXLi6" target="_blank" rel="noopener" class="sma-btn">
+                    <i class="ri-map-2-line"></i> Ver ubicación
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
 
-  .btn-outline-light {
-    border: 2px solid #fff;
-    padding: 12px 26px;
-    border-radius: 50px;
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-  }
+          <article class="sma-card tilt-card">
+            <div class="sma-card-media">
+              <span class="sma-badge-top">Arte & diseño</span>
+              <img src="img/-fabrica-la-aurora-fabrica.jpg" alt="Fábrica La Aurora">
+            </div>
+            <div class="sma-card-body">
+              <h4 class="sma-card-title">Fábrica La Aurora</h4>
+              <p class="sma-card-desc">
+                Un espacio lleno de galerías, diseño, arte contemporáneo y tiendas con piezas únicas. Ideal para una tarde visual, tranquila y sofisticada.
+              </p>
 
-  .btn-outline-light:hover {
-    background: #ffffff20;
-  }
-</style>
+              <div class="sma-info-row">
+                <span class="sma-chip"><i class="ri-palette-line"></i> Galerías</span>
+                <span class="sma-chip"><i class="ri-brush-line"></i> Arte local</span>
+                <span class="sma-chip"><i class="ri-walk-line"></i> Paseo relajado</span>
+              </div>
 
-<section class="fs-section fs-section-cta">
-  <div class="fs-inner center">
-    <div>
+              <div class="sma-review-box">
+                <div class="sma-review-label">Reseña</div>
+                <p class="sma-review-text">
+                  “Muy recomendable para huéspedes que buscan una experiencia cultural y elegante fuera del recorrido tradicional.”
+                </p>
+              </div>
 
-      <div class="fs-label">LISTO PARA EL SIGUIENTE PASO</div>
+              <div class="sma-card-footer">
+                <div class="sma-price">
+                  Entrada libre
+                  <small>Ideal para pasar la tarde</small>
+                </div>
+                <div class="sma-actions">
+                  <a href="https://maps.app.goo.gl/bhwFAwTP1kDs7M6P6" target="_blank" rel="noopener" class="sma-btn">
+                    <i class="ri-map-2-line"></i> Ver ubicación
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
 
-      <h2 class="fs-title fs-title-light">
-        Cuéntanos Qué Propiedad Estás Buscando.
-      </h2>
+          <article class="sma-card tilt-card">
+            <div class="sma-card-media">
+              <span class="sma-badge-top">Naturaleza</span>
+              <img src="img/elcharcodelingenio.jpg" alt="El Charco del Ingenio">
+            </div>
+            <div class="sma-card-body">
+              <h4 class="sma-card-title">El Charco del Ingenio</h4>
+              <p class="sma-card-desc">
+                Un lugar perfecto para desconectarse, caminar entre naturaleza, admirar cactus y paisajes, y disfrutar una experiencia más tranquila cerca de la ciudad.
+              </p>
 
-      <p class="fs-body fs-body-center">
-        Zona, presupuesto, número de recámaras y si es para descanso, renta vacacional o inversión.
-        Te preparamos opciones a tu medida y un recorrido privado.
-      </p>
+              <div class="sma-info-row">
+                <span class="sma-chip"><i class="ri-plant-line"></i> Jardín botánico</span>
+                <span class="sma-chip"><i class="ri-route-line"></i> Senderos</span>
+                <span class="sma-chip"><i class="ri-sun-line"></i> Mejor por la mañana</span>
+              </div>
 
-      <div class="fs-buttons">
-        <a href="contact.html" class="btn-blue">
-          <i class="ri-calendar-check-line"></i> Agendar una cita
-        </a>
-        <a href="https://wa.me/524424520418" target="_blank" rel="noopener"
-          class="btn-outline-light">
-          <i class="ri-whatsapp-line"></i> Escribir por WhatsApp
-        </a>
-      </div>
+              <div class="sma-review-box">
+                <div class="sma-review-label">Reseña</div>
+                <p class="sma-review-text">
+                  “Excelente opción para huéspedes que buscan relajarse, caminar y disfrutar una cara más natural de San Miguel.”
+                </p>
+              </div>
 
-    </div>
+              <div class="sma-card-footer">
+                <div class="sma-price">
+                  $100 MXN
+                  <small>Entrada general estimada</small>
+                </div>
+                <div class="sma-actions">
+                  <a href="https://maps.app.goo.gl/UEu3fMJSpMZfSX5w5" target="_blank" rel="noopener" class="sma-btn">
+                    <i class="ri-map-2-line"></i> Ver ubicación
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Restaurantes -->
+        <div class="sma-subtitle-row">
+          <h3>Restaurantes recomendados</h3>
+          <div class="sma-mini-note">Rooftops, cenas especiales y vistas</div>
+        </div>
+
+        <div class="sma-cards-grid">
+
+          <article class="sma-card tilt-card">
+            <div class="sma-card-media">
+              <span class="sma-badge-top">Rooftop</span>
+              <img src="img/Quince Rooftop.jpg" alt="Quince Rooftop">
+            </div>
+            <div class="sma-card-body">
+              <h4 class="sma-card-title">Quince Rooftop</h4>
+              <p class="sma-card-desc">
+                Uno de los rooftops más conocidos de San Miguel. Ideal para disfrutar cocteles, cena y una de las vistas más espectaculares hacia la Parroquia.
+              </p>
+
+              <div class="sma-info-row">
+                <span class="sma-chip"><i class="ri-star-smile-line"></i> Muy recomendado</span>
+                <span class="sma-chip"><i class="ri-building-line"></i> Centro</span>
+                <span class="sma-chip"><i class="ri-camera-line"></i> Vista top</span>
+              </div>
+
+              <div class="sma-review-box">
+                <div class="sma-review-label">Reseña</div>
+                <p class="sma-review-text">
+                  “Perfecto para una cena memorable, sunset con amigos o una noche especial en el centro.”
+                </p>
+              </div>
+
+              <div class="sma-card-footer">
+                <div class="sma-price">
+                  $500 - $1,000 MXN
+                  <small>Por persona, según consumo</small>
+                </div>
+                <div class="sma-actions">
+                  <a href="https://maps.app.goo.gl/zDRyyDPQLqpzAxk37" target="_blank" rel="noopener" class="sma-btn">
+                    <i class="ri-map-2-line"></i> Ubicación
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="sma-card tilt-card">
+            <div class="sma-card-media">
+              <span class="sma-badge-top">Vista premium</span>
+              <img src="img/Luna Rooftop.jpg" alt="Luna Rooftop">
+            </div>
+            <div class="sma-card-body">
+              <h4 class="sma-card-title">Luna Rooftop</h4>
+              <p class="sma-card-desc">
+                Un rooftop elegante y visualmente impresionante, perfecto para drinks, tapas y una experiencia sofisticada con panorámica de San Miguel.
+              </p>
+
+              <div class="sma-info-row">
+                <span class="sma-chip"><i class="ri-cup-line"></i> Tapas & bar</span>
+                <span class="sma-chip"><i class="ri-hotel-line"></i> Ambiente elegante</span>
+                <span class="sma-chip"><i class="ri-sun-foggy-line"></i> Ideal al atardecer</span>
+              </div>
+
+              <div class="sma-review-box">
+                <div class="sma-review-label">Reseña</div>
+                <p class="sma-review-text">
+                  “Muy buena opción para quienes buscan una experiencia más exclusiva y visualmente espectacular.”
+                </p>
+              </div>
+
+              <div class="sma-card-footer">
+                <div class="sma-price">
+                  $600 - $1,200 MXN
+                  <small>Por persona, según consumo</small>
+                </div>
+                <div class="sma-actions">
+                  <a href="https://maps.app.goo.gl/1qa8FvsWtuwmz4yK8" target="_blank" rel="noopener" class="sma-btn">
+                    <i class="ri-map-2-line"></i> Ubicación
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="sma-card tilt-card">
+            <div class="sma-card-media">
+              <span class="sma-badge-top">Fine dining</span>
+              <img src="img/APERI-10.jpg" alt="Áperi">
+            </div>
+            <div class="sma-card-body">
+              <h4 class="sma-card-title">Áperi</h4>
+              <p class="sma-card-desc">
+                Una propuesta gastronómica de alto nivel para huéspedes que quieren vivir una cena gourmet, íntima y más exclusiva durante su estancia.
+              </p>
+
+              <div class="sma-info-row">
+                <span class="sma-chip"><i class="ri-vip-crown-line"></i> Cocina premium</span>
+                <span class="sma-chip"><i class="ri-restaurant-line"></i> Cena especial</span>
+                <span class="sma-chip"><i class="ri-heart-line"></i> Ideal para pareja</span>
+              </div>
+
+              <div class="sma-review-box">
+                <div class="sma-review-label">Reseña</div>
+                <p class="sma-review-text">
+                  “Excelente para una experiencia gastronómica de nivel alto, celebraciones o una noche muy especial.”
+                </p>
+              </div>
+
+              <div class="sma-card-footer">
+
+  <div class="sma-price">
+    Desde $2,100 MXN
+    <small>Por persona, experiencia premium</small>
   </div>
-</section>
+
+  <div class="sma-actions">
+
+    <a href="https://maps.app.goo.gl/ibpdfVtAWjPkBhvy5"
+       target="_blank"
+       rel="noopener"
+       class="sma-location-btn">
+
+      <span class="sma-location-icon">
+        <i class="ri-navigation-line"></i>
+      </span>
+
+      <span class="sma-location-text">
+        Cómo llegar
+      </span>
+
+    </a>
+
+  </div>
+
+</div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        
+
+      </div>
+    </section>
 
   </main>
 
- 
+  <!-- FOOTER OPCIONAL -->
+  <footer>
+    <div class="container">
+      <div class="footer-bottom">
+        BX · Propiedades y experiencias en San Miguel de Allende.
+      </div>
+    </div>
+  </footer>
 
   <!-- JS LIBRERÍAS -->
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
   <script src="lib/lightbox/js/lightbox.min.js"></script>
 
-  <!-- REVEAL + TILT 3D + EMAILJS -->
+  <!-- JS -->
   <script>
-    // Reveal
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in-view');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.18 });
+    // ===== Reveal Animation =====
+    const revealElements = document.querySelectorAll('.reveal');
 
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    if (revealElements.length > 0) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.18 });
 
-    // Tilt 3D
+      revealElements.forEach(el => observer.observe(el));
+    }
+
+    // ===== Tilt 3D =====
     document.querySelectorAll('.tilt-card').forEach(card => {
       card.addEventListener('mousemove', (e) => {
         const rect = card.getBoundingClientRect();
@@ -1088,31 +1542,37 @@
         const rotateY = x * 10;
         card.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
       });
+
       card.addEventListener('mouseleave', () => {
         card.style.transform = 'perspective(900px) rotateX(0deg) rotateY(0deg) translateY(0px)';
       });
     });
 
-    // Comentarios EmailJS
-    document.getElementById('comentarios-form').addEventListener('submit', function (event) {
-      event.preventDefault();
+    // ===== EmailJS seguro =====
+    const comentariosForm = document.getElementById('comentarios-form');
 
-      const formData = new FormData(this);
-      const templateParams = {
-        from_name: formData.get('nombre'),
-        message: formData.get('comentario'),
-        fecha: new Date().toLocaleDateString('es-MX')
-      };
+    if (comentariosForm) {
+      comentariosForm.addEventListener('submit', function (event) {
+        event.preventDefault();
 
-      emailjs.send('service_uovpo9g', 'template_q54exgf', templateParams)
-        .then(function () {
-          alert('¡Comentario enviado exitosamente!');
-          event.target.reset();
-        }, function (error) {
-          alert('Error al enviar el comentario. Intenta de nuevo.');
-          console.error(error);
-        });
-    });
+        const formData = new FormData(this);
+        const templateParams = {
+          from_name: formData.get('nombre'),
+          message: formData.get('comentario'),
+          fecha: new Date().toLocaleDateString('es-MX')
+        };
+
+        emailjs.send('service_uovpo9g', 'template_q54exgf', templateParams)
+          .then(function () {
+            alert('¡Comentario enviado exitosamente!');
+            event.target.reset();
+          })
+          .catch(function (error) {
+            alert('Error al enviar el comentario. Intenta de nuevo.');
+            console.error(error);
+          });
+      });
+    }
   </script>
 
 </body>

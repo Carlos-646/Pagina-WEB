@@ -257,3 +257,113 @@ h6 {
     padding: 0;
     list-style-type: none;
 }
+/* ===== FOOTER DE TARJETAS CORREGIDO ===== */
+.sma-card-footer{
+  margin-top:auto;
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:14px;
+  flex-wrap:wrap;
+}
+
+.sma-price{
+  font-size:1.08rem;
+  font-weight:800;
+  color:#fff;
+  line-height:1.2;
+  flex:1 1 220px;
+  min-width:220px;
+}
+
+.sma-price small{
+  display:block;
+  font-size:.78rem;
+  color:#93c5fd;
+  font-weight:600;
+  margin-top:6px;
+  line-height:1.4;
+}
+
+.sma-actions{
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
+  flex:0 0 auto;
+  margin-left:auto;
+}
+
+/* ===== BOTÓN UBICACIÓN LUXURY ===== */
+.sma-location-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  min-height:48px;
+  padding:11px 18px;
+  border-radius:999px;
+  background:linear-gradient(135deg, rgba(15,23,42,0.96), rgba(30,41,59,0.92));
+  color:#f8fafc;
+  border:1px solid rgba(255,255,255,0.14);
+  box-shadow:
+    0 12px 30px rgba(0,0,0,0.35),
+    inset 0 1px 0 rgba(255,255,255,0.06);
+  font-size:.84rem;
+  font-weight:700;
+  letter-spacing:.02em;
+  white-space:nowrap;
+  transition:
+    transform .22s ease,
+    box-shadow .22s ease,
+    border-color .22s ease,
+    background .22s ease;
+}
+
+.sma-location-btn:hover{
+  transform:translateY(-2px);
+  border-color:rgba(125,211,252,0.45);
+  box-shadow:
+    0 18px 38px rgba(0,0,0,0.45),
+    inset 0 1px 0 rgba(255,255,255,0.08);
+  background:linear-gradient(135deg, rgba(2,6,23,1), rgba(15,23,42,0.98));
+  color:#ffffff;
+}
+
+.sma-location-icon{
+  width:32px;
+  height:32px;
+  border-radius:50%;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(135deg, #0ea5e9, #2563eb);
+  color:#fff;
+  box-shadow:0 8px 18px rgba(37,99,235,0.28);
+  flex-shrink:0;
+}
+
+.sma-location-icon i{
+  font-size:14px;
+}
+
+.sma-location-text{
+  white-space:nowrap;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px){
+  .sma-card-footer{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .sma-price{
+    min-width:100%;
+  }
+
+  .sma-actions{
+    width:100%;
+    justify-content:flex-start;
+    margin-left:0;
+  }
+}
