@@ -1307,56 +1307,64 @@ Contacta a un asesor especializado.
       price: "$23,000 MXN",
       desc: "Servicio de habitaciones · Alberca climatizada · Terraza con vista",
       coords: [20.9148, -100.7445],
-      img: "img/Casa Loreto.jpg"
+      img: "img/Casa Loreto.jpg",
+      mapsUrl: "https://maps.app.goo.gl/jVinbuZimYsb1iZ1A"
     },
     {
       name: "Casa Feliz",
       price: "$21,375 MXN",
       desc: "Ideal para familias · Jardín amplio · Estacionamiento privado",
       coords: [20.9182, -100.7382],
-      img: "img/Casa Feliz.jpg"
+      img: "img/Casa Feliz.jpg",
+      mapsUrl: "https://maps.app.goo.gl/6saLwMEQuoFE8TNT7"
     },
     {
       name: "Casa LUXO",
       price: "$16,457 MXN",
       desc: "Terraza · Espacio de trabajo · Jardín",
       coords: [20.9098, -100.7525],
-      img: "img/LUXO.jpg"
+      img: "img/LUXO.jpg",
+      mapsUrl: "https://maps.app.goo.gl/DBxge1K54TvciyCX8"
     },
     {
       name: "Casa de lujo",
       price: "$21,469 MXN",
       desc: "Jacuzzi · Traslado aeropuerto (gratis) · Gimnasio",
       coords: [20.9205, -100.7475],
-      img: "img/Casa de lujo.jpg"
+      img: "img/Casa de lujo.jpg",
+      mapsUrl: "https://maps.app.goo.gl/m3q8Y1PiYGXZu2PSA"
     },
     {
       name: "Casa Libelula",
       price: "$23,137 MXN",
       desc: "WiFi gratis · Piscina · Terraza con asador",
       coords: [20.9000, -100.7600],
-      img: "img/Casa Libelula.jpg"
+      img: "img/Casa Libelula.jpg",
+      mapsUrl: "https://maps.app.goo.gl/2s27EZPsJyqYbjE17"
     },
     {
       name: "Casa Bésame Mucho",
       price: "$12,000 MXN",
       desc: "Lavandería · Piscina · Aire acondicionado",
       coords: [20.9070, -100.7460],
-      img: "img/BESAMEMUCHO.jpg"
+      img: "img/BESAMEMUCHO.jpg",
+      mapsUrl: "https://maps.app.goo.gl/vbVq14NtCb6WmBKa7"
     },
     {
       name: "Casa Malanquín",
       price: "$14,643 MXN",
       desc: "Bed & Breakfast · Piscina · Jacuzzi",
       coords: [20.9155, -100.7400],
-      img: "img/Casa Malanquín.jpg"
+      img: "img/Casa Malanquín.jpg",
+      mapsUrl: "https://maps.app.goo.gl/6UPAuq7nc2NGKc1P6"
     },
     {
       name: "Casa Correo",
       price: "$15,477 MXN",
       desc: "TV · Patio o balcón privado · Estacionamiento gratuito",
       coords: [20.9160, -100.7480],
-      img: "img/casacorreo.jpg"
+      img: "img/casacorreo.jpg",
+      mapsUrl: "https://maps.app.goo.gl/e5TNnc9KMuHD1Xej8"
     }
   ];
 
@@ -1365,7 +1373,7 @@ Contacta a un asesor especializado.
     scrollWheelZoom: true
   }).setView([20.9144, -100.7439], 13);
 
-  /* MAPA CLARO ESTILO GOOGLE */
+  /* MAPA ESTILO GOOGLE */
   L.tileLayer('https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
     maxZoom: 20,
     subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
@@ -1394,21 +1402,25 @@ Contacta a un asesor especializado.
   }
 
   allStays.forEach((stay, index) => {
+
     const marker = L.marker(stay.coords, { icon: luxuryIcon })
       .addTo(mapAll)
       .bindPopup(`
         <div class="bx-lux-popup">
           <div class="bx-lux-popup-img">
             <img src="${stay.img}" alt="${stay.name}">
-            <div class="bx-lux-popup-badge">Premium Stay</div>
           </div>
           <div class="bx-lux-popup-body">
             <h4 class="bx-lux-popup-title">${stay.name}</h4>
             <div class="bx-lux-popup-price">${stay.price}</div>
             <div class="bx-lux-popup-desc">${stay.desc}</div>
             <div class="bx-lux-popup-actions">
-              <a href="#stock" class="bx-lux-popup-btn">Ver propiedad</a>
-              <a href="contact.html" class="bx-lux-popup-btn-light">Solicitar info</a>
+              <a href="${stay.mapsUrl}" target="_blank" rel="noopener noreferrer" class="bx-lux-popup-btn">
+                Ver propiedad
+              </a>
+              <a href="contact.html" class="bx-lux-popup-btn-light">
+                Solicitar info
+              </a>
             </div>
           </div>
         </div>
@@ -1440,25 +1452,33 @@ Contacta a un asesor especializado.
       setActiveCard(index);
     });
 
-    propertyList.appendChild(card);
+    if (propertyList) {
+      propertyList.appendChild(card);
+    }
   });
 
   const bounds = L.latLngBounds(allStays.map(item => item.coords));
   mapAll.fitBounds(bounds.pad(0.18));
 
-  document.getElementById('luxCenterMap').addEventListener('click', () => {
-    mapAll.flyTo([20.9144, -100.7439], 13, {
-      animate: true,
-      duration: 1.2
+  const centerBtn = document.getElementById('luxCenterMap');
+  if (centerBtn) {
+    centerBtn.addEventListener('click', () => {
+      mapAll.flyTo([20.9144, -100.7439], 13, {
+        animate: true,
+        duration: 1.2
+      });
     });
-  });
+  }
 
-  document.getElementById('luxViewAll').addEventListener('click', () => {
-    mapAll.fitBounds(bounds.pad(0.18), {
-      animate: true,
-      duration: 1.2
+  const viewAllBtn = document.getElementById('luxViewAll');
+  if (viewAllBtn) {
+    viewAllBtn.addEventListener('click', () => {
+      mapAll.fitBounds(bounds.pad(0.18), {
+        animate: true,
+        duration: 1.2
+      });
     });
-  });
+  }
 
   setTimeout(() => {
     mapAll.invalidateSize();
