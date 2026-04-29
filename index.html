@@ -610,7 +610,7 @@
       </div>
     </section>
 
-    PAGINA WEB VIDEO<!-- ===== PANTALLA 2: SERVICIOS / VIDEO SAN MIGUEL DE ALLENDE ===== -->
+PAGINA WEB VIDEO<!-- ===== PANTALLA 2: SERVICIOS / VIDEO SAN MIGUEL DE ALLENDE ===== -->
 <section id="servicios" class="fs-section fs-light servicios-video-section">
   <div class="fs-inner top-center">
     <div>
@@ -633,10 +633,12 @@
     </div>
 
     <div class="fs-media light video-card-sma">
-      <video class="video-sma" autoplay muted loop playsinline controls>
-        <source src="img/San Miguel de Allende Mexico.mp4" type="video/mp4">
-        Tu navegador no soporta la reproducción de video.
-      </video>
+      <iframe 
+        class="video-sma"
+        src="https://drive.google.com/file/d/1zU7skleQx1nzGz1esyeO898-3TbQ01iG/preview"
+        allow="autoplay"
+        allowfullscreen>
+      </iframe>
     </div>
   </div>
 </section>
@@ -726,12 +728,12 @@
     );
   }
 
+  /* ✅ AJUSTE FINAL SIN ZOOM */
   .video-sma {
     width: 100%;
-    height: min(68vh, 620px);
-    min-height: 360px;
+    aspect-ratio: 16 / 9; /* 👈 cambia si tu video es diferente */
+    border: none;
     display: block;
-    object-fit: cover;
     background: #000;
   }
 
@@ -755,11 +757,10 @@
     }
 
     .video-sma {
-      height: 340px;
-      min-height: 340px;
+      aspect-ratio: 16 / 9;
     }
   }
-</style> 
+</style>
 
     <!-- ===== PANTALLA 3: PROYECTOS (OSCURA SPLIT) ===== -->
     <section id="proyectos" class="fs-section fs-dark">
