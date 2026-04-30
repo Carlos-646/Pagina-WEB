@@ -369,10 +369,17 @@
     }
 
     .btn-blue:hover {
-      background: var(--accent-blue-hover);
+      background: rgb(255, 255, 255);
       transform: translateY(-1px);
       box-shadow: 0 18px 44px rgba(0, 0, 0, .65);
     }
+
+    /*Charly cambio a efecto neon*/
+    .neon-text {
+  text-shadow: 0 0 10px #ffffff54,
+               0 0 20px #ffffff54,
+               0 0 40px #ffffff54;
+}
 
     .btn-outline {
       background: transparent;
@@ -391,7 +398,8 @@
     }
 
     .btn-outline-light:hover {
-      background: rgba(255, 255, 255, .08);
+      background: rgb(255, 255, 255);
+      color: #0071e3;
     }
 
     /* BADGES */
@@ -542,9 +550,9 @@
       </div>
 
       <div class="fs-inner center">
-        <div class="fs-label">SERVICIOS · BX </div>
-        <h1 class="fs-title fs-title-light">Servicios Pensados Para Ti</h1>
-        <div class="fs-subtitle">calidad y confianza</div>
+        <div class="fs-label neon-text">SERVICIOS · BX </div>
+        <h1 class="fs-title fs-title-light neon-text">Servicios Pensados Para Ti</h1>
+        <div class="fs-subtitle neon-text">calidad y confianza</div>
 
         
 
