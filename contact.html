@@ -348,14 +348,24 @@
       box-shadow: 0 18px 44px rgba(0, 0, 0, .65);
     }
 
+    /*Charly cambio a efecto neon*/
+    .neon-text {
+  text-shadow: 0 0 10px #ffffff54,
+               0 0 20px #ffffff54,
+               0 0 40px #ffffff54;
+}
+
+
     .btn-outline-light {
       background: transparent;
-      color: #f5f5f7;
+      color: #ffffff;
       border-color: #f5f5f7;
     }
 
     .btn-outline-light:hover {
-      background: rgba(255, 255, 255, .08);
+      background: rgba(255, 255, 255, 0.712);
+      color: #147ce5;
+      border-color: #818181;
     }
 
     .btn-wa {
@@ -369,7 +379,7 @@
       background: var(--accent-wa-hover);
       border-color: var(--accent-wa-hover);
       transform: translateY(-1px);
-      box-shadow: 0 16px 42px rgba(22, 163, 74, .45);
+      color:rgba(0, 0, 0, .45);
     }
 
     .hero-pills {
@@ -689,9 +699,9 @@
 
       <div class="fs-inner split">
         <div>
-          <div class="fs-label">ATENCIÓN INMEDIATA</div>
-          <h1 class="fs-title">“Reserva Tu Estancia”</h1>
-          <div class="fs-subtitle">respuesta en menos de 24 horas</div>
+          <div class="fs-label neon-text">ATENCIÓN INMEDIATA</div>
+          <h1 class="fs-title neon-text">“Reserva Tu Estancia”</h1>
+          <div class="fs-subtitle neon-text">respuesta en menos de 24 horas</div>
 
 
 
