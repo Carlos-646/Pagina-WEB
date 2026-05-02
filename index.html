@@ -791,27 +791,171 @@
       </div>
     </section>
 
-    <!-- ===== PANTALLA 4: INTERIORES (CLARA) ===== -->
-    <section class="fs-section fs-light">
-      <div class="fs-inner top-center">
-        <div>
-          <div class="fs-label-dark">INTERIORES BX</div>
-          <h2 class="fs-title fs-title-dark">Elegancia que se vive.</h2>
-          <p class="fs-body-dark">
-            Interiores pensados para conectar contigo.
-          </p>
+   <!-- ===== PANTALLA 4: INTERIORES / CARRUSEL AUTOMÁTICO (CLARA) ===== -->
+<style>
+  /* ===== SECCIÓN CARRUSEL BX ===== */
 
-          <div class="fs-buttons center">
-            <a href="project.html" class="btn-blue">Ver catalogo</a>
-          </div>
-        </div>
+  .carousel-bx {
+    width: 100%;
+    border-radius: 28px;
+    overflow: hidden;
+    background: #000;
+    box-shadow: 0 35px 90px rgba(0, 0, 0, 0.20);
+  }
 
-        <div class="fs-media light">
-          <img src="img/1d3f8f94-74fc-4a50-9815-1e01f077aad1.webp" alt="Interiores MOMED">
-        </div>
+  .carousel-bx .carousel-inner {
+    border-radius: 28px;
+  }
+
+  .carousel-bx .carousel-item img {
+    width: 100%;
+    height: 560px;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Quitar botones del carrusel */
+  .carousel-bx .carousel-control-prev,
+  .carousel-bx .carousel-control-next {
+    display: none !important;
+  }
+
+  /* Indicadores inferiores elegantes */
+  .carousel-bx .carousel-indicators {
+    bottom: 18px;
+    margin-bottom: 0;
+  }
+
+  .carousel-bx .carousel-indicators li {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    opacity: 0.45;
+    margin: 0 6px;
+  }
+
+  .carousel-bx .carousel-indicators .active {
+    opacity: 1;
+  }
+
+  /* Ajuste visual para celulares */
+  @media (max-width: 768px) {
+    .carousel-bx {
+      border-radius: 20px;
+    }
+
+    .carousel-bx .carousel-inner {
+      border-radius: 20px;
+    }
+
+    .carousel-bx .carousel-item img {
+      height: 360px;
+    }
+  }
+</style>
+
+<section class="fs-section fs-light">
+  <div class="fs-inner top-center">
+
+    <div>
+      <div class="fs-label-dark">Interiores BX</div>
+
+      <h2 class="fs-title fs-title-dark">
+        Descubre la cultura
+      </h2>
+
+      <p class="fs-body-dark">
+        La magía de San Miguel de Allende.
+      </p>
+
+      <div class="fs-buttons center">
+        <a href="project.html" class="btn-blue">Ver catálogo</a>
       </div>
-    </section>
+    </div>
 
+    <!-- ===== CARRUSEL AUTOMÁTICO DE 8 IMÁGENES ===== -->
+    <div class="fs-media light">
+      <div 
+        id="carouselInterioresBX" 
+        class="carousel slide carousel-fade carousel-bx" 
+        data-ride="carousel" 
+        data-interval="3000"
+        data-pause="false">
+
+        <!-- Indicadores -->
+        <ol class="carousel-indicators">
+          <li data-target="#carouselInterioresBX" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselInterioresBX" data-slide-to="1"></li>
+          <li data-target="#carouselInterioresBX" data-slide-to="2"></li>
+          <li data-target="#carouselInterioresBX" data-slide-to="3"></li>
+          <li data-target="#carouselInterioresBX" data-slide-to="4"></li>
+          <li data-target="#carouselInterioresBX" data-slide-to="5"></li>
+          <li data-target="#carouselInterioresBX" data-slide-to="6"></li>
+          <li data-target="#carouselInterioresBX" data-slide-to="7"></li>
+        </ol>
+
+        <!-- Imágenes del carrusel -->
+        <div class="carousel-inner">
+
+          <div class="carousel-item active">
+            <img 
+              src="img/79d0f99c-2710-4ac2-a4cf-3cecedcde886_2048x1069.jpg" 
+              class="d-block w-100" 
+              alt="Hospedaje premium en San Miguel de Allende">
+          </div>
+
+          <div class="carousel-item">
+            <img 
+              src="img/desterr.webp" 
+              class="d-block w-100" 
+              alt="Interior elegante en San Miguel de Allende">
+          </div>
+
+          <div class="carousel-item">
+            <img 
+              src="img/DUJKUYO5R5BGJHII2NAIR5KIOY.jpeg" 
+              class="d-block w-100" 
+              alt="Terraza de descanso">
+          </div>
+
+          <div class="carousel-item">
+            <img 
+              src="img/372_A_000.jpg" 
+              class="d-block w-100" 
+              alt="Sala premium">
+          </div>
+
+          <div class="carousel-item">
+            <img 
+              src="img/casa-de-los-soles.jpg" 
+              class="d-block w-100" 
+              alt="Habitación elegante">
+          </div>
+
+          <div class="carousel-item">
+            <img 
+              src="img/659825ae78bc07ec3de86fb4_65973dea9358ce62450672be_WMsu7J9W6RhurGjw_sICBVQMoeHIkr92VojQGgzJvYIhirrRml_C8N9MHCLkQJvuDKWY9hngpU1MMA0jmhlb474Nw7f6h2xEG7gzzAijLCXv43YzitLrf1jCsJ8_RwOuBdtf1G4V7B0dSzvGujheYic.jpeg" 
+              class="d-block w-100" 
+              alt="Cocina moderna">
+          </div>
+
+          <div class="carousel-item">
+            <img 
+              src="img/Mojigangas-en-Parroquia.jpg" 
+              class="d-block w-100" 
+              alt="Alberca y descanso">
+          </div>
+
+         
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
   <!-- ===== PANTALLA 5: CTA FINAL ===== -->
 <section class="fs-section fs-dark" style="padding:120px 0;">
   <div class="fs-inner center" style="display:flex; flex-direction:column; gap:80px; max-width:1100px; margin:auto;">
