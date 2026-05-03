@@ -719,328 +719,6 @@
       </div>
     </section>
 
-   <!-- ===== SECCIÓN FORMULARIO CONTACTO ===== -->
-<section class="contact-section reveal">
-  <div class="contact-inner">
-    <!-- Columna izquierda: explicación -->
-    <div>
-      <div class="contact-badge">
-        <span class="dot"></span>
-        RESPUESTA RÁPIDA · ATENCIÓN PERSONALIZADA
-      </div>
-
-      <h2 class="contact-title" style="margin-top:14px;">
-        Cuéntanos Qué Buscas.
-      </h2>
-      <p class="contact-sub">
-        Indícanos fechas y presupuesto, y te preparamos una selección personalizada de hospedajes en San Miguel.
-      </p>
-
-      <div class="contact-tags">
-        <span class="tag">
-          <i class="fas fa-home icon-venta"></i>
-          Estancias exclusivas
-        </span>
-        <span class="tag">
-          <i class="fas fa-umbrella-beach icon-descanso"></i>
-          Atención personalizada
-        </span>
-        <span class="tag">
-          <i class="fas fa-key icon-airbnb"></i>
-          Mejores ubicaciones en San Miguel
-        </span>
-      </div>
-
-      <div class="contact-highlight">
-        <i class="fas fa-bolt icon-bolt"></i>
-        <div>
-          <strong>Tiempo de respuesta promedio:</strong><br>
-          menos de 24 horas en días hábiles.
-        </div>
-      </div>
-
-      <div class="contact-trust">
-        <i class="fas fa-shield-alt icon-shield"></i>
-        Tus datos están protegidos. Solo los usamos para darte seguimiento a tu consulta.
-      </div>
-    </div>
-
-    <!-- Columna derecha: formulario -->
-    <div>
-      <div class="contact-card">
-        <div class="text-center mb-3">
-          <h3 class="contact-form-title mb-1">CONTÁCTANOS</h3>
-          <p>Déjanos tus datos y un asesor te escribirá lo antes posible.</p>
-        </div>
-
-        <form id="contactForm" onsubmit="sendContactEmail(event)">
-          <!-- Nombre -->
-          <div class="form-group mb-3">
-            <label for="name" class="form-label">Nombre completo</label>
-            <div class="input-group input-group-lg">
-              <span class="input-group-text">
-                <i class="fas fa-user"></i>
-              </span>
-              <input type="text" class="form-control" id="name" placeholder="Ej. Damián Castillo" required />
-            </div>
-          </div>
-
-          <!-- Correo -->
-          <div class="form-group mb-3">
-            <label for="email" class="form-label">Correo electrónico</label>
-            <div class="input-group input-group-lg">
-              <span class="input-group-text">
-                <i class="fas fa-envelope"></i>
-              </span>
-              <input type="email" class="form-control" id="email" placeholder="ejemplo@correo.com" required />
-            </div>
-          </div>
-
-          <!-- Tema -->
-          <div class="form-group mb-3">
-            <label for="subject" class="form-label">Tema de consulta</label>
-            <div class="input-group input-group-lg">
-              <span class="input-group-text">
-                <i class="fas fa-tag"></i>
-              </span>
-              <input type="text" class="form-control" id="subject" placeholder="Cotización, dudas, visita..." required />
-            </div>
-          </div>
-
-          <!-- Mensaje -->
-          <div class="form-group mb-3">
-            <label for="message" class="form-label">Tu mensaje</label>
-            <textarea class="form-control" id="message" rows="4" placeholder="Escribe aquí tu mensaje..." required></textarea>
-          </div>
-
-          <!-- Mensaje de estado -->
-          <div id="statusMessage" class="mb-3" style="display: none;"></div>
-
-          <!-- Botones -->
-          <div class="row g-3 align-items-center">
-            <div class="col-md-7 mb-3 mb-md-0">
-              <button class="btn contact-main-btn w-100 py-3" type="submit" id="sendMessageButton">
-                <i class="fas fa-paper-plane mr-2"></i>
-                <span id="buttonText">ENVIAR MENSAJE</span>
-              </button>
-            </div>
-            <div class="col-md-5">
-              <a href="https://wa.me/524424520418?text=Hola%2C%20quiero%20informes%20sobre%20las%20propiedades."
-                 target="_blank"
-                 class="btn contact-wa-btn w-100 py-3">
-                <i class="fab fa-whatsapp mr-2"></i> WHATSAPP
-              </a>
-            </div>
-          </div>
-        </form>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ==== ESTILOS ESPECÍFICOS DEL APARTADO DE CONTACTO (PUEDES PASARLOS A TU CSS) ==== -->
-<style>
-  .contact-section{
-    padding:60px 0;
-    background:#f5f7fb;
-  }
-
-  .contact-inner{
-    max-width:1120px;
-    margin:0 auto;
-    display:grid;
-    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-    gap:40px;
-    align-items:flex-start;
-  }
-
-  @media (max-width: 992px){
-    .contact-inner{
-      grid-template-columns:1fr;
-    }
-  }
-
-  .contact-badge{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    padding:6px 12px;
-    border-radius:999px;
-    background:rgba(37,99,235,0.06); /* azul suave, sin verde */
-    color:#374151;
-    font-size:12px;
-    font-weight:600;
-    letter-spacing:.08em;
-    text-transform:uppercase;
-  }
-
-  .contact-badge .dot{
-    width:8px;
-    height:8px;
-    border-radius:999px;
-    background:#10b981; /* si no quieres nada verde cámbialo a #22c55e o a azul #22c1ee */
-  }
-
-  .contact-title{
-    font-size:32px;
-    font-weight:700;
-    color:#111827;
-    margin-bottom:10px;
-  }
-
-  .contact-sub{
-    font-size:15px;
-    color:#4b5563;
-    max-width:540px;
-    margin-bottom:18px;
-  }
-
-  .contact-tags{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-    margin-bottom:20px;
-  }
-
-  .contact-tags .tag{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    padding:8px 14px;
-    border-radius:999px;
-    background:#ffffff;
-    border:1px solid #e5e7eb;
-    font-size:13px;
-    color:#111827;
-    box-shadow:0 6px 18px rgba(15,23,42,0.04);
-  }
-
-  /* Colores reales por ícono */
-  .icon-venta{
-    color:#2563eb; /* azul */
-  }
-  .icon-descanso{
-    color:#f97316; /* naranja playa */
-  }
-  .icon-airbnb{
-    color:#8b5cf6; /* morado llave */
-  }
-
-  .contact-highlight{
-    display:flex;
-    align-items:flex-start;
-    gap:10px;
-    padding:12px 14px;
-    border-radius:14px;
-    background:#eef4ff;
-    border:1px solid #d1ddff;
-    font-size:13px;
-    color:#1f2933;
-    margin-bottom:10px;
-  }
-
-  .contact-highlight strong{
-    font-weight:600;
-  }
-
-  .icon-bolt{
-    margin-top:2px;
-    font-size:18px;
-    color:#facc15; /* amarillo rayo */
-  }
-
-  .contact-trust{
-    display:flex;
-    align-items:center;
-    gap:8px;
-    font-size:12px;
-    color:#6b7280;
-    margin-top:6px;
-  }
-
-  .icon-shield{
-    font-size:16px;
-    color:#0ea5e9; /* azul seguridad */
-  }
-
-  .contact-card{
-    background:#ffffff;
-    border-radius:24px;
-    padding:28px 26px 26px;
-    box-shadow:0 22px 55px rgba(15,23,42,0.12);
-    border:1px solid #e5e7eb;
-  }
-
-  .contact-form-title{
-    font-size:18px;
-    letter-spacing:.14em;
-    font-weight:700;
-    color:#111827;
-  }
-
-  .contact-card p{
-    font-size:13px;
-    color:#6b7280;
-    margin-bottom:0;
-  }
-
-  .input-group-text{
-    background:#f9fafb;
-    border:1px solid #e5e7eb;
-    border-right:none;
-  }
-
-  .input-group-lg .form-control{
-    border-left:none;
-  }
-
-  .form-control:focus{
-    box-shadow:0 0 0 1px #2563eb33;
-    border-color:#2563eb;
-  }
-
-  .contact-main-btn{
-    background:#2563eb;
-    border:none;
-    color:#ffffff;
-    font-weight:600;
-    letter-spacing:.06em;
-    font-size:13px;
-    border-radius:999px;
-    transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
-  }
-
-  .contact-main-btn:hover{
-    background:#1d4ed8;
-    transform:translateY(-1px);
-    box-shadow:0 16px 30px rgba(37,99,235,0.35);
-  }
-
-  .contact-wa-btn{
-    background:#25D366; /* color real de WhatsApp */
-    border:none;
-    color:#ffffff;
-    font-weight:600;
-    letter-spacing:.06em;
-    font-size:12px;
-    border-radius:999px;
-    transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
-    text-transform:uppercase;
-  }
-
-  .contact-wa-btn:hover{
-    background:#1ebe5d;
-    transform:translateY(-1px);
-    box-shadow:0 16px 30px rgba(37,211,102,0.35);
-  }
-
-  .contact-main-btn i,
-  .contact-wa-btn i{
-    font-size:14px;
-  }
-</style>
-
 <!-- ===== SECCIÓN CONTRATAR PAQUETES ===== -->
 <section class="packages-section reveal" id="paquetes">
   <div class="packages-inner">
@@ -1063,7 +741,7 @@
     <div class="packages-grid">
 
       <!-- PAQUETE 1 -->
-      <div class="package-card">
+      <div class="package-card package-featured">
         <div class="package-image">
           <img src="img/san-miguel-de-allende-recorrido-en-cuatrimoto-guanajuato.jpg" alt="Cuatrimotos en San Miguel de Allende">
           <span class="package-chip">Aventura</span>
@@ -1175,7 +853,7 @@
       </div>
 
       <!-- PAQUETE 3 -->
-      <div class="package-card">
+      <div class="package-card package-featured">
         <div class="package-image">
           <img src="img/museum2.webp" alt="Museos y recorrido cultural">
           <span class="package-chip">Cultural</span>
@@ -1230,7 +908,7 @@
       </div>
 
       <!-- PAQUETE 4 -->
-      <div class="package-card">
+      <div class="package-card package-featured">
         <div class="package-image">
           <img src="img/captura-de-pantalla-2021-10-04-a-las-92407-1199x630-1.webp" alt="Viñedo">
           <span class="package-chip wine">Viñedo</span>
@@ -1283,9 +961,7 @@
           </div>
         </div>
       </div>
-
-    
-            
+ 
             </a>
           </div>
         </div>
@@ -1301,7 +977,6 @@
         horarios y proveedor de la experiencia.
       </p>
     </div>
-
   </div>
 </section>
 
@@ -1747,6 +1422,328 @@
   }
 </style>
   </main>
+
+   <!-- ===== SECCIÓN FORMULARIO CONTACTO ===== -->
+<section class="contact-section reveal">
+  <div class="contact-inner">
+    <!-- Columna izquierda: explicación -->
+    <div>
+      <div class="contact-badge">
+        <span class="dot"></span>
+        RESPUESTA RÁPIDA · ATENCIÓN PERSONALIZADA
+      </div>
+
+      <h2 class="contact-title" style="margin-top:14px;">
+        Contrara Tu Paquete
+      </h2>
+      <p class="contact-sub">
+        Indícanos fechas y presupuesto, y te preparamos una selección personalizada de hospedajes en San Miguel.
+      </p>
+
+      <div class="contact-tags">
+        <span class="tag">
+          <i class="fas fa-home icon-venta"></i>
+          Estancias exclusivas
+        </span>
+        <span class="tag">
+          <i class="fas fa-umbrella-beach icon-descanso"></i>
+          Atención personalizada
+        </span>
+        <span class="tag">
+          <i class="fas fa-key icon-airbnb"></i>
+          Mejores ubicaciones en San Miguel
+        </span>
+      </div>
+
+      <div class="contact-highlight">
+        <i class="fas fa-bolt icon-bolt"></i>
+        <div>
+          <strong>Tiempo de respuesta promedio:</strong><br>
+          menos de 24 horas en días hábiles.
+        </div>
+      </div>
+
+      <div class="contact-trust">
+        <i class="fas fa-shield-alt icon-shield"></i>
+        Tus datos están protegidos. Solo los usamos para darte seguimiento a tu consulta.
+      </div>
+    </div>
+
+    <!-- Columna derecha: formulario -->
+    <div>
+      <div class="contact-card">
+        <div class="text-center mb-3">
+          <h3 class="contact-form-title mb-1">CONTÁCTANOS</h3>
+          <p>Déjanos tus datos y un asesor te escribirá lo antes posible.</p>
+        </div>
+
+        <form id="contactForm" onsubmit="sendContactEmail(event)">
+          <!-- Nombre -->
+          <div class="form-group mb-3">
+            <label for="name" class="form-label">Nombre completo</label>
+            <div class="input-group input-group-lg">
+              <span class="input-group-text">
+                <i class="fas fa-user"></i>
+              </span>
+              <input type="text" class="form-control" id="name" placeholder="Ej. Damián Castillo" required />
+            </div>
+          </div>
+
+          <!-- Correo -->
+          <div class="form-group mb-3">
+            <label for="email" class="form-label">Correo electrónico</label>
+            <div class="input-group input-group-lg">
+              <span class="input-group-text">
+                <i class="fas fa-envelope"></i>
+              </span>
+              <input type="email" class="form-control" id="email" placeholder="ejemplo@correo.com" required />
+            </div>
+          </div>
+
+          <!-- Tema -->
+          <div class="form-group mb-3">
+            <label for="subject" class="form-label">Tema de consulta</label>
+            <div class="input-group input-group-lg">
+              <span class="input-group-text">
+                <i class="fas fa-tag"></i>
+              </span>
+              <input type="text" class="form-control" id="subject" placeholder="Cotización, dudas, visita..." required />
+            </div>
+          </div>
+
+          <!-- Mensaje -->
+          <div class="form-group mb-3">
+            <label for="message" class="form-label">Tu mensaje</label>
+            <textarea class="form-control" id="message" rows="4" placeholder="Escribe aquí tu mensaje..." required></textarea>
+          </div>
+
+          <!-- Mensaje de estado -->
+          <div id="statusMessage" class="mb-3" style="display: none;"></div>
+
+          <!-- Botones -->
+          <div class="row g-3 align-items-center">
+            <div class="col-md-7 mb-3 mb-md-0">
+              <button class="btn contact-main-btn w-100 py-3" type="submit" id="sendMessageButton">
+                <i class="fas fa-paper-plane mr-2"></i>
+                <span id="buttonText">ENVIAR MENSAJE</span>
+              </button>
+            </div>
+            <div class="col-md-5">
+              <a href="https://wa.me/524424520418?text=Hola%2C%20quiero%20informes%20sobre%20las%20propiedades."
+                 target="_blank"
+                 class="btn contact-wa-btn w-100 py-3">
+                <i class="fab fa-whatsapp mr-2"></i> WHATSAPP
+              </a>
+            </div>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==== ESTILOS ESPECÍFICOS DEL APARTADO DE CONTACTO (PUEDES PASARLOS A TU CSS) ==== -->
+<style>
+  .contact-section{
+    padding:60px 0;
+    background:#f5f7fb;
+  }
+
+  .contact-inner{
+    max-width:1120px;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    gap:40px;
+    align-items:flex-start;
+  }
+
+  @media (max-width: 992px){
+    .contact-inner{
+      grid-template-columns:1fr;
+    }
+  }
+
+  .contact-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:6px 12px;
+    border-radius:999px;
+    background:rgba(37,99,235,0.06); /* azul suave, sin verde */
+    color:#374151;
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+  }
+
+  .contact-badge .dot{
+    width:8px;
+    height:8px;
+    border-radius:999px;
+    background:#10b981; /* si no quieres nada verde cámbialo a #22c55e o a azul #22c1ee */
+  }
+
+  .contact-title{
+    font-size:32px;
+    font-weight:700;
+    color:#111827;
+    margin-bottom:10px;
+  }
+
+  .contact-sub{
+    font-size:15px;
+    color:#4b5563;
+    max-width:540px;
+    margin-bottom:18px;
+  }
+
+  .contact-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-bottom:20px;
+  }
+
+  .contact-tags .tag{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:8px 14px;
+    border-radius:999px;
+    background:#ffffff;
+    border:1px solid #e5e7eb;
+    font-size:13px;
+    color:#111827;
+    box-shadow:0 6px 18px rgba(15,23,42,0.04);
+  }
+
+  /* Colores reales por ícono */
+  .icon-venta{
+    color:#2563eb; /* azul */
+  }
+  .icon-descanso{
+    color:#f97316; /* naranja playa */
+  }
+  .icon-airbnb{
+    color:#8b5cf6; /* morado llave */
+  }
+
+  .contact-highlight{
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+    padding:12px 14px;
+    border-radius:14px;
+    background:#eef4ff;
+    border:1px solid #d1ddff;
+    font-size:13px;
+    color:#1f2933;
+    margin-bottom:10px;
+  }
+
+  .contact-highlight strong{
+    font-weight:600;
+  }
+
+  .icon-bolt{
+    margin-top:2px;
+    font-size:18px;
+    color:#facc15; /* amarillo rayo */
+  }
+
+  .contact-trust{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-size:12px;
+    color:#6b7280;
+    margin-top:6px;
+  }
+
+  .icon-shield{
+    font-size:16px;
+    color:#0ea5e9; /* azul seguridad */
+  }
+
+  .contact-card{
+    background:#ffffff;
+    border-radius:24px;
+    padding:28px 26px 26px;
+    box-shadow:0 22px 55px rgba(15,23,42,0.12);
+    border:1px solid #e5e7eb;
+  }
+
+  .contact-form-title{
+    font-size:18px;
+    letter-spacing:.14em;
+    font-weight:700;
+    color:#111827;
+  }
+
+  .contact-card p{
+    font-size:13px;
+    color:#6b7280;
+    margin-bottom:0;
+  }
+
+  .input-group-text{
+    background:#f9fafb;
+    border:1px solid #e5e7eb;
+    border-right:none;
+  }
+
+  .input-group-lg .form-control{
+    border-left:none;
+  }
+
+  .form-control:focus{
+    box-shadow:0 0 0 1px #2563eb33;
+    border-color:#2563eb;
+  }
+
+  .contact-main-btn{
+    background:#2563eb;
+    border:none;
+    color:#ffffff;
+    font-weight:600;
+    letter-spacing:.06em;
+    font-size:13px;
+    border-radius:999px;
+    transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+  }
+
+  .contact-main-btn:hover{
+    background:#1d4ed8;
+    transform:translateY(-1px);
+    box-shadow:0 16px 30px rgba(37,99,235,0.35);
+  }
+
+  .contact-wa-btn{
+    background:#25D366; /* color real de WhatsApp */
+    border:none;
+    color:#ffffff;
+    font-weight:600;
+    letter-spacing:.06em;
+    font-size:12px;
+    border-radius:999px;
+    transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+    text-transform:uppercase;
+  }
+
+  .contact-wa-btn:hover{
+    background:#1ebe5d;
+    transform:translateY(-1px);
+    box-shadow:0 16px 30px rgba(37,211,102,0.35);
+  }
+
+  .contact-main-btn i,
+  .contact-wa-btn i{
+    font-size:14px;
+  }
+</style>
 
  <!-- Volver Arriba -->
     <!-- Botón de volver arriba con estilo unificado -->
