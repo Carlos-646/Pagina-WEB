@@ -217,11 +217,10 @@
       width: 100%;
     }
 
-    .fs-section {
+  .fs-section {
   position: relative;
   width: 100%;
-  min-height: 100vh;
-    height: auto;
+  min-height: auto;
   display: flex;
   align-items: stretch;
   justify-content: center;
@@ -1880,33 +1879,8 @@
   }
 
   /* ===== RESPONSIVE ===== */
-  @media (max-width: 760px) {
-  .amenities-row {
-    gap: 6px;
+@media (max-width: 760px) {
   }
-
-  .properties-carousel-wrapper {
-  overflow: visible;
-  padding-bottom: 20px;
-}
-
-.properties-carousel {
-  align-items: flex-start;
-}
-
-.property-card {
-  height: auto;
-}
-
-.properties-section {
-  min-height: auto !important;
-  height: auto !important;
-  padding-bottom: 40px !important;
-}
-
-  .fs-section {
-  min-height: auto !important;
-}
 
   .amenity-chip {
     font-size: 10px;
@@ -1963,7 +1937,19 @@
   html {
     overflow-x: hidden;
   }
-}
+
+
+  /* ===== DOTS ===== */
+  .carousel-dots {
+    bottom: 10px;
+  }
+
+  /* ===== FIX ESPACIO BLANCO ===== */
+  body,
+  html {
+    overflow-x: hidden;
+  }
+
 
   @media (max-width: 430px) {
     .property-media {
@@ -1987,7 +1973,7 @@
     }
   }
 
-  @media (max-width: 480px) {
+ @media (max-width: 480px) {
 
   .property-media {
     height: 200px;
@@ -2009,7 +1995,83 @@
   .properties-header h2 {
     font-size: 34px;
   }
-}
+
+/* ===== FIX DESCUBRE SAN MIGUEL MOBILE ===== */
+@media (max-width: 768px) {
+
+  .sma-premium-guide-section {
+    min-height: auto !important;
+    height: auto !important;
+    overflow: hidden;
+    padding: 60px 16px !important;
+  }
+
+  .sma-premium-wrap {
+    display: block;
+    width: 100%;
+  }
+
+  .sma-premium-grid {
+    display: grid;
+    grid-template-columns: 1fr !important;
+    gap: 20px;
+  }
+
+  .sma-premium-card {
+    width: 100%;
+    min-height: auto;
+    overflow: hidden;
+    border-radius: 24px;
+  }
+
+  .sma-premium-media {
+    height: 220px !important;
+  }
+
+  .sma-premium-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .sma-premium-body {
+    padding: 18px;
+  }
+
+  .sma-premium-title {
+    font-size: 38px !important;
+    line-height: 1.05;
+  }
+
+  .sma-premium-subtitle-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .sma-premium-footer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+  }
+
+  .sma-premium-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* EVITA ESPACIOS BLANCOS */
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  body,
+  html {
+    overflow-x: hidden;
+  }
+  }
+  }
 </style>
 
 <script>
@@ -2850,52 +2912,66 @@
     }
   }
 
-  @media (max-width: 768px) {
-    .sma-premium-guide-section {
-      padding: 82px 0;
-    }
+ @media (max-width: 768px) {
 
-    .sma-premium-title {
-      letter-spacing: -2.2px;
-    }
-
-    .sma-premium-text {
-      font-size: 16px;
-    }
-
-    .sma-premium-subtitle-row {
-      display: block;
-      margin-top: 58px;
-    }
-
-    .sma-premium-subtitle-row p {
-      max-width: 100%;
-      margin-top: 14px;
-      text-align: left;
-    }
-
-    .sma-premium-grid {
-      grid-template-columns: 1fr;
-      gap: 22px;
-    }
-
-    .sma-premium-card {
-      border-radius: 26px;
-    }
-
-    .sma-premium-media {
-      height: 235px;
-    }
-
-    .sma-premium-footer {
-      align-items: flex-start;
-      flex-direction: column;
-    }
-
-    .sma-premium-btn {
-      width: 100%;
-    }
+  .sma-premium-guide-section {
+    min-height: auto !important;
+    height: auto !important;
+    overflow: hidden;
+    padding: 60px 16px !important;
   }
+
+  .sma-premium-wrap {
+    display: block;
+    width: 100%;
+  }
+
+  .sma-premium-grid {
+    display: grid;
+    grid-template-columns: 1fr !important;
+    gap: 20px;
+  }
+
+  .sma-premium-card {
+    width: 100%;
+    min-height: auto;
+    overflow: hidden;
+    border-radius: 24px;
+  }
+
+  .sma-premium-media {
+    height: 220px !important;
+  }
+
+  .sma-premium-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .sma-premium-body {
+    padding: 18px;
+  }
+
+  .sma-premium-title {
+    font-size: 38px !important;
+    line-height: 1.05;
+  }
+
+  .sma-premium-subtitle-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .sma-premium-footer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+  }
+
+  }
+
 
   @media (max-width: 430px) {
     .sma-premium-wrap {
