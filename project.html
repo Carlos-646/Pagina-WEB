@@ -221,6 +221,7 @@
   position: relative;
   width: 100%;
   min-height: 100vh;
+    height: auto;
   display: flex;
   align-items: stretch;
   justify-content: center;
@@ -1559,10 +1560,20 @@
 
   .properties-carousel {
     display: flex;
-    gap: 30px;
-    transition: transform 0.72s cubic-bezier(0.22, 1, 0.36, 1);
-    will-change: transform;
+  align-items: stretch;
+  gap: 30px;
+  transition: transform 0.72s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
   }
+
+  .properties-carousel-wrapper {
+  min-height: auto;
+}
+
+.properties-carousel,
+.property-card {
+  height: auto;
+}
 
   /* ===== TARJETAS ===== */
   .property-card {
@@ -1873,6 +1884,25 @@
   .amenities-row {
     gap: 6px;
   }
+
+  .properties-carousel-wrapper {
+  overflow: visible;
+  padding-bottom: 20px;
+}
+
+.properties-carousel {
+  align-items: flex-start;
+}
+
+.property-card {
+  height: auto;
+}
+
+.properties-section {
+  min-height: auto !important;
+  height: auto !important;
+  padding-bottom: 40px !important;
+}
 
   .fs-section {
   min-height: auto !important;
