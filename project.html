@@ -218,14 +218,14 @@
     }
 
     .fs-section {
-      position: relative;
-      width: 100%;
-      min-height: 100vh;
-      display: flex;
-      align-items: stretch;
-      justify-content: center;
-      overflow: hidden;
-    }
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  overflow: hidden;
+}
 
     .fs-inner {
       width: min(1060px, 100%);
@@ -1870,63 +1870,70 @@
 
   /* ===== RESPONSIVE ===== */
   @media (max-width: 760px) {
-    .properties-section {
-      padding: 78px 0 92px;
-    }
-
-    .properties-header h2 {
-      letter-spacing: -2.2px;
-    }
-
-    .properties-header p {
-      font-size: 16px;
-    }
-
-    .properties-carousel-wrapper {
-      width: calc(100% - 28px);
-    }
-
-    .property-media {
-      height: 245px;
-    }
-
-    .property-body {
-      padding: 22px 20px 24px;
-    }
-
-    .property-top {
-      flex-direction: column;
-    }
-
-    .property-footer {
-      align-items: flex-start;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .property-actions {
-      width: 100%;
-      justify-content: space-between;
-    }
-
-    .chip-btn {
-      flex: 1;
-      padding: 0 12px;
-    }
-
-    .carousel-prev {
-      left: 10px;
-    }
-
-    .carousel-next {
-      right: 10px;
-    }
-
-    .carousel-arrow {
-      width: 42px;
-      height: 42px;
-    }
+  .amenities-row {
+    gap: 6px;
   }
+
+  .fs-section {
+  min-height: auto !important;
+}
+
+  .amenity-chip {
+    font-size: 10px;
+    padding: 7px 10px;
+  }
+
+  /* ===== FOOTER ===== */
+  .property-footer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+  }
+
+  .property-price {
+    font-size: 20px;
+  }
+
+  .property-actions {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+  }
+
+  .chip-btn {
+    flex: 1;
+    justify-content: center;
+    min-height: 44px;
+    font-size: 11px;
+    padding: 0 10px;
+  }
+
+  /* ===== BOTONES DEL CARRUSEL ===== */
+  .carousel-arrow {
+    width: 38px;
+    height: 38px;
+    top: 42%;
+  }
+
+  .carousel-prev {
+    left: 6px;
+  }
+
+  .carousel-next {
+    right: 6px;
+  }
+
+  /* ===== DOTS ===== */
+  .carousel-dots {
+    bottom: 10px;
+  }
+
+  /* ===== FIX ESPACIO BLANCO ===== */
+  body,
+  html {
+    overflow-x: hidden;
+  }
+}
 
   @media (max-width: 430px) {
     .property-media {
@@ -1949,6 +1956,30 @@
       font-size: 10px;
     }
   }
+
+  @media (max-width: 480px) {
+
+  .property-media {
+    height: 200px;
+  }
+
+  .property-title {
+    font-size: 18px;
+  }
+
+  .property-price {
+    font-size: 18px;
+  }
+
+  .chip-btn {
+    font-size: 10px;
+    letter-spacing: 0.5px;
+  }
+
+  .properties-header h2 {
+    font-size: 34px;
+  }
+}
 </style>
 
 <script>
