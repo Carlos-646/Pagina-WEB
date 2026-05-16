@@ -1525,155 +1525,174 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         </div>
       </div>
 
-      <!-- DERECHA -->
-      <div class="col-lg-7 right-side">
+     <!-- DERECHA -->
+<div class="col-lg-7 right-side">
 
-        <div class="form-card">
+  <div class="form-card">
 
-          <div class="text-center">
+    <div class="text-center">
 
-            <div class="vip-badge">
-              <i class="fas fa-star"></i>
-              CONTACTO VIP
-            </div>
+      <div class="vip-badge">
+        <i class="fas fa-star"></i>
+        CONTACTO VIP
+      </div>
 
-            <h2 class="form-title">
-              Hablemos de tu próxima experiencia
-            </h2>
+      <h2 class="form-title">
+        Hablemos de tu próxima experiencia
+      </h2>
 
-            <p class="form-subtitle">
-              Completa el formulario y recibe atención personalizada.
-            </p>
+      <p class="form-subtitle">
+        Completa el formulario y recibe atención personalizada.
+      </p>
+
+    </div>
+
+    <div class="divider">
+      <span><i class="fas fa-heart"></i></span>
+    </div>
+
+    <!-- FORM -->
+    <form id="contactForm">
+
+      <!-- FILA -->
+      <div class="row">
+
+        <!-- NOMBRE -->
+        <div class="col-md-6">
+
+          <div class="input-group-custom">
+
+            <label>
+              <i class="fas fa-user"></i>
+              Nombre completo
+            </label>
+
+            <input
+              type="text"
+              id="nombre"
+              placeholder="Ej. Damián Castillo"
+              required
+            >
 
           </div>
 
-          <div class="divider">
-            <span><i class="fas fa-heart"></i></span>
+        </div>
+
+        <!-- EMAIL -->
+        <div class="col-md-6">
+
+          <div class="input-group-custom">
+
+            <label>
+              <i class="fas fa-envelope"></i>
+              Correo electrónico
+            </label>
+
+            <input
+              type="email"
+              id="correo"
+              placeholder="ejemplo@correo.com"
+              required
+            >
+
           </div>
-
-          <!-- FORM -->
-          <form action="https://formsubmit.co/rauwleto10@gmail.com" method="POST">
-
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_subject" value="Nuevo mensaje desde tu página web">
-
-            <!-- FILA -->
-            <div class="row">
-
-              <!-- NOMBRE -->
-              <div class="col-md-6">
-
-                <div class="input-group-custom">
-
-                  <label>
-                    <i class="fas fa-user"></i>
-                    Nombre completo
-                  </label>
-
-                  <input
-                    type="text"
-                    name="Nombre"
-                    placeholder="Ej. Damián Castillo"
-                    required
-                  >
-
-                </div>
-
-              </div>
-
-              <!-- EMAIL -->
-              <div class="col-md-6">
-
-                <div class="input-group-custom">
-
-                  <label>
-                    <i class="fas fa-envelope"></i>
-                    Correo electrónico
-                  </label>
-
-                  <input
-                    type="email"
-                    name="Correo"
-                    placeholder="ejemplo@correo.com"
-                    required
-                  >
-
-                </div>
-
-              </div>
-
-            </div>
-
-            <!-- TEMA -->
-            <div class="input-group-custom">
-
-              <label>
-                <i class="fas fa-tag"></i>
-                Tema de consulta
-              </label>
-
-              <input
-                type="text"
-                name="Tema"
-                placeholder="Cotización, dudas, visita..."
-                required
-              >
-
-            </div>
-
-            <!-- MENSAJE -->
-            <div class="input-group-custom">
-
-              <label>
-                <i class="fas fa-comment-dots"></i>
-                Tu mensaje
-              </label>
-
-              <textarea
-                name="Mensaje"
-                rows="6"
-                placeholder="Escribe aquí tu mensaje..."
-                required
-              ></textarea>
-
-            </div>
-
-            <!-- BOTONES -->
-            <div class="buttons-row">
-
-              <button type="submit" class="send-btn">
-                <i class="fas fa-paper-plane"></i>
-                ENVIAR MENSAJE
-              </button>
-
-              <a
-                href="https://wa.me/524424520418"
-                target="_blank"
-                class="wa-btn"
-              >
-                <i class="fab fa-whatsapp"></i>
-                WHATSAPP
-              </a>
-
-            </div>
-
-            <div class="security-text">
-              <i class="fas fa-shield-alt"></i>
-              Tu información está protegida y solo se usará para darte seguimiento.
-            </div>
-
-          </form>
 
         </div>
 
       </div>
 
-    </div>
+      <!-- TEMA -->
+      <div class="input-group-custom">
 
-  </div>
+        <label>
+          <i class="fas fa-tag"></i>
+          Tema de consulta
+        </label>
 
-</section>
+        <input
+          type="text"
+          id="tema"
+          placeholder="Cotización, dudas, visita..."
+          required
+        >
 
+      </div>
+
+      <!-- MENSAJE -->
+      <div class="input-group-custom">
+
+        <label>
+          <i class="fas fa-comment-dots"></i>
+          Tu mensaje
+        </label>
+
+        <textarea
+          id="mensaje"
+          rows="6"
+          placeholder="Escribe aquí tu mensaje..."
+          required
+        ></textarea>
+
+      </div>
+
+<!-- BOTONES -->
+<div class="buttons-row">
+
+    <button type="submit" class="wa-btn">
+        <i class="fas fa-paper-plane"></i>
+        Enviar solicitud
+    </button>
+
+</div>
+
+<style>
+.buttons-row{
+    display:flex;
+    justify-content:center;
+    margin-top:20px;
+}
+
+.wa-btn{
+    background:#FF385C !important;
+    background-image:none !important;
+    color:white !important;
+    border:none !important;
+    border-radius:12px;
+    padding:16px 38px;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    min-width:230px;
+    transition:all .3s ease;
+    box-shadow:0 6px 18px rgba(255,56,92,.25) !important;
+}
+
+.wa-btn:hover{
+    background:#E31C5F !important;
+    background-image:none !important;
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(255,56,92,.4) !important;
+}
+
+.wa-btn:active{
+    transform:scale(.97);
+}
+
+.wa-btn i{
+    color:white !important;
+}
+
+@media(max-width:768px){
+    .wa-btn{
+        width:100%;
+        padding:15px;
+    }
+}
+</style>
 <style>
 
 /* ====================================
